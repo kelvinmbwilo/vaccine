@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="" />
+    <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="55" selection-start="1603" selection-end="1603" vertical-scroll-proportion="-23.0" vertical-offset="99" max-vertical-offset="1242">
+            <state line="40" column="55" selection-start="1603" selection-end="1603" vertical-scroll-proportion="1.7592068" vertical-offset="99" max-vertical-offset="1242">
               <folding />
             </state>
           </provider>
@@ -35,7 +37,7 @@
       <file leaf-file-name="2014_05_31_093203_create_users_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_093203_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="42" selection-start="548" selection-end="548" vertical-scroll-proportion="-12.592592" vertical-offset="38" max-vertical-offset="774">
+            <state line="22" column="42" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="792">
               <folding />
             </state>
           </provider>
@@ -44,7 +46,7 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="-11.333333" vertical-offset="1134" max-vertical-offset="1584">
+            <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="1602">
               <folding />
             </state>
           </provider>
@@ -53,16 +55,16 @@
       <file leaf-file-name="Stock.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Stock.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="360">
+            <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014_05_31_133912_create_manufacturer_table.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2014_05_31_133912_create_manufacturer_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133912_create_manufacturer_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="18" selection-start="413" selection-end="413" vertical-scroll-proportion="0.5827338" vertical-offset="162" max-vertical-offset="720">
+            <state line="21" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="-5.3333335" vertical-offset="216" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -71,7 +73,7 @@
       <file leaf-file-name="2014_05_31_142054_create_stock_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_142054_create_stock_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="-2.2222223" vertical-offset="174" max-vertical-offset="720">
+            <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="738">
               <folding />
             </state>
           </provider>
@@ -80,7 +82,7 @@
       <file leaf-file-name="District.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/District.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="-7.888889" vertical-offset="183" max-vertical-offset="558">
+            <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="558">
               <folding />
             </state>
           </provider>
@@ -89,7 +91,7 @@
       <file leaf-file-name="Region.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Region.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="-6.6296296" vertical-offset="163" max-vertical-offset="504">
+            <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="504">
               <folding />
             </state>
           </provider>
@@ -101,6 +103,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -163,7 +168,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,58 +186,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vaccine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vaccine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vaccine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vaccine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vaccine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vaccine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,18 +239,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30199203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1561753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18964143" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5003984" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.4996016" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -303,6 +257,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -323,218 +278,317 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/iCheck/flat/red.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1098">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/font-awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="72" selection-start="76" selection-end="76" vertical-scroll-proportion="0.029411765" vertical-offset="0" max-vertical-offset="28296">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/hello.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="7681" selection-end="7681" vertical-scroll-proportion="-20.333334" vertical-offset="207" max-vertical-offset="864">
-          <folding>
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401523372000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/jqueryui/js/jquery-1.10.2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176094">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/left.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="5" selection-start="4177" selection-end="4177" vertical-scroll-proportion="-27.666666" vertical-offset="783" max-vertical-offset="1638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="432">
-          <folding>
-            <marker date="1401527145070" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401527145070" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="327" column="46" selection-start="12777" selection-end="12973" vertical-scroll-proportion="-7.491228" vertical-offset="5333" max-vertical-offset="5904">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="489" selection-end="489" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="35" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-16.0" vertical-offset="594" max-vertical-offset="2340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124554_create_roles_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="338" selection-end="338" vertical-scroll-proportion="-6.6666665" vertical-offset="108" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133601_create_diluent_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="40" selection-start="350" selection-end="350" vertical-scroll-proportion="-2.6666667" vertical-offset="216" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_134638_create_diluent_manufacturer_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="412" selection-end="412" vertical-scroll-proportion="-3.3333333" vertical-offset="216" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_140411_create_package_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.0" vertical-offset="108" max-vertical-offset="666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="353" selection-end="353" vertical-scroll-proportion="-4.6666665" vertical-offset="162" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="56" selection-start="673" selection-end="673" vertical-scroll-proportion="-11.888889" vertical-offset="75" max-vertical-offset="792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_131908_create_manufacture_barcode_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="46" selection-start="379" selection-end="379" vertical-scroll-proportion="-6.6666665" vertical-offset="108" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_132756_create_manufacture_batch_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="36" selection-start="365" selection-end="365" vertical-scroll-proportion="-2.6666667" vertical-offset="216" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124948_create_arrival_district_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="257" selection-end="257" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="792">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_131527_create_arrival_region_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="185" selection-end="185" vertical-scroll-proportion="-0.6666667" vertical-offset="144" max-vertical-offset="666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_134218_create_vaccine_manufacturer_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="47" selection-start="425" selection-end="425" vertical-scroll-proportion="-6.2222223" vertical-offset="138" max-vertical-offset="702">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="55" selection-start="1603" selection-end="1603" vertical-scroll-proportion="-23.0" vertical-offset="99" max-vertical-offset="1242">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_093203_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="42" selection-start="548" selection-end="548" vertical-scroll-proportion="-12.592592" vertical-offset="38" max-vertical-offset="774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="-11.333333" vertical-offset="1134" max-vertical-offset="1584">
+        <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="1602">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Stock.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="-6.6296296" vertical-offset="163" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/District.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="-7.888889" vertical-offset="183" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_142054_create_stock_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="-2.2222223" vertical-offset="174" max-vertical-offset="720">
+        <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="360">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133912_create_manufacturer_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="18" selection-start="413" selection-end="413" vertical-scroll-proportion="0.5827338" vertical-offset="162" max-vertical-offset="720">
+        <state line="16" column="20" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_142054_create_stock_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/District.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="55" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="1242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_093203_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="1602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Stock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133912_create_manufacturer_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="20" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_142054_create_stock_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/District.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="55" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_093203_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="1602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Stock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133912_create_manufacturer_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="20" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_142054_create_stock_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/District.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/iCheck/flat/red.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1098" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/font-awesome/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="72" selection-start="76" selection-end="76" vertical-scroll-proportion="0.029411765" vertical-offset="0" max-vertical-offset="28296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/hello.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="7681" selection-end="7681" vertical-scroll-proportion="-20.333334" vertical-offset="207" max-vertical-offset="864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/jqueryui/js/jquery-1.10.2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176094" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/left.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="5" selection-start="4177" selection-end="4177" vertical-scroll-proportion="-27.666666" vertical-offset="783" max-vertical-offset="1638" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="12" selection-start="308" selection-end="308" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="327" column="46" selection-start="12777" selection-end="12973" vertical-scroll-proportion="-7.491228" vertical-offset="5333" max-vertical-offset="5904" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="1" selection-start="489" selection-end="489" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="35" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-16.0" vertical-offset="594" max-vertical-offset="2340" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124554_create_roles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="338" selection-end="338" vertical-scroll-proportion="-6.6666665" vertical-offset="108" max-vertical-offset="684" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133601_create_diluent_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="40" selection-start="350" selection-end="350" vertical-scroll-proportion="-2.6666667" vertical-offset="216" max-vertical-offset="684" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_134638_create_diluent_manufacturer_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="29" selection-start="412" selection-end="412" vertical-scroll-proportion="-3.3333333" vertical-offset="216" max-vertical-offset="702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_140411_create_package_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.0" vertical-offset="108" max-vertical-offset="666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="43" selection-start="353" selection-end="353" vertical-scroll-proportion="-4.6666665" vertical-offset="162" max-vertical-offset="684" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="56" selection-start="673" selection-end="673" vertical-scroll-proportion="-11.888889" vertical-offset="75" max-vertical-offset="792" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_131908_create_manufacture_barcode_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="46" selection-start="379" selection-end="379" vertical-scroll-proportion="-6.6666665" vertical-offset="108" max-vertical-offset="702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_132756_create_manufacture_batch_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="36" selection-start="365" selection-end="365" vertical-scroll-proportion="-2.6666667" vertical-offset="216" max-vertical-offset="702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124948_create_arrival_district_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="33" selection-start="257" selection-end="257" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="792" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_131527_create_arrival_region_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="7" selection-start="185" selection-end="185" vertical-scroll-proportion="-0.6666667" vertical-offset="144" max-vertical-offset="666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_134218_create_vaccine_manufacturer_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="47" selection-start="425" selection-end="425" vertical-scroll-proportion="-6.2222223" vertical-offset="138" max-vertical-offset="702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_093203_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="94" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="1602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Stock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="346" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="504">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/District.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" vertical-offset="183" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_142054_create_stock_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133912_create_manufacturer_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="-5.3333335" vertical-offset="216" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="55" selection-start="1603" selection-end="1603" vertical-scroll-proportion="1.7592068" vertical-offset="99" max-vertical-offset="1242">
           <folding />
         </state>
       </provider>
