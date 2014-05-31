@@ -323,8 +323,8 @@
 <!-- jQuery 2.0.2 -->
 {{HTML::script("js/jquery.min.js")}}
 <!-- Bootstrap -->
-{{HTML::script("js/plugins/bootstrap.min.js")}}
+{{HTML::script("js/bootstrap.min.js")}}
 <!-- AdminLTE App -->
-{{HTML::script("js/plugins/AdminLTE/app.js")}}
+{{HTML::script("js/AdminLTE/app.js")}}
 </body>
 </html>
