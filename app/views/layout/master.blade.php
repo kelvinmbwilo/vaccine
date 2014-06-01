@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Dashboard</title>
+    <title>Vaccine Tracking System</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     {{HTML::style("css/bootstrap.min.css") }}
@@ -24,7 +24,7 @@
 <header class="header">
 <a href="index.html" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    AdminLTE
+    Vaccine Arrival
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">

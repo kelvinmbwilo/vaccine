@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVaccineTable extends Migration {
+class CreateFlightDetailsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,9 @@ class CreateVaccineTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('vaccine', function(Blueprint $table)
+		Schema::create('flight_details', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string("vaccine_name");
-            $table->string("GTIN");
-            $table->string("desease_it_cure");
 			$table->timestamps();
 		});
 	}
@@ -29,7 +26,7 @@ class CreateVaccineTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('vaccine');
+		Schema::drop('flight_details');
 	}
 
 }

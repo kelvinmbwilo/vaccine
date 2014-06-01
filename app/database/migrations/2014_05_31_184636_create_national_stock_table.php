@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVaccineTable extends Migration {
+class CreateNationalStockTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,12 @@ class CreateVaccineTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('vaccine', function(Blueprint $table)
+		Schema::create('national_stock', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string("vaccine_name");
-            $table->string("GTIN");
-            $table->string("desease_it_cure");
-			$table->timestamps();
+            $table->string("stock_order_level");
+            $table->string("current_stock_level");
+            $table->timestamps();
 		});
 	}
 
@@ -29,7 +28,7 @@ class CreateVaccineTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('vaccine');
+		Schema::drop('national_stock');
 	}
 
 }

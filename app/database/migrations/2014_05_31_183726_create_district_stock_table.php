@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStockTable extends Migration {
+class CreateDistrictStockTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,12 @@ class CreateStockTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('stock', function(Blueprint $table)
+		Schema::create('district_stock', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer("area_id");
-            $table->integer("reorder_level");
-            $table->integer("stock_level");
-			$table->timestamps();
+            $table->string("stock_order_level");
+            $table->string("current_stock_level");
+            $table->timestamps();
 		});
 	}
 
@@ -29,7 +28,7 @@ class CreateStockTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('stock');
+		Schema::drop('district_stock');
 	}
 
 }

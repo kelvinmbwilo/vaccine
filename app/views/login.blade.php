@@ -2,7 +2,7 @@
 <html class="bg-black">
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Log in</title>
+    <title>Vaccine | Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     {{HTML::style("css/bootstrap.min.css") }}
@@ -19,12 +19,12 @@
     {{HTML::script("js/respond.min.js")}}
     <![endif]-->
 </head>
-<body class="bg-black">
-
+<body class="bg-gray">
+<div class="row"><div class="col-md-6 col-md-offset-4 text-aqua" id="title_label"><p>Vaccine Tracking Management System</p></div></div>
 <div class="form-box" id="login-box">
     <div class="header">Sign In</div>
     <form action="{{url('home')}}" method="post">
-        <div class="body bg-gray">
+        <div class="body bg-aqua">
             <div class="form-group">
                 <input type="text" name="userid" class="form-control" placeholder="User ID"/>
             </div>
