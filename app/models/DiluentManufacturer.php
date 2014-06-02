@@ -12,4 +12,6 @@ class DiluentManufacturer extends Eloquent{
 
     protected $guarded = array("id");
 
+
+
 } 

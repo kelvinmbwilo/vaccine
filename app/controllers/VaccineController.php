@@ -75,7 +75,18 @@ class VaccineController extends \BaseController {
 	 */
 	public function update($id)
 	{
+        $vaccine = Vaccine::find($id);
+        $vaccine->GTIN = Input::get("gtn");
+        $vaccine->vaccine_name = Input::get("name");
+        $vaccine->desease_it_cure = Input::get("disease");
+        $vaccine->save();
+        $name = $vaccine->GTIN;
 
+        Logs::create(array(
+            "user_id"=>  Auth::user()->id,
+            "action"  =>"Update vaccine with GTIN number ".$name
+        ));
+        return "<h4 class='text-success'>Vaccine Updated Successfull</h4>";
 	}
 
 

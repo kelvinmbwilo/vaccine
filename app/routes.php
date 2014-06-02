@@ -74,7 +74,7 @@ Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show')
 
 
 //display a form to add new vaccine
-Route::get('vaccine/add',array('uses'=>'UserController@create'));
+Route::get('vaccine/add',array('uses'=>'VaccineController@create'));
 
 //display a list of vaccines
 Route::get('vaccine/list',array('uses'=>'VaccineController@lists'));
@@ -93,6 +93,36 @@ Route::post('vaccine/edit/{id}',array('uses'=>'VaccineController@update'));
 
 //deleting vaccine
 Route::post('vaccine/delete/{id}',array('uses'=>'VaccineController@destroy'));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Vaccines actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('diluent/add',array('uses'=>'DiluentController@create'));
+
+//display a list of vaccines
+Route::get('diluent/list',array('uses'=>'DiluentController@lists'));
+
+//adding new vaccine
+Route::post('diluent/add',array('uses'=>'DiluentController@store'));
+
+//viewing index page
+Route::get('diluent',array('uses'=>'DiluentController@index'));
+
+//display a form to edit vaccine information
+Route::get('diluent/edit/{id}',array('uses'=>'DiluentController@edit'));
+
+//editng vaccine information
+Route::post('diluent/edit/{id}',array('uses'=>'DiluentController@update'));
+
+//deleting vaccine
+Route::post('diluent/delete/{id}',array('uses'=>'DiluentController@destroy'));
 
 
 

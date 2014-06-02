@@ -15,4 +15,8 @@ class Vaccine extends Eloquent {
     protected $table = 'vaccine';
 
     protected  $guarded = array('id');
+
+    public function vaccine(){
+        return $this->belongsTo("Diluent",'id',"vaccine_id");
+    }
 } 
