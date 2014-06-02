@@ -1,6 +1,6 @@
 <ul class="sidebar-menu">
     <li class="active">
-        <a href="index.html">
+        <a href="{{url("home")}}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
     </li>
