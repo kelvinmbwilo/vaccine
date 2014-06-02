@@ -18,6 +18,7 @@ class CreateManufacturerTable extends Migration {
             $table->string("name");
             $table->string("country");
             $table->string("email");
+            $table->string("physical_address");
 			$table->timestamps();
 		});
 	}

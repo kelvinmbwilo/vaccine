@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Dashboard</title>
+    <title>Vaccine Tracking System</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     {{HTML::style("css/bootstrap.min.css") }}
@@ -12,6 +12,12 @@
     {{HTML::style("css/ionicons.min.css") }}
     <!-- Theme style -->
     {{HTML::style("css/AdminLTE.css") }}
+
+    <!--Jquery ui-->
+    {{ HTML::script("jqueryui/css/jquery-u.css") }}
+
+    <!-- jQuery 2.0.2 -->
+    {{HTML::script("js/jquery.min.js")}}
      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,7 +30,7 @@
 <header class="header">
 <a href="index.html" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    AdminLTE
+    Vaccine Arrival
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">
@@ -51,7 +57,7 @@
                 <li><!-- start message -->
                     <a href="#">
                         <div class="pull-left">
-                            <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
+                            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image"/>
                         </div>
                         <h4>
                             Support Team
@@ -320,11 +326,21 @@
 </div><!-- ./wrapper -->
 
 
-<!-- jQuery 2.0.2 -->
-{{HTML::script("js/jquery.min.js")}}
+
 <!-- Bootstrap -->
 {{HTML::script("js/bootstrap.min.js")}}
 <!-- AdminLTE App -->
 {{HTML::script("js/AdminLTE/app.js")}}
+
+<!--data tables-->
+{{ HTML::script("datatables/js/jquery.dataTables.min.js") }}
+
+<!--Highchart files-->
+{{ HTML::script("Highcharts/js/highcharts.js") }}
+{{ HTML::script("Highcharts/js/modules/exporting.js") }}
+{{ HTML::script("Highcharts/js/themes/gray.js") }}
+
+<!--Jquery ui-->
+{{ HTML::script("jqueryui/js/jquery-ui-1.10.4.custom.min.js") }}
 </body>
 </html>
