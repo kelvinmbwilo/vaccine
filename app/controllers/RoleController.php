@@ -1,6 +1,6 @@
 <?php
 
-class VaccineController extends \BaseController {
+class RoleController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class VaccineController extends \BaseController {
 	 */
 	public function index()
 	{
-        Return View::make("vaccine.index");
+        Return View::make("roles.index");
 	}
 
 
@@ -20,7 +20,7 @@ class VaccineController extends \BaseController {
 	 */
 	public function create()
 	{
-        Return View::make("vaccine.add");
+        Return View::make("roles.add");
 	}
 
 
@@ -31,14 +31,12 @@ class VaccineController extends \BaseController {
 	 */
 	public function store()
 	{
-		if(Vaccine::where("GTIN",Input::get("gtn"))->count() == 0){
-            Vaccine::create(array(
-                'vaccine_name'      => Input::get("name"),
-                'GTIN'              =>Input::get("gtn"),
-                'desease_it_cure'   =>Input::get("disease")
+        if(Roles::where("role",Input::get("role"))->count() == 0){
+            Roles::create(array(
+                'role'      => Input::get("role")
             ));
         }else{
-            return "<h4 class='text-error'>Vaccine with GTIN Number ".Input::get("gtn")." already existed </h4>";
+            return "<h4 class='text-error'>Role ".Input::get("role")." already existed </h4>";
         }
 	}
 
@@ -46,14 +44,19 @@ class VaccineController extends \BaseController {
 	/**
 	 * Display the specified resource.
 	 *
+	 * @param  int  $id
 	 * @return Response
 	 */
-	public function lists()
+	public function show($id)
 	{
-		return View::make("vaccine.list");
+		//
 	}
-
-
+        /**
+        list roles
+         */
+   public function lists(){
+       return View::make("roles.list");
+   }
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -62,8 +65,8 @@ class VaccineController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$vaccine = Vaccine::find($id);
-        return View::make("vaccine.edit",compact("vaccine"));
+        $role = Roles::find($id);
+        return View::make("roles.edit",compact("role"));
 	}
 
 
@@ -75,15 +78,15 @@ class VaccineController extends \BaseController {
 	 */
 	public function update($id)
 	{
-        $role = Vaccine::find($id);
+        $role = Roles::find($id);
 
         //udating password
         if(Input::has("role")){
 
-            $role->role = Input::get("role");
-            $role->save();
-            $updatedrole = $role->role;
-        }else{}
+                $role->role = Input::get("role");
+                $role->save();
+                $updatedrole = $role->role;
+            }else{}
 
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
@@ -101,12 +104,12 @@ class VaccineController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-        $vaccine = Vaccine::find($id);
-        $gt = $vaccine->GTIN;
+        $vaccine = Roles::find($id);
+        $rol = $vaccine->role;
         $vaccine->delete();
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
-            "action"  =>"Delete vaccine with name ".$gt
+            "action"  =>"Delete role with name ".$rol
         ));
 	}
 

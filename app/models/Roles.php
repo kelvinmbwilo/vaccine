@@ -15,4 +15,7 @@ class Roles extends Eloquent{
     protected $table = 'roles';
 
     protected  $guarded = array('id');
+    public function getUsers(){
+        return $this->hasMany("users");
+    }
 } 
