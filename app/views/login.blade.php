@@ -23,10 +23,16 @@
 <div class="row"><div class="col-md-6 col-md-offset-4 text-aqua" id="title_label"><p>Vaccine Tracking Management System</p></div></div>
 <div class="form-box" id="login-box">
     <div class="header">Sign In</div>
-    <form action="{{url('home')}}" method="post">
+    @if(isset($error))
+    <div class="alert alert-danger alert-dismissable" style="padding: 5px">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>{{ $error }}!</strong>
+    </div>
+    @endif
+    <form method="post" action="{{ url('login') }}">
         <div class="body bg-aqua">
             <div class="form-group">
-                <input type="text" name="userid" class="form-control" placeholder="User ID"/>
+                <input type="text" name="email" class="form-control" placeholder="User ID"/>
             </div>
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Password"/>
