@@ -1,11 +1,18 @@
 @extends("layout.master")
 
-@section('breadcumbs')
+@section('title')
+<h1>
+    User Management
+    <small>Add, Edit and Delete Users</small>
+</h1>
+@stop
+@section('breadcumb')
+<ol class="breadcrumb">
 <li>
     <a href="{{ url('home') }}">Dashboard</a>
 </li>
 <li class="active">Users</li>
-
+</ol>
 @stop
 
 @section('contents')

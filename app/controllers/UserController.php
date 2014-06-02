@@ -100,7 +100,7 @@ class UserController extends \BaseController {
         $user->firstname = Input::get("firstname");
         $user->lastname = Input::get("lastname");
         $user->middlename = Input::get("middlename");
-        $user->role = Input::get("role");
+        $user->role_id = Input::get("role");
         $user->email = Input::get("email");
         $user->phone = Input::get("phone");
         $user->save();

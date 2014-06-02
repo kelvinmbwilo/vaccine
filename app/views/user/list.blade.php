@@ -8,7 +8,7 @@
    @if(User::all()->count() == 0)
     <h3>There are no users</h3>
     @else
-    <table class="table table-striped table-bordered" id="example">
+    <table class="table table-striped table-bordered" id="example2">
     <thead>
     <tr>
         <th> # </th>
@@ -49,12 +49,7 @@
 <script>
     /* Table initialisation */
     $(document).ready(function() {
-        $('#example').dataTable( {
-            "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-            "sPaginationType": "bootstrap",
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
-            },
+        $('#example2').dataTable({
             "fnDrawCallback": function( oSettings ) {
                 //editing a room
                 $(".edituser").click(function(){
@@ -87,6 +82,14 @@
                     });
                 });//endof deleting category
             }
+        });
+        $('#example').dataTable( {
+            "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+            "sPaginationType": "bootstrap",
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ records per page"
+            },
+
         });
         $('input[type="text"]').addClass("form-control");
         $('select').addClass("form-control");

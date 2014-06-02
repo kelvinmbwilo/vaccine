@@ -235,14 +235,14 @@
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="glyphicon glyphicon-user"></i>
-        <span>Jane Doe <i class="caret"></i></span>
+        <span>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<i class="caret"></i></span>
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
             <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
             <p>
-                Jane Doe - Web Developer
+                {{ Auth::user()->firstname }} {{ Auth::user()->middlename }} {{ Auth::user()->lastname }} - Web Developer
                 <small>Member since Nov. 2012</small>
             </p>
         </li>
@@ -264,7 +264,7 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="url('logout')" class="btn btn-default btn-flat">Sign out</a>
             </div>
         </li>
     </ul>
@@ -313,7 +313,7 @@
             @yield("title")
 
 <!--            breadcumbs-->
-            @yield("breadcumb")
+                @yield("breadcumb")
 
         </section>
 
@@ -333,7 +333,8 @@
 {{HTML::script("js/AdminLTE/app.js")}}
 
 <!--data tables-->
-{{ HTML::script("datatables/js/jquery.dataTables.min.js") }}
+{{ HTML::script("datatables/jquery.dataTables.js") }}
+{{ HTML::script("datatables/dataTables.bootstrap.js") }}
 
 <!--Highchart files-->
 {{ HTML::script("Highcharts/js/highcharts.js") }}
