@@ -105,6 +105,14 @@ class UserController extends \BaseController {
         $user->phone = Input::get("phone");
         $user->save();
         $name = $user->firstname." ".$user->middlename." ".$user->lastname;
+
+        //udating password
+        if(Input::has("password")){
+            if(Input::get("password")===Input::get("re_enter_password")){
+                    $user->password = Input::get("password");
+                    $user->save();
+            }else{}
+        }
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
             "action"  =>"Update user named ".$name
@@ -176,5 +184,15 @@ class UserController extends \BaseController {
     public function profile(){
         $user = Auth::user();
         return View::make("user.profile",compact("user"));
+    }
+
+    public function profileInfo(){
+        $user = Auth::user();
+        return View::make("user.profileInfo",compact("user"));
+    }
+
+    public function profileEdit(){
+        $user = Auth::user();
+        return View::make("user.profileEdit",compact("user"));
     }
 }

@@ -72,3 +72,9 @@ Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show')
 
 //route to display profile
 Route::get('profile',array('as'=>'profile', 'uses'=>'UserController@profile'));
+
+//route to display profile info
+Route::get('profileInfo',array('as'=>'profileInfo', 'uses'=>'UserController@profileInfo'));
+
+//route to display profile edit
+Route::get('profileEdit',array('as'=>'profileEdit', 'uses'=>'UserController@profileEdit'));

@@ -13,7 +13,14 @@
     <li class="active">Profile</li>
 </ol>
 @stop
+@section('contents')
+<div class="row">
+    <div class="col-md-7" id="profileInfo">
+        @include('user.profileInfo')
+    </div>
+    <div class="col-md-5" id="profileEdit">
+        @include('user.profileEdit')
+    </div>
+</div>
 
-@section("contents")
-{{ $user->firstname }}
 @stop
