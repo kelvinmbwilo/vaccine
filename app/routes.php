@@ -63,3 +63,34 @@ Route::post('user/delete/{id}',array('as'=>'deleteuser', 'uses'=>'UserController
 
 //display a system usage log for a user
 Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Vaccines actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('vaccine/add',array('uses'=>'UserController@create'));
+
+//display a list of vaccines
+Route::get('vaccine/list',array('uses'=>'VaccineController@lists'));
+
+//adding new vaccine
+Route::post('vaccine/add',array('uses'=>'VaccineController@store'));
+
+//viewing index page
+Route::get('vaccine',array('uses'=>'VaccineController@index'));
+
+//display a form to edit vaccine information
+Route::get('vaccine/edit/{id}',array('uses'=>'VaccineController@edit'));
+
+//editng vaccine information
+Route::post('vaccine/edit/{id}',array('uses'=>'VaccineController@update'));
+
+//deleting vaccine
+Route::post('vaccine/delete/{id}',array('uses'=>'VaccineController@destroy'));
+
