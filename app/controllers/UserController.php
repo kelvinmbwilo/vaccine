@@ -47,7 +47,7 @@ class UserController extends \BaseController {
                     "lastname"=>Input::get("lastname"),
                     "phone"=>Input::get("phone"),
                     "email"=>Input::get("email"),
-                    "role"=>Input::get("role"),
+                    "role_id"=>Input::get("role"),
                     "password"=>Input::get("password"),
                     "status"=>"active"
                 ));

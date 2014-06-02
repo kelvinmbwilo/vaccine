@@ -50,7 +50,22 @@
       </div>
     <script>
         $(document).ready(function (){
-            alert("mama")
+            $('#FileUploader').on('submit', function(e) {
+                e.preventDefault();
+                $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
+                $(this).ajaxSubmit({
+                    target: '#output',
+                    success:  afterSuccess
+                });
 
+            });
+
+            function afterSuccess(){
+                $('#FileUploader').resetForm();
+                setTimeout(function() {
+                    $("#output").html("");
+                }, 3000);
+                $("#listuser").load("<?php echo url("user/list") ?>")
+            }
         });
     </script>

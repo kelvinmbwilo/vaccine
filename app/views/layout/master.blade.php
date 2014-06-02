@@ -14,7 +14,7 @@
     {{HTML::style("css/AdminLTE.css") }}
 
     <!--Jquery ui-->
-    {{ HTML::script("jqueryui/css/jquery-u.css") }}
+    {{ HTML::style("jqueryui/css/cupertino/jquery-ui.css") }}
 
     <!-- jQuery 2.0.2 -->
     {{HTML::script("js/jquery.min.js")}}
@@ -69,7 +69,7 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                            <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             AdminLTE Design Team
@@ -81,7 +81,7 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                            <img src="{{ asset('img/avatar.png') }}" class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             Developers
@@ -93,7 +93,7 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                            <img src="{{ asset('img/avatar.png') }}" class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             Sales Department
@@ -105,7 +105,7 @@
                 <li>
                     <a href="#">
                         <div class="pull-left">
-                            <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                            <img src="{{ asset('img/avatar.png') }}" class="img-circle" alt="user image"/>
                         </div>
                         <h4>
                             Reviewers
@@ -240,7 +240,7 @@
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header bg-light-blue">
-            <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
             <p>
                 Jane Doe - Web Developer
                 <small>Member since Nov. 2012</small>
@@ -281,7 +281,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                    <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
                 </div>
                 <div class="pull-left info">
                     <p>Hello, Jane</p>
@@ -342,5 +342,8 @@
 
 <!--Jquery ui-->
 {{ HTML::script("jqueryui/js/jquery-ui-1.10.4.custom.min.js") }}
+
+<!--Jquery form plugin-->
+{{ HTML::script("js/jquery.form.js") }}
 </body>
 </html>
