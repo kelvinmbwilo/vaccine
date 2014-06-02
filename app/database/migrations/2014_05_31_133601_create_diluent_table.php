@@ -15,6 +15,7 @@ class CreateDiluentTable extends Migration {
 		Schema::create('diluent', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('vaccine_id');
             $table->string("diluent_name");
 			$table->timestamps();
 		});

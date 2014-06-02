@@ -16,4 +16,9 @@ class Diluent extends Eloquent{
 
     protected  $guarded = array('id');
 
+    public function vaccine(){
+        return $this->belongsTo("Vaccine","vaccine_id",'id');
+    }
+
+
 } 
