@@ -63,3 +63,12 @@ Route::post('user/delete/{id}',array('as'=>'deleteuser', 'uses'=>'UserController
 
 //display a system usage log for a user
 Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+////manage profile routes
+///////////////////////////////////////////////////////////////////////////////////////
+
+//route to display profile
+Route::get('profile',array('as'=>'profile', 'uses'=>'UserController@profile'));

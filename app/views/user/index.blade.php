@@ -1,6 +1,6 @@
 @extends("layout.master")
 
-@section('breadcumbs')
+@section('breadcumb')
 <li>
     <a href="{{ url('home') }}">Dashboard</a>
 </li>

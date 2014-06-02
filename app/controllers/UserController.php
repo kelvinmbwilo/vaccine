@@ -168,4 +168,13 @@ class UserController extends \BaseController {
         Auth::logout();
         return Redirect::to("/");
     }
+
+   /**
+    manage user profile
+    return user profile
+    */
+    public function profile(){
+        $user = Auth::user();
+        return View::make("user.profile",compact("user"));
+    }
 }
