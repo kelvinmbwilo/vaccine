@@ -349,6 +349,7 @@
 
 <!--Jquery form plugin-->
 {{ HTML::script("js/jquery.form.js") }}
+{{ HTML::script("js/plugins/fullcalendar/fullcalendar.min.js") }}
 </body>
 </html>
 @endif
