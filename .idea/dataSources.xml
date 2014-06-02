@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="323024066">
-    <data-source source="LOCAL" name="MySQL - vaccine@localhost" uuid="cb8bc0bf-69bc-409d-bf17-a2c4f87a3b60">
+  <component name="DataSourceManagerImpl" format="xml" hash="3808992930">
+    <data-source source="LOCAL" name="MySQL - vaccine@localhost" uuid="e464e629-3a30-4470-ba3b-68a131309066">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/vaccine</jdbc-url>
       <user-name>root</user-name>
-      <user-password>dfc7dfdadfcbdfc4dfcedfcf</user-password>
+      <user-password>dfc1dfcfdfdcdfcedfc5dfc7</user-password>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
