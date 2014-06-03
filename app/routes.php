@@ -165,3 +165,27 @@ Route::post('roles/edit/{id}',array('uses'=>'RoleController@update'));
 
 //deleting vaccine
 Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
+
+
+///////////////////////////////////////////////////////////////////////////////////
+////// Routes for package management
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new role
+//Route::get('package/index',array('uses'=>'PackageController@index'));
+
+//display a form to add new role
+Route::get('package/prepare',array('uses'=>'PackageController@create'));
+
+//display a list of vaccines
+Route::get('package/receive',array('uses'=>'PackageController@index'));
+
+//adding new vaccine
+Route::post('package/prepare',array('uses'=>'PackageController@store'));
+
+//viewing index page
+Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
+
+//display a form to edit vaccine information
+Route::post('package/send',array('uses'=>'PackageController@edit'));
