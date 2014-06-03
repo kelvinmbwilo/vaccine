@@ -1,7 +1,7 @@
 <div class="row">
 <div class="box ">
     <div class="box-header">
-        <h3 class="box-title">Edit User Profile </h3>
+        <h3 class="box-title">Update Your Information </h3>
     </div><!-- /.box-header -->
     <!-- form start -->
     <form role="form" id="profileEditor" method="post" action="{{url("user/edit/{$user->id}")}}">

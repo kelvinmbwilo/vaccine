@@ -27,7 +27,7 @@
                     150
                 </h3>
                 <p>
-                    New Orders
+                   Received Packages
                 </p>
             </div>
             <div class="icon">
@@ -46,7 +46,7 @@
                     53<sup style="font-size: 20px">%</sup>
                 </h3>
                 <p>
-                    Bounce Rate
+                   Sent Packages
                 </p>
             </div>
             <div class="icon">
@@ -84,7 +84,7 @@
                     65
                 </h3>
                 <p>
-                    Unique Visitors
+                    Damaged Packages
                 </p>
             </div>
             <div class="icon">
@@ -112,7 +112,7 @@
     <!-- Box (with bar chart) -->
 
 
-    <<div class="box box-warning">
+    <div class="box box-warning">
         <div class="box-header">
             <i class="fa fa-calendar"></i>
             <div class="box-title">Calendar</div>

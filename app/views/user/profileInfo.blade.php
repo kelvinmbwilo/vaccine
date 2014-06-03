@@ -16,6 +16,8 @@
                 </thead>
                 <tbody>
                 <tr><td><b>Full Name</b></td><td>{{$user->firstname." ".$user->middlename." ".$user->lastname}}</td></tr>
+                <tr><td><b>Phone Number</b></td><td>{{$user->phone}}</td></tr>
+                <tr><td><b>Email Address</b></td><td>{{$user->email}}</td></tr>
                 <tr><td><b>Role</b></td><td>{{$user->role_id}}</td></tr>
                 <tr><td><b>Last Login:</b></td><td>{{date("M, j Y H:i:s",strtotime($user->logs()->orderBy("created_at","desc")->first()->created_at))}} Hrs</td></tr>
                 <tr><td><b>Last Updated:</b></td><td>{{date("M, j Y H:i:s",strtotime($user->orderBy("updated_at","desc")->first()->updated_at))}} Hrs</td></tr>

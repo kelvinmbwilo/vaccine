@@ -6,13 +6,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Vaccine Tracking System</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='width=device-width, nitial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     {{HTML::style("css/bootstrap.min.css") }}
     <!-- font Awesome -->
-    {{HTML::style("css/font-awesome.min.css") }}
+    {{HTML::style("font-awesome/css/font-awesome.min.css") }}
     <!-- Ionicons -->
     {{HTML::style("css/ionicons.min.css") }}
+    {{HTML::style("css/jvectormap/jquery-jvectormap-1.2.2.css") }}
+    <!-- fullCalendar -->
+     {{HTML::style("css/fullcalendar/fullcalendar.css") }}
+    <!-- Daterange picker -->
+    {{HTML::style("css/daterangepicker/daterangepicker-bs3.css") }}
+    <!-- bootstrap wysihtml5 - text editor -->
+    {{HTML::style("css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}
     <!-- Theme style -->
     {{HTML::style("css/AdminLTE.css") }}
 
@@ -284,16 +291,7 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
             <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
-                </div>
-                <div class="pull-left info">
-                    <p>Hello, Jane</p>
-
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
+            @include('userpanel')
             <!-- search form -->
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
@@ -336,6 +334,7 @@
 {{HTML::script("js/bootstrap.min.js")}}
 <!-- AdminLTE App -->
 {{HTML::script("js/AdminLTE/app.js")}}
+{{HTML::script("js/AdminLTE/dashboard.js")}}
 
 <!--data tables-->
 {{ HTML::script("datatables/jquery.dataTables.js") }}
@@ -357,6 +356,20 @@
 {{ HTML::script("multiselect/js/plugins/localisation/jquery.localisation-min.js") }}
 {{ HTML::script("multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js") }}
 {{ HTML::script("multiselect/js/ui.multiselect.js") }}
+
+{{ HTML::script("js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js") }}
+<!-- jQuery Knob Chart -->
+{{ HTML::script("js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") }}
+{{ HTML::script("js/plugins/jqueryKnob/jquery.knob.js") }}
+<!-- daterangepicker -->
+{{ HTML::script("js/plugins/jqueryKnob/jquery.knob.js") }}
+<!-- Bootstrap WYSIHTML5 -->
+{{ HTML::script("js/plugins/daterangepicker/daterangepicker.js") }}
+{{ HTML::script("js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
+<!-- iCheck -->
+{{ HTML::script("js/plugins/iCheck/icheck.min.js") }}
+
+
 </body>
 </html>
 @endif

@@ -168,3 +168,53 @@ Route::get('profileInfo',array('as'=>'profileInfo', 'uses'=>'UserController@prof
 
 //route to display profile edit
 Route::get('profileEdit',array('as'=>'profileEdit', 'uses'=>'UserController@profileEdit'));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/// managing roles
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//display a form to add new role
+Route::get('roles/add',array('uses'=>'RoleController@create'));
+
+//display a list of vaccines
+Route::get('roles/list',array('uses'=>'RoleController@lists'));
+
+//adding new vaccine
+Route::post('roles/add',array('uses'=>'RoleController@store'));
+
+//viewing index page
+Route::get('roles',array('uses'=>'RoleController@index'));
+
+//display a form to edit vaccine information
+Route::get('roles/edit/{id}',array('uses'=>'RoleController@edit'));
+
+//editng vaccine information
+Route::post('roles/edit/{id}',array('uses'=>'RoleController@update'));
+
+//deleting vaccine
+Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
+
+
+///////////////////////////////////////////////////////////////////////////////////
+////// Routes for package management
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new role
+//Route::get('package/index',array('uses'=>'PackageController@index'));
+
+//display a form to add new role
+Route::get('package/prepare',array('uses'=>'PackageController@create'));
+
+//display a list of vaccines
+Route::get('package/receive',array('uses'=>'PackageController@index'));
+
+//adding new vaccine
+Route::post('package/prepare',array('uses'=>'PackageController@store'));
+
+//viewing index page
+Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
+
+//display a form to edit vaccine information
+Route::post('package/send',array('uses'=>'PackageController@edit'));
