@@ -2,28 +2,32 @@
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
-    <div class="text-muted bootstrap-admin-box-title">Diluent Lists</div>
+    <div class="text-muted bootstrap-admin-box-title">Manufacturers</div>
 </div>
 <div class="bootstrap-admin-panel-content">
-   @if(Diluent::all()->count() == 0)
-    <h3>There are no defined diluents</h3>
+   @if(Manufacturer::all()->count() == 0)
+    <h3>There are no defined Manufactures</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
     <thead>
     <tr>
         <th> # </th>
-        <th> Diluent Name </th>
-        <th> Vaccine </th>
+        <th> Company Name </th>
+        <th> Country </th>
+        <th> Email </th>
+        <th> Physical Address </th>
         <th> Action </th>
     </tr>
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(Diluent::all() as $us)
+    @foreach(Manufacturer::all() as $us)
     <tr>
         <td>{{ $i++ }}</td>
-        <td>{{ $us->diluent_name }}</td>
-        <td style="text-transform: capitalize">{{ $us->vaccine->vaccine_name }}</td>
+        <td style="text-transform: capitalize">{{ $us->name }}</td>
+        <td>{{ $us->getCountry->name }}</td>
+        <td>{{ $us->email }}</td>
+        <td>{{ $us->physical_address }}</td>
         <td id="{{ $us->id }}">
             <a href="#edit" title="edit Vaccine" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
             <a href="#b" title="delete Vaccine" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
@@ -50,7 +54,7 @@
                 $(".edituser").click(function(){
                     var id1 = $(this).parent().attr('id');
                     $("#adduser").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
-                    $("#adduser").load("<?php echo url("diluent/edit") ?>/"+id1);
+                    $("#adduser").load("<?php echo url("manufacture/edit") ?>/"+id1);
                 })
 
 
@@ -65,7 +69,7 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('diluent/delete') ?>/"+id1,function(data){
+                        $.post("<?php echo url('manufacture/delete') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });

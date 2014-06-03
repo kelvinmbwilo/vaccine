@@ -19,6 +19,8 @@
     <!--Jquery ui-->
     {{ HTML::style("jqueryui/css/cupertino/jquery-ui.css") }}
 
+    <!--multselect-->
+    {{ HTML::style("multiselect/css/ui.multiselect.css") }}
     <!-- jQuery 2.0.2 -->
     {{HTML::script("js/jquery.min.js")}}
      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -350,6 +352,11 @@
 <!--Jquery form plugin-->
 {{ HTML::script("js/jquery.form.js") }}
 {{ HTML::script("js/plugins/fullcalendar/fullcalendar.min.js") }}
+
+<!--Multselect-->
+{{ HTML::script("multiselect/js/plugins/localisation/jquery.localisation-min.js") }}
+{{ HTML::script("multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js") }}
+{{ HTML::script("multiselect/js/ui.multiselect.js") }}
 </body>
 </html>
 @endif

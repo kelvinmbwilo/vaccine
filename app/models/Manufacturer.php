@@ -14,4 +14,16 @@ class Manufacturer extends Eloquent{
     public function getBarcode(){
         return $this->hasMany("ManufacturerBarcode","manufacture_id");
     }
+
+    public function getCountry(){
+        return $this->belongsTo("Country","country",'id');
+    }
+
+    public function vaccine(){
+        return $this->hasMany("ManufacturerBarcode","manufacture_id");
+    }
+
+    public function diluent(){
+        return $this->hasMany("ManufacturerBarcode","manufacture_id");
+    }
 }
