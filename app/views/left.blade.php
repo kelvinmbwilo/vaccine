@@ -11,10 +11,9 @@
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li><a href="{{ 'package/prepare' }}"><i class="fa fa-angle-double-right"></i> Prepare Package</a></li>
-            <li><a href="{{ 'package/send' }}"><i class="fa fa-angle-double-right"></i> Send Package</a></li>
             <li><a href="{{ url('package/receive') }}"><i class="fa fa-angle-double-right"></i> Receive Package</a></li>
-        </ul>
+            <li><a href="{{ url('package/send') }}"><i class="fa fa-angle-double-right"></i> Send Package</a></li>
+            </ul>
     </li>
     <li class="treeview">
         <a href="#">

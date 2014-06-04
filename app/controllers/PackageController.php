@@ -15,6 +15,8 @@ class PackageController extends \BaseController {
 /** send packagae*/
     public function sendPackage(){
 
+                return View::make("send_package.index");
+
     }
 	/**
 	 * Show the form for creating a new resource.
