@@ -18,6 +18,7 @@
      {{HTML::style("css/fullcalendar/fullcalendar.css") }}
     <!-- Daterange picker -->
     {{HTML::style("css/daterangepicker/daterangepicker-bs3.css") }}
+    {{HTML::style("css/timepicker/bootstrap-timepicker.css") }}
     <!-- bootstrap wysihtml5 - text editor -->
     {{HTML::style("css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}
     <!-- Theme style -->
@@ -242,6 +243,7 @@
 {{ HTML::script("js/plugins/jqueryKnob/jquery.knob.js") }}
 <!-- daterangepicker -->
 {{ HTML::script("js/plugins/jqueryKnob/jquery.knob.js") }}
+{{ HTML::script("js/plugins/timepicker/bootstrap-timepicker.js") }}
 <!-- Bootstrap WYSIHTML5 -->
 {{ HTML::script("js/plugins/daterangepicker/daterangepicker.js") }}
 {{ HTML::script("js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}

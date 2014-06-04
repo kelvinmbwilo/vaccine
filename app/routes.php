@@ -213,7 +213,7 @@ Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
 Route::get('package/prepare',array('uses'=>'PackageController@create'));
 
 //display a list of vaccines
-Route::get('package/receive',array('uses'=>'PackageController@index'));
+Route::get('package/receive',array('uses'=>'PackageController@receive'));
 
 //adding new vaccine
 Route::post('package/prepare',array('uses'=>'PackageController@store'));

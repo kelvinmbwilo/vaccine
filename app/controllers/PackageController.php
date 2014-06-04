@@ -85,5 +85,15 @@ class PackageController extends \BaseController {
 		//
 	}
 
+    /**
+     * Recieve a package in a national level
+     *
+     * @return Response
+     */
+    public function receive()
+    {
+        return View::make("recieve.national");
+    }
+
 
 }
