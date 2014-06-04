@@ -64,6 +64,11 @@ Route::post('user/delete/{id}',array('as'=>'deleteuser', 'uses'=>'UserController
 //display a system usage log for a user
 Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
 
+//check for a regions district...
+Route::post('user/region_check/{id}',array('uses'=>'UserController@check_region'));
+
+//check for a regions district...
+Route::post('user/region_check1/{id}',array('uses'=>'UserController@check_region1'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**

@@ -48,6 +48,8 @@ class UserController extends \BaseController {
                     "phone"=>Input::get("phone"),
                     "email"=>Input::get("email"),
                     "role_id"=>Input::get("role"),
+                    "region_id"=>Input::get("region"),
+                    "district_id"=>Input::get("district"),
                     "password"=>Input::get("password"),
                     "status"=>"active"
                 ));
@@ -102,6 +104,8 @@ class UserController extends \BaseController {
         $user->middlename = Input::get("middlename");
         $user->role_id = Input::get("role");
         $user->email = Input::get("email");
+        $user->region_id = Input::get("region");
+        $user->district_id = Input::get("district");
         $user->phone = Input::get("phone");
         $user->save();
         $name = $user->firstname." ".$user->middlename." ".$user->lastname;
@@ -194,5 +198,23 @@ class UserController extends \BaseController {
     public function profileEdit(){
         $user = Auth::user();
         return View::make("user.profileEdit",compact("user"));
+    }
+
+    public function check_region($id){
+        if($id == "all"){
+            return Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
+
+        }else{
+            return Form::select('district',Region::find($id)->district()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
+        }
+    }
+
+    public function check_region1($id){
+        if($id == "all"){
+            return Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
+
+        }else{
+            return Form::select('district',array('all'=>'all')+Region::find($id)->district()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered'));
+        }
     }
 }

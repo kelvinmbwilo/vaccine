@@ -32,6 +32,16 @@
             </div>
 
         </div>
+        <div class='form-group'>
+
+            <div class='col-sm-6'>
+                Region<br>{{ Form::select('region',array('0'=>'all')+Region::all()->lists('region','id'),$user->region_id,array('class'=>'form-control','required'=>'requiered')) }}
+            </div>
+            <div class='col-sm-6'>
+                District<br><span id="district-area">{{ Form::select('district',array('0'=>'all')+District::lists('district','id'),$user->district_id,array('class'=>'form-control','required'=>'requiered')) }}</span>
+            </div>
+
+        </div>
 
         <div id="output"></div>
        <div class='col-sm-12 form-group text-center'>
@@ -53,6 +63,12 @@
 
         });
 
+        $("select[name=region]").change(function(){
+            $("#district-area").html("<i class='fa fa-spinner fa-spin'></i> Wait... ")
+            $.post("<?php echo url('user/region_check1') ?>/"+$(this).val(),function(dat){
+                $("#district-area").html(dat);
+            })
+        })
         function afterSuccess(){
             $('#FileUploader').resetForm();
             setTimeout(function() {
