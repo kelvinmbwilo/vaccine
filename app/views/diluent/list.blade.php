@@ -2,7 +2,7 @@
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
-    <div class="text-muted bootstrap-admin-box-title">System Users</div>
+    <div class="text-muted bootstrap-admin-box-title">Diluent Lists</div>
 </div>
 <div class="bootstrap-admin-panel-content">
    @if(Diluent::all()->count() == 0)

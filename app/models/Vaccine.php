@@ -19,4 +19,8 @@ class Vaccine extends Eloquent {
     public function vaccine(){
         return $this->belongsTo("Diluent",'id',"vaccine_id");
     }
+
+    public function manufacturer(){
+        return $this->hasMany("VaccineManufacturer","vaccine_id","id");
+    }
 } 

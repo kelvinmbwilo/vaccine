@@ -1,11 +1,12 @@
 @extends("layout.master")
 
 @section('breadcumb')
+<ol class="breadcrumb">
 <li>
     <a href="{{ url('home') }}">Dashboard</a>
 </li>
 <li class="active">Users</li>
-
+</ol>
 @stop
 
 @section('contents')

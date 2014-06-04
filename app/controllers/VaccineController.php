@@ -99,6 +99,11 @@ class VaccineController extends \BaseController {
 	public function destroy($id)
 	{
         $vaccine = Vaccine::find($id);
+        if($vaccine->manufacture()->count() != 0){
+            foreach($vaccine->manufacturer as $manu){
+                $manu->delete();
+            }
+        }
         $gt = $vaccine->GTIN;
         $vaccine->delete();
         Logs::create(array(

@@ -20,5 +20,8 @@ class Diluent extends Eloquent{
         return $this->belongsTo("Vaccine","vaccine_id",'id');
     }
 
+    public function manufacturer(){
+        return $this->hasMany("VaccineManufacturer","diluent_id","id");
+    }
 
 } 

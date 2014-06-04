@@ -64,6 +64,11 @@ Route::post('user/delete/{id}',array('as'=>'deleteuser', 'uses'=>'UserController
 //display a system usage log for a user
 Route::get('user/log/{id}',array('as'=>'userlog', 'uses'=>'UserController@show'));
 
+//check for a regions district...
+Route::post('user/region_check/{id}',array('uses'=>'UserController@check_region'));
+
+//check for a regions district...
+Route::post('user/region_check1/{id}',array('uses'=>'UserController@check_region1'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
@@ -97,7 +102,7 @@ Route::post('vaccine/delete/{id}',array('uses'=>'VaccineController@destroy'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
- * Managing Vaccines actions
+ * Managing Diluents actions
  * Directing routes to correct controllers
  */
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,6 +128,35 @@ Route::post('diluent/edit/{id}',array('uses'=>'DiluentController@update'));
 
 //deleting vaccine
 Route::post('diluent/delete/{id}',array('uses'=>'DiluentController@destroy'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Manufacturer actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('manufacture/add',array('uses'=>'ManufactureController@create'));
+
+//display a list of vaccines
+Route::get('manufacture/list',array('uses'=>'ManufactureController@lists'));
+
+//adding new vaccine
+Route::post('manufacture/add',array('uses'=>'ManufactureController@store'));
+
+//viewing index page
+Route::get('manufacture',array('uses'=>'ManufactureController@index'));
+
+//display a form to edit vaccine information
+Route::get('manufacture/edit/{id}',array('uses'=>'ManufactureController@edit'));
+
+//editng vaccine information
+Route::post('manufacture/edit/{id}',array('uses'=>'ManufactureController@update'));
+
+//deleting vaccine
+Route::post('manufacture/delete/{id}',array('uses'=>'ManufactureController@destroy'));
 
 
 
@@ -189,3 +223,33 @@ Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
 
 //display a form to edit vaccine information
 Route::post('package/send',array('uses'=>'PackageController@edit'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Manufacture Barcodes actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('manubarcode/add/',array('uses'=>'ManuBarController@create'));
+
+//display a list of vaccines
+Route::get('manubarcode/list',array('uses'=>'ManuBarController@lists'));
+
+//adding new vaccine
+Route::post('manubarcode/add',array('uses'=>'ManuBarController@store'));
+
+//viewing index page
+Route::get('manubarcode',array('uses'=>'ManuBarController@index'));
+
+//display a form to edit vaccine information
+Route::get('manubarcode/edit/{id}',array('uses'=>'ManuBarController@edit'));
+
+//editng vaccine information
+Route::post('manubarcode/edit/{id}',array('uses'=>'ManuBarController@update'));
+
+//deleting vaccine
+Route::post('manubarcode/delete/{id}',array('uses'=>'ManuBarController@destroy'));
+

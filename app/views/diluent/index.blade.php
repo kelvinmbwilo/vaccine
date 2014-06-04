@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Vaccine Management
-    <small>Add, Edit and Delete Vaccines</small>
+    Diluent Management
+    <small>Add, Edit and Delete Diluent</small>
 </h1>
 @stop
 @section('breadcumb')
