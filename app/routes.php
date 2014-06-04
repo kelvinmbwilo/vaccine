@@ -126,7 +126,7 @@ Route::post('diluent/delete/{id}',array('uses'=>'DiluentController@destroy'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
- * Managing Diluents actions
+ * Managing Manufacturer actions
  * Directing routes to correct controllers
  */
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -218,3 +218,33 @@ Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
 
 //display a form to edit vaccine information
 Route::post('package/send',array('uses'=>'PackageController@edit'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Manufacture Barcodes actions
+ * Directing routes to correct controllers
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('manubarcode/add/',array('uses'=>'ManuBarController@create'));
+
+//display a list of vaccines
+Route::get('manubarcode/list',array('uses'=>'ManuBarController@lists'));
+
+//adding new vaccine
+Route::post('manubarcode/add',array('uses'=>'ManuBarController@store'));
+
+//viewing index page
+Route::get('manubarcode',array('uses'=>'ManuBarController@index'));
+
+//display a form to edit vaccine information
+Route::get('manubarcode/edit/{id}',array('uses'=>'ManuBarController@edit'));
+
+//editng vaccine information
+Route::post('manubarcode/edit/{id}',array('uses'=>'ManuBarController@update'));
+
+//deleting vaccine
+Route::post('manubarcode/delete/{id}',array('uses'=>'ManuBarController@destroy'));
+

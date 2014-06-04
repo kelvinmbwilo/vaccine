@@ -20,10 +20,10 @@ class Manufacturer extends Eloquent{
     }
 
     public function vaccine(){
-        return $this->hasMany("ManufacturerBarcode","manufacture_id");
+        return $this->hasMany("VaccineManufacturer","manufacturer_id","id");
     }
 
     public function diluent(){
-        return $this->hasMany("ManufacturerBarcode","manufacture_id");
+        return $this->hasMany("DiluentManufacturer","manufacturer_id","id");
     }
 }

@@ -97,6 +97,11 @@ class DiluentController extends \BaseController {
     public function destroy($id)
     {
         $diluent = Diluent::find($id);
+        if($diluent->manufacture()->count() != 0){
+            foreach($diluent->manufacturer as $manu){
+                $manu->delete();
+            }
+        }
         $gt = $diluent->diluent_name;
         $diluent->delete();
         Logs::create(array(

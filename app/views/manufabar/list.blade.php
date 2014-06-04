@@ -2,36 +2,50 @@
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
-    <div class="text-muted bootstrap-admin-box-title">Manufacturers</div>
+    <div class="text-muted bootstrap-admin-box-title">User Roles</div>
 </div>
 <div class="bootstrap-admin-panel-content">
-   @if(Manufacturer::all()->count() == 0)
-    <h3>There are no defined Manufactures</h3>
+   @if(ManufacturerBarcode::all()->count() == 0)
+    <h3>There are no defined roles</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
     <thead>
     <tr>
         <th> # </th>
-        <th> Company Name </th>
-        <th> Country </th>
-        <th> Email </th>
-        <th> Physical Address </th>
+        <th>Manufacturer</th>
+        <th>Barcode</th>
+        <th>Vaccine / Diluent</th>
+        <th>Manufacturer Date</th>
+        <th>Expiry Date</th>
+        <th>Lot Number</th>
+        <th>Quantity</th>
+        <th>Number of boxes</th>
+        <th>Number of vials</th>
+
+
         <th> Action </th>
     </tr>
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(Manufacturer::all() as $us)
+    @foreach(ManufacturerBarcode::all() as $us)
     <tr>
         <td>{{ $i++ }}</td>
-        <td style="text-transform: capitalize">{{ $us->name }}</td>
-        <td>{{ $us->getCountry->name }}</td>
-        <td>{{ $us->email }}</td>
-        <td>{{ $us->physical_address }}</td>
+        <td>{{ $us->manufacturer->name }}</td>
+        <td>{{ $us->barcode }}</td>
+        <td>
+            @if($us->vaccine_id != 0){{ $us->vaccine->vaccine_name }}@endif
+            @if($us->diluent_id != 0){{ $us->diluent->diluent_name }}@endif
+        </td>
+        <td>{{ $us->Manufacture_date }}</td>
+        <td>{{ $us->expiry_date }}</td>
+        <td>{{ $us->lot_number }}</td>
+        <td>{{ $us->quantity }}</td>
+        <td>{{ $us->boxes }}</td>
+        <td>{{ $us->vials }}</td>
         <td id="{{ $us->id }}">
-            <a href="#edit" title="Add Barcode" class="addbar"><i class="fa fa-pencil text-info"></i> barcode</a>&nbsp;&nbsp;&nbsp;
-            <a href="#edit" title="edit Manufacture" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
-            <a href="#b" title="delete Manufacture" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
+            <a href="#edit" title="edit Role" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
+            <a href="#b" title="delete Role" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
         </td>
     </tr>
     @endforeach
@@ -52,16 +66,10 @@
         $('#example2').dataTable({
             "fnDrawCallback": function( oSettings ) {
                 //editing a room
-                $(".addbar").click(function(){
-                    var id1 = $(this).parent().attr('id');
-                    $("#adduser").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
-                    $("#adduser").load("<?php echo url("manubarcode/add") ?>/"+id1);
-                })
-
                 $(".edituser").click(function(){
                     var id1 = $(this).parent().attr('id');
-                    $("#adduser").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
-                    $("#adduser").load("<?php echo url("manufacture/edit") ?>/"+id1);
+                    $("#addroles").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
+                    $("#addroles").load("<?php echo url("roles/edit") ?>/"+id1);
                 })
 
 
@@ -76,7 +84,7 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('manufacture/delete') ?>/"+id1,function(data){
+                        $.post("<?php echo url('roles/delete') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });

@@ -12,11 +12,18 @@ class ManufacturerBarcode extends Eloquent{
      *
      * @var string
      */
-    protected $table = 'manufacturer_barcode';
+    protected $table = 'manufacture_barcode';
 
     protected  $guarded = array('id');
 
-    public function getManufacturer(){
-        return $this->belongsTo("Manufacturer","manufacture_id");
+    public function manufacturer(){
+        return $this->belongsTo("Manufacturer","manufacture_id",'id');
     }
+    public function vaccine(){
+        return $this->belongsTo("Vaccine","vaccine_id",'id');
+    }
+    public function diluent(){
+        return $this->belongsTo("Diluent","diluent_id",'id');
+    }
+
 } 

@@ -1,6 +1,6 @@
 <?php
 
-class ManufactureController extends \BaseController {
+class ManuBarController extends \BaseController {
 
     /**
      * Display a listing of the resource.
@@ -9,7 +9,7 @@ class ManufactureController extends \BaseController {
      */
     public function index()
     {
-        Return View::make("manufacture.index");
+        Return View::make("manufabar.index");
     }
 
 
@@ -20,7 +20,7 @@ class ManufactureController extends \BaseController {
      */
     public function create()
     {
-        Return View::make("manufacture.add");
+        Return View::make("manufabar.add");
     }
 
 
@@ -31,27 +31,22 @@ class ManufactureController extends \BaseController {
      */
     public function store()
     {
-        if(Manufacturer::where("email",Input::get("email"))->count() == 0){
-            $manu = Manufacturer::create(array(
-                'name'      => Input::get("name"),
-                'country'        =>Input::get("country"),
-                'email'      => Input::get("email"),
-                'physical_address'        =>Input::get("address")
+        if(ManufacturerBarcode::where("barcode",Input::get("barcode"))->count() == 0){
+            $manu = ManufacturerBarcode::create(array(
+                'manufacture_id'      => Input::get("manufacture"),
+                'barcode'        =>Input::get("barcode"),
+                'vaccine_id'     =>(Input::get("sel") == "vaccine")?Input::get("vaccine"):"",
+                'diluent_id'     =>(Input::get("sel") == "diluent")?Input::get("diluent"):"",
+                'Manufacture_date'      => Input::get("manu"),
+                'expiry_date'        =>Input::get("exp"),
+                'quantity'        =>Input::get("quantity"),
+                'lot_number'        =>Input::get("lot"),
+                'boxes'        =>Input::get("boxes"),
+                'vials'        =>Input::get("vials")
             ));
-            foreach($_POST['vaccines'] as $vaccine){
-                VaccineManufacturer::create(array(
-                    "manufacturer_id"   => $manu->id,
-                    "vaccine_id"        => $vaccine
-                ));
-            }
-            foreach($_POST['diluent'] as $diluent){
-                DiluentManufacturer::create(array(
-                    "manufacturer_id"   => $manu->id,
-                    "diluent_id"        => $diluent
-                ));
-            }
+
         }else{
-            return "<h4 class='text-error'>Manufacture already existed </h4>";
+            return "<h4 class='text-error'>Manufacture Barcode already existed </h4>".Input::get('barcode');
         }
     }
 
@@ -63,7 +58,7 @@ class ManufactureController extends \BaseController {
      */
     public function lists()
     {
-        return View::make("manufacture.list");
+        return View::make("manufabar.list");
     }
 
 
@@ -76,7 +71,7 @@ class ManufactureController extends \BaseController {
     public function edit($id)
     {
         $manu = Manufacturer::find($id);
-        return View::make("manufacture.edit",compact("manu"));
+        return View::make("manufabar.edit",compact("manu"));
     }
 
 

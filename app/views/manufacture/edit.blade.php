@@ -1,28 +1,35 @@
 
 <div class="panel panel-default">
     <div class="panel-body">
-        {{ Form::open(array("url"=>url("vaccine/edit/{$vaccine->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
+        {{ Form::open(array("url"=>url("manufacture/edit/{$manu->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
         <h3 class="text-center text-muted">Update Vaccine Information</h3>
         <div class='form-group'>
-
-            <div class='col-sm-10'>
-                GTN Number <br>  {{ Form::text('gtn',$vaccine->GTIN,array('class'=>'form-control','placeholder'=>'GTN Number','required'=>'required')) }}
+            <div class='col-sm-6'>
+                Name <br> {{ Form::text('name',$manu->name,array('class'=>'form-control','placeholder'=>'Name of Company','required'=>'required')) }}
+            </div>
+            <div class='col-sm-6'>
+                Country<br>{{ Form::select('country',Country::all()->lists('name','id'),$manu->country,array('class'=>'form-control','required'=>'requiered')) }}
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Email  <br>  {{ Form::text('email',$manu->email,array('class'=>'form-control','placeholder'=>'Contact Email','required'=>'required')) }}
+            </div>
+            <div class='col-sm-6'>
+                Physical Address<br>{{ Form::text('address',$manu->physical_address,array('class'=>'form-control','placeholder'=>'Physical Address Desease','required'=>'required')) }}
             </div>
         </div>
 
         <div class='form-group'>
-            <div class='col-sm-10'>
-                Name <br> {{ Form::text('name',$vaccine->vaccine_name,array('class'=>'form-control','placeholder'=>'Vaccine Common Name','required'=>'required')) }}
+            <div class='col-sm-12'>
+                Vaccines Produced<br>{{ Form::select('vaccines[]',Vaccine::all()->lists('vaccine_name','id'),$manu->vaccine->lists('vaccine_id'),array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
             </div>
         </div>
-
         <div class='form-group'>
-            <div class='col-sm-10'>
-                Disease<br>{{ Form::text('disease',$vaccine->desease_it_cure,array('class'=>'form-control','placeholder'=>'Prevented Desease','required'=>'required')) }}
+            <div class='col-sm-12'>
+                Diluent Produced<br>{{ Form::select('diluent[]',Diluent::all()->lists('diluent_name','id'),$manu->diluent->lists('diluent_id'),array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
             </div>
         </div>
-
-
         <div id="output"></div>
        <div class='col-sm-12 form-group text-center'>
             {{ Form::submit('Submit',array('class'=>'btn btn-primary','id'=>'submitqn')) }}
@@ -33,6 +40,7 @@
       </div>
 <script>
     $(document).ready(function (){
+        $(".multiselect").multiselect();
         $('#FileUploader').on('submit', function(e) {
             e.preventDefault();
             $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
