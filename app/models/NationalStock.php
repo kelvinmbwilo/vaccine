@@ -11,4 +11,12 @@ class NationalStock extends Eloquent  {
 
     protected $guarded = array("id");
 
+    public function manufacturer(){
+        return $this->belongsTo("ManufacturerBarcode","lot_number","lot_number");
+    }
+
+    public function vaccine(){
+        return $this->belongsTo("Vaccine","vaccine_id",'id');
+    }
+
 }

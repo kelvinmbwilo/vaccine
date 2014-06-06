@@ -11,7 +11,7 @@ class Country extends Eloquent {
 
     protected  $guarded = array('id');
 
-    public function guest(){
+    public function manufacture(){
         return $this->hasMany('Manufacture', 'country', 'id');
     }
 

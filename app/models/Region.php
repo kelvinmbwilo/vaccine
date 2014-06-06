@@ -20,8 +20,16 @@ class Region extends Eloquent {
         return $this->hasMany('District', 'region_id', 'id');
     }
 
-    public function getRegionStock(){
-        return $this->hasOne("RegionStock","region_id");
+    public function stock(){
+        return $this->hasMany("RegionStock","region_id",'id');
+    }
+
+    public function arrivals(){
+        return $this->hasMany('ArrivalRegion', 'regional_id', 'id');
+    }
+
+    public function sent_package(){
+        return $this->hasMany('NationalPackage','region_id','id');
     }
 
 }

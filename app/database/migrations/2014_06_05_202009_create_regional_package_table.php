@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArrivalDistrictTable extends Migration {
+class CreateRegionalPackageTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,16 @@ class CreateArrivalDistrictTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('arrival_district', function(Blueprint $table)
+		Schema::create('regional_package', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('regional_package');
+            $table->integer('source_id');
             $table->integer('district_id');
-            $table->string("lot_number");
-            $table->string("number_of_doses");
-            $table->string("vaccine_id");
-            $table->string("number_as_expected");
-            $table->string("problem");
+            $table->string('date_sent');
+            $table->string('date_received');
+            $table->string('comments');
+            $table->string('received_status');
+            $table->integer('sender');
             $table->integer('receiver');
 			$table->timestamps();
 		});
@@ -34,7 +34,7 @@ class CreateArrivalDistrictTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('arrival_district');
+		Schema::drop('regional_package');
 	}
 
 }

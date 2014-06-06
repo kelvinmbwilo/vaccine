@@ -12,4 +12,11 @@ class VaccineManufacturer extends Eloquent {
 
     protected $guarded = array("id");
 
+    public function manufacturer(){
+        return $this->hasMany("Manufacturer","manufacturer_id","id");
+    }
+
+    public function vaccine(){
+        return $this->hasMany("Vaccine","vaccine_id","id");
+    }
 }

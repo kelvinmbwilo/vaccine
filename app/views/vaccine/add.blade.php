@@ -4,21 +4,28 @@
          {{ Form::open(array("url"=>url('vaccine/add'),"class"=>"form-horizontal","id"=>'FileUploader')) }}
          <h2 class="text-center text-muted">Add new Vaccine</h2>
           <div class='form-group'>
-
-                <div class='col-sm-10'>
+                <div class='col-sm-6'>
                     GTN Number <br>  {{ Form::text('gtn','',array('class'=>'form-control','placeholder'=>'GTN Number','required'=>'required')) }}
                 </div>
+              <div class='col-sm-6'>
+                  Vaccine Name <br> {{ Form::text('name','',array('class'=>'form-control','placeholder'=>'Vaccine Common Name','required'=>'required')) }}
+              </div>
             </div>
              
               <div class='form-group'>
-                    <div class='col-sm-10'>
-                        Name <br> {{ Form::text('name','',array('class'=>'form-control','placeholder'=>'Vaccine Common Name','required'=>'required')) }}
+                    <div class='col-sm-6'>
+                        Doses per Vials <br> {{ Form::text('dose','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Vials','required'=>'required')) }}
                     </div>
+                      <div class='col-sm-6'>
+                          Vials Per Box <br> {{ Form::text('box','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Vials Per Box','required'=>'required')) }}
+                      </div>
             </div>
 
             <div class='form-group'>
-                    <div class='col-sm-10'>
-                        Disease<br>{{ Form::text('disease','',array('class'=>'form-control','placeholder'=>'Prevented Desease','required'=>'required')) }}
+                    <div class='col-sm-10 col-sm-offset-1'>
+                        Warning Period<br>
+                        <span class="help-block">Number of month before expiry to display warning</span>
+                        {{ Form::text('warning','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Warning Period (Month)','required'=>'required')) }}
                     </div>
                 </div>
 

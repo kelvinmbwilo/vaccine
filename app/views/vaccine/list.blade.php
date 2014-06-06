@@ -14,7 +14,9 @@
         <th> # </th>
         <th> GTIN Number </th>
         <th> Name </th>
-        <th> Prevented Disease </th>
+        <th> Doses per Vial </th>
+        <th> Vials per Box </th>
+        <th> Warning Period </th>
         <th> Action </th>
     </tr>
     </thead>
@@ -25,7 +27,9 @@
         <td>{{ $i++ }}</td>
         <td>{{ $us->GTIN }}</td>
         <td style="text-transform: capitalize">{{ $us->vaccine_name }}</td>
-        <td>{{ $us->desease_it_cure }}</td>
+        <td>{{ $us->doses_per_vial }}</td>
+        <td>{{ $us->vials_per_box }}</td>
+        <td>{{ $us->warning_period }} month</td>
         <td id="{{ $us->id }}">
             <a href="#edit" title="edit Vaccine" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
             <a href="#b" title="delete Vaccine" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>

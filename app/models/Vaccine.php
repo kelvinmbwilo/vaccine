@@ -16,11 +16,23 @@ class Vaccine extends Eloquent {
 
     protected  $guarded = array('id');
 
-    public function vaccine(){
-        return $this->belongsTo("Diluent",'id',"vaccine_id");
+    public function diluent(){
+        return $this->hasMany("Diluent",'vaccine_id',"id");
     }
 
     public function manufacturer(){
         return $this->hasMany("VaccineManufacturer","vaccine_id","id");
+    }
+
+    public function region_package(){
+        return $this->hasMany("RegionalPackageContent","vaccine_id","id");
+    }
+
+    public function district_package(){
+        return $this->hasMany("DistrictPackageContent","vaccine_id","id");
+    }
+
+    public function national_package(){
+        return $this->hasMany("NationalPackageContent","vaccine_id","id");
     }
 } 

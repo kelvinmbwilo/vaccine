@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration {
             $table->string('password');
             $table->string('phone');
             $table->string('status');
+            $table->string('region_id');
+            $table->string('district_id');
             $table->string("remember_token");
 			$table->timestamps();
 		});

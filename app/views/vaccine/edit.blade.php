@@ -4,21 +4,28 @@
         {{ Form::open(array("url"=>url("vaccine/edit/{$vaccine->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
         <h3 class="text-center text-muted">Update Vaccine Information</h3>
         <div class='form-group'>
-
-            <div class='col-sm-10'>
+            <div class='col-sm-6'>
                 GTN Number <br>  {{ Form::text('gtn',$vaccine->GTIN,array('class'=>'form-control','placeholder'=>'GTN Number','required'=>'required')) }}
             </div>
-        </div>
-
-        <div class='form-group'>
-            <div class='col-sm-10'>
-                Name <br> {{ Form::text('name',$vaccine->vaccine_name,array('class'=>'form-control','placeholder'=>'Vaccine Common Name','required'=>'required')) }}
+            <div class='col-sm-6'>
+                Vaccine Name <br> {{ Form::text('name',$vaccine->vaccine_name,array('class'=>'form-control','placeholder'=>'Vaccine Common Name','required'=>'required')) }}
             </div>
         </div>
 
         <div class='form-group'>
-            <div class='col-sm-10'>
-                Disease<br>{{ Form::text('disease',$vaccine->desease_it_cure,array('class'=>'form-control','placeholder'=>'Prevented Desease','required'=>'required')) }}
+            <div class='col-sm-6'>
+                Doses per Vials <br> {{ Form::text('dose',$vaccine->doses_per_vial,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Vials','required'=>'required')) }}
+            </div>
+            <div class='col-sm-6'>
+                Vials Per Box <br> {{ Form::text('box',$vaccine->vials_per_box,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Vials Per Box','required'=>'required')) }}
+            </div>
+        </div>
+
+        <div class='form-group'>
+            <div class='col-sm-10 col-sm-offset-1'>
+                Warning Period<br>
+                <span class="help-block">Number of month before expiry to display warning</span>
+                {{ Form::text('warning',$vaccine->warning_period,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Warning Period (Month)','required'=>'required')) }}
             </div>
         </div>
 

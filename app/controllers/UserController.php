@@ -48,8 +48,8 @@ class UserController extends \BaseController {
                     "phone"=>Input::get("phone"),
                     "email"=>Input::get("email"),
                     "role_id"=>Input::get("role"),
-                    "region_id"=>Input::get("region"),
-                    "district_id"=>Input::get("district"),
+                    "region_id"=>(Input::has('region'))?Input::get("region"):0,
+                    "district_id"=>(Input::has('district'))?Input::get("district"):0,
                     "password"=>Input::get("password"),
                     "status"=>"active"
                 ));
@@ -104,8 +104,11 @@ class UserController extends \BaseController {
         $user->middlename = Input::get("middlename");
         $user->role_id = Input::get("role");
         $user->email = Input::get("email");
-        $user->region_id = Input::get("region");
-        $user->district_id = Input::get("district");
+        if(Input::has("region")){
+            $user->region_id = Input::get("region");
+        }if(Input::has("district")){
+            $user->district_id = Input::get("district");
+        }
         $user->phone = Input::get("phone");
         $user->save();
         $name = $user->firstname." ".$user->middlename." ".$user->lastname;

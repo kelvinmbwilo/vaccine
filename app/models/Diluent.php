@@ -21,7 +21,7 @@ class Diluent extends Eloquent{
     }
 
     public function manufacturer(){
-        return $this->hasMany("VaccineManufacturer","diluent_id","id");
+        return $this->hasMany("DiluentManufacturer","diluent_id","id");
     }
 
 } 

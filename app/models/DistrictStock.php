@@ -7,8 +7,19 @@ class DistrictStock extends Eloquent  {
 *
 * @var string
 */
-protected $table = 'district_stock';
+    protected $table = 'district_stock';
 
-protected $guarded = array("id");
+    protected $guarded = array("id");
 
+    public function district(){
+        return $this->belongsTo('District', 'district_id', 'id');
+    }
+
+    public function manufacturer(){
+        return $this->belongsTo("ManufacturerBarcode","lot_number","lot_number");
+    }
+
+    public function vaccine(){
+        return $this->belongsTo("Vaccine","vaccine_id",'id');
+    }
 }

@@ -1,18 +1,23 @@
 <?php
-
-class RegionStock extends Eloquent  {
+/**
+ * Created by PhpStorm.
+ * User: kelvin
+ * Date: 2/17/14
+ * Time: 9:04 PM
+ */
+class DistrictPackageContents extends Eloquent {
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'region_stock';
+    protected $table = 'district_package_contents';
 
-    protected $guarded = array("id");
+    protected  $guarded = array('id');
 
-    public function region(){
-        return $this->belongsTo("Region","region_id",'id');
+    public function package(){
+        return $this->belongsTo('DistrictPackage', 'package_id', 'id');
     }
 
     public function manufacturer(){
@@ -22,6 +27,4 @@ class RegionStock extends Eloquent  {
     public function vaccine(){
         return $this->belongsTo("Vaccine","vaccine_id",'id');
     }
-
-
 }

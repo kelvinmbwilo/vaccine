@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePackageTable extends Migration {
+class CreateFacilityTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,12 @@ class CreatePackageTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('package', function(Blueprint $table)
+		Schema::create('facility', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string("");
+            $table->integer('district_id');
+            $table->string('name');
+            $table->string('contact');
 			$table->timestamps();
 		});
 	}
@@ -27,7 +29,7 @@ class CreatePackageTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('package');
+		Schema::drop('facility');
 	}
 
 }

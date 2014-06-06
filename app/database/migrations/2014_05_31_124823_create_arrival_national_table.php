@@ -15,13 +15,17 @@ class CreateArrivalNationalTable extends Migration {
 		Schema::create('arrival_national', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->date("date_of_report");
-            $table->string("place_of_inspection");
-            $table->date("date_of_inspection");
-            $table->dateTime("time_of_inspection");
-            $table->string("cold_store");
-            $table->date("date_entered_cold_store");
+            $table->string("ssc");
+            $table->string("lot_number");
+            $table->string("number_of_vials");
+            $table->string("number_as_expected");
+            $table->string("problem");
+            $table->string("coolant_type");
+            $table->string("temperature_monitor");
+            $table->string("docs_available");
+            $table->string("labels_available");
             $table->dateTime("time_entered_cold_store");
+            $table->integer('receiver');
 			$table->timestamps();
 		});
 	}

@@ -32,12 +32,12 @@
                     </div>
 
                 </div>
-          <div class='form-group'>
+          <div class='form-group' id="area">
 
-              <div class='col-sm-6'>
-                  Region<br>{{ Form::select('region',array('all'=>'all')+Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
+              <div class='col-sm-6' id="regarea">
+                  Region<br>{{ Form::select('region',Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
               </div>
-              <div class='col-sm-6'>
+              <div class='col-sm-6' id="disarea">
                   District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
               </div>
 
@@ -69,6 +69,22 @@
                 });
 
             });
+
+            var area = $("#area").html();
+            var dis = $("#disarea").html();
+            var reg = $("#regarea").html();
+            $("#disarea,#regarea").html("");
+            $("select[name=role]").change(function(){
+                if($(this).val() == "Region"){
+                    $("#regarea").html(reg);
+                    $("#disarea").html("");
+                }else if($(this).val() == "District"){
+                    $("#disarea").html(dis);
+                    $("#regarea").html("");
+                }else{
+                    $("#disarea,#regarea").html("");
+                }
+            })
 
             $("select[name=region]").change(function(){
                 $("#district-area").html("<i class='fa fa-spinner fa-spin'></i> Wait... ")

@@ -17,7 +17,9 @@ class CreateVaccineTable extends Migration {
 			$table->increments('id');
             $table->string("vaccine_name");
             $table->string("GTIN");
-            $table->string("desease_it_cure");
+            $table->string("doses_per_vial");
+            $table->string("vials_per_box");
+            $table->string("warning_period");
 			$table->timestamps();
 		});
 	}

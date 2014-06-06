@@ -15,4 +15,28 @@ class ArrivalRegion extends Eloquent{
     protected $table = 'arrival_region';
 
     protected  $guarded = array('id');
+
+    public function vaccine(){
+        return $this->belongsTo("Vaccine","vaccine_id",'id');
+    }
+
+    public function nation_package(){
+        return $this->belongsTo("NationalPackage","national_package",'id');
+    }
+
+    public function region(){
+        return $this->belongsTo("Region","region_id",'id');
+    }
+
+    public function manufacturer(){
+        return $this->belongsTo("ManufacturerBarcode","lot_number","lot_number");
+    }
+
+    public function user(){
+        return $this->belongsTo("User","receiver","id");
+    }
+
+    public function problem(){
+        return $this->hasMany("Problem","arrival_id","id");
+    }
 } 

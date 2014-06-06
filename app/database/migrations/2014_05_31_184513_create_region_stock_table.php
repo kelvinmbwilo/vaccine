@@ -16,8 +16,9 @@ class CreateRegionStockTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer("region_id");
-            $table->string("stock_order_level");
-            $table->string("current_stock_level");
+            $table->string("number_of_doses");
+            $table->string("lot_number");
+            $table->string("vaccine_id");
             $table->timestamps();
 		});
 	}

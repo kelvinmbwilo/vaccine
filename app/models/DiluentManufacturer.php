@@ -12,6 +12,12 @@ class DiluentManufacturer extends Eloquent{
 
     protected $guarded = array("id");
 
+    public function diluent(){
+        return $this->belongsTo("Diluent","diluent_id",'id');
+    }
 
+    public function manufacturer(){
+        return $this->belongsTo("Manufacturer","manufacturer_id","id");
+    }
 
 } 

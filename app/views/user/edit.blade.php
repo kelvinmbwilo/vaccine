@@ -28,17 +28,17 @@
                 Phone Number<br>{{ Form::text('phone',$user->phone,array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Role<br>{{ Form::select('role',array("admin"=>"Administrator","doctor"=>"Doctor"),$user->role,array('class'=>'form-control','required'=>'requiered')) }}
+                Level<br>{{ Form::select('role',array("admin"=>"Administrator","National"=>"National","Region"=>"Region","District"=>"District"),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
 
         </div>
-        <div class='form-group'>
+        <div class='form-group' id="area">
 
-            <div class='col-sm-6'>
-                Region<br>{{ Form::select('region',array('0'=>'all')+Region::all()->lists('region','id'),$user->region_id,array('class'=>'form-control','required'=>'requiered')) }}
+            <div class='col-sm-6' id="regarea">
+                Region<br>{{ Form::select('region',Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
-            <div class='col-sm-6'>
-                District<br><span id="district-area">{{ Form::select('district',array('0'=>'all')+District::lists('district','id'),$user->district_id,array('class'=>'form-control','required'=>'requiered')) }}</span>
+            <div class='col-sm-6' id="disarea">
+                District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
             </div>
 
         </div>
@@ -62,6 +62,31 @@
             });
 
         });
+
+        var area = $("#area").html();
+        var dis = $("#disarea").html();
+        var reg = $("#regarea").html();
+        if($("select[name=role]").val() == "National" || $("select[name=role]").val() == "Administrator"){
+            $("#disarea,#regarea").html("");
+        }else if($("select[name=role]").val() == "Region"){
+            $("#regarea").html(reg);
+            $("#disarea").html("");
+        }else if($("select[name=role]").val() == "District"){
+            $("#disarea").html(dis);
+            $("#regarea").html("");
+        }
+
+        $("select[name=role]").change(function(){
+            if($(this).val() == "Region"){
+                $("#regarea").html(reg);
+                $("#disarea").html("");
+            }else if($(this).val() == "District"){
+                $("#disarea").html(dis);
+                $("#regarea").html("");
+            }else{
+                $("#disarea,#regarea").html("");
+            }
+        })
 
         $("select[name=region]").change(function(){
             $("#district-area").html("<i class='fa fa-spinner fa-spin'></i> Wait... ")

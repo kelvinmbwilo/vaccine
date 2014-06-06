@@ -15,6 +15,14 @@ class CreateArrivalRegionTable extends Migration {
 		Schema::create('arrival_region', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('national_package');
+            $table->integer('regional_id');
+            $table->string("lot_number");
+            $table->string("number_of_doses");
+            $table->string("vaccine_id");
+            $table->string("number_as_expected");
+            $table->string("problem");
+            $table->integer('receiver');
 			$table->timestamps();
 		});
 	}

@@ -20,9 +20,4 @@ class Logs extends Eloquent {
         return $this->belongsTo('User', 'user_id', 'id');
     }
 
-    public function parameter(){
-        return $this->hasMany('ProductParameter', 'product_id', 'id');
-    }
-
-
 }

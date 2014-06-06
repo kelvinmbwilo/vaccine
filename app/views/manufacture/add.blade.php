@@ -24,12 +24,12 @@
 
           <div class='form-group'>
               <div class='col-sm-12'>
-                  Vaccines Produced<br>{{ Form::select('vaccines[]',Vaccine::all()->lists('vaccine_name','id'),'',array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
+                  Vaccines Produced by This Manufacturer<br>{{ Form::select('vaccines[]',Vaccine::all()->lists('vaccine_name','id'),'',array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
               </div>
           </div>
           <div class='form-group'>
               <div class='col-sm-12'>
-                  Diluent Produced<br>{{ Form::select('diluent[]',Diluent::all()->lists('diluent_name','id'),'',array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
+                  Diluent Produced by This Manufacturer<br>{{ Form::select('diluent[]',Diluent::all()->lists('diluent_name','id'),'',array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
               </div>
           </div>
           <div id="output"></div>

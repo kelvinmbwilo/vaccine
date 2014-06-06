@@ -35,7 +35,13 @@ class VaccineController extends \BaseController {
             Vaccine::create(array(
                 'vaccine_name'      => Input::get("name"),
                 'GTIN'              =>Input::get("gtn"),
-                'desease_it_cure'   =>Input::get("disease")
+                'doses_per_vial'   =>Input::get("dose"),
+                'vials_per_box'   =>Input::get("box"),
+                'warning_period'   =>Input::get("warning")
+            ));
+            Logs::create(array(
+                "user_id"=>  Auth::user()->id,
+                "action"  =>"Add vaccine with GTIN number ".Input::get("gtn")
             ));
         }else{
             return "<h4 class='text-error'>Vaccine with GTIN Number ".Input::get("gtn")." already existed </h4>";
@@ -78,7 +84,9 @@ class VaccineController extends \BaseController {
         $vaccine = Vaccine::find($id);
         $vaccine->GTIN = Input::get("gtn");
         $vaccine->vaccine_name = Input::get("name");
-        $vaccine->desease_it_cure = Input::get("disease");
+        $vaccine->doses_per_vial = Input::get("dose");
+        $vaccine->vials_per_box = Input::get("box");
+        $vaccine->warning_period = Input::get("warning");
         $vaccine->save();
         $name = $vaccine->GTIN;
 

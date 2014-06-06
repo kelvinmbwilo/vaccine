@@ -15,4 +15,28 @@ class ArrivalDistrict extends Eloquent{
     protected $table = 'arrival_district';
 
     protected  $guarded = array('id');
+
+    public function vaccine(){
+        return $this->belongsTo("Vaccine","vaccine_id",'id');
+    }
+
+    public function region_package(){
+        return $this->belongsTo("RegionalPackage","regional_package",'id');
+    }
+
+    public function district(){
+        return $this->belongsTo("District","district_id",'id');
+    }
+
+    public function manufacturer(){
+        return $this->belongsTo("ManufacturerBarcode","lot_number","lot_number");
+    }
+
+    public function user(){
+        return $this->belongsTo("User","receiver","id");
+    }
+
+    public function problem(){
+        return $this->hasMany("Problem","arrival_id","id");
+    }
 } 
