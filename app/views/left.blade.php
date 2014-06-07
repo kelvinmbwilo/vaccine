@@ -22,9 +22,9 @@
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
+            <li><a href="#"><i class="fa fa-angle-double-right"></i> Morris</a></li>
+            <li><a href="#"><i class="fa fa-angle-double-right"></i> Flot</a></li>
+            <li><a href="#"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
         </ul>
     </li>
 

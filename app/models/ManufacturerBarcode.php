@@ -19,11 +19,9 @@ class ManufacturerBarcode extends Eloquent{
     public function manufacturer(){
         return $this->belongsTo("Manufacturer","manufacture_id",'id');
     }
-    public function vaccine(){
-        return $this->belongsTo("Vaccine","vaccine_id",'id');
-    }
-    public function diluent(){
-        return $this->belongsTo("Diluent","diluent_id",'id');
+
+    public function packages(){
+        return $this->hasMany("ManufacturePackage","package_id",'id');
     }
 
 } 

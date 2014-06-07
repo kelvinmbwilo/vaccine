@@ -6,51 +6,43 @@
 </div>
 <div class="bootstrap-admin-panel-content">
    @if(ManufacturerBarcode::all()->count() == 0)
-    <h3>There are no defined roles</h3>
+    <h3>There are no Packages</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
-    <thead>
-    <tr>
-        <th> # </th>
-        <th>Manufacturer</th>
-        <th>Barcode</th>
-        <th>Vaccine / Diluent</th>
-        <th>Manufacturer Date</th>
-        <th>Expiry Date</th>
-        <th>Lot Number</th>
-        <th>Quantity</th>
-        <th>Number of boxes</th>
-        <th>Number of vials</th>
+        <thead>
+        <tr>
+            <th> # </th>
+            <th>SSCC</th>
+            <th>#Packages</th>
+            <th>Content</th>
+            <th>Name</th>
+            <th>Lot Number</th>
+            <th>Doses</th>
+            <th> Action </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php $i=1; ?>
+        @foreach(ManufacturePackage::all() as $pack)
+        <tr>
+            <td>{{ $i++ }}</td>
+            <td>{{ $pack->manufacture->ssc }}</td>
+            <td>{{ $pack->manufacture->number_of_packages }}</td>
+            <td>{{ $pack->content }}</td>
+            <td>
+                @if($pack->vaccine_id != 0){{ $pack->vaccine->vaccine_name }}@endif
+                @if($pack->diluent_id != 0){{ $pack->diluent->diluent_name }}@endif
+            </td>
+            <td>{{ $pack->lot_number }}</td>
+            <td>{{ $pack->number_of_doses }}</td>
+            <td id="{{ $pack->id }}">
+                <a href="#edit" title="edit Role" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
+                <a href="#b" title="delete Role" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
+            </td>
+        </tr>
+        @endforeach
 
-
-        <th> Action </th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php $i=1; ?>
-    @foreach(ManufacturerBarcode::all() as $us)
-    <tr>
-        <td>{{ $i++ }}</td>
-        <td>{{ $us->manufacturer->name }}</td>
-        <td>{{ $us->barcode }}</td>
-        <td>
-            @if($us->vaccine_id != 0){{ $us->vaccine->vaccine_name }}@endif
-            @if($us->diluent_id != 0){{ $us->diluent->diluent_name }}@endif
-        </td>
-        <td>{{ $us->Manufacture_date }}</td>
-        <td>{{ $us->expiry_date }}</td>
-        <td>{{ $us->lot_number }}</td>
-        <td>{{ $us->quantity }}</td>
-        <td>{{ $us->boxes }}</td>
-        <td>{{ $us->vials }}</td>
-        <td id="{{ $us->id }}">
-            <a href="#edit" title="edit Role" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
-            <a href="#b" title="delete Role" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
-        </td>
-    </tr>
-    @endforeach
-
-    </tbody>
+        </tbody>
     </table>
 
     @endif
@@ -68,8 +60,8 @@
                 //editing a room
                 $(".edituser").click(function(){
                     var id1 = $(this).parent().attr('id');
-                    $("#addroles").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
-                    $("#addroles").load("<?php echo url("roles/edit") ?>/"+id1);
+                    $("#adduser").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
+                    $("#adduser").load("<?php echo url("manubarcode/edit") ?>/"+id1);
                 })
 
 
@@ -84,20 +76,14 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('roles/delete') ?>/"+id1,function(data){
+                        $.post("<?php echo url('manubarcode/delete') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });
                 });//endof deleting category
             }
         });
-        $('#example').dataTable({
-            "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-            "sPaginationType": "bootstrap",
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
-            }
-        });
+
         $('input[type="text"]').addClass("form-control");
         $('select').addClass("form-control");
 

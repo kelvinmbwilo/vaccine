@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vaccine Tracking System</title>
-    <meta content='width=device-width, nitial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     {{HTML::style("css/bootstrap.min.css") }}
     <!-- font Awesome -->

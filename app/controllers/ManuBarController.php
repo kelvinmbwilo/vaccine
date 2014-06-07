@@ -31,23 +31,28 @@ class ManuBarController extends \BaseController {
      */
     public function store()
     {
-        if(ManufacturerBarcode::where("barcode",Input::get("barcode"))->count() == 0){
+        if(ManufacturerBarcode::where("ssc",Input::get("barcode"))->count() == 0){
             $manu = ManufacturerBarcode::create(array(
-                'manufacture_id'      => Input::get("manufacture"),
-                'barcode'        =>Input::get("barcode"),
-                'vaccine_id'     =>(Input::get("sel") == "vaccine")?Input::get("vaccine"):"",
-                'diluent_id'     =>(Input::get("sel") == "diluent")?Input::get("diluent"):"",
-                'Manufacture_date'      => Input::get("manu"),
-                'expiry_date'        =>Input::get("exp"),
-                'quantity'        =>Input::get("quantity"),
-                'lot_number'        =>Input::get("lot"),
-                'boxes'        =>Input::get("boxes"),
-                'vials'        =>Input::get("vials")
+                'manufacture_id'        =>Input::get("manufacture"),
+                'ssc'                   =>Input::get("barcode"),
+                'number_of_packages'    =>Input::get("packages"),
             ));
-
         }else{
-            return "<h4 class='text-error'>Manufacture Barcode already existed </h4>".Input::get('barcode');
+            $manu = DB::table('manufacture_barcode')->where("ssc",Input::get("barcode"))->first();
         }
+        if(isset($manu)){
+            $package = ManufacturePackage::create(array(
+                'package_id'            =>$manu->id,
+                'content'               =>Input::get("type"),
+                'vaccine_id'            =>(Input::get("type") == "vaccine")?Input::get("vaccine"):"",
+                'diluent_id'            =>(Input::get("type") == "diluent")?Input::get("diluent"):"",
+                'Manufacture_date'      =>Input::get("manu"),
+                'expiry_date'           =>Input::get("exp"),
+                'lot_number'            =>Input::get("lot"),
+                'number_of_doses'       =>Input::get("quantity")
+            ));
+        }
+
     }
 
 
@@ -109,26 +114,18 @@ class ManuBarController extends \BaseController {
      */
     public function destroy($id)
     {
-        $manu = Manufacturer::find($id);
-
-
-        if($manu->vaccine()->count() != 0){
-            foreach($manu->vaccine as $vaccine){
-                $vaccine->delete();
+        $manu = ManufacturerBarcode::find($id);
+        if($manu->packages()->count() != 0){
+            foreach($manu->packages as $package){
+                $package->delete();
             }
         }
-
-        if($manu->diluent()->count() != 0){
-            foreach($manu->diluent as $diluent){
-                $diluent->delete();
-            }
-        }
-        $gt = $manu->name;
+        $gt = $manu->ssc;
         $manu->delete();
 
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
-            "action"  =>"Delete Manufacture with name ".$gt
+            "action"  =>"Delete Manufacture Package with SSCC ".$gt
         ));
     }
 

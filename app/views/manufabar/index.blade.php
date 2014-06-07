@@ -17,10 +17,10 @@
 
 @section('contents')
 <div class="row">
-    <div class="col-md-7" id="listroles">
+    <div class="col-md-7" id="listuser">
         @include('manufabar.list')
     </div>
-    <div class="col-md-5" id="addroles">
+    <div class="col-md-5" id="adduser">
         @include('manufabar.add')
     </div>
 </div>

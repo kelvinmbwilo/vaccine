@@ -21,7 +21,7 @@ class DistrictPackageContents extends Eloquent {
     }
 
     public function manufacturer(){
-        return $this->belongsTo("ManufacturerBarcode","lot_number","lot_number");
+        return $this->belongsTo("ManufacturePackage","lot_number","lot_number");
     }
 
     public function vaccine(){

@@ -18,14 +18,7 @@
 @section('contents')
 <div class="row">
     <div class="col-md-12" id="listuser">
-            @if(Auth::user()->role_id=="national")
-                @include("send_package.national")
-            @elseif(Auth::user()->role_id=="admin")
-                @include("send_package.national")
-            @elseif(Auth::user()->role_id=="region")
-                @include("send_package.region")
-             @else
-             @endif
+            
     </div>
 </div>
 

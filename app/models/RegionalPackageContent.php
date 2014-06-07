@@ -24,7 +24,7 @@ class RegionalPackageContent extends Eloquent {
         return $this->belongsTo('RegionalPackage', 'package_id', 'id');
     }
     public function manufacturer(){
-        return $this->belongsTo("ManufacturerBarcode","lot_number","lot_number");
+        return $this->belongsTo("ManufacturePackage","lot_number","lot_number");
     }
 
     public function vaccine(){
