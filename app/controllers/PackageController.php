@@ -9,7 +9,7 @@ class PackageController extends \BaseController {
 	 */
 	public function index()
 	{
-        return View::make("package.index");
+        return View::make("recieve_national.index");
 	}
 
 /** send packagae*/
@@ -95,6 +95,22 @@ class PackageController extends \BaseController {
     public function receive()
     {
         return View::make("recieve.national");
+    }
+
+    /**
+     * Checking for a package with required sscc and return it details
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function checksscc($id){
+        $package = ManufacturerBarcode::where('ssc',$id)->first();
+        if($package){
+            return View::make("recieve_national.package",compact('package'));
+        }else{
+            echo "<h3 class='text-danger'>There are no information about this package</h3>";
+        }
+
     }
 
 

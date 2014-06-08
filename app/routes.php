@@ -202,7 +202,7 @@ Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-////// Routes for package management
+////// Routes for Nationl package management
 ///////////////////////////////////////////////////////////////////////////////////
 
 
@@ -210,7 +210,10 @@ Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
 //Route::get('package/index',array('uses'=>'PackageController@index'));
 
 //display a list of vaccines
-Route::get('package/receive',array('uses'=>'PackageController@receive'));
+Route::get('package/receive/national',array('uses'=>'PackageController@index'));
+
+//display a list of vaccines
+Route::post('package/receive/sscc/{id}',array('uses'=>'PackageController@checksscc'));
 
 //viewing index page
 Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
