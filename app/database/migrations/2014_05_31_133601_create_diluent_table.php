@@ -16,6 +16,7 @@ class CreateDiluentTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('vaccine_id');
+			$table->integer('units_per_box');
             $table->string("diluent_name");
 			$table->timestamps();
 		});

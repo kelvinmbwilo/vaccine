@@ -39,7 +39,7 @@
            </div>
               <div class='form-group'>
                   <div class='col-sm-6'>
-                      Quantity(Number of Doses) <br>  {{ Form::text('quantity','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Number of Doses','required'=>'required')) }}
+                      Quantity(Number of Doses/Units) <br>  {{ Form::text('quantity','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Number of Doses/Units','required'=>'required')) }}
                   </div>
 
               </div>

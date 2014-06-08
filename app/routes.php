@@ -215,6 +215,9 @@ Route::get('package/receive/national',array('uses'=>'PackageController@index'));
 //display a list of vaccines
 Route::post('package/receive/sscc/{id}',array('uses'=>'PackageController@checksscc'));
 
+//display a list of vaccines
+Route::post('package/receive/confirm/{id}',array('uses'=>'PackageController@confirmpackage'));
+
 //viewing index page
 Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
 

@@ -15,6 +15,12 @@
                         Vaccine<br>{{ Form::select('vaccine',Vaccine::all()->lists('vaccine_name','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
                     </div>
             </div>
+          <div class='form-group'>
+
+              <div class='col-sm-10'>
+                  Units Per Box <br>  {{ Form::text('units','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Units Per Box','required'=>'required')) }}
+              </div>
+          </div>
 
           <div id="output"></div>
        <div class='col-sm-12 form-group text-center'>

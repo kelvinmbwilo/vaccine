@@ -1,7 +1,7 @@
 <p>
     Manufacturer: {{ $package->manufacturer->name }} &nbsp;&nbsp;&nbsp;
-
-    Expected Number of packages : {{ $package->number_of_packages }}
+    SSCC : {{ $package->ssc }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Package : {{ ArrivalNational::where('ssc',$package->ssc)->count()+1 }} / {{ $package->number_of_packages }}
 </p>
 <table class="table table-responsive table-bordered">
     <tr>
@@ -35,6 +35,7 @@
     @endforeach
 </table>
 <div class="row">
+    {{ Form::open(array("url"=>url("package/receive/confirm/{$package->id}"),"class"=>"form-horizontal","id"=>'confirmpackage')) }}
     <div class='form-group'>
         <div class='col-sm-4'>
            <small> Was quantity received as per shipping notification? </small>
@@ -46,23 +47,46 @@
         </div>
         <div class='col-sm-4'>
             Temperature monitors present<br>
-            {{ Form::select('coolant',array('VVM'=>'VVM','Cold-chain card'=>'Cold-chain card','Electronic device'=>'Electronic device','Other'=>'Other'),'',array('class'=>'form-control','required'=>'requiered')) }}
-        </div>
-        <div class='col-sm-4'>
-            Temperature monitors present<br>
-            {{ Form::select('coolant',array('VVM'=>'VVM','Cold-chain card'=>'Cold-chain card','Electronic device'=>'Electronic device','Other'=>'Other'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            {{ Form::select('temp',array('VVM'=>'VVM','Cold-chain card'=>'Cold-chain card','Electronic device'=>'Electronic device','Other'=>'Other'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
     </div>
     <div class='form-group'>
         <div class='col-sm-4'>
            <small> What was the condition of boxes on arrival? </small><br>
-            {{ Form::select('coolant',array('Good Condition'=>'Good Condition','Bad Condition'=>'Bad Condition'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            {{ Form::select('condition',array('Good Condition'=>'Good Condition','Bad Condition'=>'Bad Condition'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
         <div class='col-sm-4'>
             <small> Were necessary labels attached to shipping boxes? </small><br>
-            {{ Form::select('coolant',array('Yes'=>'Yes','No'=>'No'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            {{ Form::select('labels',array('Yes'=>'Yes','No'=>'No'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
+        <div class='col-sm-4'>
+            Click here after checking<br>
+            {{ Form::submit('Confirm',array('class'=>'btn btn-primary form-control','id'=>'submitqn')) }}
+        </div>
+    </div>
+    {{ Form::close() }}
+    <div id="output1" style="padding-top: 10px;text-align: center">
 
     </div>
-
 </div>
+<script>
+    $(document).ready(function (){
+        $('#confirmpackage').on('submit', function(e) {
+            e.preventDefault();
+            $("#output1").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Confirming please wait...</span><h3>");
+            $(this).ajaxSubmit({
+                target: '#output1',
+                success:  afterSuccess
+            });
+
+        });
+
+        function afterSuccess(){
+<!--            $('#FileUploader').resetForm();-->
+<!--            setTimeout(function() {-->
+<!--                $("#output1").html("");-->
+<!--            }, 3000);-->
+<!--            $("#listuser").load("--><?php //echo url("diluent/list11") ?><!--")-->
+        }
+    });
+</script>

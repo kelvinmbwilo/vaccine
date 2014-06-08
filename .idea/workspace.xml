@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_133601_create_diluent_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_133601_create_diluent_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DiluentController.php" afterPath="$PROJECT_DIR$/app/controllers/DiluentController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/controllers/PackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/left.blade.php" afterPath="$PROJECT_DIR$/app/views/left.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/diluent/add.blade.php" afterPath="$PROJECT_DIR$/app/views/diluent/add.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/manufabar/add.blade.php" afterPath="$PROJECT_DIR$/app/views/manufabar/add.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/diluent/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/diluent/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/diluent/list.blade.php" afterPath="$PROJECT_DIR$/app/views/diluent/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +37,7 @@
       <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/recieve_national/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="-9.444445" vertical-offset="177" max-vertical-offset="1170">
+            <state line="24" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="-13.444445" vertical-offset="69" max-vertical-offset="1170">
               <folding>
                 <marker date="1402210696176" expanded="true" signature="48:119" placeholder="..." />
                 <marker date="1402210696176" expanded="true" signature="171:290" placeholder="..." />
@@ -55,17 +59,10 @@
       <file leaf-file-name="package.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/recieve_national/package.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="8" selection-start="2875" selection-end="2875" vertical-scroll-proportion="0.5304348" vertical-offset="969" max-vertical-offset="1314">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManufacturerBarcode.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/ManufacturerBarcode.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="28" selection-start="439" selection-end="447" vertical-scroll-proportion="-9.185185" vertical-offset="58" max-vertical-offset="486">
-              <folding />
+            <state line="3" column="71" selection-start="215" selection-end="215" vertical-scroll-proportion="0.15652174" vertical-offset="0" max-vertical-offset="1746">
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,16 +70,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="38" selection-start="7243" selection-end="7268" vertical-scroll-proportion="-3.5614035" vertical-offset="3505" max-vertical-offset="4482">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="left.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/left.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="57" selection-start="477" selection-end="477" vertical-scroll-proportion="-6.6666665" vertical-offset="54" max-vertical-offset="900">
+            <state line="218" column="41" selection-start="7360" selection-end="7388" vertical-scroll-proportion="-2.6140351" vertical-offset="3613" max-vertical-offset="4536">
               <folding />
             </state>
           </provider>
@@ -91,7 +79,16 @@
       <file leaf-file-name="PackageController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="54" selection-start="1779" selection-end="1779" vertical-scroll-proportion="-7.259259" vertical-offset="1784" max-vertical-offset="2214">
+            <state line="108" column="102" selection-start="1811" selection-end="1811" vertical-scroll-proportion="-4.111111" vertical-offset="1833" max-vertical-offset="2538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/diluent/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="105" selection-start="980" selection-end="980" vertical-scroll-proportion="-7.3333335" vertical-offset="162" max-vertical-offset="1116">
               <folding />
             </state>
           </provider>
@@ -110,12 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/DiluentManufacturer.php" />
-        <option value="$PROJECT_DIR$/app/models/AdvanceNotice.php" />
-        <option value="$PROJECT_DIR$/app/models/DistrictPackage.php" />
-        <option value="$PROJECT_DIR$/app/models/Facility.php" />
-        <option value="$PROJECT_DIR$/app/models/Document.php" />
-        <option value="$PROJECT_DIR$/app/models/FlightDetails.php" />
         <option value="$PROJECT_DIR$/app/models/Logs.php" />
         <option value="$PROJECT_DIR$/app/models/Manufacturer.php" />
         <option value="$PROJECT_DIR$/app/models/NationalPackage.php" />
@@ -138,7 +129,6 @@
         <option value="$PROJECT_DIR$/app/views/manufacture/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/manufabar/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/manufabar/add.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_06_07_015110_create_manufacture_package_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_131908_create_manufacture_barcode_table.php" />
         <option value="$PROJECT_DIR$/app/models/ManufacturePackage.php" />
@@ -157,9 +147,16 @@
         <option value="$PROJECT_DIR$/app/controllers/ManuBarController.php" />
         <option value="$PROJECT_DIR$/app/views/recieve/national.blade.php" />
         <option value="$PROJECT_DIR$/app/views/left.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_133601_create_diluent_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/DiluentController.php" />
+        <option value="$PROJECT_DIR$/app/views/diluent/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/diluent/add.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/manufabar/add.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" />
+        <option value="$PROJECT_DIR$/app/views/diluent/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
       </list>
     </option>
@@ -331,7 +328,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manufacture" />
+              <option name="myItemId" value="manufabar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,6 +351,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="diluent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,9 +456,9 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28455284" sideWeight="0.4996016" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20454545" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14469697" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2128788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3189394" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5003984" order="10" side_tool="true" content_ui="tabs" />
@@ -495,31 +510,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/FlightDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="39" selection-start="45" selection-end="45" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Region.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="-14.148149" vertical-offset="212" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/RegionalPackage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="5" selection-start="809" selection-end="809" vertical-scroll-proportion="-14.148149" vertical-offset="266" max-vertical-offset="774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Facility.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="5" selection-start="394" selection-end="394" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="486" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/District.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="39" selection-start="781" selection-end="781" vertical-scroll-proportion="-15.481482" vertical-offset="212" max-vertical-offset="792" />
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/10a31e5c/e464e629-3a30-4470-ba3b-68a131309066/vaccine..facility">
       <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -621,13 +611,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/vaccine/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="74" selection-start="1588" selection-end="1605" vertical-scroll-proportion="0.59504133" vertical-offset="270" max-vertical-offset="1188">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/manufabar/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="13" selection-start="3157" selection-end="4535" vertical-scroll-proportion="-8.777778" vertical-offset="735" max-vertical-offset="1098">
           <folding />
         </state>
       </provider>
@@ -772,13 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="38" selection-start="7243" selection-end="7268" vertical-scroll-proportion="-3.5614035" vertical-offset="3505" max-vertical-offset="4482">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ArrivalNational.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="51" selection-start="485" selection-end="485" vertical-scroll-proportion="0.09497207" vertical-offset="290" max-vertical-offset="846">
@@ -789,13 +765,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/ManufacturerBarcode.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="28" selection-start="439" selection-end="447" vertical-scroll-proportion="-9.185185" vertical-offset="58" max-vertical-offset="486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="54" selection-start="1779" selection-end="1779" vertical-scroll-proportion="-7.259259" vertical-offset="1784" max-vertical-offset="2214">
           <folding />
         </state>
       </provider>
@@ -814,9 +783,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="41" selection-start="7360" selection-end="7388" vertical-scroll-proportion="-2.6140351" vertical-offset="3613" max-vertical-offset="4536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133601_create_diluent_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="42" selection-start="377" selection-end="377" vertical-scroll-proportion="-9.333333" vertical-offset="54" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/diluent/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="86" selection-start="973" selection-end="973" vertical-scroll-proportion="-7.3333335" vertical-offset="162" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/manufabar/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="172" selection-start="2755" selection-end="2755" vertical-scroll-proportion="-2.5925925" vertical-offset="668" max-vertical-offset="1854">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="39" selection-start="729" selection-end="729" vertical-scroll-proportion="0.7012987" vertical-offset="216" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DiluentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="58" selection-start="836" selection-end="836" vertical-scroll-proportion="0.57391304" vertical-offset="468" max-vertical-offset="2196">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/diluent/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="33" selection-start="811" selection-end="811" vertical-scroll-proportion="-8.0" vertical-offset="270" max-vertical-offset="1692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_national/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="-9.444445" vertical-offset="177" max-vertical-offset="1170">
+        <state line="24" column="7" selection-start="635" selection-end="635" vertical-scroll-proportion="-13.444445" vertical-offset="69" max-vertical-offset="1170">
           <folding>
             <marker date="1402210696176" expanded="true" signature="48:119" placeholder="..." />
             <marker date="1402210696176" expanded="true" signature="171:290" placeholder="..." />
@@ -834,17 +852,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/diluent/add.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/diluent/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="165" selection-start="636" selection-end="766" vertical-scroll-proportion="0.4173913" vertical-offset="108" max-vertical-offset="954">
+        <state line="20" column="105" selection-start="980" selection-end="980" vertical-scroll-proportion="-7.3333335" vertical-offset="162" max-vertical-offset="1116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="102" selection-start="1811" selection-end="1811" vertical-scroll-proportion="-4.111111" vertical-offset="1833" max-vertical-offset="2538">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_national/package.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="8" selection-start="2875" selection-end="2875" vertical-scroll-proportion="0.5304348" vertical-offset="969" max-vertical-offset="1314">
-          <folding />
+        <state line="3" column="71" selection-start="215" selection-end="215" vertical-scroll-proportion="0.15652174" vertical-offset="0" max-vertical-offset="1746">
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

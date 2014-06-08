@@ -14,6 +14,7 @@
         <th> # </th>
         <th> Diluent Name </th>
         <th> Vaccine </th>
+        <th> Units per Box </th>
         <th> Action </th>
     </tr>
     </thead>
@@ -24,6 +25,7 @@
         <td>{{ $i++ }}</td>
         <td>{{ $us->diluent_name }}</td>
         <td style="text-transform: capitalize">{{ $us->vaccine->vaccine_name }}</td>
+        <td>{{ $us->units_per_box }}</td>
         <td id="{{ $us->id }}">
             <a href="#edit" title="edit Vaccine" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
             <a href="#b" title="delete Vaccine" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>

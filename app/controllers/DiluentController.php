@@ -34,7 +34,8 @@ class DiluentController extends \BaseController {
         if(Diluent::where("diluent_name",Input::get("name"))->count() == 0){
             Diluent::create(array(
                 'diluent_name'      => Input::get("name"),
-                'vaccine_id'        =>Input::get("vaccine")
+                'vaccine_id'        =>Input::get("vaccine"),
+                'units_per_box'        =>Input::get("units")
             ));
         }else{
             return "<h4 class='text-error'>Vaccine with GTIN Number ".Input::get("gtn")." already existed </h4>";
@@ -77,6 +78,7 @@ class DiluentController extends \BaseController {
         $diluent = Diluent::find($id);
         $diluent->diluent_name = Input::get("name");
         $diluent->vaccine_id = Input::get("vaccine");
+        $diluent->units_per_box = Input::get("units");
         $diluent->save();
         $name = $diluent->diluent_name;
 

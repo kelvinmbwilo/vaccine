@@ -105,12 +105,31 @@ class PackageController extends \BaseController {
      */
     public function checksscc($id){
         $package = ManufacturerBarcode::where('ssc',$id)->first();
-        if($package){
-            return View::make("recieve_national.package",compact('package'));
+        if(ArrivalNational::where('ssc',$package->ssc)->count() == $package->number_of_packages ){
+            echo "<h3 class='text-danger'>All packages from this shipping information has been scanned</h3>";
         }else{
-            echo "<h3 class='text-danger'>There are no information about this package</h3>";
+            if($package){
+                return View::make("recieve_national.package",compact('package'));
+            }else{
+                echo "<h3 class='text-danger'>There are no information about this package</h3>";
+            }
         }
 
+    }
+
+    public function confirmpackage($id){
+        $package = ManufacturerBarcode::find($id);
+        $arr = ArrivalNational::where('ssc',$package->ssc)->count();
+        $arrival = ArrivalNational::create(array(
+            'ssc'=>$package->ssc,
+            'number_of_packages'=>$arr+1,
+            'number_as_expected'=>Input::get('quantity'),
+            'coolant_type'=>Input::get('coolant'),
+            'temperature_monitor'=>Input::get('temp'),
+            'labels_available'=>Input::get('labels'),
+            'condition'=>Input::get('condition'),
+            'receiver'=>Auth::user()->id,
+        ));
     }
 
 
