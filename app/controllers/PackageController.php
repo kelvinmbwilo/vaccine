@@ -103,14 +103,15 @@ class PackageController extends \BaseController {
      */
     public function checksscc($id){
         $package = ManufacturerBarcode::where('ssc',$id)->first();
+        if($package){
         if(ArrivalNational::where('ssc',$package->ssc)->count() == $package->number_of_packages ){
             echo "<h3 class='text-danger'>All packages from this shipping information has been scanned</h3>";
         }else{
-            if($package){
+
                 return View::make("recieve_national.package",compact('package'));
-            }else{
-                echo "<h3 class='text-danger'>There are no information about this package</h3>";
             }
+        }else{
+            echo "<h3 class='text-danger'>There are no information about this package</h3>";
         }
 
     }
