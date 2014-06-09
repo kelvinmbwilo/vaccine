@@ -50,7 +50,7 @@
         </div>
     </form>
 
-    <div class="margin text-center">
+    <div class="margin text-center" style="height: 130px">
         <span>Sign in using social networks</span>
         <br/>
 <br />
