@@ -38,19 +38,23 @@
                 <input type="password" name="password" class="form-control" placeholder="Password"/>
             </div>
             <div class="form-group">
-                <input type="checkbox" name="remember_me" name="check"/> Remember me
+                <input type="checkbox" name="remember_me"/> Remember me
             </div>
         </div>
         <div class="footer">
             <button type="submit" class="btn bg-olive btn-block">Sign me in</button>
 
-<!--            <p><a href="#">I forgot my password</a></p>-->
+            <p><a href="#">-</a></p>
 
-<!--            <a href="register.html" class="text-center">Register a new membership</a>-->
+            <a href="register.html" class="text-center">-</a>
         </div>
     </form>
 
-
+    <div class="margin text-center">
+        <span>Sign in using social networks</span>
+        <br/>
+<br />
+    </div>
 </div>
 
 

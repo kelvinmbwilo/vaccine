@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="" />
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,11 +50,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PackageController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PackageController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="25" selection-start="1817" selection-end="1830" vertical-scroll-proportion="0.5181518" vertical-offset="1787" max-vertical-offset="3438">
+            <state line="114" column="9" selection-start="2041" selection-end="2041" vertical-scroll-proportion="-9.888889" vertical-offset="1785" max-vertical-offset="3456">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="69" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.4532374" vertical-offset="594" max-vertical-offset="1224">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/District.php" />
         <option value="$PROJECT_DIR$/app/models/Vaccine.php" />
         <option value="$PROJECT_DIR$/app/models/VaccineManufacturer.php" />
         <option value="$PROJECT_DIR$/app/views/vaccine/add.blade.php" />
@@ -174,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/models/NationalPackage.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
+        <option value="$PROJECT_DIR$/app/views/login.blade.php" />
       </list>
     </option>
   </component>
@@ -361,10 +370,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="741" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27154472" sideWeight="0.4996016" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27154472" sideWeight="0.4996016" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18181819" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -420,13 +429,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="26" selection-start="1485" selection-end="1749" vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="1980">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="18" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2052">
@@ -724,8 +726,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="25" selection-start="1817" selection-end="1830" vertical-scroll-proportion="0.5181518" vertical-offset="1787" max-vertical-offset="3438">
+        <state line="114" column="9" selection-start="2041" selection-end="2041" vertical-scroll-proportion="-9.888889" vertical-offset="1785" max-vertical-offset="3456">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="69" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.4532374" vertical-offset="594" max-vertical-offset="1224">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
