@@ -1,3 +1,5 @@
+<?php $count = ArrivalNational::where('ssc',$package->ssc)->count()+1;
+$expected = $package->number_of_packages; ?>
 <p>
     Manufacturer: {{ $package->manufacturer->name }} &nbsp;&nbsp;&nbsp;
     SSCC : {{ $package->ssc }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -75,18 +77,26 @@
             e.preventDefault();
             $("#output1").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Confirming please wait...</span><h3>");
             $(this).ajaxSubmit({
-                target: '#output1',
+                target: '#output',
                 success:  afterSuccess
             });
 
         });
 
         function afterSuccess(){
-<!--            $('#FileUploader').resetForm();-->
-<!--            setTimeout(function() {-->
-<!--                $("#output1").html("");-->
-<!--            }, 3000);-->
-<!--            $("#listuser").load("--><?php //echo url("diluent/list11") ?><!--")-->
+            if('<?php echo $count ?>' == '<?php echo $expected ?>'){
+                setTimeout(function() {
+                    $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>please wait...</span><h3>");
+                    $("#output").load("<?php echo url("package/receive/form") ?>")
+                }, 2000);
+            }else{
+                setTimeout(function() {
+                    $("#output").html("");
+                }, 2000);
+
+            }
+
+
         }
     });
 </script>

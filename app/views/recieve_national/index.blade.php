@@ -21,8 +21,12 @@
         <span class="help-block">Scan/Write the SSCC Number From Received Packages</span>
         <input type="text" name="sscc" placeholder="SSCC Number" required="">
         <button type="submit">Add</button>
+        <a href="{{ url('package/receive/list') }}" class="pull-right btn btn-primary">
+            <i class="fa fa-list-ul"></i> List
+        </a>
     </div>
 </form>
+
     <div id="output">
 
     </div>

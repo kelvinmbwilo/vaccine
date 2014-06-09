@@ -14,8 +14,7 @@ class PackageController extends \BaseController {
 
 /** send packagae*/
     public function sendPackage(){
-
-                return View::make("send_package.index");
+        return View::make("send_national.index");
 
     }
 	/**
@@ -43,7 +42,6 @@ class PackageController extends \BaseController {
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
 	public function lists()
@@ -130,7 +128,59 @@ class PackageController extends \BaseController {
             'condition'=>Input::get('condition'),
             'receiver'=>Auth::user()->id,
         ));
+        if($arr+1 != $package->number_of_packages)
+            echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> The package is confirmed</h3>";
+        if($arr+1 == $package->number_of_packages){
+            foreach($package->packages as $pack){
+                NationalStock::create(array(
+                    'number_of_doses'   => $pack->number_of_doses,
+                    'lot_number'        => $pack->lot_number
+            ));
+            }
+
+            echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
+        }
     }
 
+    public function listrecieved(){
+        return View::make('recieve_national.list');
+    }
+
+    public function fillform(){
+        return View::make('recieve_national.final_form');
+    }
+
+    public function prepareform($id){
+        $package = NationalStock::where('lot_number',$id)->first();
+        $idd = "";
+        if($package){
+            if(Input::get('id') == "first"){
+                $createdid = NationalPackage::create(array(
+                    'region_id' => Input::get('region')
+                ));
+                $idd = $createdid->id;
+            }else{
+
+            }
+
+            return View::make("send_national.package",compact('package','idd'));
+        }else{
+            echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
+        }
+    }
+
+    public function processaddpackage(){
+        NationalPackageContent::create(array(
+            'package_id' => Input::get('idd'),
+            'number_of_boxes' => Input::get('box'),
+            'lot_number' => Input::get('lot')
+        ));
+        echo '<h3 class="text-success"> Added Successfull</h3>';
+    }
+
+    public function sendPackageList($id){
+        $natpack = NationalPackage::find($id);
+        return View::make('send_national.list',compact('natpack'));
+    }
 
 }

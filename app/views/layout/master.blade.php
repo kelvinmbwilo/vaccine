@@ -202,8 +202,9 @@
 
         <!-- Main content -->
         <section class="content">
-
-        @yield("contents")
+            <div class="row" style="padding-left: 15px">
+                @yield("contents")
+            </div>
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->

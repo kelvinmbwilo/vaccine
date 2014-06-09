@@ -218,8 +218,27 @@ Route::post('package/receive/sscc/{id}',array('uses'=>'PackageController@checkss
 //display a list of vaccines
 Route::post('package/receive/confirm/{id}',array('uses'=>'PackageController@confirmpackage'));
 
+//display a list of vaccines
+Route::get('package/receive/list',array('uses'=>'PackageController@listrecieved'));
+
+//display a list of vaccines
+Route::get('package/receive/form',array('uses'=>'PackageController@fillform'));
+
 //viewing index page
-Route::get('package/send',array('uses'=>'PackageController@sendPackage'));
+Route::get('package/send/national',array('uses'=>'PackageController@sendPackage'));
+
+//viewing index page
+Route::get('package/send/list/{id}',array('uses'=>'PackageController@sendPackageList'));
+
+
+//display a list of vaccines
+Route::post('package/prepare/{id}',array('uses'=>'PackageController@prepareform'));
+
+//display a list of vaccines
+Route::post('package/prepare/add',array('uses'=>'PackageController@addpackage'));
+
+//display a list of vaccines
+Route::post('package/addpack',array('uses'=>'PackageController@processaddpackage'));
 
 //display a form to edit vaccine information
 Route::post('package/send',array('uses'=>'PackageController@edit'));

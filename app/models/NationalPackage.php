@@ -19,12 +19,16 @@ class NationalPackage extends Eloquent{
         return $this->belongsTo('Region', 'region_id', 'id');
     }
 
+    public function packages(){
+        return $this->hasMany('NationalPackageContent', 'package_id', 'id');
+    }
+
     public function sender(){
-        return $this->hasMany('User', 'sender', 'id');
+        return $this->belongsTo('User', 'sender', 'id');
     }
 
     public function receiver(){
-        return $this->hasMany('User', 'receiver', 'id');
+        return $this->BelongsTo('User', 'receiver', 'id');
     }
 
 } 
