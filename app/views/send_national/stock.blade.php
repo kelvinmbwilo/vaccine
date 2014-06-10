@@ -20,6 +20,7 @@
         <th>Name</th>
         <th>Number Of Doses</th>
         <th>Doses Per Box</th>
+        <th>Boxes</th>
         <th>Expiry Date</th>
     </tr>
     </thead>
@@ -39,7 +40,8 @@
         </td>
         <td>{{ $us->number_of_doses }}</td>
         <td>{{ $us->manufacturer->vaccine->doses_per_vial*$us->manufacturer->vaccine->vials_per_box; }}</td>
-        <td>{{ $us->manufacturer->expiry_date }}</td>
+        <td>{{ $us->number_of_doses/($us->manufacturer->vaccine->doses_per_vial*$us->manufacturer->vaccine->vials_per_box) }}</td>
+        <td>{{ date('j M Y',strtotime($us->manufacturer->expiry_date)) }}</td>
     </tr>
     @endforeach
 

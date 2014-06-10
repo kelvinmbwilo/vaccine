@@ -37,7 +37,7 @@ class RegionPackageController extends \BaseController {
 
     public function confirmpackage($id){
         $package = NationalPackage::find($id);
-        $arr = ArrivalRegion::where('lot_number',$package->ssc)->count();
+        $arr = ArrivalRegion::where('lot_number',$package->ssc)->where('regional_id',Auth::user()->region_id)->count();
         $arrival = ArrivalRegion::create(array(
             'national_package'=>$package->id,
             'regional_id'=>Auth::user()->region_id,
@@ -65,6 +65,7 @@ class RegionPackageController extends \BaseController {
             }
         $package->receiver = Auth::user()->id;
         $package->received_status = 'received';
+        $package->date_received  =date('Y-m-d');
         $package->save();
             echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
 
@@ -79,12 +80,13 @@ class RegionPackageController extends \BaseController {
     }
 
     public function prepareform($id){
-        $package = RegionStock::where('lot_number',$id)->first();
+        $package = RegionStock::where('lot_number',$id)->where('region_id',Auth::user()->region_id)->first();
         $idd = "";
         if($package){
             if(Input::get('id') == "first"){
-                $createdid = NationalPackage::create(array(
-                    'region_id' => Input::get('region')
+                $createdid = RegionalPackage::create(array(
+                    'source_id' => Auth::user()->region_id,
+                    'district_id' => Input::get('district'),
                 ));
                 $idd = $createdid->id;
             }else{
@@ -98,16 +100,15 @@ class RegionPackageController extends \BaseController {
     }
 
     public function processaddpackage(){
-        $stock = NationalStock::where('lot_number',Input::get('lot'))->first();
+        $stock = RegionStock::where('lot_number',Input::get('lot'))->where('region_id',Auth::user()->region_id)->first();
         $doses = Input::get('box') * $stock->manufacturer->vaccine->vials_per_box * $stock->manufacturer->vaccine->doses_per_vial;
-
         if($stock->number_of_doses > $doses){
-            $pack = NationalPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
+            $pack = RegionalPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
             if($pack){
                 $pack->number_of_boxes = $pack->number_of_boxes+Input::get('box');
                 $pack->save();
             }else{
-                NationalPackageContent::create(array(
+                RegionalPackageContent::create(array(
                     'package_id' => Input::get('idd'),
                     'number_of_boxes' => Input::get('box'),
                     'lot_number' => Input::get('lot')
@@ -120,17 +121,17 @@ class RegionPackageController extends \BaseController {
     }
 
     public function sendPackageList($id){
-        $natpack = NationalPackage::find($id);
-        return View::make('send_regional.list',compact('natpack'));
+        $natpack = RegionalPackage::find($id);
+        return View::make('send_region.list',compact('natpack'));
     }
 
     public function deleteinlist($id){
-        $pack = NationalPackageContent::find($id);
+        $pack = RegionalPackageContent::find($id);
         $pack->delete();
     }
 
     public function confirmsend($id){
-        $package = NationalPackage::find($id);
+        $package = RegionalPackage::find($id);
         if($package->packages()->count() != 0){
             $package->date_sent = date("Y-m-d");
             $package->sender = Auth::user()->id;
@@ -138,7 +139,7 @@ class RegionPackageController extends \BaseController {
             foreach($package->packages as $pack){
                 //$doses = ($pack->manufacturer->vaccine->doses_per_vial / $pack->number_of_doses )*$pack->manufacturer->vaccine->vials_per_box;
                 $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
-                $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
+                $stock = RegionStock::where('lot_number',$pack->lot_number)->where('region_id',Auth::user()->region_id)->first();
                 $stock->number_of_doses = $stock->number_of_doses - $doses;
                 $stock->save();
             }
@@ -150,7 +151,7 @@ class RegionPackageController extends \BaseController {
     }
 
     public function deletprepared($id){
-        $package = NationalPackage::find($id);
+        $package = RegionalPackage::find($id);
         foreach($package->packages as $pack){
             $pack->delete();
         }

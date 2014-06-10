@@ -1,5 +1,5 @@
 <p>
-    Package From National Level &nbsp;&nbsp;&nbsp;
+    Package From Regional Level &nbsp;&nbsp;&nbsp;
     Package Number : {{ $package->id }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 <table class="table table-responsive table-bordered">
@@ -34,7 +34,7 @@
     @endforeach
 </table>
 <div class="row">
-    {{ Form::open(array("url"=>url("region_package/receive/confirm/{$package->id}"),"class"=>"form-horizontal","id"=>'confirmpackage')) }}
+    {{ Form::open(array("url"=>url("district_package/receive/confirm/{$package->id}"),"class"=>"form-horizontal","id"=>'confirmpackage')) }}
     <div class='form-group'>
         <div class='col-sm-4'>
            <small> Was quantity received as per shipping notification? </small>

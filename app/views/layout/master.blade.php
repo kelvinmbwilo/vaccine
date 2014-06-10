@@ -147,7 +147,7 @@
                 {{ Auth::user()->firstname }} {{ Auth::user()->middlename }} {{ Auth::user()->lastname }} -
                 @if(Auth::user()->role_id == 'Region')
                 {{ Auth::user()->region->region }} {{ Auth::user()->role_id }}
-                @elseif(Auth::user()->role_id == 'Ristrict')
+                @elseif(Auth::user()->role_id == 'District')
                 {{ Auth::user()->district->district }} {{ Auth::user()->role_id }}
                 @endif
 

@@ -33,6 +33,6 @@ class RegionalPackage extends Eloquent {
     }
 
     public function packages(){
-        return $this->hasMany('RegionalPackageContents', 'package_id', 'id');
+        return $this->hasMany('RegionalPackageContent', 'package_id', 'id');
     }
 }

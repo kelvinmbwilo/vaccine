@@ -288,7 +288,7 @@ Route::get('region_package/receive/form',array('uses'=>'RegionPackageController@
 Route::get('region_package/send/national',array('uses'=>'RegionPackageController@sendPackage'));
 
 //viewing index page
-Route::get('region_package/send/list/{id}',array('uses'=>'PackageController@sendPackageList'));
+Route::get('region_package/send/list/{id}',array('uses'=>'RegionPackageController@sendPackageList'));
 
 
 //display a list of vaccines
