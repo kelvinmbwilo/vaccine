@@ -13,6 +13,8 @@
         <ul class="treeview-menu">
             <li><a href="{{ url('package/receive/national') }}"><i class="fa fa-angle-double-right"></i> Receive Package</a></li>
             <li><a href="{{ url('package/send/national') }}"><i class="fa fa-angle-double-right"></i> Send Package</a></li>
+            <li><a href="{{ url('package/national/stock') }}"><i class="fa fa-angle-double-right"></i> Check Stock</a></li>
+            <li><a href="{{ url('package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Sent Packages</a></li>
             </ul>
     </li>
     <li class="treeview">

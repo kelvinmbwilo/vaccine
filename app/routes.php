@@ -213,6 +213,12 @@ Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
 Route::get('package/receive/national',array('uses'=>'PackageController@index'));
 
 //display a list of vaccines
+Route::get('package/national/stock',array('uses'=>'PackageController@viewstock'));
+
+//display a list of vaccines
+Route::get('package/national/sent',array('uses'=>'PackageController@viewsent'));
+
+//display a list of vaccines
 Route::post('package/receive/sscc/{id}',array('uses'=>'PackageController@checksscc'));
 
 //display a list of vaccines
@@ -242,6 +248,15 @@ Route::post('package/addpack',array('uses'=>'PackageController@processaddpackage
 
 //display a form to edit vaccine information
 Route::post('package/send',array('uses'=>'PackageController@edit'));
+
+//display a form to edit vaccine information
+Route::post('package/national/listed/delete/{id}',array('uses'=>'PackageController@deleteinlist'));
+
+//display a form to edit vaccine information
+Route::post('package/national/confirmsend/{id}',array('uses'=>'PackageController@confirmsend'));
+
+//display a form to edit vaccine information
+Route::post('package/national/prepared/delete/{id}',array('uses'=>'PackageController@deletprepared'));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**

@@ -133,12 +133,16 @@ class PackageController extends \BaseController {
             echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> The package is confirmed</h3>";
         if($arr+1 == $package->number_of_packages){
             foreach($package->packages as $pack){
-                NationalStock::create(array(
-                    'number_of_doses'   => $pack->number_of_doses,
-                    'lot_number'        => $pack->lot_number
-            ));
+                $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
+                if($stock){
+                    $stock->number_of_doses = $stock->number_of_doses + $pack->number_of_doses;
+                }else{
+                    NationalStock::create(array(
+                        'number_of_doses'   => $pack->number_of_doses,
+                        'lot_number'        => $pack->lot_number
+                    ));
+                }
             }
-
             echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
         }
     }
@@ -171,12 +175,25 @@ class PackageController extends \BaseController {
     }
 
     public function processaddpackage(){
-        NationalPackageContent::create(array(
-            'package_id' => Input::get('idd'),
-            'number_of_boxes' => Input::get('box'),
-            'lot_number' => Input::get('lot')
-        ));
-        echo '<h3 class="text-success"> Added Successfull</h3>';
+        $stock = NationalStock::where('lot_number',Input::get('lot'))->first();
+        $doses = Input::get('box') * $stock->manufacturer->vaccine->vials_per_box * $stock->manufacturer->vaccine->doses_per_vial;
+
+        if($stock->number_of_doses > $doses){
+            $pack = NationalPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
+            if($pack){
+                $pack->number_of_boxes = $pack->number_of_boxes+Input::get('box');
+                $pack->save();
+            }else{
+                NationalPackageContent::create(array(
+                    'package_id' => Input::get('idd'),
+                    'number_of_boxes' => Input::get('box'),
+                    'lot_number' => Input::get('lot')
+                ));
+            }
+            echo '<h3 class="text-success">Added Successfull</h3>';
+        }else{
+            echo '<h3 class="text-danger"> This amount is not available on stock</h3>';
+        }
     }
 
     public function sendPackageList($id){
@@ -184,4 +201,44 @@ class PackageController extends \BaseController {
         return View::make('send_national.list',compact('natpack'));
     }
 
+    public function deleteinlist($id){
+        $pack = NationalPackageContent::find($id);
+        $pack->delete();
+    }
+
+    public function confirmsend($id){
+        $package = NationalPackage::find($id);
+        if($package->packages()->count() != 0){
+            $package->date_sent = date("Y-m-d");
+            $package->sender = Auth::user()->id;
+
+            foreach($package->packages as $pack){
+                //$doses = ($pack->manufacturer->vaccine->doses_per_vial / $pack->number_of_doses )*$pack->manufacturer->vaccine->vials_per_box;
+                $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
+                $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
+                $stock->number_of_doses = $stock->number_of_doses - $doses;
+                $stock->save();
+            }
+            $package->save();
+        }else{
+            echo "not";
+        }
+
+    }
+
+    public function deletprepared($id){
+        $package = NationalPackage::find($id);
+        foreach($package->packages as $pack){
+            $pack->delete();
+        }
+        $package->delete();
+    }
+
+    public function viewstock(){
+        return View::make('send_national.stock');
+    }
+
+    public function viewsent(){
+        return View::make('send_national.List_sent');
+    }
 }
