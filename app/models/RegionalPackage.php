@@ -32,7 +32,7 @@ class RegionalPackage extends Eloquent {
         return $this->belongsTo('District', 'district_id', 'id');
     }
 
-    public function content(){
-        return $this->belongsTo('RegionalPackageContents', 'package_id', 'id');
+    public function packages(){
+        return $this->hasMany('RegionalPackageContents', 'package_id', 'id');
     }
 }

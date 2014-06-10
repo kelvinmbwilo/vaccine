@@ -3,11 +3,11 @@
 @section('title')
 <h1>
     StocK lavel
-    <small>National Sent Packages </small>
+    <small>{{ Auth::user()->region->region }} Region Sent Packages </small>
 </h1>
 @stop
 @section('contents')
-@if(NationalPackage::all()->count() == 0)
+@if(RegionalPackage::all()->count() == 0)
 <h3>There are no packages sent</h3>
 @else
 <table class="table table-striped table-bordered" id="example2">
@@ -29,10 +29,10 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(NationalPackage::all() as $us)
+    @foreach(RegionalPackage::all() as $us)
     <tr>
         <td>{{ $i++ }}</td>
-        <td>{{ $us->region->region }}</td>
+        <td>{{ $us->district->district }}</td>
         <td>
             @if($us->received_status == 'received')
               Received

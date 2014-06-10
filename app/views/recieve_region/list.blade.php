@@ -3,18 +3,18 @@
 @section('title')
 <h1>
     Received Packages
-    <small>National level </small>
+    <small>{{Auth::user()->region->region }} Region level </small>
 </h1>
 @stop
 @section('contents')
-@if(ArrivalNational::all()->count() == 0)
-<h3>There are no defined roles</h3>
+@if(ArrivalRegion::all()->count() == 0)
+<h3>There are no recieved packages</h3>
 @else
 <table class="table table-striped table-bordered" id="example2">
     <thead>
     <tr>
         <th> # </th>
-        <th>SSCC</th>
+        <th>Package Number</th>
 <!--        <th>Number Of Packages</th>-->
         <th>Coolant type</th>
         <th>Temperature Monitor</th>
@@ -22,12 +22,11 @@
         <th>Condition</th>
         <th>Received By</th>
 
-        <th> Action </th>
     </tr>
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(ArrivalNational::all() as $us)
+    @foreach(ArrivalRegion::all() as $us)
     <tr>
         <td>{{ $i++ }}</td>
         <td>{{ $us->ssc }}</td>
@@ -37,9 +36,7 @@
         <td>{{ $us->labels_available }}</td>
         <td>{{ $us->condition }}</td>
         <td>{{ $us->user->firstname }}</td>
-        <td id="{{ $us->id }}">
-            <a href="#b" title="delete Role" class="deletevacine"><i class="fa fa-trash-o text-danger"></i> </a>
-        </td>
+
     </tr>
     @endforeach
 

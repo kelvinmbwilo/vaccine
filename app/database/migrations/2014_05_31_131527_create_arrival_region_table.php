@@ -18,9 +18,11 @@ class CreateArrivalRegionTable extends Migration {
             $table->integer('national_package');
             $table->integer('regional_id');
             $table->string("lot_number");
-            $table->string("number_of_doses");
-            $table->string("vaccine_id");
             $table->string("number_as_expected");
+            $table->string("coolant_type");
+            $table->string("temperature_monitor");
+            $table->string("labels_available");
+            $table->string("condition");
             $table->string("problem");
             $table->integer('receiver');
 			$table->timestamps();

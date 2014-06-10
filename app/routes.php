@@ -258,6 +258,108 @@ Route::post('package/national/confirmsend/{id}',array('uses'=>'PackageController
 //display a form to edit vaccine information
 Route::post('package/national/prepared/delete/{id}',array('uses'=>'PackageController@deletprepared'));
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+///////////Managing region stock
+///////////Using RegionPackageController
+////////////////////////////////////////////////////////////////////////////////////////////////
+//display a list of vaccines
+Route::get('region_package/receive/national',array('uses'=>'RegionPackageController@index'));
+
+//display a list of vaccines
+Route::get('region_package/national/stock',array('uses'=>'RegionPackageController@viewstock'));
+
+//display a list of vaccines
+Route::get('region_package/national/sent',array('uses'=>'RegionPackageController@viewsent'));
+
+//display a list of vaccines
+Route::post('region_package/receive/sscc/{id}',array('uses'=>'RegionPackageController@checksscc'));
+
+//display a list of vaccines
+Route::post('region_package/receive/confirm/{id}',array('uses'=>'RegionPackageController@confirmpackage'));
+
+//display a list of vaccines
+Route::get('region_package/receive/list',array('uses'=>'RegionPackageController@listrecieved'));
+
+//display a list of vaccines
+Route::get('region_package/receive/form',array('uses'=>'RegionPackageController@fillform'));
+
+//viewing index page
+Route::get('region_package/send/national',array('uses'=>'RegionPackageController@sendPackage'));
+
+//viewing index page
+Route::get('region_package/send/list/{id}',array('uses'=>'PackageController@sendPackageList'));
+
+
+//display a list of vaccines
+Route::post('region_package/prepare/{id}',array('uses'=>'RegionPackageController@prepareform'));
+
+//display a list of vaccines
+Route::post('region_package/prepare/add',array('uses'=>'RegionPackageController@addpackage'));
+
+//display a list of vaccines
+Route::post('region_package/addpack',array('uses'=>'RegionPackageController@processaddpackage'));
+
+//display a form to edit vaccine information
+Route::post('region_package/national/listed/delete/{id}',array('uses'=>'RegionPackageController@deleteinlist'));
+
+//display a form to edit vaccine information
+Route::post('region_package/national/confirmsend/{id}',array('uses'=>'RegionPackageController@confirmsend'));
+
+//display a form to edit vaccine information
+Route::post('region_package/national/prepared/delete/{id}',array('uses'=>'RegionPackageController@deletprepared'));
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+///////////Managing region stock
+///////////Using RegionPackageController
+////////////////////////////////////////////////////////////////////////////////////////////////
+//display a list of vaccines
+Route::get('district_package/receive/national',array('uses'=>'DistrictPackageController@index'));
+
+//display a list of vaccines
+Route::get('district_package/national/stock',array('uses'=>'DistrictPackageController@viewstock'));
+
+//display a list of vaccines
+Route::get('district_package/national/sent',array('uses'=>'DistrictPackageController@viewsent'));
+
+//display a list of vaccines
+Route::post('district_package/receive/sscc/{id}',array('uses'=>'DistrictPackageController@checksscc'));
+
+//display a list of vaccines
+Route::post('district_package/receive/confirm/{id}',array('uses'=>'DistrictPackageController@confirmpackage'));
+
+//display a list of vaccines
+Route::get('district_package/receive/list',array('uses'=>'PackageController@listrecieved'));
+
+//display a list of vaccines
+Route::get('district_package/receive/form',array('uses'=>'DistrictPackageController@fillform'));
+
+//viewing index page
+Route::get('district_package/send/national',array('uses'=>'DistrictPackageController@sendPackage'));
+
+//viewing index page
+Route::get('district_package/send/list/{id}',array('uses'=>'DistrictPackageController@sendPackageList'));
+
+
+//display a list of vaccines
+Route::post('district_package/prepare/{id}',array('uses'=>'DistrictPackageController@prepareform'));
+
+//display a list of vaccines
+Route::post('district_package/prepare/add',array('uses'=>'DistrictPackageController@addpackage'));
+
+//display a list of vaccines
+Route::post('district_package/addpack',array('uses'=>'DistrictPackageController@processaddpackage'));
+
+//display a form to edit vaccine information
+Route::post('district_package/national/listed/delete/{id}',array('uses'=>'DistrictPackageController@deleteinlist'));
+
+//display a form to edit vaccine information
+Route::post('district_package/national/confirmsend/{id}',array('uses'=>'DistrictPackageController@confirmsend'));
+
+//display a form to edit vaccine information
+Route::post('district_package/national/prepared/delete/{id}',array('uses'=>'DistrictPackageController@deletprepared'));
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Managing Manufacture Barcodes actions

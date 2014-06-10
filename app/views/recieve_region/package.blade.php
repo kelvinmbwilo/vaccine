@@ -1,9 +1,6 @@
-<?php $count = ArrivalNational::where('ssc',$package->ssc)->count()+1;
-$expected = $package->number_of_packages; ?>
 <p>
-    Manufacturer: {{ $package->manufacturer->name }} &nbsp;&nbsp;&nbsp;
-    SSCC : {{ $package->ssc }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Package : {{ ArrivalNational::where('ssc',$package->ssc)->count()+1 }} / {{ $package->number_of_packages }}
+    Package From National Level &nbsp;&nbsp;&nbsp;
+    Package Number : {{ $package->id }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 <table class="table table-responsive table-bordered">
     <tr>
@@ -17,27 +14,27 @@ $expected = $package->number_of_packages; ?>
     @foreach($package->packages as $pack)
     <tr>
         <td>{{ $pack->lot_number }}</td>
-        <td>{{ $pack->content }}</td>
+        <td>{{ $pack->manufacturer->content }}</td>
         <td>
-            @if($pack->content == 'vaccine')
-                {{ $pack->vaccine->vaccine_name }}
+            @if($pack->manufacturer->content == 'vaccine')
+                {{ $pack->manufacturer->vaccine->vaccine_name }}
             @endif
-            @if($pack->content == 'diluent')
-                {{ $pack->vaccine->diluent_name }}
+            @if($pack->manufacturer->content == 'diluent')
+                {{ $pack->manufacturer->vaccine->diluent_name }}
             @endif
         </td>
-        <td>{{ $pack->expiry_date }}</td>
-        <td>{{ $pack->number_of_doses }}</td>
+        <td>{{ date('d M Y',strtotime($pack->manufacturer->expiry_date)) }}</td>
+        <td>{{ $pack->number_of_boxes * $pack->manufacturer->vaccine->doses_per_vial*$pack->manufacturer->vaccine->vials_per_box   }}</td>
         <td>
-        @if($pack->content == 'vaccine')
-            {{ ($pack->number_of_doses/$pack->vaccine->doses_per_vial)/$pack->vaccine->vials_per_box }}
+        @if($pack->manufacturer->content == 'vaccine')
+            {{ $pack->number_of_boxes}}
         @endif
         </td>
     </tr>
     @endforeach
 </table>
 <div class="row">
-    {{ Form::open(array("url"=>url("package/receive/confirm/{$package->id}"),"class"=>"form-horizontal","id"=>'confirmpackage')) }}
+    {{ Form::open(array("url"=>url("region_package/receive/confirm/{$package->id}"),"class"=>"form-horizontal","id"=>'confirmpackage')) }}
     <div class='form-group'>
         <div class='col-sm-4'>
            <small> Was quantity received as per shipping notification? </small>
@@ -80,23 +77,14 @@ $expected = $package->number_of_packages; ?>
                 target: '#output',
                 success:  afterSuccess
             });
-
         });
 
         function afterSuccess(){
-            if('<?php echo $count ?>' == '<?php echo $expected ?>'){
+            setTimeout(function() {
                 setTimeout(function() {
-                    $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>please wait...</span><h3>");
-                    $("#output").load("<?php echo url("package/receive/form") ?>")
-                }, 2000);
-            }else{
-                setTimeout(function() {
-                    $("#output").html("");
-                }, 2000);
-
-            }
-
-
+                    location.reload();
+                }, 3000);
+            }, 2000);
         }
     });
 </script>

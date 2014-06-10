@@ -3,7 +3,7 @@
 @section('title')
 <h1>
     Package Arrival
-    <small>National vaccine arrival </small>
+    <small>{{ Auth::user()->region->region }} Region vaccine arrival </small>
 </h1>
 @stop
 @section('breadcumb')
@@ -11,17 +11,17 @@
     <li>
         <a href="{{ url('home') }}">Dashboard</a>
     </li>
-    <li class="active">vaccine arrival</li>
+    <li class="active">Region vaccine arrival</li>
 </ol>
 @stop
 
 @section('contents')
 <form method="post" action="{{ url('') }}" id="addsscc">
     <div class="form-group">
-        <span class="help-block">Scan/Write the SSCC Number From Received Packages</span>
-        <input type="text" name="sscc" placeholder="SSCC Number" required="">
+        <span class="help-block">Scan/Write the Package Number From Received Packages</span>
+        <input type="text" name="sscc" placeholder="Package Number" required="">
         <button type="submit">Add</button>
-        <a href="{{ url('package/receive/list') }}" class="pull-right btn btn-primary">
+        <a href="{{ url('region_package/receive/list') }}" class="pull-right btn btn-primary">
             <i class="fa fa-list-ul"></i> List
         </a>
     </div>
@@ -44,7 +44,7 @@
             e.preventDefault();
             $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Retriving package information please wait...</span><h4>");
             $(this).ajaxSubmit({
-                url : '<?php echo url('package/receive/sscc') ?>/'+$('input[name=sscc]').val(),
+                url : '<?php echo url('region_package/receive/sscc') ?>/'+$('input[name=sscc]').val(),
                 target: '#output',
                 success:  afterSuccess
             });

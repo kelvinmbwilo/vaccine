@@ -27,7 +27,7 @@
         <td style="text-transform: capitalize">{{ $us->firstname }} {{ $us->middlename }} {{ $us->lastname }}</td>
         <td>{{ $us->email }}</td>
         <td>{{ $us->phone }}</td>
-        <td>{{ $us->role }}</td>
+        <td>{{ $us->role_id }}</td>
         <td id="{{ $us->id }}">
             <a href="#log" title="View Staff log" class="userlog"><i class="fa fa-list text-success"></i> log</a>&nbsp;&nbsp;&nbsp;
             <a href="#edit" title="edit User" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;

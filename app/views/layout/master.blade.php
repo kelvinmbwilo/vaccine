@@ -144,7 +144,12 @@
         <li class="user-header bg-light-blue">
             <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
             <p>
-                {{ Auth::user()->firstname }} {{ Auth::user()->middlename }} {{ Auth::user()->lastname }} - {{ Auth::user()->role_id }}
+                {{ Auth::user()->firstname }} {{ Auth::user()->middlename }} {{ Auth::user()->lastname }} -
+                @if(Auth::user()->role_id == 'Region')
+                {{ Auth::user()->region->region }} {{ Auth::user()->role_id }}
+                @elseif(Auth::user()->role_id == 'Ristrict')
+                {{ Auth::user()->district->district }} {{ Auth::user()->role_id }}
+                @endif
 
             </p>
         </li>

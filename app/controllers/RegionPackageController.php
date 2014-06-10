@@ -1,98 +1,21 @@
 <?php
 
-class PackageController extends \BaseController {
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return View::make("recieve_national.index");
-	}
-
-/** send packagae*/
-    public function sendPackage(){
-        return View::make("send_national.index");
-
-    }
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @return Response
-	 */
-	public function lists()
-	{
-		return View::make("package.receive");
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+class RegionPackageController extends \BaseController {
 
     /**
-     * Recieve a package in a national level
+     * Display a listing of the resource.
      *
      * @return Response
      */
-    public function receive()
+    public function index()
     {
-        return View::make("recieve.national");
+        return View::make("recieve_region.index");
+    }
+
+    /** send packagae*/
+    public function sendPackage(){
+        return View::make("send_region.index");
+
     }
 
     /**
@@ -102,14 +25,10 @@ class PackageController extends \BaseController {
      * @return Response
      */
     public function checksscc($id){
-        $package = ManufacturerBarcode::where('ssc',$id)->first();
+        $region =  Auth::user()->region_id;
+        $package = NationalPackage::where('received_status','')->where('region_id',$region)->where('id',$id)->first();
         if($package){
-        if(ArrivalNational::where('ssc',$package->ssc)->count() == $package->number_of_packages ){
-            echo "<h3 class='text-danger'>All packages from this shipping information has been scanned</h3>";
-        }else{
-
-                return View::make("recieve_national.package",compact('package'));
-            }
+            return View::make("recieve_region.package",compact('package'));
         }else{
             echo "<h3 class='text-danger'>There are no information about this package</h3>";
         }
@@ -117,11 +36,11 @@ class PackageController extends \BaseController {
     }
 
     public function confirmpackage($id){
-        $package = ManufacturerBarcode::find($id);
-        $arr = ArrivalNational::where('ssc',$package->ssc)->count();
-        $arrival = ArrivalNational::create(array(
-            'ssc'=>$package->ssc,
-            'number_of_packages'=>$arr+1,
+        $package = NationalPackage::find($id);
+        $arr = ArrivalRegion::where('lot_number',$package->ssc)->count();
+        $arrival = ArrivalRegion::create(array(
+            'national_package'=>$package->id,
+            'regional_id'=>Auth::user()->region_id,
             'number_as_expected'=>Input::get('quantity'),
             'coolant_type'=>Input::get('coolant'),
             'temperature_monitor'=>Input::get('temp'),
@@ -129,27 +48,30 @@ class PackageController extends \BaseController {
             'condition'=>Input::get('condition'),
             'receiver'=>Auth::user()->id,
         ));
-        if($arr+1 != $package->number_of_packages)
-            echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> The package is confirmed</h3>";
-        if($arr+1 == $package->number_of_packages){
+
             foreach($package->packages as $pack){
-                $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
+                $stock = RegionStock::where('lot_number',$pack->lot_number)->first();
+                $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
                 if($stock){
-                    $stock->number_of_doses = $stock->number_of_doses + $pack->number_of_doses;
+                    $stock->number_of_doses = $stock->number_of_doses + $doses;
                     $stock->save();
                 }else{
-                    NationalStock::create(array(
-                        'number_of_doses'   => $pack->number_of_doses,
-                        'lot_number'        => $pack->lot_number
+                    RegionStock::create(array(
+                        'number_of_doses'   => $doses,
+                        'lot_number'        => $pack->lot_number,
+                        'region_id'         => Auth::user()->region_id,
                     ));
                 }
             }
+        $package->receiver = Auth::user()->id;
+        $package->received_status = 'received';
+        $package->save();
             echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
-        }
+
     }
 
     public function listrecieved(){
-        return View::make('recieve_national.list');
+        return View::make('recieve_region.list');
     }
 
     public function fillform(){
@@ -157,7 +79,7 @@ class PackageController extends \BaseController {
     }
 
     public function prepareform($id){
-        $package = NationalStock::where('lot_number',$id)->first();
+        $package = RegionStock::where('lot_number',$id)->first();
         $idd = "";
         if($package){
             if(Input::get('id') == "first"){
@@ -169,7 +91,7 @@ class PackageController extends \BaseController {
 
             }
 
-            return View::make("send_national.package",compact('package','idd'));
+            return View::make("send_region.package",compact('package','idd'));
         }else{
             echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
         }
@@ -199,7 +121,7 @@ class PackageController extends \BaseController {
 
     public function sendPackageList($id){
         $natpack = NationalPackage::find($id);
-        return View::make('send_national.list',compact('natpack'));
+        return View::make('send_regional.list',compact('natpack'));
     }
 
     public function deleteinlist($id){
@@ -236,10 +158,10 @@ class PackageController extends \BaseController {
     }
 
     public function viewstock(){
-        return View::make('send_national.stock');
+        return View::make('send_region.stock');
     }
 
     public function viewsent(){
-        return View::make('send_national.List_sent');
+        return View::make('send_region.List_sent');
     }
 }
