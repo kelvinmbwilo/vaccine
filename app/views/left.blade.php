@@ -15,17 +15,19 @@
             <li><a href="{{ url('package/receive/national') }}"><i class="fa fa-angle-double-right"></i> Receive Package</a></li>
             <li><a href="{{ url('package/send/national') }}"><i class="fa fa-angle-double-right"></i> Send Package</a></li>
             <li><a href="{{ url('package/national/stock') }}"><i class="fa fa-angle-double-right"></i> Check Stock</a></li>
-            <li><a href="{{ url('package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Sent Packages</a></li>
+            <li><a href="{{ url('package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Out Packages</a></li>
             @elseif(Auth::user()->role_id == 'Region')
             <li><a href="{{ url('region_package/receive/national') }}"><i class="fa fa-angle-double-right"></i> Receive Package</a></li>
             <li><a href="{{ url('region_package/send/national') }}"><i class="fa fa-angle-double-right"></i> Send Package</a></li>
             <li><a href="{{ url('region_package/national/stock') }}"><i class="fa fa-angle-double-right"></i> Check Stock</a></li>
-            <li><a href="{{ url('region_package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Sent Packages</a></li>
+            <li><a href="{{ url('region_package/national/received') }}"><i class="fa fa-angle-double-right"></i> In Packages</a></li>
+            <li><a href="{{ url('region_package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Out Packages</a></li>
             @elseif(Auth::user()->role_id == 'District')
             <li><a href="{{ url('district_package/receive/national') }}"><i class="fa fa-angle-double-right"></i> Receive Package</a></li>
             <li><a href="{{ url('district_package/send/national') }}"><i class="fa fa-angle-double-right"></i> Send Package</a></li>
             <li><a href="{{ url('district_package/national/stock') }}"><i class="fa fa-angle-double-right"></i> Check Stock</a></li>
-            <li><a href="{{ url('district_package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Sent Packages</a></li>
+            <li><a href="{{ url('district_package/national/received') }}"><i class="fa fa-angle-double-right"></i> In Packages</a></li>
+            <li><a href="{{ url('district_package/national/sent') }}"><i class="fa fa-angle-double-right"></i> Out Packages</a></li>
             @endif
 
         </ul>

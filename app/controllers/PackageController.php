@@ -17,79 +17,7 @@ class PackageController extends \BaseController {
         return View::make("send_national.index");
 
     }
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
 
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @return Response
-	 */
-	public function lists()
-	{
-		return View::make("package.receive");
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
-    /**
-     * Recieve a package in a national level
-     *
-     * @return Response
-     */
     public function receive()
     {
         return View::make("recieve.national");
@@ -135,11 +63,11 @@ class PackageController extends \BaseController {
             foreach($package->packages as $pack){
                 $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
                 if($stock){
-                    $stock->number_of_doses = $stock->number_of_doses + $pack->number_of_doses;
+                    $stock->number_of_doses = $stock->number_of_doses + ($package->number_of_packages*$pack->number_of_doses);
                     $stock->save();
                 }else{
                     NationalStock::create(array(
-                        'number_of_doses'   => $pack->number_of_doses,
+                        'number_of_doses'   => $package->number_of_packages*$pack->number_of_doses,
                         'lot_number'        => $pack->lot_number
                     ));
                 }
@@ -162,7 +90,9 @@ class PackageController extends \BaseController {
         if($package){
             if(Input::get('id') == "first"){
                 $createdid = NationalPackage::create(array(
-                    'region_id' => Input::get('region')
+                    'region_id' => Input::get('region'),
+                    'package_number' => Input::get('pack'),
+                    'number_of_packages' => Input::get('number')
                 ));
                 $idd = $createdid->id;
             }else{

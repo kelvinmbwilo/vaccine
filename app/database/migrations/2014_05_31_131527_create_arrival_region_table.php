@@ -16,6 +16,7 @@ class CreateArrivalRegionTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('national_package');
+            $table->integer('number_of_packages');
             $table->integer('regional_id');
             $table->string("lot_number");
             $table->string("number_as_expected");

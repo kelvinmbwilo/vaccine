@@ -17,6 +17,7 @@ class CreateNationalPackageTable extends Migration {
 			$table->increments('id');
             $table->integer('region_id');
             $table->string('date_sent');
+            $table->string('package_number');
             $table->string('date_received');
             $table->string('comments');
             $table->string('received_status');

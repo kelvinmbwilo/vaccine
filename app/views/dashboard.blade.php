@@ -184,20 +184,18 @@
     <div class="box-body chat" id="chat-box">
         <!-- chat item -->
         <div class="item">
-            <img src="img/avatar.png" alt="user image" class="online"/>
+            <img src="{{ asset('img/avatar.png') }}" alt="user image" class="online"/>
             <p class="message">
                 <a href="#" class="name">
                     <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
                     Mike Doe
                 </a>
-                I would like to meet you to discuss the latest news about
-                the arrival of the new theme. They say it is going to be one the
-                best themes on the market
+                I would like to meet you to discuss about the delays in arrivals of vaccines that were sent to your station last mounth
             </p>
             <div class="attachment">
                 <h4>Attachments:</h4>
                 <p class="filename">
-                    Theme-thumbnail-image.jpg
+                    Vaccine_arrival_report.pdf
                 </p>
                 <div class="pull-right">
                     <button class="btn btn-primary btn-sm btn-flat">Open</button>
@@ -206,30 +204,17 @@
         </div><!-- /.item -->
         <!-- chat item -->
         <div class="item">
-            <img src="img/avatar2.png" alt="user image" class="offline"/>
+            <img src="{{ asset('img/avatar2.png')}}" alt="user image" class="offline"/>
             <p class="message">
                 <a href="#" class="name">
                     <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
                     Jane Doe
                 </a>
-                I would like to meet you to discuss the latest news about
-                the arrival of the new theme. They say it is going to be one the
-                best themes on the market
+                Thanks for information i think we can arrange to meet any time from next month because there are many activities as we finish this month
             </p>
         </div><!-- /.item -->
         <!-- chat item -->
-        <div class="item">
-            <img src="img/avatar3.png" alt="user image" class="offline"/>
-            <p class="message">
-                <a href="#" class="name">
-                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
-                    Susan Doe
-                </a>
-                I would like to meet you to discuss the latest news about
-                the arrival of the new theme. They say it is going to be one the
-                best themes on the market
-            </p>
-        </div><!-- /.item -->
+
     </div><!-- /.chat -->
     <div class="box-footer">
         <div class="input-group">
@@ -267,7 +252,7 @@
                 <!-- checkbox -->
                 <input type="checkbox" value="" name=""/>
                 <!-- todo text -->
-                <span class="text">Design a nice theme</span>
+                <span class="text">Receive a Package</span>
                 <!-- Emphasis label -->
                 <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
                 <!-- General tools such as edit or delete-->
@@ -282,7 +267,7 @@
                                                 <i class="fa fa-ellipsis-v"></i>
                                             </span>
                 <input type="checkbox" value="" name=""/>
-                <span class="text">Make the theme responsive</span>
+                <span class="text">Compile a report to send to national level</span>
                 <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
                 <div class="tools">
                     <i class="fa fa-edit"></i>
@@ -295,52 +280,14 @@
                                                 <i class="fa fa-ellipsis-v"></i>
                                             </span>
                 <input type="checkbox" value="" name=""/>
-                <span class="text">Let theme shine like a star</span>
+                <span class="text">Prepare a package for Kagera region</span>
                 <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
                 <div class="tools">
                     <i class="fa fa-edit"></i>
                     <i class="fa fa-trash-o"></i>
                 </div>
             </li>
-            <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                <input type="checkbox" value="" name=""/>
-                <span class="text">Let theme shine like a star</span>
-                <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </li>
-            <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                <input type="checkbox" value="" name=""/>
-                <span class="text">Check your messages and notifications</span>
-                <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </li>
-            <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                <input type="checkbox" value="" name=""/>
-                <span class="text">Let theme shine like a star</span>
-                <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </li>
+
         </ul>
     </div><!-- /.box-body -->
     <div class="box-footer clearfix no-border">

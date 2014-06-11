@@ -290,6 +290,9 @@ Route::get('region_package/send/national',array('uses'=>'RegionPackageController
 //viewing index page
 Route::get('region_package/send/list/{id}',array('uses'=>'RegionPackageController@sendPackageList'));
 
+//viewing index page
+Route::get('region_package/national/received',array('uses'=>'RegionPackageController@receivedPackageList'));
+
 
 //display a list of vaccines
 Route::post('region_package/prepare/{id}',array('uses'=>'RegionPackageController@prepareform'));

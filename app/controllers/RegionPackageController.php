@@ -26,7 +26,7 @@ class RegionPackageController extends \BaseController {
      */
     public function checksscc($id){
         $region =  Auth::user()->region_id;
-        $package = NationalPackage::where('received_status','')->where('region_id',$region)->where('id',$id)->first();
+        $package = NationalPackage::where('received_status','')->where('region_id',$region)->where('package_number',$id)->first();
         if($package){
             return View::make("recieve_region.package",compact('package'));
         }else{
@@ -37,9 +37,10 @@ class RegionPackageController extends \BaseController {
 
     public function confirmpackage($id){
         $package = NationalPackage::find($id);
-        $arr = ArrivalRegion::where('lot_number',$package->ssc)->where('regional_id',Auth::user()->region_id)->count();
+        $arr = ArrivalRegion::where('national_package',$package->id)->where('regional_id',Auth::user()->region_id)->count();
         $arrival = ArrivalRegion::create(array(
             'national_package'=>$package->id,
+            'number_of_packages'=>$arr+1,
             'regional_id'=>Auth::user()->region_id,
             'number_as_expected'=>Input::get('quantity'),
             'coolant_type'=>Input::get('coolant'),
@@ -49,9 +50,12 @@ class RegionPackageController extends \BaseController {
             'receiver'=>Auth::user()->id,
         ));
 
+        if($arr+1 != $package->number_of_packages)
+            echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> The package is confirmed</h3>";
+        if($arr+1 == $package->number_of_packages){
             foreach($package->packages as $pack){
                 $stock = RegionStock::where('lot_number',$pack->lot_number)->first();
-                $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
+                $doses = $package->number_of_packages*($pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial);
                 if($stock){
                     $stock->number_of_doses = $stock->number_of_doses + $doses;
                     $stock->save();
@@ -63,11 +67,17 @@ class RegionPackageController extends \BaseController {
                     ));
                 }
             }
-        $package->receiver = Auth::user()->id;
-        $package->received_status = 'received';
-        $package->date_received  =date('Y-m-d');
-        $package->save();
+            $package->receiver = Auth::user()->id;
+            $package->received_status = 'received';
+            $package->date_received  =date('Y-m-d');
+            $package->save();
             echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
+        }
+
+
+
+
+
 
     }
 
@@ -87,6 +97,8 @@ class RegionPackageController extends \BaseController {
                 $createdid = RegionalPackage::create(array(
                     'source_id' => Auth::user()->region_id,
                     'district_id' => Input::get('district'),
+                    'package_number' => Input::get('pack'),
+                    'number_of_packages' => Input::get('number')
                 ));
                 $idd = $createdid->id;
             }else{
@@ -164,5 +176,8 @@ class RegionPackageController extends \BaseController {
 
     public function viewsent(){
         return View::make('send_region.List_sent');
+    }
+    public function receivedPackageList(){
+        return View::make('send_region.List_received');
     }
 }

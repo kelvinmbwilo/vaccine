@@ -1,6 +1,10 @@
+<?php $count = ArrivalRegion::where('national_package',$package->id)->count()+1;
+$expected = $package->number_of_packages; ?>
+<p>
 <p>
     Package From National Level &nbsp;&nbsp;&nbsp;
-    Package Number : {{ $package->id }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Package Number : {{ $package->package_number }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Package : {{ ArrivalRegion::where('national_package',$package->id)->count()+1 }} / {{ $package->number_of_packages }}
 </p>
 <table class="table table-responsive table-bordered">
     <tr>

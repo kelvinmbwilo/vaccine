@@ -13,7 +13,7 @@
 <table class="table table-striped table-bordered" id="example2">
     <thead>
     <tr>
-        <th> # </th>
+        <th>Package Number</th>
         <th>Destination</th>
         <th>Status</th>
         <th>Sent on</th>
@@ -30,10 +30,10 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(RegionalPackage::all() as $us)
+    @foreach(RegionalPackage::orderBy('created_at','DESC')->get() as $us)
     <tr>
-        <td>{{ $i++ }}</td>
-        <td>{{ $us->district->district }}</td>
+        <td>{{ $us->package_number }}</td>
+        <td>{{ $us->district->district }} ({{ $us->number_of_packages }})</td>
 
         <td>
             @if($us->received_status == 'received')

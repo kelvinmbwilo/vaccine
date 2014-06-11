@@ -2,7 +2,7 @@
 
 @section('title')
 <h1>
-    StocK lavel
+    Stock level
     <small>{{ Auth::user()->region_id }} Region Stock Information </small>
 </h1>
 @stop

@@ -16,6 +16,7 @@ class CreateArrivalDistrictTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('regional_package');
+            $table->integer('number_of_packages');
             $table->integer('district_id');
             $table->string("lot_number");
             $table->string("number_of_doses");

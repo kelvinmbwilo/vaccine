@@ -6805,13 +6805,12 @@
     <table name="arrival_region" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="national_package" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="number_of_packages" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="regional_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="lot_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="number_of_doses" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="vaccine_id" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="number_as_expected" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="coolant_type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="temprerature_monitors" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="temperature_monitor" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="labels_available" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="condition" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="problem" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -6968,6 +6967,8 @@
     </table>
     <table name="national_package" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="package_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="number_of_packages" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="region_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="date_sent" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="date_received" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -7010,6 +7011,8 @@
     </table>
     <table name="regional_package" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="package_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="number_of_packages" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="source_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="district_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="date_sent" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>

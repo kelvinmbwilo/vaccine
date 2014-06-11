@@ -94,13 +94,7 @@ $(function() {
         editable: true, //Enable drag and drop
         events: [
             {
-                title: 'All Day Event',
-                start: new Date(y, m, 1),
-                backgroundColor: "#3c8dbc", //light-blue 
-                borderColor: "#3c8dbc" //light-blue
-            },
-            {
-                title: 'Long Event',
+                title: 'Preparation Of packages',
                 start: new Date(y, m, d - 5),
                 end: new Date(y, m, d - 2),
                 backgroundColor: "#f39c12", //yellow
@@ -114,29 +108,21 @@ $(function() {
                 borderColor: "#0073b7" //Blue
             },
             {
-                title: 'Lunch',
-                start: new Date(y, m, d, 12, 0),
-                end: new Date(y, m, d, 14, 0),
-                allDay: false,
-                backgroundColor: "#00c0ef", //Info (aqua)
-                borderColor: "#00c0ef" //Info (aqua)
-            },
-            {
-                title: 'Birthday Party',
+                title: 'Receive Package',
                 start: new Date(y, m, d + 1, 19, 0),
                 end: new Date(y, m, d + 1, 22, 30),
                 allDay: false,
                 backgroundColor: "#00a65a", //Success (green)
                 borderColor: "#00a65a" //Success (green)
             },
-            {
-                title: 'Click for Google',
-                start: new Date(y, m, 28),
-                end: new Date(y, m, 29),
-                url: 'http://google.com/',
-                backgroundColor: "#f56954", //red
-                borderColor: "#f56954" //red
-            }
+//            {
+//                title: 'Click for Google',
+//                start: new Date(y, m, 28),
+//                end: new Date(y, m, 29),
+//                url: 'http://google.com/',
+//                backgroundColor: "#f56954", //red
+//                borderColor: "#f56954" //red
+//            }
         ],
         buttonText: {//This is to add icons to the visible buttons
             prev: "<span class='fa fa-caret-left'></span>",

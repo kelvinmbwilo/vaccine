@@ -15,6 +15,7 @@ class CreateDistrictPackageTable extends Migration {
 		Schema::create('district_package', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->string('package_number');
             $table->integer('source_id');
             $table->integer('facility');
             $table->string('date_sent');

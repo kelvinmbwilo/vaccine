@@ -7,7 +7,7 @@
 </h1>
 @stop
 @section('contents')
-@if(NationalPackage::all()->count() == 0)
+@if(NationalPackage::where('region_id',Auth::user()->region_id)->count() == 0)
 <h3>There are no packages sent</h3>
 @else
 <table class="table table-striped table-bordered" id="example2">
@@ -29,15 +29,15 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(NationalPackage::orderBy('created_at','DESC')->get() as $us)
+    @foreach(NationalPackage::where('region_id',Auth::user()->region_id)->orderBy('created_at','DESC')->get() as $us)
     <tr>
         <td>{{ $us->package_number }}</td>
         <td>{{ $us->region->region }} ({{ $us->number_of_packages }})</td>
         <td>
             @if($us->received_status == 'received')
-              Received
+            Received
             @else
-              On Transit
+            On Transit
             @endif
         </td>
         <td>

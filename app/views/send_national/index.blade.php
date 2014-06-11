@@ -17,11 +17,19 @@
 
 @section('contents')
 <form method="post" action="{{ url('') }}" id="addsscc">
-    <div class="form-group col-sm-4">
+    <div class="form-group col-sm-2">
+        <span class="help-block">Package Number</span>
+        <input class="form-control" type="text" name="pack" placeholder="Package Number" required="required" style="height: 34px">
+    </div>
+    <div class="form-group col-sm-3">
         <span class="help-block">Region of Destination</span>
         {{ Form::select('region',array(""=>"Select Region")+Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
     </div>
-    <div class="form-group  col-sm-8" id="lotarea">
+    <div class="form-group col-sm-2">
+        <span class="help-block">Number of Packages</span>
+        <input class="form-control" pattern="\d*" type="text" name="number" placeholder="Packages with the same contents" required="required" style="height: 34px">
+    </div>
+    <div class="form-group  col-sm-5" id="lotarea">
         <span class="help-block">Scan/Write the Lot Number Of Package</span>
         <input type="text" name="sscc" placeholder="Lot Number" required="required" style="height: 34px">
         <input type="hidden" name="id" value="first" />
