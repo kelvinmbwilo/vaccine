@@ -24,4 +24,8 @@ class ManufacturerBarcode extends Eloquent{
         return $this->hasMany("ManufacturePackage","package_id",'id');
     }
 
+    public function nation(){
+        return $this->hasMany("ArrivalNational","ssc","ssc");
+    }
+
 } 

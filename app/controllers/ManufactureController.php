@@ -35,8 +35,8 @@ class ManufactureController extends \BaseController {
             $manu = Manufacturer::create(array(
                 'name'      => Input::get("name"),
                 'country'        =>Input::get("country"),
-                'email'      => Input::get("email"),
-                'physical_address'        =>Input::get("address")
+//                'email'      => Input::get("email"),
+//                'physical_address'        =>Input::get("address")
             ));
             foreach($_POST['vaccines'] as $vaccine){
                 VaccineManufacturer::create(array(
@@ -91,13 +91,10 @@ class ManufactureController extends \BaseController {
         $manu = Manufacturer::find($id);
         $manu->name = Input::get("name");
         $manu->country = Input::get("country");
-        $manu->email = Input::get("email");
-        $manu->physcal_address = Input::get("address");
+//        $manu->email = Input::get("email");
+//        $manu->physcal_address = Input::get("address");
         $manu->save();
         $name = $manu->name;
-
-
-
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
             "action"  =>"Update manufacture with name ".$name

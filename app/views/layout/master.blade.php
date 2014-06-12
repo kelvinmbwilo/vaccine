@@ -38,7 +38,7 @@
     {{HTML::script("js/respond.min.js")}}
    <![endif]-->
 </head>
-<body class="skin-blue">
+<body class="skin-blue" style="background-image: url({{ asset('img/body-bg.png')}})">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
 <a href="index.html" class="logo">
@@ -173,9 +173,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="row" style="padding-left: 15px">
                 @yield("contents")
-            </div>
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->

@@ -14,8 +14,6 @@
         <th> # </th>
         <th> Company Name </th>
         <th> Country </th>
-        <th> Email </th>
-        <th> Physical Address </th>
         <th> Action </th>
     </tr>
     </thead>
@@ -26,8 +24,6 @@
         <td>{{ $i++ }}</td>
         <td style="text-transform: capitalize">{{ $us->name }}</td>
         <td>{{ $us->getCountry->name }}</td>
-        <td>{{ $us->email }}</td>
-        <td>{{ $us->physical_address }}</td>
         <td id="{{ $us->id }}">
             <a href="#edit" title="edit Manufacture" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
             <a href="#b" title="delete Manufacture" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>

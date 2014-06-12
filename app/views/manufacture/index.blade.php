@@ -16,13 +16,10 @@
 @stop
 
 @section('contents')
-<div class="row">
     <div class="col-md-7" id="listuser">
         @include('manufacture.list')
     </div>
     <div class="col-md-5" id="adduser">
         @include('manufacture.add')
     </div>
-</div>
-
 @stop

@@ -1,8 +1,9 @@
 
-<div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
-    <div class="text-muted bootstrap-admin-box-title">User Roles</div>
+    <div class="text-muted bootstrap-admin-box-title">International shipment
+        <button class="btn btn-primary btn-xs pull-right add" id="add"><i class="fa fa-plus"></i> add</button>
+    </div>
 </div>
 <div class="bootstrap-admin-panel-content">
    @if(ManufacturerBarcode::all()->count() == 0)
@@ -13,10 +14,11 @@
         <tr>
             <th> # </th>
             <th>SSCC</th>
+            <th>Manufacture</th>
+            <th>Lot Number</th>
             <th>#Packages</th>
             <th>Content</th>
-            <th>Name</th>
-            <th>Lot Number</th>
+            <th>Type</th>
             <th>Doses</th>
             <th> Action </th>
         </tr>
@@ -27,16 +29,16 @@
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{ $pack->manufacture->ssc }}</td>
+            <td>{{ $pack->manufacture->manufacturer->name }}</td>
+            <td>{{ $pack->lot_number }}</td>
             <td>{{ $pack->manufacture->number_of_packages }}</td>
             <td>{{ $pack->content }}</td>
             <td>
                 @if($pack->vaccine_id != 0){{ $pack->vaccine->vaccine_name }}@endif
                 @if($pack->diluent_id != 0){{ $pack->diluent->diluent_name }}@endif
             </td>
-            <td>{{ $pack->lot_number }}</td>
             <td>{{ $pack->number_of_doses }}</td>
             <td id="{{ $pack->id }}">
-                <a href="#edit" title="edit Role" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
                 <a href="#b" title="delete Role" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
             </td>
         </tr>
@@ -46,7 +48,6 @@
     </table>
 
     @endif
-</div>
 </div>
 </div>
 
@@ -84,8 +85,36 @@
             }
         });
 
-        $('input[type="text"]').addClass("form-control");
+        $('input[type="text"]').addClass("form-control  pull-right");
         $('select').addClass("form-control");
 
+
+        //managing the add button
+        $(".add").click(function(){
+            var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+            modal+= '<div class="modal-dialog">';
+            modal+= '<div class="modal-content">';
+            modal+= '<div class="modal-header">';
+            modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+            modal+= '<h2 class="modal-title" id="myModalLabel">International Shipment</h2>';
+            modal+= '</div>';
+            modal+= '<div class="modal-body">';
+
+            modal+= ' </div>';
+//            modal+= '<div class="modal-footer">';
+//            modal+= '   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+//            modal+= '</div>';
+            modal+= '</div>';
+            modal+= '</div>';
+
+            $("body").append(modal);
+            $("#myModal").modal("show");
+            $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+            $(".modal-body").load("<?php echo url("manubarcode/add/") ?>");
+            $("#myModal").on('hidden.bs.modal',function(){
+                $("#myModal").remove();
+            })
+
+        })
     } );
 </script>

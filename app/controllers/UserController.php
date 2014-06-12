@@ -36,14 +36,14 @@ class UserController extends \BaseController {
     public function store()
     {
         if(Input::get("password") == Input::get("repassword")){
-            $usser = User::where("email",Input::get("email"))->count();
+            $usser = User::where("username",Input::get("username"))->count();
             if($usser != 0){
-                return "<h4 class='text-error'>User with ".Input::get("email")." already existed </h4>";
+                return "<h4 class='text-error'>User with username ".Input::get("username")." already existed Please try another name</h4>";
             }else{
 
                 $user = User::create(array(
                     "firstname"=>Input::get("firstname"),
-                    "middlename"=>Input::get("middlename"),
+                    "username"=>Input::get("username"),
                     "lastname"=>Input::get("lastname"),
                     "phone"=>Input::get("phone"),
                     "email"=>Input::get("email"),
@@ -53,12 +53,12 @@ class UserController extends \BaseController {
                     "password"=>Input::get("password"),
                     "status"=>"active"
                 ));
-                $name = $user->firstname." ".$user->middlename." ".$user->lastname;
+                $name = $user->firstname." ".$user->lastname;
                 Logs::create(array(
                     "user_id"=>  Auth::user()->id,
                     "action"  =>"Add user named ".$name
                 ));
-                return "<h4 class='text-error'>User Successful Registered</h4>";
+                return "<h4 class='text-success'>User Successful Registered</h4>";
             }
         }else{
             return "<h4 class='text-error'>two password do not match</h4>";
@@ -101,7 +101,7 @@ class UserController extends \BaseController {
         $user = User::find($id);
         $user->firstname = Input::get("firstname");
         $user->lastname = Input::get("lastname");
-        $user->middlename = Input::get("middlename");
+        $user->username = Input::get("username");
         $user->role_id = Input::get("role");
         $user->email = Input::get("email");
         if(Input::has("region")){
@@ -111,7 +111,7 @@ class UserController extends \BaseController {
         }
         $user->phone = Input::get("phone");
         $user->save();
-        $name = $user->firstname." ".$user->middlename." ".$user->lastname;
+        $name = $user->firstname." ".$user->lastname;
 
         //udating password
         if(Input::has("password")){
@@ -136,7 +136,7 @@ class UserController extends \BaseController {
     public function destroy($id)
     {
         $user = User::find($id);
-        $name = $user->firstname." ".$user->middlename." ".$user->lastname;
+        $name = $user->firstname." ".$user->lastname;
         $user->status="deleted";
         $user->save();
         Logs::create(array(
@@ -154,7 +154,7 @@ class UserController extends \BaseController {
     public function validate()
     {
 //        $user = User::where("email",Input::get('email'))->first();
-        $user = User::where("email",Input::get('email'))->first();
+        $user = User::where("username",Input::get('email'))->first();
         if($user && $user->password == Input::get('password')){
             if(Input::get('keep') == "keep"){
                 Auth::login($user,TRUE);

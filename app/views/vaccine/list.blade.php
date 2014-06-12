@@ -13,9 +13,9 @@
     <tr>
         <th> # </th>
         <th> GTIN Number </th>
-        <th> Name </th>
-        <th> Doses per Vial </th>
-        <th> Vials per Box </th>
+        <th> Type </th>
+        <th> Doses per Unit </th>
+        <th> Packaging</th>
         <th> Warning Period </th>
         <th> Action </th>
     </tr>

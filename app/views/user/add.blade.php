@@ -8,14 +8,15 @@
                 <div class='col-sm-6'>
                     First Name <br>  {{ Form::text('firstname','',array('class'=>'form-control','placeholder'=>'First Name','required'=>'required')) }}
                 </div>
-                 <div class='col-sm-6'>
-                     Middle Name<br> {{ Form::text('middlename','',array('class'=>'form-control','placeholder'=>'Middle Name')) }}
-                 </div>
+                <div class='col-sm-6'>
+                  Last Name <br> {{ Form::text('lastname','',array('class'=>'form-control','placeholder'=>'Last Name','required'=>'required')) }}
+                </div>
+
             </div>
-             
+
               <div class='form-group'>
                     <div class='col-sm-6'>
-                        Last Name <br> {{ Form::text('lastname','',array('class'=>'form-control','placeholder'=>'Last Name','required'=>'required')) }}
+                        Username <br> {{ Form::text('username','',array('class'=>'form-control','placeholder'=>'Username','required'=>'required')) }}
                     </div>
                   <div class='col-sm-6'>
                       Email <br> {{ Form::email('email','',array('class'=>'form-control','placeholder'=>'Email','required'=>'required')) }}
@@ -28,7 +29,7 @@
                         Phone Number<br>{{ Form::text('phone','',array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
                     </div>
                     <div class='col-sm-6'>
-                        Level<br>{{ Form::select('role',array("admin"=>"Administrator","National"=>"National","Region"=>"Region","District"=>"District"),'',array('class'=>'form-control','required'=>'requiered')) }}
+                        Role <br>{{ Form::select('role',array("admin"=>"Administrator","National IVD"=>"National IVD","National"=>"National Store","Region"=>"Region Store","District"=>"District Store"),'',array('class'=>'form-control','required'=>'requiered')) }}
                     </div>
 
                 </div>

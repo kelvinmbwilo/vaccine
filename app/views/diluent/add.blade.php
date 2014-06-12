@@ -1,7 +1,7 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-         {{ Form::open(array("url"=>url('diluent/add'),"class"=>"form-horizontal","id"=>'FileUploader')) }}
+         {{ Form::open(array("url"=>url('diluent/add'),"class"=>"form-horizontal","id"=>'FileUploader2')) }}
          <h2 class="text-center text-muted">Add new Diluent</h2>
           <div class='form-group'>
 
@@ -22,7 +22,7 @@
               </div>
           </div>
 
-          <div id="output"></div>
+          <div id="output4"></div>
        <div class='col-sm-12 form-group text-center'>
             {{ Form::submit('Add',array('class'=>'btn btn-primary','id'=>'submitqn')) }}
             {{ Form::reset('Reset',array('class'=>'btn btn-warning','id'=>'submitqn')) }}
@@ -32,11 +32,11 @@
       </div>
     <script>
         $(document).ready(function (){
-            $('#FileUploader').on('submit', function(e) {
+            $('#FileUploader2').on('submit', function(e) {
                 e.preventDefault();
-                $("#output").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
+                $("#output4").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
                 $(this).ajaxSubmit({
-                    target: '#output',
+                    target: '#output4',
                     success:  afterSuccess
                 });
 
@@ -45,9 +45,9 @@
             function afterSuccess(){
                 $('#FileUploader').resetForm();
                 setTimeout(function() {
-                    $("#output").html("");
+                    $("#output4").html("");
                 }, 3000);
-                $("#listuser").load("<?php echo url("diluent/list") ?>")
+                $("#listduser").load("<?php echo url("diluent/list") ?>")
             }
         });
     </script>

@@ -28,7 +28,7 @@
                 Phone Number<br>{{ Form::text('phone',$user->phone,array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Level<br>{{ Form::select('role',array("admin"=>"Administrator","National"=>"National","Region"=>"Region","District"=>"District"),'',array('class'=>'form-control','required'=>'requiered')) }}
+                Role <br>{{ Form::select('role',array("admin"=>"Administrator","National IVD"=>"National IVD","National"=>"National Store","Region"=>"Region Store","District"=>"District Store"),$user->role_id,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
 
         </div>

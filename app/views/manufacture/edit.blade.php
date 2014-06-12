@@ -11,14 +11,6 @@
                 Country<br>{{ Form::select('country',Country::all()->lists('name','id'),$manu->country,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
         </div>
-        <div class='form-group'>
-            <div class='col-sm-6'>
-                Email  <br>  {{ Form::text('email',$manu->email,array('class'=>'form-control','placeholder'=>'Contact Email','required'=>'required')) }}
-            </div>
-            <div class='col-sm-6'>
-                Physical Address<br>{{ Form::text('address',$manu->physical_address,array('class'=>'form-control','placeholder'=>'Physical Address Desease','required'=>'required')) }}
-            </div>
-        </div>
 
         <div class='form-group'>
             <div class='col-sm-12'>

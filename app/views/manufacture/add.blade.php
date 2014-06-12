@@ -14,15 +14,6 @@
                   </div>
             </div>
           <div class='form-group'>
-              <div class='col-sm-6'>
-                 Email  <br>  {{ Form::text('email','',array('class'=>'form-control','placeholder'=>'Contact Email','required'=>'required')) }}
-              </div>
-              <div class='col-sm-6'>
-                  Physical Address<br>{{ Form::text('address','',array('class'=>'form-control','placeholder'=>'Physical Address Desease','required'=>'required')) }}
-              </div>
-          </div>
-
-          <div class='form-group'>
               <div class='col-sm-12'>
                   Vaccines Produced by This Manufacturer<br>{{ Form::select('vaccines[]',Vaccine::all()->lists('vaccine_name','id'),'',array('class'=>'multiselect form-control','required'=>'requiered','multiple'=>"multiple")) }}
               </div>

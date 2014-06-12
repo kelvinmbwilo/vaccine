@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    User Roles Management
-    <small>Add, Edit and Delete Roles</small>
+    International Shipment
+    <small>Manage international shipment</small>
 </h1>
 @stop
 @section('breadcumb')
@@ -16,13 +16,22 @@
 @stop
 
 @section('contents')
-<div class="row">
-    <div class="col-md-7" id="listuser">
-        @include('manufabar.list')
+<ul id="myTab" class="nav nav-tabs" style="margin-left: 15px">
+    <li class="active"><a href="#home" data-toggle="tab">On Transit</a></li>
+    <li><a href="#profile" data-toggle="tab">Received</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+        <div class="col-sm-12" id="listuser">
+            @include('manufabar.list')
+        </div>
     </div>
-    <div class="col-md-5" id="adduser">
-        @include('manufabar.add')
+    <div class="tab-pane fade" id="profile">
+        <div class="col-sm-12" id="listuser">
+            @include('manufabar.listreceived')
+        </div>
     </div>
 </div>
+
 
 @stop

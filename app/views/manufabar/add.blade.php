@@ -89,8 +89,8 @@
             function afterSuccess(){
                 $('#FileUploader').resetForm();
                 setTimeout(function() {
-                    $("#output").html("");
-                }, 3000);
+                    $("#myModal").modal("hide");
+                }, 1000);
                 $("#listuser").load("<?php echo url("manubarcode/list") ?>")
             }
         });
