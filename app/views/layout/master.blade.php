@@ -110,7 +110,7 @@
         <li class="user-header bg-light-blue">
             <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
             <p>
-                {{ Auth::user()->firstname }} {{ Auth::user()->middlename }} {{ Auth::user()->lastname }} -
+                {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} -
                 @if(Auth::user()->role_id == 'Region')
                 {{ Auth::user()->region->region }} {{ Auth::user()->role_id }}
                 @elseif(Auth::user()->role_id == 'District')
@@ -172,7 +172,7 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" style="background-image: url({{ asset('img/body-bg.png')}})">
                 @yield("contents")
         </section><!-- /.content -->
     </aside><!-- /.right-side -->

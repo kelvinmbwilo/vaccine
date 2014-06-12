@@ -1,16 +1,8 @@
-@extends("layout.master")
 
-@section('title')
-<h1>
-    StocK lavel
-    <small>National Sent Packages </small>
-</h1>
-@stop
-@section('contents')
 @if(NationalPackage::all()->count() == 0)
 <h3>There are no packages sent</h3>
 @else
-<table class="table table-striped table-bordered" id="example2">
+<table class="table table-striped table-bordered example3" id="example2">
     <thead>
     <tr>
         <th>Package Number</th>
@@ -30,6 +22,7 @@
     <tbody>
     <?php $i=1; ?>
     @foreach(NationalPackage::orderBy('created_at','DESC')->get() as $us)
+    @if($us)
     <tr>
         <td>{{ $us->package_number }}</td>
         <td>{{ $us->region->region }} ({{ $us->number_of_packages }})</td>
@@ -57,16 +50,10 @@
             @endforeach
         </td>
     </tr>
-
+    @endif
     @endforeach
 
     </tbody>
 </table>
 
 @endif
-</div>
-</div>
-</div>
-
-
-@stop
