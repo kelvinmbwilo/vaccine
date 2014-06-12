@@ -1,16 +1,8 @@
-@extends("layout.master")
 
-@section('title')
-<h1>
-    StocK lavel
-    <small>{{ Auth::user()->region->region }} Region Sent Packages </small>
-</h1>
-@stop
-@section('contents')
 @if(RegionalPackage::all()->count() == 0)
 <h3>There are no packages sent</h3>
 @else
-<table class="table table-striped table-bordered" id="example2">
+<table class="table table-striped table-bordered example3" id="example2">
     <thead>
     <tr>
         <th>Package Number</th>
@@ -67,9 +59,3 @@
 </table>
 
 @endif
-</div>
-</div>
-</div>
-
-
-@stop

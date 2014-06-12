@@ -19,7 +19,7 @@
     {{HTML::script("js/respond.min.js")}}
     <![endif]-->
 </head>
-<body class="bg-gray">
+<body class="bg-gray" style="background-image: url({{ asset('img/body-bg.png')}})">
 <div class="row"><div class="col-md-6 col-md-offset-4 text-aqua" id="title_label"><p>Vaccine Tracking Management System</p></div></div>
 <div class="form-box" id="login-box">
     <div class="header">Sign In</div>

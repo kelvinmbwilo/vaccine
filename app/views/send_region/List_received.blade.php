@@ -1,16 +1,8 @@
-@extends("layout.master")
 
-@section('title')
-<h1>
-    StocK lavel
-    <small>National Sent Packages </small>
-</h1>
-@stop
-@section('contents')
 @if(NationalPackage::where('region_id',Auth::user()->region_id)->count() == 0)
 <h3>There are no packages sent</h3>
 @else
-<table class="table table-striped table-bordered" id="example2">
+<table class="table table-striped table-bordered example3" id="example2">
     <thead>
     <tr>
         <th>Package Number</th>
@@ -64,9 +56,16 @@
 </table>
 
 @endif
-</div>
-</div>
-</div>
+<!--script to process the list of users-->
+<script>
+    /* Table initialisation */
+    $(document).ready(function() {
+        $('.example3').dataTable({
 
+        });
 
-@stop
+        $('input[type="text"]').addClass("form-control");
+        $('select').addClass("form-control");
+
+    } );
+</script>
