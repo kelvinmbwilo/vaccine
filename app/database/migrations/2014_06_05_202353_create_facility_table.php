@@ -18,6 +18,9 @@ class CreateFacilityTable extends Migration {
             $table->integer('district_id');
             $table->string('name');
             $table->string('contact');
+            $table->string('target_population');
+            $table->string('annual_birth');
+            $table->string('surviving_infants');
 			$table->timestamps();
 		});
 	}

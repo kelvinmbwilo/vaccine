@@ -35,4 +35,8 @@ class Vaccine extends Eloquent {
     public function national_package(){
         return $this->hasMany("NationalPackageContent","vaccine_id","id");
     }
+
+    public function country(){
+        return $this->belongsTo('Country','country_id','id');
+    }
 } 

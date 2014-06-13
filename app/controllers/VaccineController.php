@@ -33,11 +33,15 @@ class VaccineController extends \BaseController {
 	{
 		if(Vaccine::where("GTIN",Input::get("gtn"))->count() == 0){
             Vaccine::create(array(
-                'vaccine_name'      => Input::get("name"),
-                'GTIN'              =>Input::get("gtn"),
-                'doses_per_vial'   =>Input::get("dose"),
-                'vials_per_box'   =>Input::get("box"),
-                'warning_period'   =>Input::get("warning")
+                'name'              => Input::get("name"),
+                'GTIN'              => Input::get("gtn"),
+                'packaging'         => Input::get("pack"),
+                'doses_per_vial'    => Input::get("dose"),
+                'vials_per_box'     => Input::get("package"),
+                'warning_period'    => Input::get("warning"),
+                'country_id'        => Input::get("country"),
+                'manufacturer'      => Input::get("manufacturer"),
+                'type'              => Input::get("type")
             ));
             Logs::create(array(
                 "user_id"=>  Auth::user()->id,
@@ -82,11 +86,15 @@ class VaccineController extends \BaseController {
 	public function update($id)
 	{
         $vaccine = Vaccine::find($id);
-        $vaccine->GTIN = Input::get("gtn");
-        $vaccine->vaccine_name = Input::get("name");
-        $vaccine->doses_per_vial = Input::get("dose");
-        $vaccine->vials_per_box = Input::get("box");
-        $vaccine->warning_period = Input::get("warning");
+        $vaccine->name              =Input::get("name");
+        $vaccine->GTIN              =Input::get("gtn");
+        $vaccine->packaging         =Input::get("pack");
+        $vaccine->doses_per_vial    =Input::get("dose");
+        $vaccine->vials_per_box     =Input::get("package");
+        $vaccine->warning_period    =Input::get("warning");
+        $vaccine->country_id        =Input::get("country");
+        $vaccine->manufacturer      =Input::get("manufacturer");
+        $vaccine->type              =Input::get("type");
         $vaccine->save();
         $name = $vaccine->GTIN;
 
@@ -107,16 +115,11 @@ class VaccineController extends \BaseController {
 	public function destroy($id)
 	{
         $vaccine = Vaccine::find($id);
-        if($vaccine->manufacture()->count() != 0){
-            foreach($vaccine->manufacturer as $manu){
-                $manu->delete();
-            }
-        }
         $gt = $vaccine->GTIN;
         $vaccine->delete();
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
-            "action"  =>"Delete vaccine with name ".$gt
+            "action"  =>"Delete vaccine with GTIN ".$gt
         ));
 	}
 

@@ -6775,6 +6775,7 @@
     <table name="arrival_district" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="regional_package" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="number_of_packages" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="district_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="lot_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="number_of_doses" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -6831,6 +6832,7 @@
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="vaccine_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="diluent_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="units_per_box" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
@@ -6845,6 +6847,8 @@
     </table>
     <table name="district_package" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="package_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="number_of_packages" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="source_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="facility" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="date_sent" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -6881,6 +6885,9 @@
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="district" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
       <column name="region_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="target_population" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="annual_birth" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="surviving_infants" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="documents" schema="" catalog="vaccine" type="TABLE">
@@ -6901,6 +6908,9 @@
       <column name="district_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="contact" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="target_population" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="annual_birth" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="surviving_infants" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
@@ -6939,10 +6949,8 @@
     </table>
     <table name="manufacture_package" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="package_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="content" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sscc" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="vaccine_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="diluent_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="manufacture_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="expiry_date" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="lot_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -7038,6 +7046,9 @@
     <table name="regions" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="region" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tagert_population" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="annual_birth" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="surviving_infants" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="shipping_indicator" schema="" catalog="vaccine" type="TABLE">
@@ -7054,7 +7065,7 @@
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="role_id" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="firstname" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="middlename" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="lastname" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -7069,11 +7080,15 @@
     </table>
     <table name="vaccine" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="vaccine_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="GTIN" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="packaging" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="doses_per_vial" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="vials_per_box" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="warning_period" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="country_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="manufacturer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>

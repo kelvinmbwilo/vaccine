@@ -15,10 +15,8 @@ class CreateManufacturePackageTable extends Migration {
 		Schema::create('manufacture_package', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->integer('package_id');
-            $table->string("content");
+            $table->integer('sscc');
             $table->integer("vaccine_id");
-            $table->integer("diluent_id");
             $table->string("manufacture_date");
             $table->string("expiry_date");
             $table->string("lot_number");

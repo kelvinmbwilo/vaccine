@@ -54,8 +54,9 @@
         <ul class="treeview-menu">
             <li><a href="{{ url('users') }}"><span class="glyphicon glyphicon-user"></span> Users <i class="fa fa-angle-double-right pull-right"></i> </a></li>
             <li><a href="{{ url('vaccine') }}"><span class="glyphicon glyphicon-pushpin"></span> Vaccine/Diluent <i class="fa fa-angle-double-right pull-right"></i></a></li>
-            <li><a href="#"> <i class="fa fa-institution"></i> Facility <i class="fa fa-angle-double-right pull-right"></i></a></li>
-            <li><a href="{{url('manufacture')}}"><span class="glyphicon glyphicon-tower"></span> Manufacturer <i class="fa fa-angle-double-right pull-right"></i></a></li>
+            <li><a href="{{ url('demographics') }}"> <i class="fa fa-map-marker"></i> Area Demographics <i class="fa fa-angle-double-right pull-right"></i></a></li>
+            <li><a href="{{ url('facility') }}"> <i class="fa fa-institution"></i> Facility <i class="fa fa-angle-double-right pull-right"></i></a></li>
+<!--            <li><a href="{{url('manufacture')}}"><span class="glyphicon glyphicon-tower"></span> Manufacturer <i class="fa fa-angle-double-right pull-right"></i></a></li>-->
             <li><a href="{{url('manubarcode')}}"> <i class="fa fa-cube"></i> International Shipment </a></li>
             </ul>
     </li>

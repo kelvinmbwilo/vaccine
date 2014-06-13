@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Vaccine/Diluent Management
-    <small>Add, Edit and Delete Vaccines&Diluent</small>
+    Facilities Management
+    <small>Add, Edit and Delete Facilities</small>
 </h1>
 @stop
 @section('breadcumb')
@@ -11,14 +11,14 @@
 <li>
     <a href="{{ url('home') }}">Dashboard</a>
 </li>
-<li class="active">Vaccines</li>
+<li class="active">facilities</li>
 </ol>
 @stop
 
 @section('contents')
     <div class="tab-pane fade in active" id="home">
         <div class="col-sm-12" id="listuser">
-            @include('vaccine.list')
+            @include('facility.list')
         </div>
     </div>
 

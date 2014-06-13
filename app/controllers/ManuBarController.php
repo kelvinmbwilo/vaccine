@@ -31,27 +31,14 @@ class ManuBarController extends \BaseController {
      */
     public function store()
     {
-        if(ManufacturerBarcode::where("ssc",Input::get("barcode"))->count() == 0){
-            $manu = ManufacturerBarcode::create(array(
-                'manufacture_id'        =>Input::get("manufacture"),
-                'ssc'                   =>Input::get("barcode"),
-                'number_of_packages'    =>Input::get("packages"),
-            ));
-        }else{
-            $manu = DB::table('manufacture_barcode')->where("ssc",Input::get("barcode"))->first();
-        }
-        if(isset($manu)){
-            $package = ManufacturePackage::create(array(
-                'package_id'            =>$manu->id,
-                'content'               =>Input::get("type"),
-                'vaccine_id'            =>(Input::get("type") == "vaccine")?Input::get("vaccine"):"",
-                'diluent_id'            =>(Input::get("type") == "diluent")?Input::get("diluent"):"",
-                'Manufacture_date'      =>Input::get("manu"),
-                'expiry_date'           =>Input::get("exp"),
-                'lot_number'            =>Input::get("lot"),
-                'number_of_doses'       =>Input::get("quantity")
-            ));
-        }
+        $package = ManufacturePackage::create(array(
+            'sscc'            =>Input::get("barcode"),
+            'vaccine_id'            =>Input::get("vaccine"),
+            'Manufacture_date'      =>Input::get("manu"),
+            'expiry_date'           =>Input::get("exp"),
+            'lot_number'            =>Input::get("lot"),
+            'number_of_doses'       =>Input::get("quantity")
+        ));
 
     }
 
@@ -114,13 +101,8 @@ class ManuBarController extends \BaseController {
      */
     public function destroy($id)
     {
-        $manu = ManufacturerBarcode::find($id);
-        if($manu->packages()->count() != 0){
-            foreach($manu->packages as $package){
-                $package->delete();
-            }
-        }
-        $gt = $manu->ssc;
+        $manu = ManufacturePackage::find($id);
+        $gt = $manu->sscc;
         $manu->delete();
 
         Logs::create(array(

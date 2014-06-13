@@ -3,45 +3,43 @@
 <div class="panel panel-default">
 <div class="panel-heading">
     <div class="text-muted bootstrap-admin-box-title">
-        Vaccine&Diluent List
+        Facility List
         <button class="btn btn-primary btn-xs pull-right add" id="add"><i class="fa fa-plus"></i> add</button>
     </div>
 </div>
 <div class="bootstrap-admin-panel-content">
-   @if(Vaccine::all()->count() == 0)
-    <h3>There are no defined vaccines or diluents</h3>
+   @if(Facility::all()->count() == 0)
+    <h3>There are no facilities</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
     <thead>
     <tr>
         <th> # </th>
-        <th> GTIN Number </th>
-        <th> Manufacture </th>
-        <th> Short Description </th>
-        <th> Packaging</th>
-        <th> Secondary Packaging</th>
-        <th> Vaccine Presentation</th>
-        <th> Origin</th>
-        <th> Warning Period </th>
+        <th> Name </th>
+        <th> Region </th>
+        <th> District </th>
+        <th> Target Population</th>
+        <th> Annual Birth</th>
+        <th> Surviving Infant</th>
+        <th>  Contacts</th>
         <th> Action </th>
     </tr>
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(Vaccine::all() as $us)
+    @foreach(Facility::all() as $us)
     <tr>
         <td>{{ $i++ }}</td>
-        <td>{{ $us->GTIN }}</td>
-        <td>{{ $us->manufacturer }}</td>
-        <td style="text-transform: capitalize">{{ $us->name }}</td>
-        <td>{{ $us->packaging }}</td>
-        <td>{{ $us->vials_per_box }}</td>
-        <td>{{ $us->doses_per_vial }}</td>
-        <td>{{ $us->country->name }}</td>
-        <td>{{ $us->warning_period }} month</td>
+        <td>{{ $us->name }}</td>
+        <td>{{ $us->district->region->region }}</td>
+        <td >{{ $us->district->district }}</td>
+        <td>{{ $us->target_population }}</td>
+        <td>{{ $us->annual_birth }}</td>
+        <td>{{ $us->surviving_infants }}</td>
+        <td>{{ $us->contact }}</td>
         <td id="{{ $us->id }}">
             <a href="#edit" title="edit Vaccine" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
-            <a href="#b" title="delete Vaccine" class="deletevaccine"><i class="fa fa-trash-o text-danger"> delete</i> </a>
+            <a href="#b" title="delete Vaccine" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>
         </td>
     </tr>
     @endforeach
@@ -69,7 +67,7 @@
                     modal+= '<div class="modal-content">';
                     modal+= '<div class="modal-header">';
                     modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-                    modal+= '<h2 class="modal-title" id="myModalLabel">Update Vaccine/Diluent Information</h2>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">Update Facility Information</h2>';
                     modal+= '</div>';
                     modal+= '<div class="modal-body">';
                     modal+= ' </div>';
@@ -79,7 +77,7 @@
                     $("body").append(modal);
                     $("#myModal").modal("show");
                     $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-                    $(".modal-body").load("<?php echo url("vaccine/edit") ?>/"+id1);
+                    $(".modal-body").load("<?php echo url("facility/edit") ?>/"+id1);
                     $("#myModal").on('hidden.bs.modal',function(){
                         $("#myModal").remove();
                     })
@@ -97,7 +95,7 @@
                     });
                     $("#yes").click(function(){
                         $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
-                        $.post("<?php echo url('vaccine/delete') ?>/"+id1,function(data){
+                        $.post("<?php echo url('facility/delete') ?>/"+id1,function(data){
                             btn.hide("slow").next("hr").hide("slow");
                         });
                     });
@@ -122,7 +120,7 @@
             modal+= '<div class="modal-content">';
             modal+= '<div class="modal-header">';
             modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-            modal+= '<h2 class="modal-title" id="myModalLabel">Add Vaccine/Diluent</h2>';
+            modal+= '<h2 class="modal-title" id="myModalLabel">Register Facility</h2>';
             modal+= '</div>';
             modal+= '<div class="modal-body">';
             modal+= ' </div>';
@@ -132,7 +130,7 @@
             $("body").append(modal);
             $("#myModal").modal("show");
             $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
-            $(".modal-body").load("<?php echo url("vaccine/add/") ?>");
+            $(".modal-body").load("<?php echo url("facility/add/") ?>");
             $("#myModal").on('hidden.bs.modal',function(){
                 $("#myModal").remove();
             })

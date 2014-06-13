@@ -2,7 +2,6 @@
 <div class="panel panel-default">
     <div class="panel-body">
         {{ Form::open(array("url"=>url("user/edit/{$user->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
-        <h3 class="text-center text-muted">Update User Information</h3>
         <div class='form-group'>
 
             <div class='col-sm-6'>
@@ -46,7 +45,6 @@
         <div id="output"></div>
        <div class='col-sm-12 form-group text-center'>
             {{ Form::submit('Submit',array('class'=>'btn btn-primary','id'=>'submitqn')) }}
-           {{ Form::button('Cancel',array('class'=>'btn btn-danger','id'=>'cancel')) }}
         </div>
       {{ Form::close() }}
     </div>
@@ -95,11 +93,9 @@
             })
         })
         function afterSuccess(){
-            $('#FileUploader').resetForm();
             setTimeout(function() {
-                $("#output").html("");
-                $("#adduser").load("<?php echo url("user/add") ?>")
-            }, 3000);
+                $("#myModal").modal("hide");
+            }, 1000);
             $("#listuser").load("<?php echo url("user/list") ?>")
         }
     });

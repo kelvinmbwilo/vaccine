@@ -1,8 +1,10 @@
-
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
-    <div class="text-muted bootstrap-admin-box-title">System Users</div>
+    <div class="text-muted bootstrap-admin-box-title">
+        System Users
+        <button class="btn btn-primary btn-xs pull-right add" id="add"><i class="fa fa-plus"></i> add</button>
+    </div>
 </div>
 <div class="bootstrap-admin-panel-content">
    @if(User::all()->count() == 0)
@@ -59,15 +61,51 @@
                 //editing a room
                 $(".edituser").click(function(){
                     var id1 = $(this).parent().attr('id');
-                    $("#adduser").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
-                    $("#adduser").load("<?php echo url("user/edit") ?>/"+id1);
+                    var id1 = $(this).parent().attr('id');
+                    var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+                    modal+= '<div class="modal-dialog">';
+                    modal+= '<div class="modal-content">';
+                    modal+= '<div class="modal-header">';
+                    modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">Update User  Information</h2>';
+                    modal+= '</div>';
+                    modal+= '<div class="modal-body">';
+                    modal+= ' </div>';
+                    modal+= '</div>';
+                    modal+= '</div>';
+
+                    $("body").append(modal);
+                    $("#myModal").modal("show");
+                    $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+                    $(".modal-body").load("<?php echo url("user/edit") ?>/"+id1);
+                    $("#myModal").on('hidden.bs.modal',function(){
+                        $("#myModal").remove();
+                    })
                 })
 
                 //display user log
                 $(".userlog").click(function(){
                     var id = $(this).parent().attr('id');
-                    $("#adduser").html("<br><i class='fa fa-spinner fa-spin'></i>loading...");
-                    $("#adduser").load("<?php echo url("user/log") ?>/"+id);
+                    var id1 = $(this).parent().attr('id');
+                    var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+                    modal+= '<div class="modal-dialog">';
+                    modal+= '<div class="modal-content">';
+                    modal+= '<div class="modal-header">';
+                    modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+                    modal+= '<h2 class="modal-title" id="myModalLabel">System Usage Log</h2>';
+                    modal+= '</div>';
+                    modal+= '<div class="modal-body">';
+                    modal+= ' </div>';
+                    modal+= '</div>';
+                    modal+= '</div>';
+
+                    $("body").append(modal);
+                    $("#myModal").modal("show");
+                    $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+                    $(".modal-body").load("<?php echo url("user/log") ?>/"+id1);
+                    $("#myModal").on('hidden.bs.modal',function(){
+                        $("#myModal").remove();
+                    })
                 })
 
                 $(".deleteuser").click(function(){
@@ -88,16 +126,33 @@
                 });//endof deleting category
             }
         });
-        $('#example').dataTable( {
-            "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-            "sPaginationType": "bootstrap",
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
-            },
 
-        });
         $('input[type="text"]').addClass("form-control");
         $('select').addClass("form-control");
+
+        //managing the add button
+        $(".add").click(function(){
+            var modal = '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">';
+            modal+= '<div class="modal-dialog">';
+            modal+= '<div class="modal-content">';
+            modal+= '<div class="modal-header">';
+            modal+= '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+            modal+= '<h2 class="modal-title" id="myModalLabel">User Registration</h2>';
+            modal+= '</div>';
+            modal+= '<div class="modal-body">';
+            modal+= ' </div>';
+            modal+= '</div>';
+            modal+= '</div>';
+
+            $("body").append(modal);
+            $("#myModal").modal("show");
+            $(".modal-body").html("<h3><i class='fa fa-spin fa-spinner '></i><span>loading...</span><h3>");
+            $(".modal-body").load("<?php echo url("user/add/") ?>");
+            $("#myModal").on('hidden.bs.modal',function(){
+                $("#myModal").remove();
+            })
+
+        })
 
     } );
 </script>

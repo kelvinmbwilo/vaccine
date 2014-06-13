@@ -15,6 +15,7 @@ class District extends Eloquent {
     protected $table = 'districts';
 
     protected  $guarded = array('id');
+    public $timestamps = false;
 
     public function region(){
         return $this->belongsTo('Region', 'region_id', 'id');

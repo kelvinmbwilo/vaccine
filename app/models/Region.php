@@ -15,6 +15,7 @@ class Region extends Eloquent {
     protected $table = 'regions';
 
     protected  $guarded = array('id');
+    public $timestamps = false;
 
     public function district(){
         return $this->hasMany('District', 'region_id', 'id');

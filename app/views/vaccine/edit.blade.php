@@ -1,39 +1,53 @@
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
     <div class="panel-body">
         {{ Form::open(array("url"=>url("vaccine/edit/{$vaccine->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
-        <h3 class="text-center text-muted">Update Vaccine Information</h3>
+
         <div class='form-group'>
             <div class='col-sm-6'>
-                GTN Number <br>  {{ Form::text('gtn',$vaccine->GTIN,array('class'=>'form-control','placeholder'=>'GTN Number','required'=>'required')) }}
+                GTIN Number <br>  {{ Form::text('gtn',$vaccine->GTIN,array('class'=>'form-control','placeholder'=>'GTN Number','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Type <br> {{ Form::text('name',$vaccine->vaccine_name,array('class'=>'form-control','placeholder'=>'Vaccine Common Name','required'=>'required')) }}
+                Type<br>{{ Form::select('type',array('vaccine'=>'vaccine','diluent'=>'diluent'),$vaccine->type,array('class'=>'form-control','required'=>'requiered')) }}
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Short Description<br> {{ Form::text('name',$vaccine->name,array('class'=>'form-control','placeholder'=>'Short Description','required'=>'required')) }}
+            </div>
+            <div class='col-sm-6'>
+                Manufacturer<br> {{ Form::text('manufacturer',$vaccine->manufacturer,array('class'=>'form-control','placeholder'=>'Manufacturer','required'=>'required')) }}
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Country<br>{{ Form::select('country',Country::all()->lists('name','id'),$vaccine->country_id,array('class'=>'form-control','required'=>'requiered')) }}
+            </div>
+            <div class='col-sm-6'>
+                Packaging <br> {{ Form::text('pack',$vaccine->packaging,array('class'=>'form-control','placeholder'=>'Packaging','required'=>'required')) }}
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Secondary Packaging <br> {{ Form::text('package',$vaccine->vials_per_box,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Packaging','required'=>'required')) }}
+            </div>
+            <div class='col-sm-6'>
+                Vaccine Presentation<br> {{ Form::text('dose',$vaccine->doses_per_vial,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Unit','required'=>'required')) }}
             </div>
         </div>
 
         <div class='form-group'>
-            <div class='col-sm-6'>
-                Doses per unit <br> {{ Form::text('dose',$vaccine->doses_per_vial,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Vials','required'=>'required')) }}
-            </div>
-            <div class='col-sm-6'>
-                Packaging<br> {{ Form::text('box',$vaccine->vials_per_box,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Vials Per Box','required'=>'required')) }}
-            </div>
-        </div>
-
-        <div class='form-group'>
-            <div class='col-sm-10 col-sm-offset-1'>
+            <div class='col-sm-12 '>
                 Warning Period<br>
                 <span class="help-block">Number of month before expiry to display warning</span>
                 {{ Form::text('warning',$vaccine->warning_period,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Warning Period (Month)','required'=>'required')) }}
             </div>
         </div>
 
-
         <div id="output"></div>
-       <div class='col-sm-12 form-group text-center'>
-            {{ Form::submit('Submit',array('class'=>'btn btn-primary','id'=>'submitqn')) }}
-           {{ Form::button('Cancel',array('class'=>'btn btn-danger','id'=>'cancel')) }}
+        <div class='col-sm-12 form-group text-center'>
+            {{ Form::submit('Update',array('class'=>'btn btn-primary','id'=>'submitqn')) }}
+            {{ Form::reset('Reset',array('class'=>'btn btn-warning','id'=>'submitqn')) }}
         </div>
       {{ Form::close() }}
     </div>
@@ -51,11 +65,9 @@
         });
 
         function afterSuccess(){
-            $('#FileUploader').resetForm();
             setTimeout(function() {
-                $("#output").html("");
-                $("#adduser").load("<?php echo url("vaccine/add") ?>")
-            }, 3000);
+                $("#myModal").modal("hide");
+            }, 1000);
             $("#listuser").load("<?php echo url("vaccine/list") ?>")
         }
     });

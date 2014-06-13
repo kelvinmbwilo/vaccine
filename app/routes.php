@@ -392,3 +392,62 @@ Route::post('manubarcode/edit/{id}',array('uses'=>'ManuBarController@update'));
 //deleting vaccine
 Route::post('manubarcode/delete/{id}',array('uses'=>'ManuBarController@destroy'));
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Facility actions
+ * Directing routes to correct controllers
+ * using FacilityController
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('facility/add',array('uses'=>'FacilityController@create'));
+
+//display a list of vaccines
+Route::get('facility/list',array('uses'=>'FacilityController@lists'));
+
+//adding new facility
+Route::post('facility/add',array('uses'=>'FacilityController@store'));
+
+//viewing index page
+Route::get('facility',array('uses'=>'FacilityController@index'));
+
+//display a form to edit facility information
+Route::get('facility/edit/{id}',array('uses'=>'FacilityController@edit'));
+
+//editng facility information
+Route::post('facility/edit/{id}',array('uses'=>'FacilityController@update'));
+
+//deleting facility
+Route::post('facility/delete/{id}',array('uses'=>'FacilityController@destroy'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Managing Demographics actions
+ * Directing routes to correct controllers
+ * using DemographicsController
+ */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new vaccine
+Route::get('demographics/add/{id}',array('uses'=>'DemographicsController@create'));
+
+//display a list of vaccines
+Route::get('demographics/list',array('uses'=>'DemographicsController@lists'));
+
+//adding new facility
+Route::post('demographics/add/{id}',array('uses'=>'DemographicsController@putt'));
+
+//viewing index page
+Route::get('demographics',array('uses'=>'DemographicsController@index'));
+
+//display a form to edit facility information
+Route::get('demographics/edit/{id}',array('uses'=>'DemographicsController@edit'));
+
+//editng facility information
+Route::post('demographics/edit/{id}',array('uses'=>'DemographicsController@update'));
+
+//deleting facility
+Route::post('demographics/delete/{id}',array('uses'=>'DemographicsController@destroy'));

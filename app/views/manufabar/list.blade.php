@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="bootstrap-admin-panel-content">
-   @if(ManufacturerBarcode::all()->count() == 0)
+   @if(ManufacturePackage::all()->count() == 0)
     <h3>There are no Packages</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
@@ -14,11 +14,11 @@
         <tr>
             <th> # </th>
             <th>SSCC</th>
+            <th>Item</th>
             <th>Manufacture</th>
+            <th>GTIN</th>
             <th>Lot Number</th>
-            <th>#Packages</th>
-            <th>Content</th>
-            <th>Type</th>
+            <th>Expiry</th>
             <th>Doses</th>
             <th> Action </th>
         </tr>
@@ -28,15 +28,12 @@
         @foreach(ManufacturePackage::all() as $pack)
         <tr>
             <td>{{ $i++ }}</td>
-            <td>{{ $pack->manufacture->ssc }}</td>
-            <td>{{ $pack->manufacture->manufacturer->name }}</td>
+            <td>{{ $pack->sscc }}</td>
+            <td>{{ $pack->vaccine->name }}</td>
+            <td>{{ $pack->vaccine->manufacturer }}</td>
+            <td>{{ $pack->vaccine->GTIN }}</td>
             <td>{{ $pack->lot_number }}</td>
-            <td>{{ $pack->manufacture->number_of_packages }}</td>
-            <td>{{ $pack->content }}</td>
-            <td>
-                @if($pack->vaccine_id != 0){{ $pack->vaccine->vaccine_name }}@endif
-                @if($pack->diluent_id != 0){{ $pack->diluent->diluent_name }}@endif
-            </td>
+            <td>{{ date('j M Y',strtotime($pack->expiry_date)) }}</td>
             <td>{{ $pack->number_of_doses }}</td>
             <td id="{{ $pack->id }}">
                 <a href="#b" title="delete Role" class="deletevaccine"><i class="fa fa-trash-o text-danger"></i> </a>

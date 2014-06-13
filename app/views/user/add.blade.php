@@ -2,7 +2,6 @@
     <div class="panel panel-default">
       <div class="panel-body">
          {{ Form::open(array("url"=>route('adduser1'),"class"=>"form-horizontal","id"=>'FileUploader')) }}
-         <h2 class="text-center text-muted">Add new User</h2>
           <div class='form-group'>
 
                 <div class='col-sm-6'>
@@ -95,10 +94,9 @@
             })
 
             function afterSuccess(){
-                $('#FileUploader').resetForm();
                 setTimeout(function() {
-                    $("#output").html("");
-                }, 3000);
+                    $("#myModal").modal("hide");
+                }, 1000);
                 $("#listuser").load("<?php echo url("user/list") ?>")
             }
         });

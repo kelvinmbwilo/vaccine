@@ -16,15 +16,12 @@ class ManufacturePackage extends Eloquent {
 
     protected  $guarded = array('id');
 
-    public function manufacture(){
-        return $this->belongsTo('ManufacturerBarcode', 'package_id', 'id');
-    }
-
     public function vaccine(){
         return $this->belongsTo("Vaccine","vaccine_id",'id');
     }
-    public function diluent(){
-        return $this->belongsTo("Diluent","diluent_id",'id');
+
+    public function arrival(){
+        return $this->hasMany("ArrivalNation","ssc",'sscc');
     }
 
 }
