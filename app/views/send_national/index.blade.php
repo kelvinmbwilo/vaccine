@@ -16,23 +16,13 @@
 @stop
 
 @section('contents')
-<form method="post" action="{{ url('') }}" id="addsscc">
     <div class="form-group col-sm-6">
         <span class="help-block">Region of Destination</span>
         {{ Form::select('region',array(""=>"Select Region")+Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
     </div>
-<!--    <div class="form-group  col-sm-5" id="lotarea">-->
-<!--        <span class="help-block">Scan/Write the Lot Number Of Package</span>-->
-<!--        <input type="text" name="sscc" placeholder="Lot Number" required="required" style="height: 34px">-->
-<!--        <input type="hidden" name="id" value="first" />-->
-<!--        <button type="submit" class="btn btn-primary">Scan</button>-->
-<!--        <a href="{{ url('package/receive/list') }}" class="pull-right btn btn-primary">-->
-<!--<!--            <i class="fa fa-list-ul"></i> List Sent Packages-->-->
-<!--        </a>-->
-<!--    </div>-->
-</form>
 
-    <div id="output">
+
+    <div id="output"class="col-sm-12">
 
     </div>
 
@@ -41,16 +31,12 @@
 <script>
     $(document).ready(function (){
 
-        $('#addsscc').on('submit', function(e) {
-            e.preventDefault();
-            $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Retriving stock information please wait...</span><h4>");
-            $(this).ajaxSubmit({
-                url : '<?php echo url('package/prepare/') ?>/'+$('input[name=sscc]').val(),
-                target: '#output',
-                success:  afterSuccess
-            });
+        $("select[name=region]").click(function(){
+            $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Getting area information please wait...</span><h4>");
+            $("#output").load('<?php echo url('package/prepare/areainfo') ?>/'+$(this).val(),function(){
 
-        });
+            });
+        })
 
         function afterSuccess(){
             $('#addsscc input[name=sscc]').val("");

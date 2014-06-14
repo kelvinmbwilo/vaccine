@@ -133,31 +133,53 @@ class PackageController extends \BaseController {
         return View::make('recieve_national.final_form');
     }
 
+    public function areainfo($id){
+        $region = Region::find($id);
+        return View::make('send_national.info',compact('region'));
+    }
+
     public function prepareform($id){
-        $package = NationalStock::where('lot_number',$id)->first();
-        $idd = "";
-        if($package){
-            if(Input::get('id') == "first"){
-                $createdid = NationalPackage::create(array(
-                    'region_id' => Input::get('region'),
-                    'package_number' => Input::get('pack'),
-                    'number_of_packages' => Input::get('number')
-                ));
-                $idd = $createdid->id;
+        if (strpos(Input::get('sscc'),')') !== false) {
+            $arr = $this->breakqr(Input::get('sscc'));
+            $package = NationalStock::where('lot_number',$arr['lot_number'])->where('number_of_doses','!=','0')->first();
+            $idd = "";
+            if($package){
+                if(Input::get('id') == "first"){
+                    $createdid = NationalPackage::create(array(
+                        'region_id' => $id,
+                    ));
+                    $createdid->package_number = strtotime($createdid->created_at);
+                    $createdid->save();
+                    $idd = $createdid->id;
+                }
+                //ckecking expiry and diluent collarance
+                $expiry_status ="";
+                 if(strtotime($package->expiry_date) < strtotime(date('Y-m-d')) ){
+                     $expiry_status = "expired";
+                 }elseif((strtotime($package->expiry_date) - strtotime(date('Y-m-d')))/2592000 < $package->vaccine->warning_period){
+                     $expiry_status = "near expiry";
+                 }
+
+                //checking the existance of same vaccine with close expiry date
+                $other_available="";
+                $other_vaccine = NationalStock::where('GTIN',$arr['gtin'])->where('number_of_doses','!=','0')->get();
+                foreach($other_vaccine as $vaccine){
+                    if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
+                        $other_available = "available";
+                }
+                return View::make("send_national.package",compact('package','idd','expiry_status','other_available'));
             }else{
-
+                echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
             }
-
-            return View::make("send_national.package",compact('package','idd'));
         }else{
-            echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
+            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
         }
+
     }
 
     public function processaddpackage(){
         $stock = NationalStock::where('lot_number',Input::get('lot'))->first();
-        $doses = Input::get('box') * $stock->manufacturer->vaccine->vials_per_box * $stock->manufacturer->vaccine->doses_per_vial;
-
+        $doses = Input::get('box') * $stock->vaccine->vials_per_box * $stock->vaccine->doses_per_vial;
         if($stock->number_of_doses > $doses){
             $pack = NationalPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
             if($pack){

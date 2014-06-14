@@ -37,6 +37,16 @@ class DemographicsController extends \BaseController {
         $district->annual_birth     =Input::get("birth");
         $district->surviving_infants= Input::get("infants");
         $district->save();
+        $target = 0; $anual = 0; $survivng = 0;
+        foreach ($district->region->district as $dis){
+            ($dis->target_population == "")?$target+=0:$target+=$dis->target_population;
+            ($dis->annual_birth == "")?$anual+=0:$anual+=$dis->annual_birth;
+            ($dis->surviving_infants == "")?$survivng+=0:$survivng+=$dis->surviving_infants;
+        }
+        $district->region->tagert_population=$target;
+        $district->region->annual_birth     =$anual;
+        $district->region->surviving_infants=$survivng;
+        $district->region->save();
         Logs::create(array(
             "user_id"=>  Auth::user()->id,
             "action"  =>"Update Demographic information for  ".$district->district." district"
@@ -68,49 +78,6 @@ class DemographicsController extends \BaseController {
         return View::make("demographics.edit",compact("facility"));
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        $vaccine = Facility::find($id);
-        $vaccine->district_id=Input::get("district");
-        $vaccine->name=Input::get("name");
-        $vaccine->contact=Input::get("contact");
-        $vaccine->target_population=Input::get("population");
-        $vaccine->annual_birth=Input::get("birth");
-        $vaccine->surviving_infants=Input::get("infants");
-        $vaccine->save();
-        $name = $vaccine->name;
-
-        Logs::create(array(
-            "user_id"=>  Auth::user()->id,
-            "action"  =>"Update facility with name ".$name
-        ));
-        return "<h4 class='text-success'>Facility Updated Successful</h4>";
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        $facility = Facility::find($id);
-        $gt = $facility->name;
-        $facility->delete();
-        Logs::create(array(
-            "user_id"=>  Auth::user()->id,
-            "action"  =>"Delete facility with name ".$gt
-        ));
-    }
 
 
 }

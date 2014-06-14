@@ -247,6 +247,9 @@ Route::get('package/send/list/{id}',array('uses'=>'PackageController@sendPackage
 Route::post('package/prepare/{id}',array('uses'=>'PackageController@prepareform'));
 
 //display a list of vaccines
+Route::get('package/prepare/areainfo/{id}',array('uses'=>'PackageController@areainfo'));
+
+//display a list of vaccines
 Route::post('package/prepare/add',array('uses'=>'PackageController@addpackage'));
 
 //display a list of vaccines
