@@ -189,7 +189,8 @@ class PackageController extends \BaseController {
                 NationalPackageContent::create(array(
                     'package_id' => Input::get('idd'),
                     'number_of_boxes' => Input::get('box'),
-                    'lot_number' => Input::get('lot')
+                    'lot_number' => Input::get('lot'),
+                    'vaccine_id' => $stock->vaccine->id
                 ));
             }
             echo '<h3 class="text-success">Added Successfull</h3>';
@@ -216,7 +217,7 @@ class PackageController extends \BaseController {
 
             foreach($package->packages as $pack){
                 //$doses = ($pack->manufacturer->vaccine->doses_per_vial / $pack->number_of_doses )*$pack->manufacturer->vaccine->vials_per_box;
-                $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
+                $doses = $pack->number_of_boxes * $pack->vaccine->vials_per_box * $pack->vaccine->doses_per_vial;
                 $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
                 $stock->number_of_doses = $stock->number_of_doses - $doses;
                 $stock->save();

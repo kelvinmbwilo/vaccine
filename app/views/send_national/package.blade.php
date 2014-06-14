@@ -3,9 +3,8 @@
   $boxes = ($package->number_of_doses / $package->vaccine->doses_per_vial  )/$package->vaccine->vials_per_box;
 
 ?>
-<hr>
 <div class="col-sm-12" id="add">
-    <div class="col-sm-2">
+    <div class="col-sm-1">
         Item<br>
         {{ $package->vaccine->name }}
     </div>
@@ -35,7 +34,7 @@
         </div>
     @endif
 
-    <div class="col-sm-1">
+    <div class="col-sm-2">
         Lot<br>
         {{ $package->lot_number }}
     </div>
@@ -60,10 +59,10 @@
 <script>
     $(document).ready(function(){
         if('<?php echo $idd ?>' == ''){
-            $("#FileUploader input[name=idd]").val($("#addsscc input[name=id]").val())
+            $("#FileUploader6 input[name=idd]").val($("#qrform input[name=id]").val())
         }else{
-            $("#addsscc input[name=id]").val(<?php echo $idd ?>)
-            $("#FileUploader input[name=idd]").val(<?php echo $idd ?>)
+            $("#qrform input[name=id]").val(<?php echo $idd ?>)
+            $("#FileUploader6 input[name=idd]").val(<?php echo $idd ?>)
         }
 
         //showing expired and near expired warings
@@ -107,7 +106,7 @@
         $("input[name=box]").focus();
     $('#FileUploader6').on('submit', function(e) {
         e.preventDefault();
-        $("#output3").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Making changes please wait...</span><h3>");
+        $("#output3").html("<h3><i class='fa fa-spin fa-spinner '></i><span>please wait...</span><h3>");
         $(this).ajaxSubmit({
             target: '#output3',
             success:  afterSuccess
@@ -116,9 +115,10 @@
     function afterSuccess(){
         $('#FileUploader').resetForm();
         setTimeout(function() {
+            $("#output3").html("");
             $("#itemarea").html("");
         }, 3000);
-        $("#listuser").load("<?php echo url("package/send/list") ?>/"+$("#addsscc input[name=id]").val())
+        $("#listuser").load("<?php echo url("package/send/list") ?>/"+$("#qrform input[name=id]").val())
     }
     });
 </script>

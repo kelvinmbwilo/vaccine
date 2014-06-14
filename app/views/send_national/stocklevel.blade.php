@@ -22,18 +22,14 @@
     <tr>
         <td>{{ $i++ }}</td>
         <td>{{ $us->lot_number }}</td>
-        <td>{{ $us->manufacturer->content }}</td>
+        <td>{{ $us->vaccine->manufacturer }}</td>
         <td>
-            @if($us->manufacturer->content == 'vaccine')
-            {{ $us->manufacturer->vaccine->vaccine_name }}
-            @else
-            {{ $us->manufacturer->diluent->diluent_name }}
-            @endif
+            {{ $us->vaccine->name }}
         </td>
         <td>{{ $us->number_of_doses }}</td>
-        <td>{{ $us->manufacturer->vaccine->doses_per_vial*$us->manufacturer->vaccine->vials_per_box; }}</td>
-        <td>{{ $us->number_of_doses/($us->manufacturer->vaccine->doses_per_vial*$us->manufacturer->vaccine->vials_per_box) }}</td>
-        <td>{{ date('j M Y',strtotime($us->manufacturer->expiry_date)) }}</td>
+        <td>{{ $us->vaccine->doses_per_vial*$us->vaccine->vials_per_box; }}</td>
+        <td>{{ $us->number_of_doses/($us->vaccine->doses_per_vial*$us->vaccine->vials_per_box) }}</td>
+        <td>{{ date('j M Y',strtotime($us->expiry_date)) }}</td>
     </tr>
     @endif
     @endforeach

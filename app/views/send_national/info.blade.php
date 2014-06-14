@@ -1,8 +1,5 @@
 <div class="col-sm-12">
     <div class="col-sm-2">
-        <b>Name</b><br>{{ $region->region }}
-    </div>
-    <div class="col-sm-2">
         <b>Target Population</b><br>
         {{ ($region->tagert_population == "")?'Not Filled':$region->tagert_population }}
     </div>
@@ -18,14 +15,14 @@
             {{ Form::open(array("url"=>url("package/prepare/{$region->id}"),"class"=>"form-horizontal","id"=>'qrform')) }}
             <div class="form-group" id="lotarea">
                     Scan QR Code<br>
-                    <input class="form-control" type="text" name="sscc" placeholder="Scan QR Code" required="required" style="height: 34px">
+                    <input style="color: #5bc0de" class="form-control" type="text" name="sscc" placeholder="Scan QR Code" required="required" style="height: 34px">
                     <input type="hidden" name="id" value="first" />
                 </div>
             {{ Form::close() }}
     </div>
 </div>
 
-<div id="itemarea"></div>
+
 
 <script>
     $(document).ready(function(){
@@ -40,9 +37,9 @@
     });
     function afterSuccess2(){
         $('#qrform').resetForm();
-        if(("#itemarea").find("h3").hasClass('text-danger')){
-            $("input[name=sscc]").focus();
-        }
-    }
+        //if(("#itemarea").find("h3").hasClass('text-danger')){
+        //    $("input[name=sscc]").focus();
+        //}
+       }
     });
 </script>

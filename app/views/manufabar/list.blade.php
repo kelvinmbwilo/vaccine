@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="bootstrap-admin-panel-content">
-   @if(ManufacturePackage::all()->count() == 0)
+   @if(ManufacturePackage::where('status','')->count() == 0)
     <h3>There are no Packages</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
@@ -25,7 +25,7 @@
         </thead>
         <tbody>
         <?php $i=1; ?>
-        @foreach(ManufacturePackage::all() as $pack)
+        @foreach(ManufacturePackage::where('status','')->get() as $pack)
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{ $pack->sscc }}</td>
