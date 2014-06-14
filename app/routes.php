@@ -268,10 +268,15 @@ Route::post('package/national/confirmsend/{id}',array('uses'=>'PackageController
 Route::post('package/national/prepared/delete/{id}',array('uses'=>'PackageController@deletprepared'));
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-///////////Managing region stock
-///////////Using RegionPackageController
-////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+////// Routes for Regional package management
+/////  Using RegionPackageController
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new role
+//Route::get('package/index',array('uses'=>'PackageController@index'));
+
 //display a list of vaccines
 Route::get('region_package/receive/national',array('uses'=>'RegionPackageController@index'));
 
@@ -283,6 +288,12 @@ Route::get('region_package/national/sent',array('uses'=>'RegionPackageController
 
 //display a list of vaccines
 Route::post('region_package/receive/sscc/{id}',array('uses'=>'RegionPackageController@checksscc'));
+
+//display a list of vaccines
+Route::post('region_package/receive/qrcode/{id}',array('uses'=>'RegionPackageController@checkqr'));
+
+//display a list of vaccines
+Route::post('region_package/receive/confirmqr/{id}',array('uses'=>'RegionPackageController@additemtostock'));
 
 //display a list of vaccines
 Route::post('region_package/receive/confirm/{id}',array('uses'=>'RegionPackageController@confirmpackage'));
@@ -299,18 +310,20 @@ Route::get('region_package/send/national',array('uses'=>'RegionPackageController
 //viewing index page
 Route::get('region_package/send/list/{id}',array('uses'=>'RegionPackageController@sendPackageList'));
 
-//viewing index page
-Route::get('region_package/national/received',array('uses'=>'RegionPackageController@receivedPackageList'));
-
-
 //display a list of vaccines
 Route::post('region_package/prepare/{id}',array('uses'=>'RegionPackageController@prepareform'));
+
+//display a list of vaccines
+Route::get('region_package/prepare/areainfo/{id}',array('uses'=>'RegionPackageController@areainfo'));
 
 //display a list of vaccines
 Route::post('region_package/prepare/add',array('uses'=>'RegionPackageController@addpackage'));
 
 //display a list of vaccines
 Route::post('region_package/addpack',array('uses'=>'RegionPackageController@processaddpackage'));
+
+//display a form to edit vaccine information
+Route::post('region_package/send',array('uses'=>'RegionPackageController@edit'));
 
 //display a form to edit vaccine information
 Route::post('region_package/national/listed/delete/{id}',array('uses'=>'RegionPackageController@deleteinlist'));
@@ -322,10 +335,15 @@ Route::post('region_package/national/confirmsend/{id}',array('uses'=>'RegionPack
 Route::post('region_package/national/prepared/delete/{id}',array('uses'=>'RegionPackageController@deletprepared'));
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-///////////Managing region stock
-///////////Using RegionPackageController
-////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+////// Routes for District package management
+/////  Using DistrictPackageController
+///////////////////////////////////////////////////////////////////////////////////
+
+
+//display a form to add new role
+//Route::get('package/index',array('uses'=>'PackageController@index'));
+
 //display a list of vaccines
 Route::get('district_package/receive/national',array('uses'=>'DistrictPackageController@index'));
 
@@ -339,10 +357,16 @@ Route::get('district_package/national/sent',array('uses'=>'DistrictPackageContro
 Route::post('district_package/receive/sscc/{id}',array('uses'=>'DistrictPackageController@checksscc'));
 
 //display a list of vaccines
+Route::post('district_package/receive/qrcode/{id}',array('uses'=>'DistrictPackageController@checkqr'));
+
+//display a list of vaccines
+Route::post('district_package/receive/confirmqr/{id}',array('uses'=>'DistrictPackageController@additemtostock'));
+
+//display a list of vaccines
 Route::post('district_package/receive/confirm/{id}',array('uses'=>'DistrictPackageController@confirmpackage'));
 
 //display a list of vaccines
-Route::get('district_package/receive/list',array('uses'=>'PackageController@listrecieved'));
+Route::get('district_package/receive/list',array('uses'=>'DistrictPackageController@listrecieved'));
 
 //display a list of vaccines
 Route::get('district_package/receive/form',array('uses'=>'DistrictPackageController@fillform'));
@@ -353,15 +377,20 @@ Route::get('district_package/send/national',array('uses'=>'DistrictPackageContro
 //viewing index page
 Route::get('district_package/send/list/{id}',array('uses'=>'DistrictPackageController@sendPackageList'));
 
-
 //display a list of vaccines
 Route::post('district_package/prepare/{id}',array('uses'=>'DistrictPackageController@prepareform'));
+
+//display a list of vaccines
+Route::get('district_package/prepare/areainfo/{id}',array('uses'=>'DistrictPackageController@areainfo'));
 
 //display a list of vaccines
 Route::post('district_package/prepare/add',array('uses'=>'DistrictPackageController@addpackage'));
 
 //display a list of vaccines
 Route::post('district_package/addpack',array('uses'=>'DistrictPackageController@processaddpackage'));
+
+//display a form to edit vaccine information
+Route::post('district_package/send',array('uses'=>'DistrictPackageController@edit'));
 
 //display a form to edit vaccine information
 Route::post('district_package/national/listed/delete/{id}',array('uses'=>'DistrictPackageController@deleteinlist'));
@@ -371,6 +400,7 @@ Route::post('district_package/national/confirmsend/{id}',array('uses'=>'District
 
 //display a form to edit vaccine information
 Route::post('district_package/national/prepared/delete/{id}',array('uses'=>'DistrictPackageController@deletprepared'));
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**

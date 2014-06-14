@@ -18,6 +18,7 @@ class CreateRegionStockTable extends Migration {
             $table->integer("region_id");
             $table->string("number_of_doses");
             $table->string("lot_number");
+            $table->string("expiry_date");
             $table->string("vaccine_id");
             $table->timestamps();
 		});

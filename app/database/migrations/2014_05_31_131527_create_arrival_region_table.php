@@ -16,14 +16,12 @@ class CreateArrivalRegionTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('national_package');
-            $table->integer('number_of_packages');
+            $table->integer('package_number');
             $table->integer('regional_id');
             $table->string("lot_number");
+            $table->string("physcal_damege");
+            $table->string("vvm_status");
             $table->string("number_as_expected");
-            $table->string("coolant_type");
-            $table->string("temperature_monitor");
-            $table->string("labels_available");
-            $table->string("condition");
             $table->string("problem");
             $table->integer('receiver');
 			$table->timestamps();

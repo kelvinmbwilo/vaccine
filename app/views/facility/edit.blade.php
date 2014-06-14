@@ -7,7 +7,7 @@
                 Region<br>{{ Form::select('region',Region::all()->lists('region','id'),$facility->district->region_id,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6' id="disarea">
-                District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::lists('district','id'),$facility->district_id,array('class'=>'form-control','required'=>'requiered')) }}</span>
+                District<br><span id="district-area">{{ Form::select('district',$facility->district->region->district->lists('district','id'),$facility->district_id,array('class'=>'form-control','required'=>'requiered')) }}</span>
             </div>
         </div>
         <div class='form-group'>
@@ -52,6 +52,12 @@
 
         });
 
+        $("select[name=region]").change(function(){
+            $("#district-area").html("<i class='fa fa-spinner fa-spin'></i> Wait... ")
+            $.post("<?php echo url('user/region_check1') ?>/"+$(this).val(),function(dat){
+                $("#district-area").html(dat);
+            })
+        })
         function afterSuccess(){
             setTimeout(function() {
                 $("#myModal").modal("hide");

@@ -3,7 +3,7 @@
   $boxes = ($package->number_of_doses / $package->vaccine->doses_per_vial  )/$package->vaccine->vials_per_box;
 
 ?>
-<div class="col-sm-12" id="add">
+<div class="col-sm-12" id="add" style="margin-top: 20px">
     <div class="col-sm-1">
         Item<br>
         {{ $package->vaccine->name }}

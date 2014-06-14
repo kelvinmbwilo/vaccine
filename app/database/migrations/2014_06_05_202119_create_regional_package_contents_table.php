@@ -17,8 +17,9 @@ class CreateRegionalPackageContentsTable extends Migration {
 			$table->increments('id');
             $table->integer('package_id');
             $table->integer('number_of_boxes');
-            $table->integer('lot_number');
-            $table->integer('vaccine_id');
+            $table->string('lot_number');
+            $table->string('vaccine_id');
+            $table->string('status');
 			$table->timestamps();
 		});
 	}

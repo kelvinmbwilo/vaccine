@@ -7,7 +7,7 @@
         <th> # </th>
         <th>Lot Number</th>
         <!--        <th>Number Of Packages</th>-->
-        <th>Type</th>
+        <th>Manufacturer</th>
         <th>Name</th>
         <th>Number Of Doses</th>
         <th>Doses Per Box</th>

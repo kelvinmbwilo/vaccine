@@ -1,3 +1,4 @@
+@if($natpack)
 <div class="col-sm-12">
     <div class="col-sm-4">
         <b>Voucher Number</b><br>
@@ -93,3 +94,4 @@
         });//endof deleting category
     })
 </script>
+@endif

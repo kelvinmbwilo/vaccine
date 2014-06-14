@@ -28,11 +28,15 @@ class DistrictPackage extends Eloquent {
         return $this->hasMany('User', 'receiver', 'id');
     }
 
-    public function facility(){
+    public function getfacility(){
         return $this->belongsTo('Facility', 'facility', 'id');
     }
 
     public function content(){
         return $this->belongsTo('DistrictPackageContents', 'package_id', 'id');
+    }
+
+    public function packages(){
+        return $this->hasMany('DistrictPackageContents', 'package_id', 'id');
     }
 }

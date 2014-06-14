@@ -8,7 +8,7 @@
                   Region<br>{{ Form::select('region',Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
               </div>
               <div class='col-sm-6' id="disarea">
-                  District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
+                  District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::orderBy('district','ASC')->get()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
               </div>
             </div>
             <div class='form-group'>

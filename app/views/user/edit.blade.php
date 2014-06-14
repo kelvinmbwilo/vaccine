@@ -8,14 +8,15 @@
                 First Name <br>  {{ Form::text('firstname',$user->firstname,array('class'=>'form-control','placeholder'=>'First Name','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Middle Name<br> {{ Form::text('middlename',$user->middlename,array('class'=>'form-control','placeholder'=>'Middle Name')) }}
-            </div>
-        </div>
-
-        <div class='form-group'>
-            <div class='col-sm-6'>
                 Last Name <br> {{ Form::text('lastname',$user->lastname,array('class'=>'form-control','placeholder'=>'Last Name','required'=>'required')) }}
             </div>
+
+        </div>
+        <div class='col-sm-6'>
+            User Name<br> {{ Form::text('username',$user->username,array('class'=>'form-control','placeholder'=>'Middle Name')) }}
+        </div>
+        <div class='form-group'>
+
             <div class='col-sm-6'>
                 Email <br> {{ Form::email('email',$user->email,array('class'=>'form-control','placeholder'=>'Email','required'=>'required')) }}
             </div>
@@ -37,7 +38,7 @@
                 Region<br>{{ Form::select('region',Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6' id="disarea">
-                District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
+                District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::orderBy('district','ASC')->get()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
             </div>
 
         </div>

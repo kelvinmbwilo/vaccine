@@ -25,50 +25,73 @@ class DistrictPackageController extends \BaseController {
      * @return Response
      */
     public function checksscc($id){
-        $district =  Auth::user()->district_id;
-        $package = RegionalPackage::where('received_status','')->where('district_id',$district)->where('id',$id)->first();
+        $package = RegionalPackage::where('package_number',$id)->where('received_status',"")->first();
         if($package){
-            return View::make("recieve_district.package",compact('package'));
+            if(ArrivalDistrict::where('package_number',$id)->count() == RegionalPackage::where('package_number',$id)->first()->packages()->count() ){
+                echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
+            }else{
+                return View::make("recieve_district.package",compact('package'));
+            }
         }else{
             echo "<h3 class='text-danger'>There are no information about this package</h3>";
         }
 
     }
 
-    public function confirmpackage($id){
-        $package = RegionalPackage::find($id);
-        $arr = Arrivaldistrict::where('lot_number',$package->ssc)->where('district_id',Auth::user()->district_id)->count();
-        $arrival = Arrivaldistrict::create(array(
-            'regional_package'=>$package->id,
-            'district_id'=>Auth::user()->district_id,
-            'number_as_expected'=>Input::get('quantity'),
-            'coolant_type'=>Input::get('coolant'),
-            'temperature_monitor'=>Input::get('temp'),
-            'labels_available'=>Input::get('labels'),
-            'condition'=>Input::get('condition'),
-            'receiver'=>Auth::user()->id,
+    public function checkqr($id){
+        if (strpos($id,')') !== false) {
+            $arr = $this->breakqr($id);
+            $pack = RegionalPackage::where('package_number',$_POST['pack'])->where('received_status',"")->first();
+            $arrival = $pack->packages()->where('lot_number',$arr['lot_number'])->first();
+            if($arrival){
+                return View::make("recieve_district.confirm",compact('arrival'));            }
+            else{
+                echo "<h3 class='text-danger'>There are no information about this package</h3>";
+            }
+
+        }else{
+            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
+        }
+
+
+
+    }
+
+    public function additemtostock($id){
+        $package = RegionalPackageContent::find($id);
+        $arrival = ArrivalDistrict::create(array(
+            'regional_package'      =>$package->package->id,
+            'package_number'        =>$package->package->package_number,
+            'district_id'           =>$package->package->district_id,
+            'lot_number'            =>$package->lot_number,
+            'number_as_expected'    =>Input::get('quantity'),
+            'physcal_damege'        =>Input::get('damage'),
+            'vvm_status'            =>Input::get('vvm'),
+            'receiver'              =>Auth::user()->id,
         ));
 
-        foreach($package->packages as $pack){
-            $stock = DistrictStock::where('lot_number',$pack->lot_number)->first();
-            $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
-            if($stock){
-                $stock->number_of_doses = $stock->number_of_doses + $doses;
-                $stock->save();
-            }else{
-                DistrictStock::create(array(
-                    'number_of_doses'   => $doses,
-                    'lot_number'        => $pack->lot_number,
-                    'district_id'         => Auth::user()->district_id,
-                ));
-            }
+        $stock = DistrictStock::where('lot_number',$package->lot_number)->first();
+        $doses = $package->number_of_boxes * $package->vaccine->vials_per_box *$package->vaccine->doses_per_vial;
+        if($stock){
+            $stock->number_of_doses = $stock->number_of_doses + $doses;
+            $stock->save();
+        }else{
+            DistrictStock::create(array(
+                'district_id'       => $package->package->district_id,
+                'number_of_doses'   => $doses,
+                'lot_number'        => $package->lot_number,
+                'vaccine_id'        => $package->vaccine->GTIN,
+                'expiry_date'       => $package->manufacturer->expiry_date
+            ));
         }
-        $package->receiver = Auth::user()->id;
-        $package->received_status = 'received';
-        $package->date_received  =date('Y-m-d');
+        $package->status = "received";
         $package->save();
-        echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
-
+        $count = RegionalPackage::find($package->package->id)->packages()->where('status','received')->count();
+        $count1 = RegionalPackage::find($package->package->id)->packages()->count();
+        if($count == $count1){
+            $package->package->received_status = "received";
+            $package->package->save();
+        }
     }
 
     public function listrecieved(){
@@ -76,45 +99,71 @@ class DistrictPackageController extends \BaseController {
     }
 
     public function fillform(){
-        return View::make('recieve_regional.final_form');
+        return View::make('recieve_district.final_form');
+    }
+
+    public function areainfo($id){
+        $facility = Facility::find($id);
+        return View::make('send_district.info',compact('facility'));
     }
 
     public function prepareform($id){
-        $package = DistrictStock::where('lot_number',$id)->where('district_id',Auth::user()->district_id)->first();
-        $idd = "";
-        if($package){
-            if(Input::get('id') == "first"){
-                $createdid = DistrictPackage::create(array(
-                    'source_id' => Auth::user()->district_id,
-                    'district_id' => Input::get('district'),
-                ));
-                $idd = $createdid->id;
+        if (strpos(Input::get('sscc'),')') !== false) {
+            $arr = $this->breakqr(Input::get('sscc'));
+            $package = DistrictStock::where('lot_number',$arr['lot_number'])->where('number_of_doses','!=','0')->first();
+            $idd = "";
+            if($package){
+                if(Input::get('id') == "first"){
+                    $createdid = DistrictPackage::create(array(
+                        'facility' => $id,
+                        'source_id' => Facility::find($id)->district_id,
+                    ));
+                    $createdid->package_number = strtotime($createdid->created_at);
+                    $createdid->save();
+                    $idd = $createdid->id;
+                }
+                //ckecking expiry and diluent collarance
+                $expiry_status ="";
+                if(strtotime($package->expiry_date) < strtotime(date('Y-m-d')) ){
+                    $expiry_status = "expired";
+                }elseif((strtotime($package->expiry_date) - strtotime(date('Y-m-d')))/2592000 < $package->vaccine->warning_period){
+                    $expiry_status = "near expiry";
+                }
+
+                //checking the existance of same vaccine with close expiry date
+                $other_available="";
+                $other_vaccine = DistrictStock::where('vaccine_id',$arr['gtin'])->where('number_of_doses','!=','0')->get();
+                foreach($other_vaccine as $vaccine){
+                    if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
+                        $other_available = "available";
+                }
+                return View::make("send_district.package",compact('package','idd','expiry_status','other_available'));
             }else{
-
+                echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
             }
-
-            return View::make("send_district.package",compact('package','idd'));
         }else{
-            echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
+            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
         }
+
     }
 
     public function processaddpackage(){
-        $stock = DistrictStock::where('lot_number',Input::get('lot'))->where('district_id',Auth::user()->district_id)->first();
-        $doses = Input::get('box') * $stock->manufacturer->vaccine->vials_per_box * $stock->manufacturer->vaccine->doses_per_vial;
+        $stock = DistrictStock::where('lot_number',Input::get('lot'))->first();
+        $doses = Input::get('box') * $stock->vaccine->vials_per_box * $stock->vaccine->doses_per_vial;
         if($stock->number_of_doses > $doses){
-            $pack = DistrictPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
+            $pack = DistrictPackageContents::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
             if($pack){
                 $pack->number_of_boxes = $pack->number_of_boxes+Input::get('box');
                 $pack->save();
             }else{
-                DistrictPackageContent::create(array(
+                DistrictPackageContents::create(array(
                     'package_id' => Input::get('idd'),
                     'number_of_boxes' => Input::get('box'),
-                    'lot_number' => Input::get('lot')
+                    'lot_number' => Input::get('lot'),
+                    'vaccine_id' => $stock->vaccine->id
                 ));
             }
-            echo '<h3 class="text-success">Added Successfull</h3>';
+            echo '<h3 class="text-success">Added Successfull </h3>';
         }else{
             echo '<h3 class="text-danger"> This amount is not available on stock</h3>';
         }
@@ -126,7 +175,7 @@ class DistrictPackageController extends \BaseController {
     }
 
     public function deleteinlist($id){
-        $pack = DistrictPackageContent::find($id);
+        $pack = DistrictPackageContents::find($id);
         $pack->delete();
     }
 
@@ -138,8 +187,8 @@ class DistrictPackageController extends \BaseController {
 
             foreach($package->packages as $pack){
                 //$doses = ($pack->manufacturer->vaccine->doses_per_vial / $pack->number_of_doses )*$pack->manufacturer->vaccine->vials_per_box;
-                $doses = $pack->number_of_boxes * $pack->manufacturer->vaccine->vials_per_box * $pack->manufacturer->vaccine->doses_per_vial;
-                $stock = DistrictStock::where('lot_number',$pack->lot_number)->where('district_id',Auth::user()->district_id)->first();
+                $doses = $pack->number_of_boxes * $pack->vaccine->vials_per_box * $pack->vaccine->doses_per_vial;
+                $stock = DistrictStock::where('lot_number',$pack->lot_number)->first();
                 $stock->number_of_doses = $stock->number_of_doses - $doses;
                 $stock->save();
             }
@@ -164,5 +213,17 @@ class DistrictPackageController extends \BaseController {
 
     public function viewsent(){
         return View::make('send_district.List_sent');
+    }
+
+    public function breakqr($qr){
+
+        $arr = explode(")",$qr);
+        unset($arr[0]);
+        $gtnarr1 = explode("(",$arr[1]);
+        $exparr1 = explode("(",$arr[2]);
+        $gtin=$gtnarr1[0];
+        $lot_number=$arr[3];
+        $expiry_date=$exparr1[0];
+        return array("gtin"=>$gtin,"lot_number"=>$lot_number,"expiry_date"=>$expiry_date);
     }
 }

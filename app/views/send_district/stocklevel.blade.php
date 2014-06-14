@@ -1,4 +1,4 @@
-@if(RegionStock::all()->count() == 0)
+@if(DistrictStock::all()->count() == 0)
 <h3>There are no vaccines or diluent in the stock</h3>
 @else
 <table class="table table-striped table-bordered example3" id="example2">
@@ -16,7 +16,7 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(RegionStock::all() as $us)
+    @foreach(DistrictStock::all() as $us)
     @if($us)
     <tr>
         <td>{{ $i++ }}</td>

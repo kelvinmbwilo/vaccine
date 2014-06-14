@@ -20,7 +20,7 @@ class RegionStock extends Eloquent  {
     }
 
     public function vaccine(){
-        return $this->belongsTo("Vaccine","vaccine_id",'id');
+        return $this->belongsTo("Vaccine","vaccine_id",'GTIN');
     }
 
 

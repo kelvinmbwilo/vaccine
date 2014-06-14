@@ -1,31 +1,46 @@
-<h4 class="text-center">Scanned Packages Ready to Send to {{ $natpack->district->district }} </h4>
-<table class="table table-hover table-responsive">
+@if($natpack)
+<div class="col-sm-12">
+    <div class="col-sm-4">
+        <b>Voucher Number</b><br>
+        {{ $natpack->package_number }}
+    </div>
+    <div class="col-sm-4">
+        <b>Name of store</b><br>
+        {{ $natpack->district->district }}
+    </div>
+    <div class="col-sm-4">
+        <b>Date</b><br>
+        {{ date('j M Y',strtotime($natpack->created_at)) }}
+    </div>
+</div>
+<table class="table table-responsive table-bordered" id="alllist">
     <tr>
-        <th>#</th>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Expiry Date</th>
-        <th>Number Of Boxes</th>
+        <th>GTIN</th>
+        <th>Description</th>
+        <th>Manufacture</th>
+        <th>Lot</th>
+        <th>Expiry</th>
+        <th>Vials</th>
+        <th>Boxes</th>
+        <th>Doses</th>
+        <th></th>
     </tr>
-    <?php $i = 1 ?>
     @foreach($natpack->packages as $pack)
     <tr>
-        <td>{{ $i++ }}</td>
-        <td>{{ $pack->manufacturer->content }}</td>
+        <td>{{ $pack->vaccine->GTIN }}</td>
+        <td>{{ $pack->vaccine->name }}</td>
         <td>
-            @if($pack->manufacturer->content == 'vaccine')
-                {{ $pack->manufacturer->vaccine->vaccine_name }}
-            @else
-                {{ $pack->manufacturer->diluent->diluent_name }}
-            @endif
+            {{ $pack->vaccine->manufacturer }}
         </td>
-        <td>{{ date("d M Y", strtotime($pack->manufacturer->expiry_date)) }}</td>
-        <td>{{ $pack->number_of_boxes }}</td>
-        <td><a href="#d" class="removepack" id="{{ $pack->id }}"><i class="fa fa-trash-o text-danger"></i> remove</a></td>
+        <td>{{ $pack->lot_number }}</td>
+        <td>{{ $pack->manufacturer->expiry_date }}</td>
+        <td>{{ $pack->number_of_boxes * $pack->vaccine->vials_per_box }}</td>
+        <td>{{ $pack->number_of_boxes}}</td>
+        <td>{{ ($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->vials_per_box }}</td>
+        <td ><a href="#k" id="{{ $pack->id }}" class="removepack"><i class="fa fa-trash-o text-danger"></i> </a> </td>
     </tr>
     @endforeach
 </table>
-
 <p><button type="button" class="btn btn-danger delpack" style="margin-top: 10px" id="{{ $natpack->id }}">Cancel</button>
 <button type="button" class="btn btn-primary sendpack" style="margin-top: 10px" id="{{ $natpack->id }}">Confirm and Send</button></p>
 <script>
@@ -79,3 +94,4 @@
         });//endof deleting category
     })
 </script>
+@endif

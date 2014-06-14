@@ -3,7 +3,7 @@
 @section('title')
 <h1>
     Send Package
-    <small>Prepare and send package to district in {{ Auth::user()->region->region }} </small>
+    <small>Prepare and send package to facilities </small>
 </h1>
 @stop
 @section('breadcumb')
@@ -16,49 +16,27 @@
 @stop
 
 @section('contents')
-<form method="post" action="{{ url('') }}" id="addsscc">
-    <div class="form-group col-sm-4">
-        <span class="help-block">District of Destination</span>
-        {{ Form::select('district',array(""=>"Select District")+Auth::user()->region->district->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
+    <div class="form-group col-sm-3">
+        <span class="help-block">District</span>
+        {{ Form::select('region',Auth::user()->district->facility->lists('name','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
     </div>
-    <div class="form-group  col-sm-8" id="lotarea">
-        <span class="help-block">Scan/Write the Lot Number Of Package</span>
-        <input type="text" name="sscc" placeholder="Lot Number" required="required" style="height: 34px">
-        <input type="hidden" name="id" value="first" />
-        <button type="submit" class="btn btn-primary">Scan</button>
-        <a href="{{ url('region_package/receive/list') }}" class="pull-right btn btn-primary">
-<!--            <i class="fa fa-list-ul"></i> List Sent Packages-->
-        </a>
-    </div>
-</form>
-
-    <div id="output">
+    <div id="output"class="col-sm-9">
 
     </div>
-
-<div id="listuser"></div>
+<div id="itemarea" class="col-sm-12" ></div>
+<div id="listuser" class="col-sm-12" style="margin-top: 20"></div>
 
 <script>
     $(document).ready(function (){
 
-        $('#addsscc').on('submit', function(e) {
-            e.preventDefault();
-            $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Retriving stock information please wait...</span><h4>");
-            $(this).ajaxSubmit({
-                url : '<?php echo url('region_package/prepare/') ?>/'+$('input[name=sscc]').val(),
-                target: '#output',
-                success:  afterSuccess
+        $("select[name=region]").click(function(){
+            $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Getting area information please wait...</span><h4>");
+            $("#output").load('<?php echo url('district_package/prepare/areainfo') ?>/'+$(this).val(),function(){
+                $("#itemarea").html("");
+                $("#listuser").html("")
             });
+        })
 
-        });
-
-        function afterSuccess(){
-            $('#addsscc input[name=sscc]').val("");
-<!--            setTimeout(function() {-->
-<!--                $("#output").html("");-->
-<!--            }, 3000);-->
-<!--            $("#listuser").load("--><?php //echo url("manubarcode/list") ?><!--")-->
-        }
     });
 </script>
 

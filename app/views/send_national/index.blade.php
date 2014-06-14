@@ -17,7 +17,7 @@
 
 @section('contents')
     <div class="form-group col-sm-3">
-        <span class="help-block">Region of Destination</span>
+        <span class="help-block">Region</span>
         {{ Form::select('region',array(""=>"Select Region")+Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
     </div>
     <div id="output"class="col-sm-9">
