@@ -17,7 +17,8 @@ class CreateNationalStockTable extends Migration {
 			$table->increments('id');
             $table->string("number_of_doses");
             $table->string("lot_number");
-            $table->string("vaccine_id");
+            $table->string("expiry_date");
+            $table->string("GTIN");
             $table->timestamps();
 		});
 	}

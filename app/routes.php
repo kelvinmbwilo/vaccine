@@ -222,6 +222,12 @@ Route::get('package/national/sent',array('uses'=>'PackageController@viewsent'));
 Route::post('package/receive/sscc/{id}',array('uses'=>'PackageController@checksscc'));
 
 //display a list of vaccines
+Route::post('package/receive/qrcode/{id}',array('uses'=>'PackageController@checkqr'));
+
+//display a list of vaccines
+Route::post('package/receive/confirmqr/{id}',array('uses'=>'PackageController@additemtostock'));
+
+//display a list of vaccines
 Route::post('package/receive/confirm/{id}',array('uses'=>'PackageController@confirmpackage'));
 
 //display a list of vaccines

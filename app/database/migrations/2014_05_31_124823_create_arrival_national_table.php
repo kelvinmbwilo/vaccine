@@ -16,14 +16,12 @@ class CreateArrivalNationalTable extends Migration {
 		{
 			$table->increments('id');
             $table->string("ssc");
-            $table->string("number_of_packages");
+            $table->string("lot_number");
             $table->string("number_as_expected");
             $table->string("problem");
-            $table->string("coolant_type");
             $table->string("temperature_monitor");
-            $table->string("docs_available");
-            $table->string("labels_available");
-            $table->dateTime("condition");
+            $table->string("physcal_damege");
+            $table->string("vvm_status");
             $table->integer('receiver');
 			$table->timestamps();
 		});

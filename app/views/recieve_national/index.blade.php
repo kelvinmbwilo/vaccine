@@ -16,18 +16,20 @@
 @stop
 
 @section('contents')
+<div class="col-sm-12" style="margin-bottom: 20px">
 <form method="post" action="{{ url('') }}" id="addsscc">
-    <div class="form-group">
-        <span class="help-block">Scan/Write the SSCC Number From Received Packages</span>
-        <input type="text" name="sscc" placeholder="SSCC Number" required="">
-        <button type="submit">Add</button>
-        <a href="{{ url('package/receive/list') }}" class="pull-right btn btn-primary">
-            <i class="fa fa-list-ul"></i> List
-        </a>
+    <div class="form-group" >
+        <div class="col-sm-6">
+           Scan the SSCC <br>
+            <input type="text" name="sscc" placeholder="Scan Package SSCC Number" required class="form-control">
+        </div>
+        <div class="col-sm-6">
+            <br><button type="submit" class="btn btn-info btn-min">Add</button>
+        </div>
     </div>
 </form>
-
-    <div id="output">
+</div>
+    <div id="output" style="margin-top: 20px">
 
     </div>
 
@@ -40,6 +42,7 @@
             dateFormat:"yy-mm-dd"
         });
 
+        $("input[name=sscc]").focus();
         $('#addsscc').on('submit', function(e) {
             e.preventDefault();
             $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Retriving package information please wait...</span><h4>");
@@ -53,12 +56,7 @@
 
         function afterSuccess(){
             $('#addsscc').resetForm();
-<!--            setTimeout(function() {-->
-<!--                $("#output").html("");-->
-<!--            }, 3000);-->
-<!--            $("#listuser").load("--><?php //echo url("manubarcode/list") ?><!--")-->
         }
     });
 </script>
-
 @stop

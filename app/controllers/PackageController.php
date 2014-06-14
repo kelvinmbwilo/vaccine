@@ -30,18 +30,65 @@ class PackageController extends \BaseController {
      * @return Response
      */
     public function checksscc($id){
-        $package = ManufacturerBarcode::where('ssc',$id)->first();
+        $package = ManufacturePackage::where('sscc',$id)->where('status',"")->get();
         if($package){
-        if(ArrivalNational::where('ssc',$package->ssc)->count() == $package->number_of_packages ){
-            echo "<h3 class='text-danger'>All packages from this shipping information has been scanned</h3>";
+        if(ArrivalNational::where('ssc',$id)->count() == ManufacturePackage::where('sscc',$id)->count() ){
+            echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
         }else{
-
                 return View::make("recieve_national.package",compact('package'));
             }
         }else{
             echo "<h3 class='text-danger'>There are no information about this package</h3>";
         }
 
+    }
+
+    public function checkqr($id){
+        if (strpos($id,')') !== false) {
+        $arr = $this->breakqr($id);
+        $arrival = ManufacturePackage::where('lot_number',$arr['lot_number'])->where('status',"")->first();
+        if($arrival){
+                return View::make("recieve_national.confirm",compact('arrival'));            }
+        else{
+            echo "<h3 class='text-danger'>There are no information about this package</h3>";
+        }
+
+        }else{
+            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
+        }
+
+
+
+    }
+
+    public function additemtostock($id){
+        $package = ManufacturePackage::find($id);
+        $arr = ArrivalNational::where('ssc',$package->ssc)->count();
+        $arr1 = ManufacturePackage::where('sscc',$package->sscc);
+        $arrival = ArrivalNational::create(array(
+            'ssc'=>$package->sscc,
+            'lot_number'=>$package->lot_number,
+            'number_as_expected'=>Input::get('quantity'),
+            'temperature_monitor'=>Input::get('temp'),
+            'physcal_damege'=>Input::get('damage'),
+            'vvm_status'=>Input::get('vvm'),
+            'receiver'=>Auth::user()->id,
+        ));
+
+        $stock = NationalStock::where('lot_number',$package->lot_number)->first();
+        if($stock){
+            $stock->number_of_doses = $stock->number_of_doses + $package->number_of_doses;
+            $stock->save();
+        }else{
+            NationalStock::create(array(
+                'number_of_doses'   => $package->number_of_doses,
+                'lot_number'        => $package->lot_number,
+                'GTIN'              => $package->vaccine->GTIN,
+                'expiry_date'       => $package->expiry_date
+            ));
+        }
+        $package->status = "received";
+        $package->save();
     }
 
     public function confirmpackage($id){
@@ -57,6 +104,8 @@ class PackageController extends \BaseController {
             'condition'=>Input::get('condition'),
             'receiver'=>Auth::user()->id,
         ));
+
+
         if($arr+1 != $package->number_of_packages)
             echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> The package is confirmed</h3>";
         if($arr+1 == $package->number_of_packages){
@@ -171,5 +220,17 @@ class PackageController extends \BaseController {
 
     public function viewsent(){
         return View::make('send_national.List_sent');
+    }
+
+    public function breakqr($qr){
+
+        $arr = explode(")",$qr);
+        unset($arr[0]);
+        $gtnarr1 = explode("(",$arr[1]);
+        $exparr1 = explode("(",$arr[2]);
+        $gtin=$gtnarr1[0];
+        $lot_number=$arr[3];
+        $expiry_date=$exparr1[0];
+        return array("gtin"=>$gtin,"lot_number"=>$lot_number,"expiry_date"=>$expiry_date);
     }
 }
