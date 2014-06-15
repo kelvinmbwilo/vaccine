@@ -1,25 +1,38 @@
 <?php
+    $boxes = ($package->number_of_doses / $package->vaccine->doses_per_vial  )/$package->vaccine->vials_per_box;
 
-  $boxes = ($package->number_of_doses / $package->vaccine->doses_per_vial  )/$package->vaccine->vials_per_box;
-
+    $stock = $region->stock()->where('vaccine_id',$package->GTIN)->get();
+    $level=0;
+    if($stock){
+        foreach($stock as $stoc){
+            $level += $stoc->number_of_doses;
+        }
+    }
+$min = round(((($region->surviving_infants *$package->vaccine->wastage *$package->vaccine->schedule*0.5)/12)/$package->vaccine->vials_per_box)/$package->vaccine->doses_per_vial);
+$max = round(((($region->surviving_infants *$package->vaccine->wastage *$package->vaccine->schedule*1.5)/12)/$package->vaccine->vials_per_box)/$package->vaccine->doses_per_vial);
+$level = $level /($package->vaccine->vials_per_box*$package->vaccine->doses_per_vial)
 ?>
 <div class="col-sm-12" id="add" style="margin-top: 20px">
 
     <div class="col-sm-2">
-        GTIN<br>
+        <b>GTIN</b><br>
         {{ $package->GTIN }}
     </div>
-    <div class="col-sm-2">
-        Manufacture<br>
-        {{ $package->vaccine->manufacturer }}
-    </div>
     <div class="col-sm-1">
-        Item<br>
+        <b>Item</b><br>
         {{ $package->vaccine->name }}
     </div>
-    <div class="col-sm-2">
-        Lot<br>
+    <div class="col-sm-1">
+        <b>Lot</b><br>
         {{ $package->lot_number }}
+    </div>
+    <div class="col-sm-2">
+        <b>Max :</b>{{ $max }} boxes<br>
+        <b>Min :</b>{{ $min }} boxes<br>
+    </div>
+    <div class="col-sm-2">
+        <b>Current Stock</b><br>
+        {{ $level }}
     </div>
 <!--    displaying warning for products near expiry-->
     @if($expiry_status == "expired")
@@ -41,11 +54,11 @@
 
 
     {{ Form::open(array("url"=>url("package/addpack"),"class"=>"form-horizontal","id"=>'FileUploader6')) }}
-    <div class="col-sm-2">
+    <div class="col-sm-1">
         <input type="hidden" name="lot" value="{{ $package->lot_number }}" />
         <input type="hidden" name="idd" value="" />
         Boxes:
-        <br><input title="Number of boxes up to {{ $boxes }} boxes" required="" name="box" pattern="\d*" type="text" class="form-control input-sm" placeholder="Max of {{ $boxes }} boxes">
+        <input title="Number of boxes up to {{ $boxes }} boxes" required="" name="box" pattern="\d*" type="text" class="form-control input-sm" placeholder="Max of {{ $boxes }} boxes">
     </div>
     <div class="col-sm-1">
         <br>
@@ -54,7 +67,7 @@
         @endif
     </div>
     {{ Form::close() }}
-
+</div>
 <div id="output3"></div>
 
 <script>
@@ -116,9 +129,13 @@
     function afterSuccess(){
         $('#FileUploader').resetForm();
         setTimeout(function() {
-            $("#output3").html("");
-            $("#itemarea").html("");
-        }, 3000);
+            $("#itemarea").fadeOut( "slow", function() {
+                $("#itemarea").html("").fadeIn();
+            });
+            $("#output3").fadeOut( "slow", function() {
+                $("#itemarea").html("").fadeIn();
+            });
+        }, 500);
         $("#listuser").load("<?php echo url("package/send/list") ?>/"+$("#qrform input[name=id]").val())
     }
     });

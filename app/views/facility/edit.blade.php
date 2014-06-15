@@ -27,10 +27,10 @@
             </div>
         </div>
         <div class='form-group'>
-            <div class='col-sm-2'>
+            <div class='col-sm-6'>
                 Pregnancy<br>{{ Form::text('preg',$facility->pregnancy,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
             </div>
-            <div class='col-sm-12'>
+            <div class='col-sm-6'>
                 Contacts <br> {{ Form::text('contact',$facility->contact,array('class'=>'form-control','placeholder'=>'Contacts')) }}
             </div>
         </div>

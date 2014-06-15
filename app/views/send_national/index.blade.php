@@ -33,11 +33,17 @@
             if($(this).val() != ''){
             $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Getting area information please wait...</span><h4>");
             $("#output").load('<?php echo url('package/prepare/areainfo') ?>/'+$(this).val(),function(){
-                $("#itemarea").html("");
-                $("#listuser").html("")
+                $("#itemarea").fadeOut( "slow", function() {
+                    $("#itemarea").html("").fadeIn();
+                });
+                $("#listuser").fadeOut( "slow", function() {
+                    $("#listuser").html("").fadeIn();
+                });
             });
             }else{
-                $("#output").html('');
+                $("#output").fadeOut( "slow", function() {
+                    $("#output").html("").fadeIn();
+                });
             }
 
         })

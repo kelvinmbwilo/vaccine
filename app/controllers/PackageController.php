@@ -97,46 +97,8 @@ class PackageController extends \BaseController {
         echo "<h3 class='text-success'>Received Successful.</h3>";
     }
 
-    public function confirmpackage($id){
-        $package = ManufacturerBarcode::find($id);
-        $arr = ArrivalNational::where('ssc',$package->ssc)->count();
-        $arrival = ArrivalNational::create(array(
-            'ssc'=>$package->ssc,
-            'number_of_packages'=>$arr+1,
-            'number_as_expected'=>Input::get('quantity'),
-            'coolant_type'=>Input::get('coolant'),
-            'temperature_monitor'=>Input::get('temp'),
-            'labels_available'=>Input::get('labels'),
-            'condition'=>Input::get('condition'),
-            'receiver'=>Auth::user()->id,
-        ));
-
-
-        if($arr+1 != $package->number_of_packages)
-            echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> The package is confirmed</h3>";
-        if($arr+1 == $package->number_of_packages){
-            foreach($package->packages as $pack){
-                $stock = NationalStock::where('lot_number',$pack->lot_number)->first();
-                if($stock){
-                    $stock->number_of_doses = $stock->number_of_doses + ($package->number_of_packages*$pack->number_of_doses);
-                    $stock->save();
-                }else{
-                    NationalStock::create(array(
-                        'number_of_doses'   => $package->number_of_packages*$pack->number_of_doses,
-                        'lot_number'        => $pack->lot_number
-                    ));
-                }
-            }
-            echo "<h3 class='text-success'><i class='fa fa-check fa-2x'></i> All packages Are confirmed</h3>";
-        }
-    }
-
     public function listrecieved(){
         return View::make('recieve_national.list');
-    }
-
-    public function fillform(){
-        return View::make('recieve_national.final_form');
     }
 
     public function areainfo($id){
@@ -173,7 +135,8 @@ class PackageController extends \BaseController {
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
                         $other_available = "available";
                 }
-                return View::make("send_national.package",compact('package','idd','expiry_status','other_available'));
+                $region = Region::find($id);
+                return View::make("send_national.package",compact('package','idd','expiry_status','other_available','region'));
             }else{
                 echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
             }
@@ -229,6 +192,10 @@ class PackageController extends \BaseController {
                 $stock->save();
             }
             $package->save();
+            Logs::create(array(
+                "user_id"=>  Auth::user()->id,
+                "action"  =>"Send a package to ".$package->region->region ." Region with Shipment number ". $package->package_number
+            ));
         }else{
             echo "not";
         }
@@ -241,6 +208,7 @@ class PackageController extends \BaseController {
             $pack->delete();
         }
         $package->delete();
+        echo "<h4 class='text-success'>Cancelled</h4>";
     }
 
     public function viewstock(){

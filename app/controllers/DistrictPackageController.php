@@ -143,7 +143,8 @@ class DistrictPackageController extends \BaseController {
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
                         $other_available = "available";
                 }
-                return View::make("send_district.package",compact('package','idd','expiry_status','other_available'));
+                $facility = Facility::find($id);
+                return View::make("send_district.package",compact('package','idd','expiry_status','other_available','facility'));
             }else{
                 echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
             }
@@ -199,6 +200,10 @@ class DistrictPackageController extends \BaseController {
                 $stock->save();
             }
             $package->save();
+            Logs::create(array(
+                "user_id"=>  Auth::user()->id,
+                "action"  =>"Send a package to ".$package->getfacility->name ." with Shipment number ". $package->package_number
+            ));
         }else{
             echo "not";
         }

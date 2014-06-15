@@ -1,12 +1,12 @@
 @if($natpack)
-<div class="col-sm-12">
+<div class="col-sm-12 lead">
     <div class="col-sm-4">
         <b>Voucher Number</b><br>
         {{ $natpack->package_number }}
     </div>
     <div class="col-sm-4">
         <b>Name of store</b><br>
-        {{ $natpack->district->district }}
+        {{ $natpack->district->district }} District
     </div>
     <div class="col-sm-4">
         <b>Date</b><br>
@@ -16,30 +16,51 @@
 <table class="table table-responsive table-bordered" id="alllist">
     <tr>
         <th>GTIN</th>
-        <th>Description</th>
         <th>Manufacture</th>
-        <th>Lot</th>
+        <th>Description</th>
+        <th>Lot Number</th>
         <th>Expiry</th>
-        <th>Vials</th>
-        <th>Boxes</th>
-        <th>Doses</th>
+        <th>Amount Issued (Doses)</th>
+        <th>Max need</th>
+        <th>Min need</th>
+        <th>Current Amount</th>
+        <th>Amount After</th>
         <th></th>
     </tr>
     @foreach($natpack->packages as $pack)
+    <?php
+    $stock = $natpack->district->stock()->where('vaccine_id',$pack->vaccine->GTIN)->get();
+    $level=0;
+    if($stock){
+        foreach($stock as $stoc){
+            $level += $stoc->number_of_doses;
+        }
+    }
+    $max = round(($natpack->district->surviving_infants *$pack->vaccine->wastage *$pack->vaccine->schedule*1.5 )/12 );
+    $min = round(($natpack->district->surviving_infants *$pack->vaccine->wastage *$pack->vaccine->schedule*0.5 )/12 );
+    $newlevel = $level+ (($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->doses_per_vial);
+    ?>
+    @if($max < $newlevel )
+    <tr class="danger" title="amaount exceed maximum amount needed">
+        @elseif($max > $newlevel )
+    <tr class="danger" title="amount is less than amount needed">
+        @else
     <tr>
+        @endif
         <td>{{ $pack->vaccine->GTIN }}</td>
+        <td>{{ $pack->vaccine->manufacturer }}</td>
         <td>{{ $pack->vaccine->name }}</td>
-        <td>
-            {{ $pack->vaccine->manufacturer }}
-        </td>
         <td>{{ $pack->lot_number }}</td>
         <td>{{ $pack->manufacturer->expiry_date }}</td>
-        <td>{{ $pack->number_of_boxes * $pack->vaccine->vials_per_box }}</td>
-        <td>{{ $pack->number_of_boxes}}</td>
-        <td>{{ ($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->vials_per_box }}</td>
+        <td>{{ ($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->doses_per_vial }}</td>
+        <td>{{ $max }}</td>
+        <td>{{ $min }}</td>
+        <td>{{ $level }}</td>
+        <td>{{ $newlevel }}</td>
         <td ><a href="#k" id="{{ $pack->id }}" class="removepack"><i class="fa fa-trash-o text-danger"></i> </a> </td>
     </tr>
     @endforeach
+
 </table>
 <p><button type="button" class="btn btn-danger delpack" style="margin-top: 10px" id="{{ $natpack->id }}">Cancel</button>
 <button type="button" class="btn btn-primary sendpack" style="margin-top: 10px" id="{{ $natpack->id }}">Confirm and Send</button></p>
@@ -51,10 +72,30 @@
             $.post("<?php echo url('region_package/national/confirmsend') ?>/"+id1,function(data){
                 if(data == "not"){
                     alert("nothing to add");
-                    $('.sendpack').html("Confirm and Send");
-                    location.reload();
+                    setTimeout(function() {
+                        $("#itemarea").fadeOut( "slow", function() {
+                            $("#itemarea").html("").fadeIn();
+                        });
+                        $("#listuser").fadeOut( "slow", function() {
+                            $("#listuser").html("").fadeIn();
+                        });
+                        $("#output").fadeOut( "slow", function() {
+                            $("#output").html("").fadeIn();
+                        });
+                    }, 1500);
                 }else{
-                    location.reload();
+                    $("#listuser").html("<h3 class='text-success'>Package sent successful</h3>");
+                    setTimeout(function() {
+                        $("#itemarea").fadeOut( "slow", function() {
+                            $("#itemarea").html("").fadeIn();
+                        });
+                        $("#listuser").fadeOut( "slow", function() {
+                            $("#listuser").html("").fadeIn();
+                        });
+                        $("#output").fadeOut( "slow", function() {
+                            $("#output").html("").fadeIn();
+                        });
+                    }, 1500);
                 }
             });
         })
@@ -86,9 +127,21 @@
                 $(this).parent().parent().find("span.del").remove();
             });
             $("#yes").click(function(){
+                var area = $(this).parent();
                 $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>Canceling...");
                 $.post("<?php echo url('region_package/national/prepared/delete') ?>/"+id1,function(data){
-                    location.reload();
+                    area.html(data);
+                    setTimeout(function() {
+                        $("#itemarea").fadeOut( "slow", function() {
+                            $("#itemarea").html("").fadeIn();
+                        });
+                        $("#listuser").fadeOut( "slow", function() {
+                            $("#listuser").html("").fadeIn();
+                        });
+                        $("#output").fadeOut( "slow", function() {
+                            $("#output").html("").fadeIn();
+                        });
+                    },500);
                 });
             });
         });//endof deleting category

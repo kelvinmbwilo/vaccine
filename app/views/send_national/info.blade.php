@@ -23,15 +23,14 @@
         {{ $region->annual_birth }}
     </div>
     <div class="col-sm-2">
-        {{ $region->surviving_infants }}
+        {{ $region->pregnancy }}
     </div>
     <div class="col-sm-2">
-        {{ $region->pregnancy }}
+        {{ $region->surviving_infants }}
     </div>
     <div class="col-sm-4">
         {{ Form::open(array("url"=>url("package/prepare/{$region->id}"),"class"=>"form-horizontal","id"=>'qrform')) }}
         <div class="" id="lotarea">
-
             <input style="color: #5bc0de; height: 25px" class="form-control" type="text" name="sscc" placeholder="Scan QR Code" required="required" style="height: 34px">
             <input type="hidden" name="id" value="first" />
         </div>
