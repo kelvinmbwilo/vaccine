@@ -35,6 +35,14 @@
                     Doses Per Vial<br> {{ Form::text('dose','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Unit','required'=>'required')) }}
                </div>
             </div>
+          <div class='form-group'>
+                <div class='col-sm-6'>
+                    Wastage Rate <br> {{ Form::text('wastage','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Wastage Rate','required'=>'required')) }}
+                </div>
+                <div class='col-sm-6'>
+                    Schedule<br> {{ Form::text('schedule','',array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Schedule','required'=>'required')) }}
+               </div>
+            </div>
 
             <div class='form-group'>
                     <div class='col-sm-12 '>

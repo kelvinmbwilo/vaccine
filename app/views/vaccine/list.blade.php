@@ -19,10 +19,12 @@
         <th> Manufacture </th>
         <th> Short Description </th>
         <th> Packaging</th>
-        <th> Secondary Packaging</th>
-        <th> Vaccine Presentation</th>
+        <th> Vials per box</th>
+        <th> Doses per Vial</th>
         <th> Origin</th>
-        <th> Warning Period </th>
+        <th> Warning </th>
+        <th> Wastage Rate </th>
+        <th> Schedule </th>
         <th> Action </th>
     </tr>
     </thead>
@@ -39,6 +41,8 @@
         <td>{{ $us->doses_per_vial }}</td>
         <td>{{ $us->country->name }}</td>
         <td>{{ $us->warning_period }} month</td>
+        <td>{{ $us->wastage }} </td>
+        <td>{{ $us->schedule }} </td>
         <td id="{{ $us->id }}">
             <a href="#edit" title="edit Vaccine" class="edituser"><i class="fa fa-pencil text-info"></i> edit</a>&nbsp;&nbsp;&nbsp;
             <a href="#b" title="delete Vaccine" class="deletevaccine"><i class="fa fa-trash-o text-danger"> delete</i> </a>

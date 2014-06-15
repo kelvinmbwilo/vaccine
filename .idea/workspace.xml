@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202353_create_facility_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202353_create_facility_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DemographicsController.php" afterPath="$PROJECT_DIR$/app/controllers/DemographicsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" afterPath="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FacilityController.php" afterPath="$PROJECT_DIR$/app/controllers/FacilityController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/controllers/PackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/RegionPackageController.php" afterPath="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/demographics/add.blade.php" afterPath="$PROJECT_DIR$/app/views/demographics/add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facility/add.blade.php" afterPath="$PROJECT_DIR$/app/views/facility/add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facility/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/facility/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/expected.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/expected.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/index.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/info.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/info.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/left.blade.php" afterPath="$PROJECT_DIR$/app/views/left.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/demographics/list.blade.php" afterPath="$PROJECT_DIR$/app/views/demographics/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facility/list.blade.php" afterPath="$PROJECT_DIR$/app/views/facility/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/package.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/VaccineController.php" afterPath="$PROJECT_DIR$/app/controllers/VaccineController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vaccine/add.blade.php" afterPath="$PROJECT_DIR$/app/views/vaccine/add.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vaccine/edit.blade.php" afterPath="$PROJECT_DIR$/app/views/vaccine/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/list.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vaccine/list.blade.php" afterPath="$PROJECT_DIR$/app/views/vaccine/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
@@ -50,19 +37,87 @@
       <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_national/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="36" selection-start="1268" selection-end="1268" vertical-scroll-proportion="-19.37037" vertical-offset="179" max-vertical-offset="954">
+            <state line="39" column="36" selection-start="1268" selection-end="1268" vertical-scroll-proportion="-25.11111" vertical-offset="24" max-vertical-offset="954">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="info.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_national/info.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="27" selection-start="342" selection-end="342" vertical-scroll-proportion="0.42217484" vertical-offset="54" max-vertical-offset="1206">
+            <state line="14" column="27" selection-start="342" selection-end="342" vertical-scroll-proportion="2.6666667" vertical-offset="324" max-vertical-offset="1206">
               <folding>
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#1;n#input#0;n#div#0;n#div#4;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/send_national/list.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="51" selection-start="832" selection-end="832" vertical-scroll-proportion="-12.0" vertical-offset="216" max-vertical-offset="1800">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/vaccine/add.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="34" selection-start="1943" selection-end="1957" vertical-scroll-proportion="-8.444445" vertical-offset="384" max-vertical-offset="1584">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/vaccine/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="72" selection-start="2550" selection-end="2550" vertical-scroll-proportion="-13.777778" vertical-offset="384" max-vertical-offset="1620">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_05_31_133145_create_vaccine_table.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="35" selection-start="717" selection-end="717" vertical-scroll-proportion="-8.666667" vertical-offset="216" max-vertical-offset="864">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VaccineController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/VaccineController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="35" selection-start="2757" selection-end="2757" vertical-scroll-proportion="-60.666668" vertical-offset="162" max-vertical-offset="2466">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/vaccine/list.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="20" selection-start="1421" selection-end="1429" vertical-scroll-proportion="0.36548224" vertical-offset="648" max-vertical-offset="2736">
+              <folding>
+                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/send_national/package.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="65" selection-start="1172" selection-end="1172" vertical-scroll-proportion="46.666668" vertical-offset="1890" max-vertical-offset="2340">
+              <folding>
+                <element signature="n#style#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,12 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_06_05_201230_create_national_package_contents_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_06_05_202119_create_regional_package_contents_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_06_05_202542_create_district_package_contents_table.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_region/package.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/listreceived.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/List_sent.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/expected.blade.php" />
@@ -100,7 +149,6 @@
         <option value="$PROJECT_DIR$/app/views/send_region/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/info.blade.php" />
         <option value="$PROJECT_DIR$/app/models/DistrictStock.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/package.blade.php" />
         <option value="$PROJECT_DIR$/app/models/DistrictPackage.php" />
@@ -132,6 +180,13 @@
         <option value="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/info.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/vaccine/add.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/vaccine/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/VaccineController.php" />
+        <option value="$PROJECT_DIR$/app/views/vaccine/list.blade.php" />
       </list>
     </option>
   </component>
@@ -237,6 +292,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="send_national" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -321,12 +398,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="741" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12357724" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19318181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -380,36 +457,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/stock.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="25" selection-start="469" selection-end="469" vertical-scroll-proportion="-5.4814816" vertical-offset="86" max-vertical-offset="792" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/expected.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="108" selection-start="948" selection-end="948" vertical-scroll-proportion="1.0964468" vertical-offset="0" max-vertical-offset="1206" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/List_sent.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="36" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.31979695" vertical-offset="648" max-vertical-offset="1134" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/listreceived.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="42" selection-start="383" selection-end="383" vertical-scroll-proportion="0.30071598" vertical-offset="0" max-vertical-offset="1206" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="80" selection-start="497" selection-end="497" vertical-scroll-proportion="-0.04054054" vertical-offset="378" max-vertical-offset="864" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_183726_create_district_stock_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="39" selection-start="528" selection-end="528" vertical-scroll-proportion="0.8333333" vertical-offset="0" max-vertical-offset="756" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="146" selection-start="2190" selection-end="2224" vertical-scroll-proportion="-12.666667" vertical-offset="378" max-vertical-offset="1962" />
@@ -448,11 +495,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/send_region/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="6" selection-start="4355" selection-end="4355" vertical-scroll-proportion="4.268293" vertical-offset="153" max-vertical-offset="1836" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_national/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="6" selection-start="4330" selection-end="4330" vertical-scroll-proportion="0.7258883" vertical-offset="1442" max-vertical-offset="1836" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/DistrictStock.php">
@@ -672,9 +714,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="12" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.6081081" vertical-offset="648" max-vertical-offset="1926">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -688,26 +728,77 @@
     <entry file="file://$PROJECT_DIR$/app/views/recieve_region/package.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="1564" selection-end="1571" vertical-scroll-proportion="0.26124197" vertical-offset="718" max-vertical-offset="1400">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_national/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="36" selection-start="1268" selection-end="1268" vertical-scroll-proportion="-19.37037" vertical-offset="179" max-vertical-offset="954">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_national/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="342" selection-end="342" vertical-scroll-proportion="0.42217484" vertical-offset="54" max-vertical-offset="1206">
+        <state line="14" column="27" selection-start="342" selection-end="342" vertical-scroll-proportion="2.6666667" vertical-offset="324" max-vertical-offset="1206">
           <folding>
             <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#1;n#input#0;n#div#0;n#div#4;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="36" selection-start="1268" selection-end="1268" vertical-scroll-proportion="-25.11111" vertical-offset="24" max-vertical-offset="954">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/package.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="65" selection-start="1172" selection-end="1172" vertical-scroll-proportion="46.666668" vertical-offset="1890" max-vertical-offset="2340">
+          <folding>
+            <element signature="n#style#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="51" selection-start="832" selection-end="832" vertical-scroll-proportion="-12.0" vertical-offset="216" max-vertical-offset="1800">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vaccine/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="34" selection-start="1943" selection-end="1957" vertical-scroll-proportion="-8.444445" vertical-offset="384" max-vertical-offset="1584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vaccine/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="72" selection-start="2550" selection-end="2550" vertical-scroll-proportion="-13.777778" vertical-offset="384" max-vertical-offset="1620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="35" selection-start="717" selection-end="717" vertical-scroll-proportion="-8.666667" vertical-offset="216" max-vertical-offset="864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/VaccineController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="35" selection-start="2757" selection-end="2757" vertical-scroll-proportion="-60.666668" vertical-offset="162" max-vertical-offset="2466">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/vaccine/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="20" selection-start="1421" selection-end="1429" vertical-scroll-proportion="0.36548224" vertical-offset="648" max-vertical-offset="2736">
+          <folding>
+            <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

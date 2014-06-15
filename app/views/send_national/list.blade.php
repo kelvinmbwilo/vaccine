@@ -16,8 +16,8 @@
 <table class="table table-responsive table-bordered" id="alllist">
     <tr>
         <th>GTIN</th>
-        <th>Description</th>
         <th>Manufacture</th>
+        <th>Description</th>
         <th>Lot</th>
         <th>Expiry</th>
         <th>Vials</th>
@@ -28,10 +28,8 @@
     @foreach($natpack->packages as $pack)
     <tr>
         <td>{{ $pack->vaccine->GTIN }}</td>
+        <td>{{ $pack->vaccine->manufacturer }}</td>
         <td>{{ $pack->vaccine->name }}</td>
-        <td>
-            {{ $pack->vaccine->manufacturer }}
-        </td>
         <td>{{ $pack->lot_number }}</td>
         <td>{{ $pack->manufacturer->expiry_date }}</td>
         <td>{{ $pack->number_of_boxes * $pack->vaccine->vials_per_box }}</td>

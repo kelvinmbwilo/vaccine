@@ -41,7 +41,9 @@ class VaccineController extends \BaseController {
                 'warning_period'    => Input::get("warning"),
                 'country_id'        => Input::get("country"),
                 'manufacturer'      => Input::get("manufacturer"),
-                'type'              => Input::get("type")
+                'type'              => Input::get("type"),
+                'wastage'           => Input::get("wastage"),
+                'schedule'          => Input::get("schedule"),
             ));
             Logs::create(array(
                 "user_id"=>  Auth::user()->id,
@@ -95,6 +97,8 @@ class VaccineController extends \BaseController {
         $vaccine->country_id        =Input::get("country");
         $vaccine->manufacturer      =Input::get("manufacturer");
         $vaccine->type              =Input::get("type");
+        $vaccine->wastage           =Input::get("wastage");
+        $vaccine->schedule          =Input::get("schedule");
         $vaccine->save();
         $name = $vaccine->GTIN;
 

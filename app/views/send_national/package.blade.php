@@ -4,17 +4,22 @@
 
 ?>
 <div class="col-sm-12" id="add" style="margin-top: 20px">
-    <div class="col-sm-1">
-        Item<br>
-        {{ $package->vaccine->name }}
+
+    <div class="col-sm-2">
+        GTIN<br>
+        {{ $package->GTIN }}
     </div>
     <div class="col-sm-2">
         Manufacture<br>
         {{ $package->vaccine->manufacturer }}
     </div>
+    <div class="col-sm-1">
+        Item<br>
+        {{ $package->vaccine->name }}
+    </div>
     <div class="col-sm-2">
-        GTIN<br>
-        {{ $package->GTIN }}
+        Lot<br>
+        {{ $package->lot_number }}
     </div>
 <!--    displaying warning for products near expiry-->
     @if($expiry_status == "expired")
@@ -28,22 +33,18 @@
             {{ date('j M Y',strtotime($package->expiry_date)) }}
         </div>
     @else
-        <div class="col-sm-2" style="background-color: #008d4c">
+        <div class="col-sm-2" style="background-color: lightgreen">
             Expiry Date <i class="fa fa-check"></i><br>
             {{ date('j M Y',strtotime($package->expiry_date)) }}
         </div>
     @endif
 
-    <div class="col-sm-2">
-        Lot<br>
-        {{ $package->lot_number }}
-    </div>
+
     {{ Form::open(array("url"=>url("package/addpack"),"class"=>"form-horizontal","id"=>'FileUploader6')) }}
     <div class="col-sm-2">
         <input type="hidden" name="lot" value="{{ $package->lot_number }}" />
         <input type="hidden" name="idd" value="" />
         Boxes:
-        <span style="font-size: 0.7em"> ( {{ $package->vaccine->doses_per_vial*$package->vaccine->vials_per_box }} Doses per box)</span>
         <br><input title="Number of boxes up to {{ $boxes }} boxes" required="" name="box" pattern="\d*" type="text" class="form-control input-sm" placeholder="Max of {{ $boxes }} boxes">
     </div>
     <div class="col-sm-1">

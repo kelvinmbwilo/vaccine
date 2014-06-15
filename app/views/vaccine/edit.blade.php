@@ -29,10 +29,18 @@
         </div>
         <div class='form-group'>
             <div class='col-sm-6'>
-                Secondary Packaging <br> {{ Form::text('package',$vaccine->vials_per_box,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Packaging','required'=>'required')) }}
+                Vials Per Box <br> {{ Form::text('package',$vaccine->vials_per_box,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Packaging','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Vaccine Presentation<br> {{ Form::text('dose',$vaccine->doses_per_vial,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Unit','required'=>'required')) }}
+                Doses Per Vial<br> {{ Form::text('dose',$vaccine->doses_per_vial,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Doses per Unit','required'=>'required')) }}
+            </div>
+        </div>
+        <div class='form-group'>
+            <div class='col-sm-6'>
+                Wastage Rate <br> {{ Form::text('wastage',$vaccine->wastage,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Wastage Rate','required'=>'required')) }}
+            </div>
+            <div class='col-sm-6'>
+                Schedule<br> {{ Form::text('schedule',$vaccine->schedule,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Schedule','required'=>'required')) }}
             </div>
         </div>
 
