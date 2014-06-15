@@ -1,4 +1,19 @@
-<h4>Package sent from region level on {{ date('j M Y',strtotime($package->created_at)) }}</h4>
+
+<div class="col-sm-12" id="qroutput" style="margin-bottom: 20px"></div>
+<div class="col-sm-12" style="margin-bottom: 5px">
+    <div class="col-sm-7"><br><h4>Package sent from region level on {{ date('j M Y',strtotime($package->created_at)) }}</h4></div>
+    <div class="col-sm-5">
+        <form method="post" action="{{ url('') }}" id="checkqr">
+            <div class="form-group" >
+                <div class="col-sm-12">
+                    Scan the QR Code  <br>
+                    <input type="text" name="lot" placeholder="Scan Item QR Code" required class="form-control">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+    <div class="col-sm-12">
 <table class="table table-responsive table-bordered" id="alllist">
     <tr>
         <th>GTIN</th>
@@ -24,20 +39,8 @@
     </tr>
     @endforeach
 </table>
-<div class="col-sm-12" style="margin-bottom: 20px">
-<form method="post" action="{{ url('') }}" id="checkqr">
-    <div class="form-group" >
-        <div class="col-sm-6">
-            Scan the QR Code from one box from per each item in the list above <br>
-            <input type="text" name="lot" placeholder="Scan Item QR Code" required class="form-control">
-        </div>
-        <div class="col-sm-6">
-<!--            <br><button type="submit" class="btn btn-info btn-min">Add</button>-->
-        </div>
     </div>
-</form>
-</div>
-<div class="col-sm-12" id="qroutput"></div>
+
 <script>
     $(document).ready(function(){
         $("input[name=lot]").focus();

@@ -4,7 +4,10 @@
                 <div class='col-sm-3'>
                     Target Population<br> {{ Form::text('population',$district->target_population,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Target Population','value'=>'0')) }}
                </div>
-              <div class='col-sm-3'>
+              <div class='col-sm-2'>
+                 Pregnancy<br>{{ Form::text('preg',$district->pregnancy,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
+              </div>
+                <div class='col-sm-3'>
                  Annual Birth<br>{{ Form::text('birth',$district->annual_birth,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
               </div>
               <div class='col-sm-3'>

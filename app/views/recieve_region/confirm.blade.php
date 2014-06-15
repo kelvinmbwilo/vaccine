@@ -40,26 +40,35 @@
             <small> VVM Status</small><br>
             {{ Form::select('vvm',array('I'=>'I (Okay)','II'=>'II (Okay)','III'=>'III (Bad)','IV'=>'IV (Bad)'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
-        <div class='col-sm-2'>
-            <small> Temperature monitors Status</small><br>
-            {{ Form::select('temp',array('Fine'=>'Fine','Not Fine'=>'Not Fine'),'',array('class'=>'form-control','required'=>'requiered')) }}
-        </div>
-        <div class='col-sm-2'>
-            Click here after checking<br>
+<!--        <div class='col-sm-2'>-->
+<!--            <small> Temperature monitors Status</small><br>-->
+<!--            {{ Form::select('temp',array('Fine'=>'Fine','Not Fine'=>'Not Fine'),'',array('class'=>'form-control','required'=>'requiered')) }}-->
+<!--        </div>-->
+        <div class='col-sm-3'>
+            <br>
             {{ Form::submit('Confirm',array('class'=>'btn btn-primary form-control','id'=>'submitqr')) }}
         </div>
-        <div class='col-sm-2'>
-            Click here after checking<br>
+        <div class='col-sm-3'>
+            <br>
             {{ Form::button('Cancel',array('class'=>'btn btn-danger form-control','id'=>'cancel')) }}
         </div>
     </div>
 
 
     </div>
-    {{ Form::close() }}
-    <div id="output1" style="padding-top: 10px;text-align: center">
+<div class="col-sm-12">
+    <div class='form-group'>
+        <div class='col-sm-8'>
+            Comments and Observations<br>
+            <textarea rows="3" placeholder="" name="comments" class="form-control"></textarea>
+        </div>
+        <div id="output1" style="padding-top: 10px;text-align: center" class="col-sm-4">
 
+        </div>
     </div>
+</div>
+    {{ Form::close() }}
+
 <script>
     $(document).ready(function (){
         $("#alllist").find("td:contains('<?php echo $arrival->lot_number ?>')").parent().hide("5000");
@@ -75,15 +84,19 @@
 
         $("#cancel").click(function(){
             $("#alllist").find("td:contains('<?php echo $arrival->lot_number ?>')").parent().show("5000");
-            $(this).parent().parent().parent().parent().parent().html("");
+            $(this).parent().parent().parent().parent().parent().fadeOut( "slow", function() {
+                $("#submitqr").parent().parent().parent().parent().parent().html("").fadeIn();
+            });
             $("input[name=lot]").focus();
         })
 
         function afterSuccess1(){
             setTimeout(function() {
-                $("#submitqr").parent().parent().parent().parent().parent().html("");
+                $("#submitqr").parent().parent().parent().parent().parent().fadeOut( "slow", function() {
+                    $("#submitqr").parent().parent().parent().parent().parent().html("").fadeIn();
+                });
                 $("input[name=lot]").focus();
-            }, 1500);
+            }, 2000);
         }
     });
 </script>

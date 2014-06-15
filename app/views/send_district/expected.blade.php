@@ -4,7 +4,7 @@
         <div class="text-muted bootstrap-admin-box-title">Received Packages</div>
     </div>
     <div class="bootstrap-admin-panel-content">
-        @if(NationalPackage::where('region_id', Auth::user()->region_id)->where('received_status','')->count() == 0)
+        @if(RegionalPackage::where('district_id', Auth::user()->district_id)->where('received_status','')->count() == 0)
         <h3>There are no Packages</h3>
         @else
         <table class="table table-striped table-bordered" id="example4">
@@ -22,7 +22,7 @@
             </thead>
             <tbody>
             <?php $i=1; ?>
-            @foreach(NationalPackage::where('region_id', Auth::user()->region_id)->where('received_status','')->get() as $pack)
+            @foreach(RegionalPackage::where('district_id', Auth::user()->district_id)->where('received_status','')->get() as $pack)
             @foreach($pack->packages as $us)
             <tr>
                 <td>{{ $i++ }}</td>

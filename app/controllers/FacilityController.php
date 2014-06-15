@@ -38,6 +38,7 @@ class FacilityController extends \BaseController {
                 'target_population'     => Input::get("population"),
                 'annual_birth'          => Input::get("birth"),
                 'surviving_infants'     => Input::get("infants"),
+                'pregnancy'             => Input::get("preg"),
             ));
             Logs::create(array(
                 "user_id"=>  Auth::user()->id,
@@ -86,6 +87,7 @@ class FacilityController extends \BaseController {
         $vaccine->target_population=Input::get("population");
         $vaccine->annual_birth=Input::get("birth");
         $vaccine->surviving_infants=Input::get("infants");
+        $vaccine->pregnancy=Input::get("preg");
         $vaccine->save();
         $name = $vaccine->name;
 

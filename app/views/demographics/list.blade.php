@@ -18,6 +18,7 @@
         <th> Region </th>
         <th> Districts </th>
         <th> Target Population </th>
+        <th> Pregnancy  </th>
         <th> Annual Birth </th>
         <th> Surviving Infants </th>
 
@@ -30,9 +31,10 @@
         <td>{{ $i++ }}</td>
         <td>{{ $us->region->region }}</td>
         <td>{{ $us->district }}</td>
-        <td>{{ ($us->target_population!="")?$us->target_population:'0' }}</td>
-        <td>{{ ($us->annual_birth!="")?$us->annual_birth:'0' }}</td>
-        <td>{{ ($us->surviving_infants!="")?$us->surviving_infants:'0' }}</td>
+        <td>{{ $us->target_population}}</td>
+        <td>{{ $us->pregnancy }}</td>
+        <td>{{ $us->annual_birth }}</td>
+        <td>{{ $us->surviving_infants }}</td>
     </tr>
     @endforeach
 

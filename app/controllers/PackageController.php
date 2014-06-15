@@ -50,7 +50,7 @@ class PackageController extends \BaseController {
         if($arrival){
                 return View::make("recieve_national.confirm",compact('arrival'));            }
         else{
-            echo "<h3 class='text-danger'>There are no information about this package</h3>";
+            echo "<h3 class='text-danger'>There are no information about this item</h3>";
         }
 
         }else{
@@ -66,13 +66,14 @@ class PackageController extends \BaseController {
         $arr = ArrivalNational::where('ssc',$package->ssc)->count();
         $arr1 = ManufacturePackage::where('sscc',$package->sscc);
         $arrival = ArrivalNational::create(array(
-            'ssc'=>$package->sscc,
-            'lot_number'=>$package->lot_number,
-            'number_as_expected'=>Input::get('quantity'),
-            'temperature_monitor'=>Input::get('temp'),
-            'physcal_damege'=>Input::get('damage'),
-            'vvm_status'=>Input::get('vvm'),
-            'receiver'=>Auth::user()->id,
+            'ssc'                   =>$package->sscc,
+            'lot_number'            =>$package->lot_number,
+            'number_as_expected'    =>Input::get('quantity'),
+            'temperature_monitor'   =>Input::get('temp'),
+            'physcal_damege'        =>Input::get('damage'),
+            'vvm_status'            =>Input::get('vvm'),
+            'receiver'              =>Auth::user()->id,
+            'problem'               =>Input::get('comments'),
         ));
 
         $stock = NationalStock::where('lot_number',$package->lot_number)->first();
@@ -89,6 +90,11 @@ class PackageController extends \BaseController {
         }
         $package->status = "received";
         $package->save();
+        Logs::create(array(
+            "user_id"=>  Auth::user()->id,
+            "action"  =>"Receive ".$package->vaccine->name." From Shipment number ". $package->sscc
+        ));
+        echo "<h3 class='text-success'>Received Successful.</h3>";
     }
 
     public function confirmpackage($id){

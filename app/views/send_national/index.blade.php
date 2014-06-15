@@ -30,11 +30,16 @@
     $(document).ready(function (){
 
         $("select[name=region]").click(function(){
+            if($(this).val() != ''){
             $("#output").html("<h4><i class='fa fa-spin fa-spinner '></i><span>Getting area information please wait...</span><h4>");
             $("#output").load('<?php echo url('package/prepare/areainfo') ?>/'+$(this).val(),function(){
                 $("#itemarea").html("");
                 $("#listuser").html("")
             });
+            }else{
+                $("#output").html('');
+            }
+
         })
 
     });

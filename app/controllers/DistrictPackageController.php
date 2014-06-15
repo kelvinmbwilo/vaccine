@@ -68,6 +68,7 @@ class DistrictPackageController extends \BaseController {
             'physcal_damege'        =>Input::get('damage'),
             'vvm_status'            =>Input::get('vvm'),
             'receiver'              =>Auth::user()->id,
+            'problem'               =>Input::get('comments'),
         ));
 
         $stock = DistrictStock::where('lot_number',$package->lot_number)->first();
@@ -92,6 +93,11 @@ class DistrictPackageController extends \BaseController {
             $package->package->received_status = "received";
             $package->package->save();
         }
+        Logs::create(array(
+            "user_id"=>  Auth::user()->id,
+            "action"  =>"Receive ".$package->vaccine->name." From Shipment number ". $package->package->package_number
+        ));
+        echo "<h3 class='text-success'>Received Successful.</h3>";
     }
 
     public function listrecieved(){

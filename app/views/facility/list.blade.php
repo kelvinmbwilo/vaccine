@@ -19,6 +19,7 @@
         <th> Region </th>
         <th> District </th>
         <th> Target Population</th>
+        <th> Pregnancy</th>
         <th> Annual Birth</th>
         <th> Surviving Infant</th>
         <th>  Contacts</th>
@@ -34,6 +35,7 @@
         <td>{{ $us->district->region->region }}</td>
         <td >{{ $us->district->district }}</td>
         <td>{{ $us->target_population }}</td>
+        <td>{{ $us->pregnancy }}</td>
         <td>{{ $us->annual_birth }}</td>
         <td>{{ $us->surviving_infants }}</td>
         <td>{{ $us->contact }}</td>
