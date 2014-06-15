@@ -39,7 +39,6 @@ class RegionPackageController extends \BaseController {
     }
 
     public function checkqr($id){
-        if (strpos($id,')') !== false) {
             $arr = $this->breakqr($id);
             $pack = NationalPackage::where('package_number',$_POST['pack'])->where('received_status',"")->first();
             $arrival = $pack->packages()->where('lot_number',$arr['lot_number'])->first();
@@ -48,13 +47,6 @@ class RegionPackageController extends \BaseController {
             else{
                 echo "<h3 class='text-danger'>There are no information about this package</h3>";
             }
-
-        }else{
-            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
-        }
-
-
-
     }
 
     public function additemtostock($id){
@@ -149,7 +141,6 @@ class RegionPackageController extends \BaseController {
     }
 
     public function prepareform($id){
-        if (strpos(Input::get('sscc'),')') !== false) {
             $arr = $this->breakqr(Input::get('sscc'));
             $package = RegionStock::where('lot_number',$arr['lot_number'])->where('number_of_doses','!=','0')->first();
             $idd = "";
@@ -159,7 +150,7 @@ class RegionPackageController extends \BaseController {
                         'district_id' => $id,
                         'source_id' => District::find($id)->region_id,
                     ));
-                    $createdid->package_number = strtotime($createdid->created_at);
+                    $createdid->package_number = '02'.strtotime($createdid->created_at);
                     $createdid->save();
                     $idd = $createdid->id;
                 }
@@ -183,10 +174,6 @@ class RegionPackageController extends \BaseController {
             }else{
                 echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
             }
-        }else{
-            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
-        }
-
     }
 
     public function processaddpackage(){
@@ -262,14 +249,18 @@ class RegionPackageController extends \BaseController {
     }
 
     public function breakqr($qr){
+        if (strpos($qr,'(01)') !== false && strpos($qr,'(17)') !== false) {
+            $arr = explode(")",$qr);
+            unset($arr[0]);
+            $gtnarr1 = explode("(",$arr[1]);
+            $exparr1 = explode("(",$arr[2]);
+            $gtin=$gtnarr1[0];
+            $lot_number=$arr[3];
+            $expiry_date=$exparr1[0];
+            return array("gtin"=>$gtin,"lot_number"=>$lot_number,"expiry_date"=>$expiry_date);
+        }else{
+            return array("lot_number"=>$qr);
+        }
 
-        $arr = explode(")",$qr);
-        unset($arr[0]);
-        $gtnarr1 = explode("(",$arr[1]);
-        $exparr1 = explode("(",$arr[2]);
-        $gtin=$gtnarr1[0];
-        $lot_number=$arr[3];
-        $expiry_date=$exparr1[0];
-        return array("gtin"=>$gtin,"lot_number"=>$lot_number,"expiry_date"=>$expiry_date);
     }
 }

@@ -23,7 +23,7 @@ class CreateVaccineTable extends Migration {
             $table->string("country_id");
             $table->string("manufacturer");
             $table->string("type");
-            $table->string("warning_period");
+            $table->float("warning_period");
             $table->string("wastage");
             $table->string("schedule");
 			$table->timestamps();

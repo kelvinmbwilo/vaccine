@@ -12,10 +12,7 @@
         <b>Surviving Infants</b>
     </div>
     <div class="col-sm-4">
-        <b>Scan QR Code</b>
-    </div>
-    <div class="col-sm-4">
-
+        <b>Enter Lot Number</b>
     </div>
 </div>
 <div class="col-sm-12">

@@ -100,67 +100,6 @@ Route::post('vaccine/edit/{id}',array('uses'=>'VaccineController@update'));
 Route::post('vaccine/delete/{id}',array('uses'=>'VaccineController@destroy'));
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * Managing Diluents actions
- * Directing routes to correct controllers
- */
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//display a form to add new vaccine
-Route::get('diluent/add',array('uses'=>'DiluentController@create'));
-
-//display a list of vaccines
-Route::get('diluent/list',array('uses'=>'DiluentController@lists'));
-
-//adding new vaccine
-Route::post('diluent/add',array('uses'=>'DiluentController@store'));
-
-//viewing index page
-Route::get('diluent',array('uses'=>'DiluentController@index'));
-
-//display a form to edit vaccine information
-Route::get('diluent/edit/{id}',array('uses'=>'DiluentController@edit'));
-
-//editng vaccine information
-Route::post('diluent/edit/{id}',array('uses'=>'DiluentController@update'));
-
-//deleting vaccine
-Route::post('diluent/delete/{id}',array('uses'=>'DiluentController@destroy'));
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * Managing Manufacturer actions
- * Directing routes to correct controllers
- */
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//display a form to add new vaccine
-Route::get('manufacture/add',array('uses'=>'ManufactureController@create'));
-
-//display a list of vaccines
-Route::get('manufacture/list',array('uses'=>'ManufactureController@lists'));
-
-//adding new vaccine
-Route::post('manufacture/add',array('uses'=>'ManufactureController@store'));
-
-//viewing index page
-Route::get('manufacture',array('uses'=>'ManufactureController@index'));
-
-//display a form to edit vaccine information
-Route::get('manufacture/edit/{id}',array('uses'=>'ManufactureController@edit'));
-
-//editng vaccine information
-Route::post('manufacture/edit/{id}',array('uses'=>'ManufactureController@update'));
-
-//deleting vaccine
-Route::post('manufacture/delete/{id}',array('uses'=>'ManufactureController@destroy'));
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////
 ////manage profile routes
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -173,37 +112,6 @@ Route::get('profileInfo',array('as'=>'profileInfo', 'uses'=>'UserController@prof
 
 //route to display profile edit
 Route::get('profileEdit',array('as'=>'profileEdit', 'uses'=>'UserController@profileEdit'));
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-/// managing roles
-//////////////////////////////////////////////////////////////////////////////////////////
-
-//display a form to add new role
-Route::get('roles/add',array('uses'=>'RoleController@create'));
-
-//display a list of vaccines
-Route::get('roles/list',array('uses'=>'RoleController@lists'));
-
-//adding new vaccine
-Route::post('roles/add',array('uses'=>'RoleController@store'));
-
-//viewing index page
-Route::get('roles',array('uses'=>'RoleController@index'));
-
-//display a form to edit vaccine information
-Route::get('roles/edit/{id}',array('uses'=>'RoleController@edit'));
-
-//editng vaccine information
-Route::post('roles/edit/{id}',array('uses'=>'RoleController@update'));
-
-//deleting vaccine
-Route::post('roles/delete/{id}',array('uses'=>'RoleController@destroy'));
-
-
-///////////////////////////////////////////////////////////////////////////////////
-////// Routes for Nationl package management
-///////////////////////////////////////////////////////////////////////////////////
 
 
 //display a form to add new role
@@ -248,6 +156,9 @@ Route::post('package/prepare/{id}',array('uses'=>'PackageController@prepareform'
 
 //display a list of vaccines
 Route::get('package/prepare/areainfo/{id}',array('uses'=>'PackageController@areainfo'));
+
+//display a list of vaccines
+Route::get('package/prepare/easysend',array('uses'=>'PackageController@easysend'));
 
 //display a list of vaccines
 Route::post('package/prepare/add',array('uses'=>'PackageController@addpackage'));

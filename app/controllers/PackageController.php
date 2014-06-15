@@ -44,7 +44,6 @@ class PackageController extends \BaseController {
     }
 
     public function checkqr($id){
-        if (strpos($id,')') !== false) {
         $arr = $this->breakqr($id);
         $arrival = ManufacturePackage::where('lot_number',$arr['lot_number'])->where('status',"")->first();
         if($arrival){
@@ -52,13 +51,6 @@ class PackageController extends \BaseController {
         else{
             echo "<h3 class='text-danger'>There are no information about this item</h3>";
         }
-
-        }else{
-            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
-        }
-
-
-
     }
 
     public function additemtostock($id){
@@ -107,7 +99,6 @@ class PackageController extends \BaseController {
     }
 
     public function prepareform($id){
-        if (strpos(Input::get('sscc'),')') !== false) {
             $arr = $this->breakqr(Input::get('sscc'));
             $package = NationalStock::where('lot_number',$arr['lot_number'])->where('number_of_doses','!=','0')->first();
             $idd = "";
@@ -116,7 +107,7 @@ class PackageController extends \BaseController {
                     $createdid = NationalPackage::create(array(
                         'region_id' => $id,
                     ));
-                    $createdid->package_number = strtotime($createdid->created_at);
+                    $createdid->package_number = '01'.strtotime($createdid->created_at);
                     $createdid->save();
                     $idd = $createdid->id;
                 }
@@ -130,7 +121,7 @@ class PackageController extends \BaseController {
 
                 //checking the existance of same vaccine with close expiry date
                 $other_available="";
-                $other_vaccine = NationalStock::where('GTIN',$arr['gtin'])->where('number_of_doses','!=','0')->get();
+                $other_vaccine = NationalStock::where('GTIN',$package->GTIN)->where('number_of_doses','!=','0')->get();
                 foreach($other_vaccine as $vaccine){
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
                         $other_available = "available";
@@ -140,9 +131,7 @@ class PackageController extends \BaseController {
             }else{
                 echo "<h3 class='text-danger'>There is no vaccine or diluent with this lot number</h3>";
             }
-        }else{
-            echo "<h3 class='text-danger'>The scanned Qr Code is Invalid</h3>";
-        }
+
 
     }
 
@@ -220,7 +209,7 @@ class PackageController extends \BaseController {
     }
 
     public function breakqr($qr){
-
+        if (strpos($qr,'(01)') !== false && strpos($qr,'(17)') !== false) {
         $arr = explode(")",$qr);
         unset($arr[0]);
         $gtnarr1 = explode("(",$arr[1]);
@@ -228,6 +217,15 @@ class PackageController extends \BaseController {
         $gtin=$gtnarr1[0];
         $lot_number=$arr[3];
         $expiry_date=$exparr1[0];
-        return array("gtin"=>$gtin,"lot_number"=>$lot_number,"expiry_date"=>$expiry_date);
+            return array("gtin"=>$gtin,"lot_number"=>$lot_number,"expiry_date"=>$expiry_date);
+        }else{
+            return array("lot_number"=>$qr);
+        }
+
+    }
+
+    public function easysend(){
+        $regions = Region::all();
+        return View::make('send_national.easy_send',compact('regions'));
     }
 }

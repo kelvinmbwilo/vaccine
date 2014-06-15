@@ -11,6 +11,7 @@
     <li class="active"><a href="#stock" data-toggle="tab">Stock</a></li>
     <li><a href="#receive" data-toggle="tab">Received</a></li>
     <li><a href="#dispatch" data-toggle="tab">Dispatch</a></li>
+    <li><a href="#region" data-toggle="tab">Regions</a></li>
 </ul>
 <div id="myTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="stock">
@@ -26,6 +27,11 @@
     <div class="tab-pane fade" id="dispatch">
         <div class="col-sm-12" >
             @include('send_national.List_sent')
+        </div>
+    </div>
+    <div class="tab-pane fade" id="region">
+        <div class="col-sm-12" >
+            @include('send_national.regionStock')
         </div>
     </div>
 </div>

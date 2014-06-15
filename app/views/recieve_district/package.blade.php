@@ -6,7 +6,7 @@
         <form method="post" action="{{ url('') }}" id="checkqr">
             <div class="form-group" >
                 <div class="col-sm-12">
-                    Scan the QR Code  <br>
+                    Enter Lot Number <br>
                     <input type="text" name="lot" placeholder="Scan Item QR Code" required class="form-control">
                 </div>
             </div>
