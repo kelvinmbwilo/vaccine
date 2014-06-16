@@ -57,47 +57,47 @@
 <div class="navbar-right">
 <ul class="nav navbar-nav">
 <!-- Messages: style can be found in dropdown.less-->
-<li class="dropdown messages-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-envelope"></i>
-        <span class="label label-success">4</span>
-    </a>
-    <ul class="dropdown-menu">
-        <li class="header">You have 2 messages</li>
-        <li>
-            <!-- inner menu: contains the actual data -->
-            <ul class="menu">
-                <li><!-- start message -->
-                    <a href="#">
-                        <div class="pull-left">
-                            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image"/>
-                        </div>
-                        <h4>
-                            Support Team
-                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                        </h4>
-                        <p>Challenges using this system?</p>
-                    </a>
-                </li><!-- end message -->
-                <li>
-                    <a href="#">
-                        <div class="pull-left">
-                            <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="user image"/>
-                        </div>
-                        <h4>
-                            System Notification
-                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                        </h4>
-                        <p>3 vaccines are close to expiry</p>
-                    </a>
-                </li>
-
-
-            </ul>
-        </li>
-        <li class="footer"><a href="#">See All Messages</a></li>
-    </ul>
-</li>
+<!--<li class="dropdown messages-menu">-->
+<!--    <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--        <i class="fa fa-envelope"></i>-->
+<!--        <span class="label label-success">4</span>-->
+<!--    </a>-->
+<!--    <ul class="dropdown-menu">-->
+<!--        <li class="header">You have 2 messages</li>-->
+<!--        <li>-->
+<!--            <!-- inner menu: contains the actual data -->
+<!--            <ul class="menu">-->
+<!--                <li><!-- start message -->
+<!--                    <a href="#">-->
+<!--                        <div class="pull-left">-->
+<!--                            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image"/>-->
+<!--                        </div>-->
+<!--                        <h4>-->
+<!--                            Support Team-->
+<!--                            <small><i class="fa fa-clock-o"></i> 5 mins</small>-->
+<!--                        </h4>-->
+<!--                        <p>Challenges using this system?</p>-->
+<!--                    </a>-->
+<!--                </li><!-- end message -->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--                        <div class="pull-left">-->
+<!--                            <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="user image"/>-->
+<!--                        </div>-->
+<!--                        <h4>-->
+<!--                            System Notification-->
+<!--                            <small><i class="fa fa-clock-o"></i> 2 hours</small>-->
+<!--                        </h4>-->
+<!--                        <p>3 vaccines are close to expiry</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!---->
+<!---->
+<!--            </ul>-->
+<!--        </li>-->
+<!--        <li class="footer"><a href="#">See All Messages</a></li>-->
+<!--    </ul>-->
+<!--</li>-->
 <!-- Notifications: style can be found in dropdown.less -->
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">

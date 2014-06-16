@@ -241,14 +241,14 @@ class PackageController extends \BaseController {
     }
 
     public function performcount(){
-        $count = NationalInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
+        $count = NationalInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M'))->first();
         if($count){
             $count->boxes = $count->boxes + Input::get('box');
             $count->vials = $count->vials + Input::get('vials');
             $count->save();
         }else{
             NationalInventory::create(array(
-                'reporting_period' => date("M Y"),
+                'reporting_period' => date("M"),
                 'user_id' => Auth::user()->id,
                 'lot_number' => Input::get('lot'),
                 'GTIN' => Input::get('GTIN'),
