@@ -218,6 +218,15 @@ Route::post('package/national/confirmsend/{id}',array('uses'=>'PackageController
 //display a form to edit vaccine information
 Route::post('package/national/prepared/delete/{id}',array('uses'=>'PackageController@deletprepared'));
 
+//display a form to edit vaccine information
+Route::post('package/stock/checklot/{id}',array('uses'=>'PackageController@checkstocklot'));
+
+//display a form to edit vaccine information
+Route::post('package/stock/count',array('uses'=>'PackageController@performcount'));
+
+//display a form to edit vaccine information
+Route::get('package/inventory/list',array('uses'=>'PackageController@liststock'));
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 ////// Routes for Regional package management

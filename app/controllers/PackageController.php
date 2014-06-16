@@ -228,4 +228,38 @@ class PackageController extends \BaseController {
         $regions = Region::all();
         return View::make('send_national.easy_send',compact('regions'));
     }
+
+    public function checkstocklot($id){
+        $arr = $this->breakqr($id);
+        $package = NationalStock::where('lot_number',$arr['lot_number'])->first();
+        if($package){
+            $period = Input::get('period');
+            return View::make("send_national.countstock",compact('package','period'));            }
+        else{
+            echo "<h3 class='text-danger'>There are no information about this item from your stock</h3>";
+        }
+    }
+
+    public function performcount(){
+        $count = NationalInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
+        if($count){
+            $count->boxes = $count->boxes + Input::get('box');
+            $count->vials = $count->vials + Input::get('vials');
+            $count->save();
+        }else{
+            NationalInventory::create(array(
+                'reporting_period' => date("M Y"),
+                'user_id' => Auth::user()->id,
+                'lot_number' => Input::get('lot'),
+                'GTIN' => Input::get('GTIN'),
+                'boxes' => Input::get('box'),
+                'vials' => Input::get('vials'),
+            ));
+        }
+    }
+
+    public function liststock(){
+//        $packages = NationalInvertory::all();
+        return View::make('send_national.listcount');
+    }
 }

@@ -21,7 +21,7 @@
 </head>
 <!-- Kizito's the body bg-cover was bg-gray before -->
 <body class="bg-cover">
-<div class="row"><div class="col-md-6 col-md-offset-4 text-title" id="title_label" style="padding-left: 85px;"><p>Vaccine Tracking Management System</p></div></div>
+<div class="row"><div class="col-md-6 col-md-offset-4 img-responsive text-title text-left" id="title_label" style="padding-left: 50px">Vaccine Tracking Management System</div></div>
 <div class="form-box" id="login-box">
     <div class="header-mod">Sign In</div>
     @if(isset($error))

@@ -12,24 +12,20 @@ class NationalInventory extends Eloquent{
      *
      * @var string
      */
-    protected $table = 'national_package';
+    protected $table = 'national_inventory';
 
     protected  $guarded = array('id');
 
-    public function region(){
-        return $this->belongsTo('Region', 'region_id', 'id');
-    }
-
-    public function packages(){
-        return $this->hasMany('NationalPackageContent', 'package_id', 'id');
-    }
-
-    public function sender(){
+    public function user(){
         return $this->belongsTo('User', 'sender', 'id');
     }
 
-    public function receiver(){
-        return $this->BelongsTo('User', 'receiver', 'id');
+    public function vaccine(){
+        return $this->BelongsTo('Vaccine', 'GTIN', 'GTIN');
+    }
+
+    public function manufacturer(){
+        return $this->belongsTo("ManufacturePackage","lot_number","lot_number");
     }
 
 }

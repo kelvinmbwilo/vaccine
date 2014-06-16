@@ -25,7 +25,7 @@
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li><a href="{{ url('mystore') }}"><i class="fa fa-angle-double-right"></i> My Store</a></li>
+            <li><a href="{{ url('mystore') }}"><i class="fa fa-angle-double-right"></i> Stock Balance</a></li>
             <li><a href="{{ url('receive') }}"><i class="fa fa-angle-double-right"></i> Received</a></li>
             <li><a href="{{ url('dispatched') }}"><i class="fa fa-angle-double-right"></i> Dispatched</a></li>
             @if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National' || Auth::user()->role_id == 'National IVD' )

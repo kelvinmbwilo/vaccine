@@ -7107,8 +7107,9 @@
       <column name="country_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="manufacturer" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="type" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="wastage" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="wastage" sqlType="FLOAT" length="12" precision="0" nullable="false" jdbcType="7"/>
       <column name="schedule" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" length="23" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
