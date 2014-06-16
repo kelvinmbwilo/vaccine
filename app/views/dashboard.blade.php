@@ -171,7 +171,7 @@ foreach(Vaccine::all() as $vaccine){
         $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(RegionalPackageContent::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
     }elseif(Auth::user()->role_id == 'District'){
         $min = round((Auth::user()->district->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
-        $stock = NationalStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
+        $stock = DistrictStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
         $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(DistrictPackageContents::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
     }
 
