@@ -202,7 +202,7 @@ $distr .="]";
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Stock Level'
+                    text: 'Stock Level(Doses)'
                 }
             },
             tooltip: {
@@ -241,7 +241,7 @@ $distr .="]";
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Rainfall (mm)'
+                    text: 'Doses'
                 }
             },
             tooltip: {
