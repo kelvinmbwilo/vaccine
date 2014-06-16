@@ -30,7 +30,7 @@
                 </thead>
                 <tbody>
                 <?php $i=1; ?>
-                @foreach(ManufacturePackage::where('status','received') as $pack)
+                @foreach(ManufacturePackage::where('status','received')->get() as $pack)
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $pack->sscc }}</td>
