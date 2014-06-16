@@ -17,10 +17,10 @@
 @section("contents")
 <?php
 if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
-    $pop    = '42,000,000';
-    $birth  = '1,470,000';
-    $infants= '1,344,000';
-    $preg   = '1,680,000';
+    $pop    = 42000000;
+    $birth  = 1470000;
+    $infants= 1344000;
+    $preg   = 1680000;
 }elseif(Auth::user()->role_id == 'Region'){
     $pop    = Auth::user()->region->tagert_population;
     $birth  = Auth::user()->region->annual_birth;
@@ -37,25 +37,25 @@ if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' |
     <div class="col-sm-3">
         <div class="panel panel-default">
             <h3 class="text-center lead">Target Population</h3>
-            <h4 class="text-center">{{ $pop }}</h4>
+            <h4 class="text-center">{{ number_format($pop) }}</h4>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default">
             <h3 class="text-center lead">Pregnancy</h3>
-            <h4 class="text-center">{{ $preg }}</h4>
+            <h4 class="text-center">{{ number_format($preg) }}</h4>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default">
             <h3 class="text-center lead">Annual Birth</h3>
-            <h4 class="text-center">{{ $birth }}</h4>
+            <h4 class="text-center">{{ number_format($birth) }}</h4>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default">
             <h3 class="text-center lead">Surviving Infants</h3>
-            <h4 class="text-center">{{ $infants }}</h4>
+            <h4 class="text-center">{{ number_format($infants) }}</h4>
         </div>
     </div>
 </div>
