@@ -21,10 +21,10 @@
         <th>Lot Number</th>
         <th>Expiry</th>
         <th>Amount Issued (Doses)</th>
-        <th>Max need</th>
-        <th>Min need</th>
-        <th>Current Amount</th>
-        <th>Amount After</th>
+        <th>Amount Issued (Doses)</th>
+        <th>Max Stock</th>
+        <th>Current Stock</th>
+        <th>New Stock</th>
         <th></th>
     </tr>
     @foreach($natpack->packages as $pack)
@@ -53,8 +53,8 @@
         <td>{{ $pack->lot_number }}</td>
         <td>{{ $pack->manufacturer->expiry_date }}</td>
         <td>{{ ($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->doses_per_vial }}</td>
-        <td>{{ $max }}</td>
         <td>{{ $min }}</td>
+        <td>{{ $max }}</td>
         <td>{{ $level }}</td>
         <td>{{ $newlevel }}</td>
         <td ><a href="#k" id="{{ $pack->id }}" class="removepack"><i class="fa fa-trash-o text-danger"></i> </a> </td>

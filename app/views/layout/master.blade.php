@@ -41,9 +41,9 @@
 <body class="skin-blue" style="background-image: url({{ asset('img/body-bg.png')}})">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
-<a href="index.html" class="logo">
+<a href="{{ url('/home') }}" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    Vaccine Arrival
+
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">
@@ -193,7 +193,7 @@
 <!--Highchart files-->
 {{ HTML::script("Highcharts/js/highcharts.js") }}
 {{ HTML::script("Highcharts/js/modules/exporting.js") }}
-{{ HTML::script("Highcharts/js/themes/gray.js") }}
+<!--{{ HTML::script("Highcharts/js/themes/gray.js") }}-->
 
 <!--Jquery ui-->
 {{ HTML::script("jqueryui/js/jquery-ui-1.10.4.custom.min.js") }}

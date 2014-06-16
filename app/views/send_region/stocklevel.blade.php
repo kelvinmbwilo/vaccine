@@ -1,3 +1,12 @@
+@extends("layout.master")
+
+@section('title')
+<h1>
+    Stock
+    <small>{{ Auth::user()->region->region }} Region Stock Information </small>
+</h1>
+@stop
+@section('contents')
 @if(RegionStock::all()->count() == 0)
 <h3>There are no vaccines or diluent in the stock</h3>
 @else
@@ -37,3 +46,4 @@
 </table>
 
 @endif
+@stop

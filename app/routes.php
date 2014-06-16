@@ -24,7 +24,47 @@ Route::get('home', function()
 
 Route::post('home', function()
 {
+
     return View::make('dashboard');
+});
+
+Route::get('mystore', function()
+{
+    if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National' || Auth::user()->role_id == 'National IVD' ){
+        return View::make('send_national.stocklevel');
+    }
+    elseif(Auth::user()->role_id == 'Region'){
+        return View::make('send_region.stocklevel');
+    }
+    elseif(Auth::user()->role_id == 'District'){
+        return View::make('send_district.stocklevel');
+    }
+});
+
+Route::get('receive', function()
+{
+    if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National' || Auth::user()->role_id == 'National IVD' ){
+        return View::make('send_national.listreceived');
+    }
+    elseif(Auth::user()->role_id == 'Region'){
+        return View::make('send_region.listreceived');
+    }
+    elseif(Auth::user()->role_id == 'District'){
+        return View::make('send_district.listreceived');
+    }
+});
+
+Route::get('dispatched', function()
+{
+    if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National' || Auth::user()->role_id == 'National IVD' ){
+        return View::make('send_national.List_sent');
+    }
+    elseif(Auth::user()->role_id == 'Region'){
+    return View::make('send_region.List_sent');
+}
+    elseif(Auth::user()->role_id == 'District'){
+    return View::make('send_district.List_sent');
+}
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

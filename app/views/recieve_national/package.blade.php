@@ -6,7 +6,7 @@
             <div class="form-group" >
                 <div class="col-sm-12">
                     Enter Lot Number  <br>
-                    <input type="text" name="lot" placeholder="Scan Item QR Code" required class="form-control">
+                    <input type="text" name="lot" placeholder="Enter Lot Number" required class="form-control">
                 </div>
             </div>
         </form>

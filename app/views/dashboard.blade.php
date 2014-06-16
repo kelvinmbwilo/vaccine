@@ -15,286 +15,254 @@
 @stop
 
 @section("contents")
+<?php
+if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
+    $pop    = '42,000,000';
+    $birth  = '1,470,000';
+    $infants= '13,44,000';
+    $preg   = '1,680,000';
+}elseif(Auth::user()->role_id == 'Region'){
+    $pop    = Auth::user()->region->tagert_population;
+    $birth  = Auth::user()->region->annual_birth;
+    $infants= Auth::user()->region->surviving_infants;
+    $preg   = Auth::user()->region->pregnancy;
+}elseif(Auth::user()->role_id == 'District'){
+    $pop    = Auth::user()->district->target_population;
+    $birth  = Auth::user()->district->annual_birth;
+    $infants= Auth::user()->district->surviving_infants;
+    $preg   = Auth::user()->district->pregnancy;
+}
+?>
+<div class="col-sm-12">
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <h3 class="text-center lead">Target Population</h3>
+            <h4 class="text-center">{{ $pop }}</h4>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <h3 class="text-center lead">Pregnancy</h3>
+            <h4 class="text-center">{{ $preg }}</h4>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <h3 class="text-center lead">Annual Birth</h3>
+            <h4 class="text-center">{{ $birth }}</h4>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <h3 class="text-center lead">Surviving Infants</h3>
+            <h4 class="text-center">{{ $infants }}</h4>
+        </div>
+    </div>
+</div>
+<!--<div class="lead col-sm-12">-->
+<!--    <div class="col-sm-6">Minimun Stock Level: 987</div>-->
+<!--    <div class="col-sm-6 text-right">Maximum Stock Level: 5445</div>-->
+<!--</div>-->
 
 <!-- Small boxes (Stat box) -->
-<div class="row">
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-aqua">
-            <div class="inner">
-                <h3>
-                    150
-                </h3>
-                <p>
-                   Received Packages
-                </p>
-            </div>
-            <div class="icon">
-                <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-        </div>
-    </div><!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-green">
-            <div class="inner">
-                <h3>
-                    53<sup style="font-size: 20px">%</sup>
-                </h3>
-                <p>
-                   Sent Packages
-                </p>
-            </div>
-            <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-        </div>
-    </div><!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-yellow">
-            <div class="inner">
-                <h3>
-                    44
-                </h3>
-                <p>
-                    User Registrations
-                </p>
-            </div>
-            <div class="icon">
-                <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-        </div>
-    </div><!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-red">
-            <div class="inner">
-                <h3>
-                    65
-                </h3>
-                <p>
-                    Damaged Packages
-                </p>
-            </div>
-            <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-            </a>
-        </div>
-    </div><!-- ./col -->
-</div><!-- /.row -->
+<!--<div class="row">-->
+<!--    <div class="col-lg-3 col-xs-6">-->
+<!--        <!-- small box -->
+<!--        <div class="small-box bg-aqua">-->
+<!--            <div class="inner">-->
+<!--                <h3>-->
+<!--                    150-->
+<!--                </h3>-->
+<!--                <p>-->
+<!--                   Received Packages-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <div class="icon">-->
+<!--                <i class="ion ion-bag"></i>-->
+<!--            </div>-->
+<!--            <a href="#" class="small-box-footer">-->
+<!--                More info <i class="fa fa-arrow-circle-right"></i>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div><!-- ./col -->
+<!--    <div class="col-lg-3 col-xs-6">-->
+<!--        <!-- small box -->
+<!--        <div class="small-box bg-green">-->
+<!--            <div class="inner">-->
+<!--                <h3>-->
+<!--                    53<sup style="font-size: 20px">%</sup>-->
+<!--                </h3>-->
+<!--                <p>-->
+<!--                   Sent Packages-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <div class="icon">-->
+<!--                <i class="ion ion-stats-bars"></i>-->
+<!--            </div>-->
+<!--            <a href="#" class="small-box-footer">-->
+<!--                More info <i class="fa fa-arrow-circle-right"></i>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div><!-- ./col -->
+<!--    <div class="col-lg-3 col-xs-6">-->
+<!--        <!-- small box -->
+<!--        <div class="small-box bg-yellow">-->
+<!--            <div class="inner">-->
+<!--                <h3>-->
+<!--                    44-->
+<!--                </h3>-->
+<!--                <p>-->
+<!--                    User Registrations-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <div class="icon">-->
+<!--                <i class="ion ion-person-add"></i>-->
+<!--            </div>-->
+<!--            <a href="#" class="small-box-footer">-->
+<!--                More info <i class="fa fa-arrow-circle-right"></i>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div><!-- ./col -->
+<!--    <div class="col-lg-3 col-xs-6">-->
+<!--        <!-- small box -->
+<!--        <div class="small-box bg-red">-->
+<!--            <div class="inner">-->
+<!--                <h3>-->
+<!--                    65-->
+<!--                </h3>-->
+<!--                <p>-->
+<!--                    Damaged Packages-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <div class="icon">-->
+<!--                <i class="ion ion-pie-graph"></i>-->
+<!--            </div>-->
+<!--            <a href="#" class="small-box-footer">-->
+<!--                More info <i class="fa fa-arrow-circle-right"></i>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div><!-- ./col -->
+<!--</div><!-- /.row -->
 
-<!-- top row -->
 <div class="row">
-    <div class="col-xs-12 connectedSortable">
+    <div class="col-sm-7" id="chat1">
 
-    </div><!-- /.col -->
+    </div>
+    <div class="col-sm-5" id="chat2">
+
+    </div>
 </div>
-<!-- /.row -->
+<?php
 
-<!-- Main row -->
-<div class="row">
-<!-- Left col -->
-<section class="col-lg-6 connectedSortable">
-    <!-- Box (with bar chart) -->
+$cats = "";$i = 0;
+$currlevel = "name: 'Current Level',data: [";
+$relevel =  "name: 'Reorder Level',data: [";
+$distr =  "name: 'Dispatch',data: [";
+foreach(Vaccine::all() as $vaccine){
+    $i++;
+    $cats .=($i == Vaccine::all()->count())?"'".$vaccine->name ."'":"'".$vaccine->name ."',";
+    if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
+        $min = round((1344000 *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
+        $stock = NationalStock::where('GTIN',$vaccine->GTIN)->sum('number_of_doses');
+        $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(NationalPackageContent::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
+    }elseif(Auth::user()->role_id == 'Region'){
+        $min = round((Auth::user()->region->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
+        $stock = RegionStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
+        $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(RegionalPackageContent::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
+    }elseif(Auth::user()->role_id == 'District'){
+        $min = round((Auth::user()->district->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
+        $stock = NationalStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
+        $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(DistrictPackageContents::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
+    }
 
+    $relevel .=($i == Vaccine::all()->count())? $min : $min.",";
+    $currlevel .=($i == Vaccine::all()->count())? $stock : $stock.",";
+    $distr .=($i == Vaccine::all()->count())? $pack : $pack.",";
 
-    <div class="box box-warning">
-        <div class="box-header">
-            <i class="fa fa-calendar"></i>
-            <div class="box-title">Calendar</div>
+}
+$currlevel .="]";
+$relevel .="]";
+$distr .="]";
+?>
+<script>
+    $(function () {
+        $('#chat1').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'My Store'
+            },
+            subtitle: {
+                text: 'Stock Level'
+            },
+            xAxis: {
+                categories: [<?php echo $cats ?> ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Stock Level'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px"><b>{point.key}</b></span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} Doses</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                <?php echo $currlevel ?>
+            }, {
+                <?php echo $relevel ?>
+            }]
+        });
 
-            <!-- tools box -->
-            <div class="pull-right box-tools">
-                <!-- button with a dropdown -->
-                <div class="btn-group">
-                    <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                    <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a href="#">Add new event</a></li>
-                        <li><a href="#">Clear events</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">View calendar</a></li>
-                    </ul>
-                </div>
-            </div><!-- /. tools -->
-        </div><!-- /.box-header -->
-        <div class="box-body no-padding">
-            <!--The calendar -->
-            <div id="calendar"></div>
-        </div><!-- /.box-body -->
-    </div><!-- /.box -->
-
-    <!-- quick email widget -->
-    <div class="box box-info">
-        <div class="box-header">
-            <i class="fa fa-envelope"></i>
-            <h3 class="box-title">Quick Email</h3>
-            <!-- tools box -->
-            <div class="pull-right box-tools">
-                <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-            </div><!-- /. tools -->
-        </div>
-        <div class="box-body">
-            <form action="#" method="post">
-                <div class="form-group">
-                    <input type="email" class="form-control" name="emailto" placeholder="Email to:"/>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject"/>
-                </div>
-                <div>
-                    <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                </div>
-            </form>
-        </div>
-        <div class="box-footer clearfix">
-            <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
-        </div>
-    </div>
-
-</section><!-- /.Left col -->
-<!-- right col (We are only adding the ID to make the widgets sortable)-->
-<section class="col-lg-6 connectedSortable">
-<!-- /.box -->
-
-<!-- Chat box -->
-<div class="box box-success">
-    <div class="box-header">
-        <h3 class="box-title"><i class="fa fa-comments-o"></i> Chat</h3>
-        <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-            <div class="btn-group" data-toggle="btn-toggle" >
-                <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>
-                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
-            </div>
-        </div>
-    </div>
-    <div class="box-body chat" id="chat-box">
-        <!-- chat item -->
-        <div class="item">
-            <img src="{{ asset('img/avatar.png') }}" alt="user image" class="online"/>
-            <p class="message">
-                <a href="#" class="name">
-                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
-                    Mike Doe
-                </a>
-                I would like to meet you to discuss about the delays in arrivals of vaccines that were sent to your station last mounth
-            </p>
-            <div class="attachment">
-                <h4>Attachments:</h4>
-                <p class="filename">
-                    Vaccine_arrival_report.pdf
-                </p>
-                <div class="pull-right">
-                    <button class="btn btn-primary btn-sm btn-flat">Open</button>
-                </div>
-            </div><!-- /.attachment -->
-        </div><!-- /.item -->
-        <!-- chat item -->
-        <div class="item">
-            <img src="{{ asset('img/avatar2.png')}}" alt="user image" class="offline"/>
-            <p class="message">
-                <a href="#" class="name">
-                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                    Jane Doe
-                </a>
-                Thanks for information i think we can arrange to meet any time from next month because there are many activities as we finish this month
-            </p>
-        </div><!-- /.item -->
-        <!-- chat item -->
-
-    </div><!-- /.chat -->
-    <div class="box-footer">
-        <div class="input-group">
-            <input class="form-control" placeholder="Type message..."/>
-            <div class="input-group-btn">
-                <button class="btn btn-success"><i class="fa fa-plus"></i></button>
-            </div>
-        </div>
-    </div>
-</div><!-- /.box (chat box) -->
-
-<!-- TO DO List -->
-<div class="box box-primary">
-    <div class="box-header">
-        <i class="ion ion-clipboard"></i>
-        <h3 class="box-title">To Do List</h3>
-        <div class="box-tools pull-right">
-            <ul class="pagination pagination-sm inline">
-                <li><a href="#">&laquo;</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&raquo;</a></li>
-            </ul>
-        </div>
-    </div><!-- /.box-header -->
-    <div class="box-body">
-        <ul class="todo-list">
-            <li>
-                <!-- drag handle -->
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                <!-- checkbox -->
-                <input type="checkbox" value="" name=""/>
-                <!-- todo text -->
-                <span class="text">Receive a Package</span>
-                <!-- Emphasis label -->
-                <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                <!-- General tools such as edit or delete-->
-                <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </li>
-            <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                <input type="checkbox" value="" name=""/>
-                <span class="text">Compile a report to send to national level</span>
-                <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </li>
-            <li>
-                                            <span class="handle">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </span>
-                <input type="checkbox" value="" name=""/>
-                <span class="text">Prepare a package for Kagera region</span>
-                <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                </div>
-            </li>
-
-        </ul>
-    </div><!-- /.box-body -->
-    <div class="box-footer clearfix no-border">
-        <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-    </div>
-</div><!-- /.box -->
-
-</section><!-- right col -->
-</div><!-- /.row (main row) -->
+        $('#chat2').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Dispatch'
+            },
+            xAxis: {
+                categories: [
+                   <?php echo $cats ?>
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Rainfall (mm)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y} Doses</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                <?php echo $distr ?>
+            }]
+        });
+    });
+</script>
 
 @stop

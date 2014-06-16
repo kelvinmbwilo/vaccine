@@ -31,7 +31,7 @@
     <div class="col-sm-4">
         {{ Form::open(array("url"=>url("region_package/prepare/{$district->id}"),"class"=>"form-horizontal","id"=>'qrform')) }}
         <div class="form-group" id="lotarea">
-            <input style="color: #5bc0de; height: 25px" class="form-control" type="text" name="sscc" placeholder="Scan QR Code" required="required" style="height: 34px">
+            <input style="color: #5bc0de; height: 25px" class="form-control" type="text" name="sscc" placeholder="Enter Lot Number" required="required" style="height: 34px">
             <input type="hidden" name="id" value="first" />
         </div>
         {{ Form::close() }}

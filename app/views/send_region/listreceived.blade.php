@@ -1,4 +1,12 @@
+@extends("layout.master")
 
+@section('title')
+<h1>
+    Received Packages
+    <small>{{ Auth::user()->region->region }} Region Received Packages </small>
+</h1>
+@stop
+@section('contents')
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="text-muted bootstrap-admin-box-title">Received Packages</div>
@@ -59,3 +67,4 @@
 
     } );
 </script>
+@stop

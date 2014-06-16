@@ -1,3 +1,12 @@
+@extends("layout.master")
+
+@section('title')
+<h1>
+    My Store
+    <small>National Store  Information </small>
+</h1>
+@stop
+@section('contents')
 @if(NationalStock::all()->count() == 0)
 <h3>There are no vaccines or diluent in the stock</h3>
 @else
@@ -38,3 +47,4 @@
 </table>
 
 @endif
+@stop

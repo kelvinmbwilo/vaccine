@@ -107,7 +107,7 @@ $level = $level /($package->vaccine->vials_per_box*$package->vaccine->doses_per_
                 $("#itemarea").after(warning)
                 $("#no").click(function(){
                     $("#warn").hide('slow');
-                    $("input[name=sscc]").focus().attr("placeholde","Scan QR Code Again");
+                    $("input[name=sscc]").focus().attr("placeholder","Enter Lot Number Again");
                 });
                 $("#yes").click(function(){
                     $("#warn").remove(); $("#itemarea").show('slow');

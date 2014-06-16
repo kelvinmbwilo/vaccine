@@ -31,7 +31,7 @@ class PackageController extends \BaseController {
      */
     public function checksscc($id){
         $package = ManufacturePackage::where('sscc',$id)->where('status',"")->get();
-        if($package){
+        if($package->count() != 0){
         if(ArrivalNational::where('ssc',$id)->count() == ManufacturePackage::where('sscc',$id)->count() ){
             echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
         }else{

@@ -1,3 +1,12 @@
+@extends("layout.master")
+
+@section('title')
+<h1>
+    Dispatch
+    <small>National Dispatch Information </small>
+</h1>
+@stop
+@section('contents')
 @if(NationalPackage::where('sender','!=','0')->count() == 0)
 <h3>There are no packages sent</h3>
 @else
@@ -53,3 +62,4 @@
 </table>
 
 @endif
+@stop

@@ -100,7 +100,7 @@ $max = round(((($facility->surviving_infants *$package->vaccine->wastage *$packa
                 $("#itemarea").after(warning)
                 $("#no").click(function(){
                     $("#warn").hide('slow');
-                    $("input[name=sscc]").focus().attr("placeholde","Scan QR Code Again");
+                    $("input[name=sscc]").focus().attr("placeholder","Enter Lot Number Again");
                 });
                 $("#yes").click(function(){
                     $("#warn").remove(); $("#itemarea").show('slow');

@@ -1,3 +1,12 @@
+@extends("layout.master")
+
+@section('title')
+<h1>
+    Dispatch
+    <small>{{ Auth::user()->district->district }} District Dispatch Information </small>
+</h1>
+@stop
+@section('contents')
 @if(DistrictPackage::where('sender','!=','0')->count() == 0)
 <h3>There are no packages sent</h3>
 @else
@@ -55,3 +64,4 @@
 </table>
 
 @endif
+@stop

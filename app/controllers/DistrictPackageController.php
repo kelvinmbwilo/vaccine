@@ -129,7 +129,7 @@ class DistrictPackageController extends \BaseController {
 
                 //checking the existance of same vaccine with close expiry date
                 $other_available="";
-                $other_vaccine = DistrictStock::where('vaccine_id',$arr['gtin'])->where('number_of_doses','!=','0')->get();
+                $other_vaccine = DistrictStock::where('vaccine_id',$package->vaccine->GTIN)->where('number_of_doses','!=','0')->get();
                 foreach($other_vaccine as $vaccine){
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
                         $other_available = "available";

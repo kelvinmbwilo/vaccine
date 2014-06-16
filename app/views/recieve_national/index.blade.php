@@ -24,7 +24,7 @@
             <input type="text" name="sscc" placeholder="Scan Package SSCC Number" required class="form-control">
         </div>
         <div class="col-sm-6">
-            <br><button type="submit" class="btn btn-info btn-min">Add</button>
+            <br><button type="submit" class="btn btn-info btn-min">Submit</button>
         </div>
     </div>
 </form>

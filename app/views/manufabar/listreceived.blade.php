@@ -4,7 +4,7 @@
             <div class="text-muted bootstrap-admin-box-title">International shipment</div>
         </div>
         <div class="bootstrap-admin-panel-content">
-            @if(ManufacturePackage::whereIn('sscc',array('0'=>'0')+ArrivalNational::all()->lists('ssc'))->count() == 0)
+            @if(ManufacturePackage::where('status','received')->count() == 0)
             <h3>There are no Packages</h3>
             @else
             <table class="table table-striped table-bordered" id="example3">
@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                 <?php $i=1; ?>
-                @foreach(ManufacturePackage::whereIn('sscc',array('0'=>'0')+ArrivalNational::all()->lists('ssc'))->get() as $pack)
+                @foreach(ManufacturePackage::where('status','received')->lists('ssc'))->get() as $pack)
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $pack->sscc }}</td>
