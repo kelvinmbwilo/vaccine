@@ -8,8 +8,8 @@ $boxes = ($package->number_of_doses / $package->vaccine->doses_per_vial  )/$pack
 //        $level += $stoc->number_of_doses;
 //    }
 //}
-$min = round(((($facility->surviving_infants *$package->vaccine->wastage *$package->vaccine->schedule*0.5)/12)/$package->vaccine->vials_per_box)/$package->vaccine->doses_per_vial);
-$max = round(((($facility->surviving_infants *$package->vaccine->wastage *$package->vaccine->schedule*1.5)/12)/$package->vaccine->vials_per_box)/$package->vaccine->doses_per_vial);
+$min = round(($facility->surviving_infants *$package->vaccine->wastage *$package->vaccine->schedule*0.5)/12);
+$max = round(($facility->surviving_infants *$package->vaccine->wastage *$package->vaccine->schedule*1.5)/12);
 //$level = $level /($package->vaccine->vials_per_box*$package->vaccine->doses_per_vial)
 ?>
     <div class="col-sm-12" id="add" style="margin-top: 20px">
@@ -27,8 +27,8 @@ $max = round(((($facility->surviving_infants *$package->vaccine->wastage *$packa
             {{ $package->lot_number }}
         </div>
         <div class="col-sm-2">
-            <b>Max :</b>{{ $max }} boxes<br>
-            <b>Min :</b>{{ $min }} boxes<br>
+            <b>Max :</b>{{ $max }} doses<br>
+            <b>Min :</b>{{ $min }} doses<br>
         </div>
         <!--    displaying warning for products near expiry-->
         @if($expiry_status == "expired")
@@ -51,8 +51,8 @@ $max = round(((($facility->surviving_infants *$package->vaccine->wastage *$packa
         <div class="col-sm-2">
             <input type="hidden" name="lot" value="{{ $package->lot_number }}" />
             <input type="hidden" name="idd" value="" />
-            Boxes:
-            <br><input title="Number of boxes up to {{ $boxes }} boxes" required="" name="box" pattern="\d*" type="text" class="form-control input-sm" placeholder="Max of {{ $boxes }} boxes">
+            Doses:
+            <br><input title="Doses up to {{ $package->number_of_doses }} " required="" name="box" pattern="\d*" type="text" class="form-control input-sm" placeholder="Max of {{ $package->number_of_doses }} doses">
         </div>
         <div class="col-sm-1">
             <br>

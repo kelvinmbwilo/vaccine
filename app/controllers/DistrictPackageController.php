@@ -143,16 +143,17 @@ class DistrictPackageController extends \BaseController {
 
     public function processaddpackage(){
         $stock = DistrictStock::where('lot_number',Input::get('lot'))->first();
-        $doses = Input::get('box') * $stock->vaccine->vials_per_box * $stock->vaccine->doses_per_vial;
-        if($stock->number_of_doses > $doses){
+        $doses = Input::get('box');
+        $boxes = (Input::get('box') / $stock->vaccine->doses_per_vial  )/$stock->vaccine->vials_per_box;
+         if($stock->number_of_doses > $doses){
             $pack = DistrictPackageContents::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
             if($pack){
-                $pack->number_of_boxes = $pack->number_of_boxes+Input::get('box');
+                $pack->number_of_boxes = $pack->number_of_boxes+$boxes;
                 $pack->save();
             }else{
                 DistrictPackageContents::create(array(
                     'package_id' => Input::get('idd'),
-                    'number_of_boxes' => Input::get('box'),
+                    'number_of_boxes' => $boxes,
                     'lot_number' => Input::get('lot'),
                     'vaccine_id' => $stock->vaccine->id
                 ));
