@@ -22,7 +22,7 @@
                 </thead>
                 <tbody>
                 <?php $i=1; ?>
-                @foreach(ManufacturePackage::where('status','received')->lists('ssc'))->get() as $pack)
+                @foreach(ManufacturePackage::where('status','received')->get() as $pack)
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $pack->sscc }}</td>

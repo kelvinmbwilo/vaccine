@@ -19,7 +19,7 @@
 if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
     $pop    = '42,000,000';
     $birth  = '1,470,000';
-    $infants= '13,44,000';
+    $infants= '1,344,000';
     $preg   = '1,680,000';
 }elseif(Auth::user()->role_id == 'Region'){
     $pop    = Auth::user()->region->tagert_population;

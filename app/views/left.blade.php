@@ -27,7 +27,7 @@
         <ul class="treeview-menu">
             <li><a href="{{ url('mystore') }}"><i class="fa fa-angle-double-right"></i> My Store</a></li>
             <li><a href="{{ url('receive') }}"><i class="fa fa-angle-double-right"></i> Received</a></li>
-            <li><a href="{{ url('dispached') }}"><i class="fa fa-angle-double-right"></i> Dispatched</a></li>
+            <li><a href="{{ url('dispatched') }}"><i class="fa fa-angle-double-right"></i> Dispatched</a></li>
             @if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National' || Auth::user()->role_id == 'National IVD' )
 <!--            <li><a href="#"><i class="fa fa-angle-double-right"></i> Low Level Stock</a></li>-->
             @endif
