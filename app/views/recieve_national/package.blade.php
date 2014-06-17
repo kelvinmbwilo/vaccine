@@ -4,9 +4,13 @@
     <div class="col-sm-5">
         <form method="post" action="{{ url('') }}" id="checkqr">
             <div class="form-group" >
-                <div class="col-sm-12">
-                    Enter Lot Number  <br>
+                <div class="col-sm-8">
+                    Enter Lot Number <br>
                     <input type="text" name="lot" placeholder="Enter Lot Number" required class="form-control">
+                </div>
+                <div class="col-sm-4">
+                    <br>
+                    <input type="submit" value="Scan" class="btn btn-sm btn-primary" />
                 </div>
             </div>
         </form>

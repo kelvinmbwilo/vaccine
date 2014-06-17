@@ -33,7 +33,7 @@ class PackageController extends \BaseController {
         $package = ManufacturePackage::where('sscc',$id)->where('status',"")->get();
         if($package->count() != 0){
         if(ArrivalNational::where('ssc',$id)->count() == ManufacturePackage::where('sscc',$id)->where('status',"")->count() ){
-            echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
+            echo "<h3 class='text-danger'>All packages from this shipping information have been received</h3>";
         }else{
                 return View::make("recieve_national.package",compact('package'));
             }

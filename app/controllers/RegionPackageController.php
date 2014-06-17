@@ -28,7 +28,7 @@ class RegionPackageController extends \BaseController {
         $package = NationalPackage::where('package_number',$id)->where('received_status',"")->first();
         if($package){
             if(ArrivalRegion::where('package_number',$id)->count() == NationalPackage::where('package_number',$id)->first()->packages()->where('status','')->count() ){
-                echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
+                echo "<h3 class='text-danger'>All packages from this shipping information have been received</h3>";
             }else{
                 return View::make("recieve_region.package",compact('package'));
             }

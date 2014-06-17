@@ -24,7 +24,7 @@
             <input type="text" name="sscc" placeholder="Scan Shipment Number" required class="form-control">
         </div>
         <div class="col-sm-6">
-            <br><button type="submit" class="btn btn-info btn-min">Submit</button>
+            <br><button type="submit" class="btn btn-info btn-min">Scan</button>
         </div>
     </div>
 </form>

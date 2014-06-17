@@ -31,8 +31,14 @@
     <div class="col-sm-4">
         {{ Form::open(array("url"=>url("region_package/prepare/{$district->id}"),"class"=>"form-horizontal","id"=>'qrform')) }}
         <div class="form-group" id="lotarea">
-            <input style="color: #5bc0de; height: 25px" class="form-control" type="text" name="sscc" placeholder="Enter Lot Number" required="required" style="height: 34px">
-            <input type="hidden" name="id" value="first" />
+            <div class="col-sm-8">
+                <input style="color: #5bc0de; height: 25px" class="form-control" type="text" name="sscc" placeholder="Enter Lot Number" required="required" style="height: 34px">
+                <input type="hidden" name="id" value="first" />
+            </div>
+            <div class="col-sm-4">
+                <input type="submit" value="Scan" class="btn btn-xs btn-primary" />
+            </div>
+
         </div>
         {{ Form::close() }}
     </div>
