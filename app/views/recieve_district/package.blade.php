@@ -18,7 +18,7 @@
     <tr>
         <th>GTIN</th>
         <th>Description</th>
-        <th>Manufacture</th>
+        <th>Manufacturer</th>
         <th>Lot</th>
         <th>Expiry</th>
         <th>Vials</th>

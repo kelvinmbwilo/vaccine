@@ -27,7 +27,7 @@ class DistrictPackageController extends \BaseController {
     public function checksscc($id){
         $package = RegionalPackage::where('package_number',$id)->where('received_status',"")->first();
         if($package){
-            if(ArrivalDistrict::where('package_number',$id)->count() == RegionalPackage::where('package_number',$id)->first()->packages()->count() ){
+            if(ArrivalDistrict::where('package_number',$id)->count() == RegionalPackage::where('package_number',$id)->first()->packages()->where('status','received')->count() ){
                 echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
             }else{
                 return View::make("recieve_district.package",compact('package'));

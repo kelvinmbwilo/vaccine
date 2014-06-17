@@ -39,7 +39,7 @@
                 <input type="password" name="password" class="form-control transparent-input" placeholder="Password"/>
             </div>
             <div class="form-group">
-                <input type="checkbox" name="remember_me"/> Remember me
+                <input type="checkbox" name="keep" title="Save my login information" value="keep"/> Remember me
             </div>
         </div>
         <div class="footer">
