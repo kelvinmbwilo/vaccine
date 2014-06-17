@@ -20,7 +20,7 @@
         </div>
         <div class='form-group'>
             <div class='col-sm-6'>
-                Annual Birth<br>{{ Form::text('birth',$facility->annual_birth,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth')) }}
+                Expected Birth<br>{{ Form::text('birth',$facility->annual_birth,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth')) }}
             </div>
             <div class='col-sm-6'>
                 Surviving Infants <br> {{ Form::text('infants',$facility->surviving_infants,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Surviving Infants')) }}
@@ -28,7 +28,7 @@
         </div>
         <div class='form-group'>
             <div class='col-sm-6'>
-                Pregnancy<br>{{ Form::text('preg',$facility->pregnancy,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
+                Expected pregnancies<br>{{ Form::text('preg',$facility->pregnancy,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
             </div>
             <div class='col-sm-6'>
                 Contacts <br> {{ Form::text('contact',$facility->contact,array('class'=>'form-control','placeholder'=>'Contacts')) }}

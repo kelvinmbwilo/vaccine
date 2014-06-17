@@ -138,7 +138,7 @@ class PackageController extends \BaseController {
     public function processaddpackage(){
         $stock = NationalStock::where('lot_number',Input::get('lot'))->first();
         $doses = Input::get('box') * $stock->vaccine->vials_per_box * $stock->vaccine->doses_per_vial;
-        if($stock->number_of_doses > $doses){
+        if($stock->number_of_doses >= $doses){
             $pack = NationalPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
             if($pack){
                 $pack->number_of_boxes = $pack->number_of_boxes+Input::get('box');

@@ -18,8 +18,8 @@
         <th> Region </th>
         <th> Districts </th>
         <th> Target Population </th>
-        <th> Pregnancy  </th>
-        <th> Annual Birth </th>
+        <th> Expected pregnancies  </th>
+        <th> Expected births </th>
         <th> Surviving Infants </th>
 
     </tr>

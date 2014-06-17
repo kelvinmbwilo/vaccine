@@ -27,7 +27,7 @@ class RegionPackageController extends \BaseController {
     public function checksscc($id){
         $package = NationalPackage::where('package_number',$id)->where('received_status',"")->first();
         if($package){
-            if(ArrivalRegion::where('package_number',$id)->count() == NationalPackage::where('package_number',$id)->first()->packages()->where('status','received')->count() ){
+            if(ArrivalRegion::where('package_number',$id)->count() == NationalPackage::where('package_number',$id)->first()->packages()->where('status','')->count() ){
                 echo "<h3 class='text-danger'>All packages from this shipping information has been received</h3>";
             }else{
                 return View::make("recieve_region.package",compact('package'));
@@ -180,7 +180,7 @@ class RegionPackageController extends \BaseController {
         $stock = RegionStock::where('lot_number',Input::get('lot'))->first();
         $doses = Input::get('box');
         $boxes = (Input::get('box') / $stock->vaccine->doses_per_vial  )/$stock->vaccine->vials_per_box;
-        if($stock->number_of_doses > $doses){
+        if($stock->number_of_doses >= $doses){
             $pack = RegionalPackageContent::where('package_id',Input::get('idd'))->where('lot_number',Input::get('lot'))->first();
             if($pack){
                 $pack->number_of_boxes = $pack->number_of_boxes+$boxes;

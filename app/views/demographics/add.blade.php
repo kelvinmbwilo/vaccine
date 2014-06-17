@@ -5,10 +5,10 @@
                     Target Population<br> {{ Form::text('population',$district->target_population,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Target Population','value'=>'0')) }}
                </div>
               <div class='col-sm-2'>
-                 Pregnancy<br>{{ Form::text('preg',$district->pregnancy,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
+                  Expected pregnancies<br>{{ Form::text('preg',$district->pregnancy,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
               </div>
                 <div class='col-sm-3'>
-                 Annual Birth<br>{{ Form::text('birth',$district->annual_birth,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
+                    Expected births<br>{{ Form::text('birth',$district->annual_birth,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Annual Birth','value'=>'0')) }}
               </div>
               <div class='col-sm-3'>
                  Surviving Infants <br> {{ Form::text('infants',$district->surviving_infants,array("pattern"=>"\d*",'class'=>'form-control','placeholder'=>'Surviving Infants','value'=>'0')) }}

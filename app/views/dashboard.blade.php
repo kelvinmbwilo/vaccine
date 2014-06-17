@@ -42,19 +42,19 @@ if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' |
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default">
-            <h3 class="text-center lead">Pregnancy</h3>
+            <h3 class="text-center lead">Expected pregnancies</h3>
             <h4 class="text-center">{{ number_format($preg) }}</h4>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default">
-            <h3 class="text-center lead">Annual Birth</h3>
+            <h3 class="text-center lead">Expected births</h3>
             <h4 class="text-center">{{ number_format($birth) }}</h4>
         </div>
     </div>
     <div class="col-sm-3">
         <div class="panel panel-default">
-            <h3 class="text-center lead">Surviving Infants</h3>
+            <h3 class="text-center lead">Surviving infants</h3>
             <h4 class="text-center">{{ number_format($infants) }}</h4>
         </div>
     </div>

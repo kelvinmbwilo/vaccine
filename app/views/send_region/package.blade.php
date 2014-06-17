@@ -51,6 +51,7 @@
             {{ date('j M Y',strtotime($package->expiry_date)) }}
         </div>
         @endif
+        @if($expiry_status != "expired")
         {{ Form::open(array("url"=>url("region_package/addpack"),"class"=>"form-horizontal","id"=>'FileUploader6')) }}
         <div class="col-sm-1">
             <input type="hidden" name="lot" value="{{ $package->lot_number }}" />
@@ -60,11 +61,21 @@
         </div>
         <div class="col-sm-1">
             <br>
-            @if($expiry_status != "expired")
             <input type="submit" value="Add" class="btn btn-success btn-sm">
-            @endif
+
         </div>
         {{ Form::close() }}
+        @else
+        <div class="col-sm-2">
+            <h4 class="text-danger"><i class="fa fa-warning"></i> This item has expired</h4>
+        </div>
+        <h4></h4>
+        <script>
+            $(document).ready(function(){
+                $("input[name=sscc]").focus().attr("placeholder","Enter Lot Number Again");
+            })
+        </script>
+        @endif
     </div>
 <div id="output3"></div>
 

@@ -200,7 +200,7 @@ opacity: 0.8;               /* Good browsers */
 /* Kizito edit begins here */
 .bg-cover {
 background-color: #eaeaec;
-background: url('../img/login-bg-3.jpg') no-repeat center center fixed;
+/*background: url('../img/login-bg-3.jpg') no-repeat center center fixed;*/
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
@@ -2338,8 +2338,8 @@ Component: timeline
     Page: register and login
 */
 .form-box {
-  width: 360px;
-  margin: 90px auto 0 auto;
+  /*width: 560px;*/
+  /*margin: 90px auto 0 auto;*/
 }
 .form-box .header {
   -webkit-border-top-left-radius: 4px;

@@ -3,13 +3,13 @@
         <b>Target Population</b>
     </div>
     <div class="col-sm-2">
-        <b>Birth</b>
+        <b>Expected births</b>
     </div>
     <div class="col-sm-2">
-        <b>Pregnancy</b>
+        <b>Expected pregnancies</b>
     </div>
     <div class="col-sm-2">
-        <b>Surviving Infants</b>
+        <b>Surviving infants</b>
     </div>
     <div class="col-sm-4">
         <b>Enter Lot Number</b>
