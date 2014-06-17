@@ -157,23 +157,23 @@ if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' |
 $cats = "";$i = 0;
 $currlevel = "name: 'Current Level',data: [";
 $relevel =  "name: 'Reorder Level',data: [";
-$distr =  "name: 'Dispatch',data: [";
+$distr =  "name: 'Expected Shipment',data: [";
 foreach(Vaccine::all() as $vaccine){
     $i++;
     $cats .=($i == Vaccine::all()->count())?"'".$vaccine->name ."'":"'".$vaccine->name ."',";
     if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
         $min = round((1344000 *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
         $stock = NationalStock::where('GTIN',$vaccine->GTIN)->sum('number_of_doses');
-        $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(NationalPackageContent::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
+        $pack = ManufacturePackage::where('status','')->where('vaccine_id',$vaccine->id)->sum('number_of_doses');
     }elseif(Auth::user()->role_id == 'Region'){
         $min = round((Auth::user()->region->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
         $stock = RegionStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
-        $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(RegionalPackageContent::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
+        $pack = (NationalPackageContent::where('status','')->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
     }elseif(Auth::user()->role_id == 'District'){
         $min = round((Auth::user()->district->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
         $stock = DistrictStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
-        $pack = $vaccine->doses_per_vial*$vaccine->vials_per_box*(DistrictPackageContents::where('vaccine_id',$vaccine->id)->sum('number_of_boxes'));
-    }
+        $pack = (RegionalPackageContent::where('status','')->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
+     }
 
     $relevel .=($i == Vaccine::all()->count())? $min : $min.",";
     $currlevel .=($i == Vaccine::all()->count())? $stock : $stock.",";
