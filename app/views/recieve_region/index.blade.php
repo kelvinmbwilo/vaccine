@@ -16,7 +16,8 @@
 @stop
 
 @section('contents')
-<div class="col-sm-12" style="margin-bottom: 20px">
+<div class="col-sm-12" id="infoarea"></div>
+<div class="col-sm-12" style="margin-bottom: 20px" id="ssccarea">
 <form method="post" action="{{ url('') }}" id="addsscc">
     <div class="form-group" >
         <div class="col-sm-6">
@@ -35,6 +36,7 @@
 
 <script>
     $(document).ready(function (){
+        $("#infoarea").hide();
 
         $(".dat").datepicker({
             changeMonth: true,
@@ -55,7 +57,19 @@
         });
 
         function afterSuccess(){
+            var ssc = $('#addsscc input[name=sscc]').val();
             $('#addsscc').resetForm();
+            var discr = "<p class='lead'>Receiving Package With Shipment Number: "+ssc+"  <button class='btn btn-xs btn-warning tooltips' id='canc' title='cancel the whole process and rescan the sscc number'>Cancel</button> </p> ";
+            $("#ssccarea").fadeOut("100")
+            $("#infoarea").html(discr).fadeIn("slow");
+            $('.tooltips').tooltipster();
+            $("#canc").click(function(){
+                $("#canc").html("<i class='fa fa-spin fa-spinner '></i> Canceling...")
+                $("#infoarea").html("").fadeOut("500")
+                $("#output").fadeOut("500").html("").fadeIn()
+                $("#ssccarea").fadeIn("slow");
+                $("input[name=sscc]").focus();
+            })
         }
     });
 </script>

@@ -36,7 +36,8 @@
 
 <script>
     $(document).ready(function (){
-$("#infoarea").hide();
+        $("#infoarea").hide();
+
         $(".dat").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -58,13 +59,16 @@ $("#infoarea").hide();
         function afterSuccess(){
             var ssc = $('#addsscc input[name=sscc]').val();
             $('#addsscc').resetForm();
-            var discr = "<p class='lead'>SSCC: "+ssc+"  <button class='btn btn-xs btn-warning' id='canc'>Cancel</button> </p> ";
-            $("#ssccarea").fadeOut("500")
+            var discr = "<p class='lead'>Receiving Package With SSCC: "+ssc+"  <button class='btn btn-xs btn-warning tooltips' id='canc' title='cancel the whole process and rescan the sscc number'>Cancel</button> </p> ";
+            $("#ssccarea").fadeOut("100")
             $("#infoarea").html(discr).fadeIn("slow");
+            $('.tooltips').tooltipster();
             $("#canc").click(function(){
+                $("#canc").html("<i class='fa fa-spin fa-spinner '></i> Canceling...")
                 $("#infoarea").html("").fadeOut("500")
-                $("#output").html("").fadeOut("500")
+                $("#output").fadeOut("500").html("").fadeIn()
                 $("#ssccarea").fadeIn("slow");
+                $("input[name=sscc]").focus();
             })
         }
     });

@@ -29,6 +29,7 @@
 
     <!--multselect-->
     {{ HTML::style("multiselect/css/ui.multiselect.css") }}
+    {{ HTML::style("css/tooltipster.css") }}
     <!-- jQuery 2.0.2 -->
     {{HTML::script("js/jquery.min.js")}}
      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -227,6 +228,7 @@
 {{ HTML::script("js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}
 <!-- iCheck -->
 {{ HTML::script("js/plugins/iCheck/icheck.min.js") }}
+{{ HTML::script("js/jquery.tooltipster.min.js") }}
 
 
 </body>
