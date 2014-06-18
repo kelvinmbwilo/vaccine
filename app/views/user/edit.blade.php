@@ -1,4 +1,17 @@
-
+<?php
+$region = array();
+$district = array();
+$role = array();
+if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD" || Auth::user()->role_id == "admin"){
+    $region = Region::all()->lists('region','id');
+    $district = District::orderBy('district','ASC')->get()->lists('district','id');
+    $role = array("admin"=>"Administrator","National IVD"=>"National IVD","National"=>"National Store","Region"=>"Region Store","District"=>"District Store");
+}elseif(Auth::user()->role_id == "Region" ){
+    $region = array(Auth::user()->region->id => Auth::user()->region->region);
+    $district = Auth::user()->region->district->lists('district','id');
+    $role = array(""=>'Select District',"District"=>"District Store");
+}
+?>
 <div class="panel panel-default">
     <div class="panel-body">
         {{ Form::open(array("url"=>url("user/edit/{$user->id}"),"class"=>"form-horizontal","id"=>'FileUploader')) }}
@@ -28,17 +41,17 @@
                 Phone Number<br>{{ Form::text('phone',$user->phone,array('class'=>'form-control','placeholder'=>'Phone Number','required'=>'required')) }}
             </div>
             <div class='col-sm-6'>
-                Role <br>{{ Form::select('role',array("admin"=>"Administrator","National IVD"=>"National IVD","National"=>"National Store","Region"=>"Region Store","District"=>"District Store"),$user->role_id,array('class'=>'form-control','required'=>'requiered')) }}
+                Role <br>{{ Form::select('role',$role,$user->role_id,array('class'=>'form-control','required'=>'requiered')) }}
             </div>
 
         </div>
         <div class='form-group' id="area">
 
             <div class='col-sm-6' id="regarea">
-                Region<br>{{ Form::select('region',Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
+                Region<br>{{ Form::select('region',$region,'',array('class'=>'form-control','required'=>'requiered')) }}
             </div>
             <div class='col-sm-6' id="disarea">
-                District<br><span id="district-area">{{ Form::select('district',array('all'=>'all')+District::orderBy('district','ASC')->get()->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}</span>
+                District<br><span id="district-area">{{ Form::select('district',$district,'',array('class'=>'form-control','required'=>'requiered')) }}</span>
             </div>
 
         </div>

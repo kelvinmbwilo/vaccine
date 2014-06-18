@@ -100,38 +100,46 @@
 <!--</li>-->
 <!-- Notifications: style can be found in dropdown.less -->
 <!-- User Account: style can be found in dropdown.less -->
-<li class="dropdown user user-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="glyphicon glyphicon-user"></i>
-        <span>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<i class="caret"></i></span>
-    </a>
-    <ul class="dropdown-menu">
-        <!-- User image -->
-        <li class="user-header bg-light-blue">
-            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />
-            <p>
-                {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} -
-                @if(Auth::user()->role_id == 'Region')
-                {{ Auth::user()->region->region }} {{ Auth::user()->role_id }}
-                @elseif(Auth::user()->role_id == 'District')
-                {{ Auth::user()->district->district }} {{ Auth::user()->role_id }}
-                @endif
-
-            </p>
-        </li>
-        <!-- Menu Body -->
-
-        <!-- Menu Footer-->
-        <li class="user-footer">
-            <div class="pull-left">
-                <a href="{{ url('profile')}}" class="btn btn-default btn-flat">Profile</a>
-            </div>
-            <div class="pull-right">
-                <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Sign out</a>
-            </div>
-        </li>
-    </ul>
-</li>
+    <li>
+        <a href="{{ url('profile')}}">
+           <b>Logged in as</b> <i>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</i>
+        </a>
+    </li>
+    <li style="border-left:solid 2px #8FB0BD">
+       <a href="{{ url('logout') }}" ><i class="fa fa-power-off text-maroon"></i> Logout</a>
+    </li>
+<!--<li class="user user-menu">-->
+<!--    <a href="{{ url('profile')}}" class="" data-toggle="dropdown">-->
+<!--        <i class="glyphicon glyphicon-user"></i>-->
+<!--        <span>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<i class="caret"></i></span>-->
+<!--    </a> | <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Logout</a>-->
+<!--    <ul class="dropdown-menu">-->
+<!--        <!-- User image -->
+<!--        <li class="user-header bg-light-blue">-->
+<!--            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image" />-->
+<!--            <p>-->
+<!--                {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} --->
+<!--                @if(Auth::user()->role_id == 'Region')-->
+<!--                {{ Auth::user()->region->region }} {{ Auth::user()->role_id }}-->
+<!--                @elseif(Auth::user()->role_id == 'District')-->
+<!--                {{ Auth::user()->district->district }} {{ Auth::user()->role_id }}-->
+<!--                @endif-->
+<!---->
+<!--            </p>-->
+<!--        </li>--
+<!--        <!-- Menu Body -->
+<!---->
+<!--        <!-- Menu Footer-->
+<!--        <li class="user-footer">-->
+<!--            <div class="pull-left">-->
+<!--                <a href="{{ url('profile')}}" class="btn btn-default btn-flat">Profile</a>-->
+<!--            </div>-->
+<!--            <div class="pull-right">-->
+<!--                <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Sign out</a>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</li>-->
 </ul>
 </div>
 </nav>

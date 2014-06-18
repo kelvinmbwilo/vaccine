@@ -11,13 +11,14 @@
                 <input type="text" class="form-control" id="firstname" name="firstname" value="{{ $user->firstname }}" placeholder="First Name">
             </div>
             <div class="form-group">
-                <label for="middlename">Middle Name</label>
-                <input type="text" class="form-control" id="middlename" name="middlename" value="{{ $user->middlename }}" placeholder="Middle Name">
-            </div>
-            <div class="form-group">
                 <label for="lastname">Last Name</label>
                 <input type="text" class="form-control" id="lastname" name="lastname" value="{{ $user->lastname }}" placeholder="Last Name">
             </div>
+            <div class="form-group">
+                <label for="middlename">User Name</label>
+                <input type="text" class="form-control" id="middlename" name="username" value="{{ $user->username }}" placeholder="Middle Name">
+            </div>
+
 
             <div class="form-group">
                 <label for="email">Email Address</label>

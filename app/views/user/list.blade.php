@@ -1,3 +1,12 @@
+<?php
+$users=array();
+if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD" || Auth::user()->role_id == "admin"){
+    $users = User::where('status','active')->get();
+}elseif(Auth::user()->role_id == "Region" ){
+    $users = User::where('status','active')->where('region_id',Auth::user()->region->id)->orWhereIn('district_id',Auth::user()->region->district->lists('id'))->get();
+
+}
+?>
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">
@@ -7,7 +16,7 @@
     </div>
 </div>
 <div class="bootstrap-admin-panel-content">
-   @if(User::all()->count() == 0)
+   @if($users->count() == 0)
     <h3>There are no users</h3>
     @else
     <table class="table table-striped table-bordered" id="example2">
@@ -24,7 +33,7 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(User::where('status','active')->get() as $us)
+    @foreach($users as $us)
     <tr>
         <td>{{ $i++ }}</td>
         <td style="text-transform: capitalize">{{ $us->firstname }} {{ $us->middlename }} {{ $us->lastname }}</td>

@@ -16,7 +16,8 @@
 @stop
 
 @section('contents')
-<div class="col-sm-12" style="margin-bottom: 20px">
+<div class="col-sm-12" id="infoarea"></div>
+<div class="col-sm-12" style="margin-bottom: 20px" id="ssccarea">
 <form method="post" action="{{ url('') }}" id="addsscc">
     <div class="form-group" >
         <div class="col-sm-6">
@@ -35,7 +36,7 @@
 
 <script>
     $(document).ready(function (){
-
+$("#infoarea").hide();
         $(".dat").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -55,7 +56,16 @@
         });
 
         function afterSuccess(){
+            var ssc = $('#addsscc input[name=sscc]').val();
             $('#addsscc').resetForm();
+            var discr = "<p class='lead'>SSCC: "+ssc+"  <button class='btn btn-xs btn-warning' id='canc'>Cancel</button> </p> ";
+            $("#ssccarea").fadeOut("500")
+            $("#infoarea").html(discr).fadeIn("slow");
+            $("#canc").click(function(){
+                $("#infoarea").html("").fadeOut("500")
+                $("#output").html("").fadeOut("500")
+                $("#ssccarea").fadeIn("slow");
+            })
         }
     });
 </script>

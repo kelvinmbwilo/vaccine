@@ -15,7 +15,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr><td><b>Full Name</b></td><td>{{$user->firstname." ".$user->middlename." ".$user->lastname}}</td></tr>
+                <tr><td><b>Name</b></td><td>{{$user->firstname." ".$user->lastname}}</td></tr>
+                <tr><td><b>Username</b></td><td>{{$user->username}}</td></tr>
                 <tr><td><b>Phone Number</b></td><td>{{$user->phone}}</td></tr>
                 <tr><td><b>Email Address</b></td><td>{{$user->email}}</td></tr>
                 <tr><td><b>Role</b></td><td>{{$user->role_id}}</td></tr>
