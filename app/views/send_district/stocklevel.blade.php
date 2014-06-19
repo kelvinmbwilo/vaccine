@@ -14,12 +14,12 @@
     <thead>
     <tr>
         <th> # </th>
-        <th>Lot Number</th>
+        <th>GTIN</th>
+        <!--        <th>Number Of Packages</th>-->
         <th>Manufacturer</th>
         <th>Name</th>
+        <th>Lot Number</th>
         <th>Number Of Doses</th>
-        <th>Vials</th>
-        <th>Boxes</th>
         <th>Expiry Date</th>
     </tr>
     </thead>
@@ -29,14 +29,13 @@
     @if($us)
     <tr>
         <td>{{ $i++ }}</td>
-        <td>{{ $us->lot_number }}</td>
+        <td>{{ $us->vaccine->GTIN }}</td>
         <td>{{ $us->vaccine->manufacturer }}</td>
         <td>
             {{ $us->vaccine->name }}
         </td>
+        <td>{{ $us->lot_number }}</td>
         <td>{{ $us->number_of_doses }}</td>
-        <td>{{ $us->number_of_doses/$us->vaccine->doses_per_vial; }}</td>
-        <td>{{ $us->number_of_doses/($us->vaccine->doses_per_vial*$us->vaccine->vials_per_box) }}</td>
         <td>{{ date('j M Y',strtotime($us->expiry_date)) }}</td>
     </tr>
     @endif

@@ -40,7 +40,7 @@
 </div>
 
 <div class="col-sm-12" id="listuser" style="margin-top: 20px">
- @include('send_national.listcount')
+
 </div>
 
 <script>
