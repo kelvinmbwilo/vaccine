@@ -17,7 +17,10 @@ class CreateArrivalNationalTable extends Migration {
 			$table->increments('id');
             $table->string("ssc");
             $table->string("lot_number");
+            $table->string("GTIN");
             $table->string("number_as_expected");
+            $table->integer('number_received');
+            $table->integer('number_expected');
             $table->string("problem");
             $table->string("temperature_monitor");
             $table->string("physcal_damege");

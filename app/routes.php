@@ -176,6 +176,9 @@ Route::post('package/receive/qrcode/{id}',array('uses'=>'PackageController@check
 Route::post('package/receive/confirmqr/{id}',array('uses'=>'PackageController@additemtostock'));
 
 //display a list of vaccines
+Route::post('package/receive/cancelrecieve/{id}',array('uses'=>'PackageController@cancelreceive'));
+
+//display a list of vaccines
 Route::post('package/receive/confirm/{id}',array('uses'=>'PackageController@confirmpackage'));
 
 //display a list of vaccines
@@ -183,6 +186,9 @@ Route::get('package/receive/list',array('uses'=>'PackageController@listrecieved'
 
 //display a list of vaccines
 Route::get('package/receive/form',array('uses'=>'PackageController@fillform'));
+
+//display a list of vaccines
+Route::get('package/receive/listconfirmed/{id}',array('uses'=>'PackageController@listconfirmed'));
 
 //viewing index page
 Route::get('package/send/national',array('uses'=>'PackageController@sendPackage'));

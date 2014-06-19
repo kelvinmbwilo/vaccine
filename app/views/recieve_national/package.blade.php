@@ -1,5 +1,5 @@
 <div class="col-sm-12" id="qroutput" style="margin-bottom: 20px"></div>
-<div class="col-sm-12" style="margin-bottom: 5px">
+<div class="col-sm-12" style="margin-bottom: 5px" id="lotform">
     <div class="col-sm-7"><br><h4>Package sent on {{ date('j M Y',strtotime($package->first()->created_at)) }}</h4></div>
     <div class="col-sm-5">
         <form method="post" action="{{ url('') }}" id="checkqr">
@@ -36,9 +36,9 @@
            {{ $pack->vaccine->manufacturer }}
         </td>
         <td>{{ $pack->lot_number }}</td>
-        <td>{{ $pack->expiry_date }}</td>
-        <td>{{ $pack->number_of_doses/$pack->vaccine->doses_per_vial }}</td>
-        <td>{{ ($pack->number_of_doses/$pack->vaccine->doses_per_vial)/$pack->vaccine->vials_per_box }}</td>
+        <td>{{ date('j M Y',strtotime($pack->expiry_date)) }}</td>
+        <td>{{ round($pack->number_of_doses/$pack->vaccine->doses_per_vial) }}</td>
+        <td>{{ round(($pack->number_of_doses/$pack->vaccine->doses_per_vial)/$pack->vaccine->vials_per_box) }}</td>
         <td>{{ $pack->number_of_doses }}</td>
     </tr>
     @endforeach

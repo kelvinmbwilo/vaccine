@@ -18,8 +18,8 @@
         </td>
         <td>{{ $arrival->lot_number }}</td>
         <td>{{ $arrival->manufacturer->expiry_date }}</td>
-        <td>{{ ($arrival->number_of_boxes*$arrival->vaccine->vials_per_box) }}</td>
-        <td>{{ $arrival->number_of_boxes }}</td>
+        <td>{{ round(($arrival->number_of_boxes*$arrival->vaccine->vials_per_box)) }}</td>
+        <td>{{ round($arrival->number_of_boxes) }}</td>
         <td>{{ ($arrival->number_of_boxes*$arrival->vaccine->doses_per_vial)*$arrival->vaccine->vials_per_box }}</td>
 
     </tr>
@@ -30,15 +30,15 @@
     <div class='form-group'>
         <div class='col-sm-2'>
             <small> Quantity Okay </small>
-            {{ Form::select('quantity',array('Yes'=>'Yes','No'=>'No'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            {{ Form::select('quantity',array(''=>'Select','Yes'=>'Yes','No'=>'No'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
         <div class='col-sm-2'>
             <small> Physical Damage</small><br>
-            {{ Form::select('damage',array('Yes'=>'Yes','No'=>'No'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            {{ Form::select('damage',array(''=>'Select','Yes'=>'Yes','No'=>'No'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
         <div class='col-sm-2'>
             <small> VVM Status</small><br>
-            {{ Form::select('vvm',array('I'=>'I (Okay)','II'=>'II (Okay)','III'=>'III (Bad)','IV'=>'IV (Bad)'),'',array('class'=>'form-control','required'=>'requiered')) }}
+            {{ Form::select('vvm',array(''=>'Select','I'=>'I (Okay)','II'=>'II (Okay)','III'=>'III (Bad)','IV'=>'IV (Bad)'),'',array('class'=>'form-control','required'=>'requiered')) }}
         </div>
 <!--        <div class='col-sm-2'>-->
 <!--            <small> Temperature monitors Status</small><br>-->
@@ -46,7 +46,7 @@
 <!--        </div>-->
         <div class='col-sm-3'>
             <br>
-            {{ Form::submit('Confirm',array('class'=>'btn btn-primary form-control','id'=>'submitqr')) }}
+            {{ Form::submit('Confirm',array('class'=>'btn btn-primary form-control','id'=>'submitqr','title'=>'Make sure you fill all necessary details before submitting, this item it will be made available in your stock')) }}
         </div>
         <div class='col-sm-3'>
             <br>
@@ -54,8 +54,17 @@
         </div>
     </div>
 
+    <div class='form-group'>
+        <div class='col-sm-6' id="quantityarea">
+            <small title='write the actual amount received without problems' class="textltips">
+                Received Amount(vials)
+                <button type="button" class='btn btn-xs btn-success toltips' title='write the actual number of vials received without problems'><i class="fa fa-question-circle"></i> </button>
+            </small>
+            {{ Form::text('quantity1','',array('class'=>'form-control','placeholder'=>'Actual Amount Received','required'=>'required')) }}
+        </div>
 
     </div>
+
 <div class="col-sm-12">
     <div class='form-group'>
         <div class='col-sm-8'>
@@ -67,10 +76,58 @@
         </div>
     </div>
 </div>
+</div>
     {{ Form::close() }}
 
 <script>
     $(document).ready(function (){
+        $('.tootip').tooltipster();
+        //taking contents
+        var quantityarea = $("#quantityarea").html();
+
+        //hiding items by default
+        $("#quantityarea").html("");
+
+        //dealing with incorrect amounts
+        $("select[name=quantity]").change(function(){
+            if($("select[name=damage]").val() == 'Yes' || $("select[name=vvm]").val() == 'III' || $("select[name=vvm]").val() == 'IV' || $("select[name=quantity]").val() == 'No'){
+                $("#quantityarea").html(quantityarea);
+                $('.toltips').tooltipster();
+            }else{
+                $("#quantityarea").html("");
+            }
+
+        })
+
+        //dealing with incorrect temperature
+        $("select[name=temp]").change(function(){
+
+        })
+
+        //dealing with incorrect vvm
+        $("select[name=vvm]").change(function(){
+            if($("select[name=damage]").val() == 'Yes' || $("select[name=vvm]").val() == 'III' || $("select[name=vvm]").val() == 'IV' || $("select[name=quantity]").val() == 'No'){
+                $("#quantityarea").html(quantityarea);
+                $('.toltips').tooltipster();
+            }else{
+                $("#quantityarea").html("");
+            }
+        })
+
+        //dealing with damaged items
+        $("select[name=damage]").change(function(){
+            if($("select[name=damage]").val() == 'Yes' || $("select[name=vvm]").val() == 'III' || $("select[name=vvm]").val() == 'IV' || $("select[name=quantity]").val() == 'No'){
+                $("#quantityarea").html(quantityarea);
+                $('.toltips').tooltipster();
+            }else{
+                $("#quantityarea").html("");
+            }
+        })
+
+        if($('#alllist tr:visible').length == 2){
+            $('#alllist').hide("slow");
+        }
+
         $("#alllist").find("td:contains('<?php echo $arrival->lot_number ?>')").parent().hide("5000");
         $('#confirmpackage').on('submit', function(e) {
             e.preventDefault();
@@ -83,6 +140,7 @@
         });
 
         $("#cancel").click(function(){
+            $('#alllist').show("slow");
             $("#alllist").find("td:contains('<?php echo $arrival->lot_number ?>')").parent().show("5000");
             $(this).parent().parent().parent().parent().parent().fadeOut( "slow", function() {
                 $("#submitqr").parent().parent().parent().parent().parent().html("").fadeIn();

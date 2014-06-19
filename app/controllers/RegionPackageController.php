@@ -41,37 +41,45 @@ class RegionPackageController extends \BaseController {
     public function checkqr($id){
             $arr = $this->breakqr($id);
             $pack = NationalPackage::where('package_number',$_POST['pack'])->where('received_status',"")->first();
-            $arrival = $pack->packages()->where('lot_number',$arr['lot_number'])->first();
-            if($arrival){
-                return View::make("recieve_region.confirm",compact('arrival'));            }
-            else{
-                echo "<h3 class='text-danger'>There are no information about this package</h3>";
+            if($pack){
+                $arrival = $pack->packages()->where('lot_number',$arr['lot_number'])->first();
+                if($arrival){
+                    return View::make("recieve_region.confirm",compact('arrival'));            }
+                else{
+                    echo "<h3 class='text-danger'>There are no information about this package</h3>";
+                }
+            }else{
+                echo "<h3 class='text-danger'>All Items from this package has been received</h3>";
             }
+
     }
 
     public function additemtostock($id){
         $package = NationalPackageContent::find($id);
+        $doses = $package->number_of_boxes * $package->vaccine->vials_per_box *$package->vaccine->doses_per_vial;
         $arrival = ArrivalRegion::create(array(
             'national_package'      =>$package->package->id,
-            'package_number'      =>$package->package->package_number,
-            'regional_id'             =>$package->package->region_id,
+            'GTIN'                  =>$package->vaccine->GTIN,
+            'package_number'        =>$package->package->package_number,
+            'regional_id'           =>$package->package->region_id,
             'lot_number'            =>$package->lot_number,
             'number_as_expected'    =>Input::get('quantity'),
             'physcal_damege'        =>Input::get('damage'),
             'vvm_status'            =>Input::get('vvm'),
+            'number_received'       =>(Input::has('quantity1'))?Input::get('quantity1')*$package->vaccine->doses_per_vial:$doses,
+            'number_expected'       =>$doses,
             'receiver'              =>Auth::user()->id,
             'problem'               =>Input::get('comments'),
         ));
 
         $stock = RegionStock::where('lot_number',$package->lot_number)->first();
-        $doses = $package->number_of_boxes * $package->vaccine->vials_per_box *$package->vaccine->doses_per_vial;
         if($stock){
-            $stock->number_of_doses = $stock->number_of_doses + $doses;
+            $stock->number_of_doses = $stock->number_of_doses + $arrival->number_received;
             $stock->save();
         }else{
             RegionStock::create(array(
                 'region_id'         => $package->package->region_id,
-                'number_of_doses'   => $doses,
+                'number_of_doses'   => $arrival->number_received,
                 'lot_number'        => $package->lot_number,
                 'vaccine_id'        => $package->vaccine->GTIN,
                 'expiry_date'       => $package->manufacturer->expiry_date
@@ -83,6 +91,7 @@ class RegionPackageController extends \BaseController {
         $count1 = NationalPackage::find($package->package->id)->packages()->count();
         if($count == $count1){
             $package->package->received_status = "received";
+            $package->package->receiver = Auth::user()->id;
             $package->package->save();
         }
 

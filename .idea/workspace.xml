@@ -2,10 +2,182 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/recieve_national/listconfirmed.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/ajax-loader.gif" afterPath="$PROJECT_DIR$/public/img/ajax-loader.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/ajax-loader1.gif" afterPath="$PROJECT_DIR$/public/img/ajax-loader1.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/alpha-horizontal.png" afterPath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/alpha-horizontal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/alpha.png" afterPath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/alpha.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/american-express.png" afterPath="$PROJECT_DIR$/public/img/credit/american-express.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/avatar.png" afterPath="$PROJECT_DIR$/public/img/avatar.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/avatar04.png" afterPath="$PROJECT_DIR$/public/img/avatar04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/avatar2.png" afterPath="$PROJECT_DIR$/public/img/avatar2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/avatar3.png" afterPath="$PROJECT_DIR$/public/img/avatar3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/avatar5.png" afterPath="$PROJECT_DIR$/public/img/avatar5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/blur-background04.jpg" afterPath="$PROJECT_DIR$/public/img/blur-background04.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/blur-background08.jpg" afterPath="$PROJECT_DIR$/public/img/blur-background08.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/blur-background09.jpg" afterPath="$PROJECT_DIR$/public/img/blur-background09.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/body-bg.png" afterPath="$PROJECT_DIR$/public/img/body-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/cirrus.png" afterPath="$PROJECT_DIR$/public/img/credit/cirrus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/front-bg.png" afterPath="$PROJECT_DIR$/public/img/front-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/front-bg2.png" afterPath="$PROJECT_DIR$/public/img/front-bg2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/header-bg-hover.png" afterPath="$PROJECT_DIR$/public/img/header-bg-hover.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/header-bg.png" afterPath="$PROJECT_DIR$/public/img/header-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/hue-horizontal.png" afterPath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/hue-horizontal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/hue.png" afterPath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/hue.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/icons.png" afterPath="$PROJECT_DIR$/public/img/icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/ivd-logo.png" afterPath="$PROJECT_DIR$/public/img/ivd-logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/login-bg-1.jpg" afterPath="$PROJECT_DIR$/public/img/login-bg-1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/login-bg-2.jpg" afterPath="$PROJECT_DIR$/public/img/login-bg-2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/login-bg-3.jpg" afterPath="$PROJECT_DIR$/public/img/login-bg-3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/logo.png" afterPath="$PROJECT_DIR$/public/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/mastercard.png" afterPath="$PROJECT_DIR$/public/img/credit/mastercard.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/mestro.png" afterPath="$PROJECT_DIR$/public/img/credit/mestro.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/pathweb-banner-logo.png" afterPath="$PROJECT_DIR$/public/img/pathweb-banner-logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/paypal.png" afterPath="$PROJECT_DIR$/public/img/credit/paypal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/paypal2.png" afterPath="$PROJECT_DIR$/public/img/credit/paypal2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/saturation.png" afterPath="$PROJECT_DIR$/public/img/bootstrap-colorpicker/saturation.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/sprite-skin-flat.png" afterPath="$PROJECT_DIR$/public/img/sprite-skin-flat.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/sprite-skin-nice.png" afterPath="$PROJECT_DIR$/public/img/sprite-skin-nice.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/user-bg.png" afterPath="$PROJECT_DIR$/public/img/user-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/user.jpg" afterPath="$PROJECT_DIR$/public/img/user.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/user2.jpg" afterPath="$PROJECT_DIR$/public/img/user2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/vacc.jpg" afterPath="$PROJECT_DIR$/public/img/vacc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/credit/visa.png" afterPath="$PROJECT_DIR$/public/img/credit/visa.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/.gitignore" afterPath="$PROJECT_DIR$/public/multiselect/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_183726_create_district_stock_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_183726_create_district_stock_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_184513_create_region_stock_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_184513_create_region_stock_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_05_31_184636_create_national_stock_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_05_31_184636_create_national_stock_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_200904_create_national_package_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_200904_create_national_package_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_201230_create_national_package_contents_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_201230_create_national_package_contents_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202009_create_regional_package_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202009_create_regional_package_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202119_create_regional_package_contents_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202119_create_regional_package_contents_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202238_create_district_package_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202238_create_district_package_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202353_create_facility_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202353_create_facility_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202542_create_district_package_contents_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_202542_create_district_package_contents_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_05_204945_create_problems_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_05_204945_create_problems_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_07_015110_create_manufacture_package_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_07_015110_create_manufacture_package_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_06_16_054812_create_national_invetory_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_06_16_054812_create_national_invetory_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/AdminLTE.css" afterPath="$PROJECT_DIR$/public/css/AdminLTE.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/AdvanceNotice.php" afterPath="$PROJECT_DIR$/app/models/AdvanceNotice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ArrivalDistrict.php" afterPath="$PROJECT_DIR$/app/models/ArrivalDistrict.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ArrivalNational.php" afterPath="$PROJECT_DIR$/app/models/ArrivalNational.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ArrivalRegion.php" afterPath="$PROJECT_DIR$/app/models/ArrivalRegion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DemographicsController.php" afterPath="$PROJECT_DIR$/app/controllers/DemographicsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Diluent.php" afterPath="$PROJECT_DIR$/app/models/Diluent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DiluentController.php" afterPath="$PROJECT_DIR$/app/controllers/DiluentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/DiluentManufacturer.php" afterPath="$PROJECT_DIR$/app/models/DiluentManufacturer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/DistrictPackage.php" afterPath="$PROJECT_DIR$/app/models/DistrictPackage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/DistrictPackageContents.php" afterPath="$PROJECT_DIR$/app/models/DistrictPackageContents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" afterPath="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Document.php" afterPath="$PROJECT_DIR$/app/models/Document.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Facility.php" afterPath="$PROJECT_DIR$/app/models/Facility.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FacilityController.php" afterPath="$PROJECT_DIR$/app/controllers/FacilityController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/FlightDetails.php" afterPath="$PROJECT_DIR$/app/models/FlightDetails.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/List_sent.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/List_sent.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/List_sent.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/List_sent.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/List_sent.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/List_sent.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/MIT-LICENSE.txt" afterPath="$PROJECT_DIR$/public/multiselect/MIT-LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ManuBarController.php" afterPath="$PROJECT_DIR$/app/controllers/ManuBarController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ManufactureController.php" afterPath="$PROJECT_DIR$/app/controllers/ManufactureController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ManufacturePackage.php" afterPath="$PROJECT_DIR$/app/models/ManufacturePackage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Manufacturer.php" afterPath="$PROJECT_DIR$/app/models/Manufacturer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ManufacturerBarcode.php" afterPath="$PROJECT_DIR$/app/models/ManufacturerBarcode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/NationalInventory.php" afterPath="$PROJECT_DIR$/app/models/NationalInventory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/NationalPackage.php" afterPath="$PROJECT_DIR$/app/models/NationalPackage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/NationalPackageContent.php" afterPath="$PROJECT_DIR$/app/models/NationalPackageContent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/NationalStock.php" afterPath="$PROJECT_DIR$/app/models/NationalStock.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/controllers/PackageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/README.textile" afterPath="$PROJECT_DIR$/public/multiselect/README.textile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/README.txt" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/RegionPackageController.php" afterPath="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/RegionStock.php" afterPath="$PROJECT_DIR$/app/models/RegionStock.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/RegionalPackage.php" afterPath="$PROJECT_DIR$/app/models/RegionalPackage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/RegionalPackageContent.php" afterPath="$PROJECT_DIR$/app/models/RegionalPackageContent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/RoleController.php" afterPath="$PROJECT_DIR$/app/controllers/RoleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Roles.php" afterPath="$PROJECT_DIR$/app/models/Roles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Vaccine.php" afterPath="$PROJECT_DIR$/app/models/Vaccine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/VaccineController.php" afterPath="$PROJECT_DIR$/app/controllers/VaccineController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/VaccineManufacturer.php" afterPath="$PROJECT_DIR$/app/models/VaccineManufacturer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/VaccineProblems.php" afterPath="$PROJECT_DIR$/app/models/VaccineProblems.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/changes.txt" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/changes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/css/common.css" afterPath="$PROJECT_DIR$/public/multiselect/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/database_backups/countries.sql" afterPath="$PROJECT_DIR$/public/database_backups/countries.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/countstock.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/countstock.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/datatables/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/public/datatables/dataTables.bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/easy_send.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/easy_send.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/expected.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/expected.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/expected.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/expected.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/final_form.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/final_form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/final_form.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/final_form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/final_form.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/final_form.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/index.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/index.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/master.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/index.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/index.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/index.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/index.html" afterPath="$PROJECT_DIR$/public/multiselect/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/info.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/info.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/info.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/info.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/info.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/info.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/datatables/jquery.dataTables.js" afterPath="$PROJECT_DIR$/public/datatables/jquery.dataTables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/localisation/jquery.localisation-min.js" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/localisation/jquery.localisation-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/localisation/jquery.localisation-pack.js" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/localisation/jquery.localisation-pack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/localisation/jquery.localisation.js" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/localisation/jquery.localisation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/jquery.scrollTo.js" afterPath="$PROJECT_DIR$/public/multiselect/js/plugins/scrollTo/jquery.scrollTo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/list.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/list.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/list.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/list.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/listcount.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/listcount.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/manufabar/listreceived.blade.php" afterPath="$PROJECT_DIR$/app/views/manufabar/listreceived.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/listreceived.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/listreceived.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/listreceived.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/listreceived.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/listreceived.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/listreceived.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.blade.php" afterPath="$PROJECT_DIR$/app/views/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/package.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/profile.blade.php" afterPath="$PROJECT_DIR$/app/views/user/profile.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/profileEdit.blade.php" afterPath="$PROJECT_DIR$/app/views/user/profileEdit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user/profileInfo.blade.php" afterPath="$PROJECT_DIR$/app/views/user/profileInfo.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/regionStock.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/regionStock.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/stock.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/stock.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/stock.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/stock.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/stock.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/stock.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-de.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-en.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-es.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-fr.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-hu.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-it.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-ja.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-ru.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui-multiselect-ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/css/ui.multiselect.css" afterPath="$PROJECT_DIR$/public/multiselect/css/ui.multiselect.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/js/locale/ui.multiselect.pt-br.js" afterPath="$PROJECT_DIR$/public/multiselect/js/locale/ui.multiselect.pt-br.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/userpanel.blade.php" afterPath="$PROJECT_DIR$/app/views/userpanel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vaccine.iml" afterPath="$PROJECT_DIR$/.idea/vaccine.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/multiselect/version.txt" afterPath="$PROJECT_DIR$/public/multiselect/version.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,41 +200,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/recieve_national/index.blade.php">
+      <file leaf-file-name="RegionPackageController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/RegionPackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="65" selection-start="320" selection-end="429" vertical-scroll-proportion="-4.6666665" vertical-offset="216" max-vertical-offset="1458">
+            <state line="51" column="73" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.59183675" vertical-offset="657" max-vertical-offset="5058">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/recieve_district/index.blade.php">
+      <file leaf-file-name="PackageController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="65" selection-start="468" selection-end="468" vertical-scroll-proportion="0.54198474" vertical-offset="129" max-vertical-offset="1440">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/recieve_region/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="46" selection-start="2509" selection-end="2509" vertical-scroll-proportion="-24.148148" vertical-offset="608" max-vertical-offset="1458">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="42" selection-start="9567" selection-end="9567" vertical-scroll-proportion="-21.37037" vertical-offset="3563" max-vertical-offset="4356">
+            <state line="90" column="89" selection-start="3509" selection-end="3509" vertical-scroll-proportion="-11.148149" vertical-offset="1319" max-vertical-offset="5184">
               <folding />
             </state>
           </provider>
@@ -81,10 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/send_district/stock.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/List_sent.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/regionStock.blade.php" />
         <option value="$PROJECT_DIR$/app/views/userpanel.blade.php" />
         <option value="$PROJECT_DIR$/app/views/manufabar/listreceived.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/listreceived.blade.php" />
@@ -93,7 +239,6 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_133145_create_vaccine_table.php" />
         <option value="$PROJECT_DIR$/app/views/vaccine/add.blade.php" />
         <option value="$PROJECT_DIR$/app/views/vaccine/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/models/NationalInventory.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/countstock.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/listcount.blade.php" />
@@ -109,8 +254,6 @@
         <option value="$PROJECT_DIR$/app/views/facility/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/login.blade.php" />
         <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
         <option value="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/index.blade.php" />
@@ -119,7 +262,6 @@
         <option value="$PROJECT_DIR$/app/views/send_national/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_district/package.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_region/package.blade.php" />
         <option value="$PROJECT_DIR$/app/views/user/profileInfo.blade.php" />
         <option value="$PROJECT_DIR$/app/views/user/profileEdit.blade.php" />
@@ -130,17 +272,25 @@
         <option value="$PROJECT_DIR$/app/views/user/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_region/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_district/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_national/listconfirmed.blade.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="27" />
-    <option name="width" value="1368" />
-    <option name="height" value="741" />
+    <option name="x" value="65" />
+    <option name="y" value="52" />
+    <option name="width" value="1301" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -378,11 +528,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="recieve_district" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,11 +546,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,7 +581,7 @@
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../barcode_system" />
-    <property name="SearchEverywhereHistory" value="&#10;*" />
+    <property name="SearchEverywhereHistory" value="&gt;&#10;*" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -478,6 +620,23 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="" />
@@ -507,15 +666,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1368" height="741" extended-state="6" />
+    <frame x="65" y="52" width="1301" height="716" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20650406" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20528771" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13863637" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16910069" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18484849" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22674866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20650406" sideWeight="0.5007576" order="10" side_tool="true" content_ui="tabs" />
@@ -545,9 +704,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -567,46 +726,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/vaccine/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="82" selection-start="2325" selection-end="2325" vertical-scroll-proportion="0.64541835" vertical-offset="540" max-vertical-offset="1620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/vaccine/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="71" selection-start="2279" selection-end="2279" vertical-scroll-proportion="0.39130434" vertical-offset="594" max-vertical-offset="1584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_06_16_054812_create_national_invetory_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="37" selection-start="571" selection-end="571" vertical-scroll-proportion="0.43939394" vertical-offset="262" max-vertical-offset="774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ManufacturePackage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.63716817" vertical-offset="216" max-vertical-offset="576" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/NationalInventory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="0.87637365" vertical-offset="185" max-vertical-offset="648" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/NationalPackageContent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="5" selection-start="434" selection-end="553" vertical-scroll-proportion="0.54395604" vertical-offset="216" max-vertical-offset="612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/NationalPackage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="2" selection-start="0" selection-end="714" vertical-scroll-proportion="1.0" vertical-offset="230" max-vertical-offset="702" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_national/listcount.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="540" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_national/countstock.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="0" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1224" />
@@ -615,11 +734,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/send_national/stock.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="23" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="1386" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="78" selection-start="8011" selection-end="8020" vertical-scroll-proportion="0.0" vertical-offset="4086" max-vertical-offset="8226" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_national/list.blade.php">
@@ -657,27 +771,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/facility/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="24" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.3014354" vertical-offset="270" max-vertical-offset="1422" />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/10a31e5c/e464e629-3a30-4470-ba3b-68a131309066/vaccine..national_package_contents">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288" />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/10a31e5c/e464e629-3a30-4470-ba3b-68a131309066/vaccine..manufacture_package">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="86" selection-start="932" selection-end="936" vertical-scroll-proportion="-1.045977" vertical-offset="539" max-vertical-offset="4860" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_region/info.blade.php">
@@ -720,11 +813,6 @@
         <state line="19" column="53" selection-start="421" selection-end="421" vertical-scroll-proportion="0.3014354" vertical-offset="216" max-vertical-offset="1044" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RegionPackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="94" selection-start="921" selection-end="925" vertical-scroll-proportion="0.31005585" vertical-offset="429" max-vertical-offset="3276" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_district/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="18" selection-start="1271" selection-end="1396" vertical-scroll-proportion="0.45933014" vertical-offset="564" max-vertical-offset="1314" />
@@ -733,13 +821,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/recieve_district/package.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="22" selection-start="401" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1332">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recieve_national/package.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1314">
           <folding />
         </state>
       </provider>
@@ -760,16 +841,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="24" selection-start="8397" selection-end="8397" vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="4914">
-          <folding>
-            <marker date="1403042857954" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1403042857954" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1403042857954" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1403042857954" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1403042857954" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1403042857954" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="233" column="24" selection-start="8397" selection-end="8397" vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="4914" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/profileEdit.blade.php">
@@ -782,16 +854,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/demographics/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="20" selection-start="440" selection-end="662" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/10a31e5c/e464e629-3a30-4470-ba3b-68a131309066/vaccine..users">
-      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
           <folding />
         </state>
       </provider>
@@ -812,32 +874,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="93" selection-start="332" selection-end="332" vertical-scroll-proportion="-0.045801528" vertical-offset="108" max-vertical-offset="3114">
-          <folding>
-            <marker date="1403064178901" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403064178901" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1403064178901" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
+        <state line="5" column="93" selection-start="332" selection-end="332" vertical-scroll-proportion="-0.045801528" vertical-offset="108" max-vertical-offset="3114" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/left.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="129" selection-start="4076" selection-end="4076" vertical-scroll-proportion="0.78625953" vertical-offset="627" max-vertical-offset="1134">
-          <folding />
-        </state>
+        <state line="52" column="129" selection-start="4076" selection-end="4076" vertical-scroll-proportion="0.78625953" vertical-offset="627" max-vertical-offset="1134" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/demographics/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="1" selection-start="353" selection-end="1021" vertical-scroll-proportion="0.75063616" vertical-offset="245" max-vertical-offset="1584">
-          <folding>
-            <marker date="1403062997617" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403062997617" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403062997617" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403062997617" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="30" column="1" selection-start="353" selection-end="1021" vertical-scroll-proportion="0.75063616" vertical-offset="245" max-vertical-offset="1584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
@@ -849,47 +896,156 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user/profileInfo.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="65" selection-start="682" selection-end="682" vertical-scroll-proportion="0.2583732" vertical-offset="216" max-vertical-offset="666">
-          <folding />
-        </state>
+        <state line="18" column="65" selection-start="682" selection-end="682" vertical-scroll-proportion="0.2583732" vertical-offset="216" max-vertical-offset="666" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="46" selection-start="2920" selection-end="2928" vertical-scroll-proportion="0.17224881" vertical-offset="1782" max-vertical-offset="4104">
+        <state line="103" column="46" selection-start="2920" selection-end="2928" vertical-scroll-proportion="0.17224881" vertical-offset="1782" max-vertical-offset="4104" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_district/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="65" selection-start="468" selection-end="468" vertical-scroll-proportion="0.60544217" vertical-offset="75" max-vertical-offset="1440">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="42" selection-start="9567" selection-end="9567" vertical-scroll-proportion="-21.37037" vertical-offset="3563" max-vertical-offset="4356">
+        <state line="230" column="42" selection-start="9567" selection-end="9567" vertical-scroll-proportion="-28.333334" vertical-offset="3375" max-vertical-offset="4356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ArrivalNational.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="6.0" vertical-offset="162" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="47" selection-start="585" selection-end="585" vertical-scroll-proportion="-7.296296" vertical-offset="181" max-vertical-offset="864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9e54f60/85db52de-39ee-4537-b718-874a383257e4/vaccine..manufacture_package">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ManufacturePackage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5197889" vertical-offset="197" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_national/listconfirmed.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="31" selection-start="486" selection-end="486" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="47" selection-start="5976" selection-end="6010" vertical-scroll-proportion="-8.0" vertical-offset="2826" max-vertical-offset="8172">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_national/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.37037" vertical-offset="604" max-vertical-offset="1386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/listreceived.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.6779661" vertical-offset="594" max-vertical-offset="1314">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="28" selection-start="607" selection-end="607" vertical-scroll-proportion="0.47596154" vertical-offset="216" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_region/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="46" selection-start="2509" selection-end="2509" vertical-scroll-proportion="-24.148148" vertical-offset="608" max-vertical-offset="1458">
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state line="70" column="46" selection-start="2509" selection-end="2509" vertical-scroll-proportion="-22.666666" vertical-offset="648" max-vertical-offset="1458">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_national/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="65" selection-start="320" selection-end="429" vertical-scroll-proportion="-4.6666665" vertical-offset="216" max-vertical-offset="1458">
+        <state line="32" column="30" selection-start="889" selection-end="889" vertical-scroll-proportion="-6.740741" vertical-offset="394" max-vertical-offset="1458">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recieve_district/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="65" selection-start="468" selection-end="468" vertical-scroll-proportion="0.54198474" vertical-offset="129" max-vertical-offset="1440">
+        <state line="32" column="58" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.10817308" vertical-offset="531" max-vertical-offset="2970">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_national/package.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="38" selection-start="2316" selection-end="2316" vertical-scroll-proportion="0.61678004" vertical-offset="106" max-vertical-offset="576">
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="tag#div#1" expanded="false" />
+            <element signature="tag#table#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="53" selection-start="1587" selection-end="1600" vertical-scroll-proportion="0.39229023" vertical-offset="529" max-vertical-offset="2934">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="89" selection-start="3509" selection-end="3509" vertical-scroll-proportion="-11.148149" vertical-offset="1319" max-vertical-offset="5184">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9e54f60/85db52de-39ee-4537-b718-874a383257e4/vaccine..region_stock">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/RegionPackageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="73" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.59183675" vertical-offset="657" max-vertical-offset="5058">
+          <folding />
         </state>
       </provider>
     </entry>

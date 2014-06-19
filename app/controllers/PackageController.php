@@ -53,28 +53,46 @@ class PackageController extends \BaseController {
         }
     }
 
+    public function listconfirmed($id){
+       $packages = ArrivalNational::where('ssc',$id)->where('status','')->get();
+        return View::make('recieve_national.listconfirmed',compact('packages'));
+    }
+
+    public function cancelreceive($id){
+        ArrivalNational::where('ssc',$id)->get();
+        foreach(ArrivalNational::where('ssc',$id)->get() as $pack){
+            $nat = NationalPackage::where('GTIN',$pack->GTIN)->where('lot_number',$pack->lot_number)->first();
+            $nat->number_of_doses = $nat->number_of_doses - $pack->number_received;
+            $nat->save();
+            $pack->delete();
+        }
+    }
+
     public function additemtostock($id){
         $package = ManufacturePackage::find($id);
         $arr = ArrivalNational::where('ssc',$package->ssc)->count();
-        $arr1 = ManufacturePackage::where('sscc',$package->sscc);
+        $arr1 = ManufacturePackage::where('sscc',$package->sscc)->where('status','received')->count();
         $arrival = ArrivalNational::create(array(
             'ssc'                   =>$package->sscc,
+            'GTIN'                  =>$package->vaccine->GTIN,
             'lot_number'            =>$package->lot_number,
             'number_as_expected'    =>Input::get('quantity'),
             'temperature_monitor'   =>Input::get('temp'),
             'physcal_damege'        =>Input::get('damage'),
             'vvm_status'            =>Input::get('vvm'),
+            'number_received'       =>(Input::has('quantity1'))?Input::get('quantity1')*$package->vaccine->doses_per_vial:$package->number_of_doses,
+            'number_expected'       =>$package->number_of_doses,
             'receiver'              =>Auth::user()->id,
             'problem'               =>Input::get('comments'),
         ));
 
         $stock = NationalStock::where('lot_number',$package->lot_number)->first();
         if($stock){
-            $stock->number_of_doses = $stock->number_of_doses + $package->number_of_doses;
+            $stock->number_of_doses = $stock->number_of_doses + $arrival->number_received;
             $stock->save();
         }else{
             NationalStock::create(array(
-                'number_of_doses'   => $package->number_of_doses,
+                'number_of_doses'   => $arrival->number_received,
                 'lot_number'        => $package->lot_number,
                 'GTIN'              => $package->vaccine->GTIN,
                 'expiry_date'       => $package->expiry_date
