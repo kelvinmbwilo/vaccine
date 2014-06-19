@@ -41,9 +41,9 @@
     $newlevel = $level+ (($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->doses_per_vial);
     ?>
     @if($max < $newlevel )
-    <tr class="danger" title="amaount exceed maximum amount needed">
+    <tr class="danger" title="amaount exceed maximum required stock">
         @elseif( $newlevel < $min   )
-    <tr class="danger" title="amount is less than amount needed">
+    <tr class="danger" title="amount is less than required minimum stock">
         @else
     <tr>
         @endif
