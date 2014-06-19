@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/controllers/PackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
@@ -28,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PackageController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PackageController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="11" selection-start="4100" selection-end="4100" vertical-scroll-proportion="-1.4074074" vertical-offset="1186" max-vertical-offset="4536">
+            <state line="105" column="11" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.40782124" vertical-offset="1078" max-vertical-offset="4536">
               <folding>
                 <element signature="e#59#131#0" expanded="false" />
                 <element signature="n#index#0;n#PackageController#0;n#!!top" expanded="false" />
@@ -83,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirm.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="confirm.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="4334" selection-end="4334" vertical-scroll-proportion="0.849162" vertical-offset="1568" max-vertical-offset="2052">
+            <state line="104" column="0" selection-start="4334" selection-end="4334" vertical-scroll-proportion="-13.259259" vertical-offset="1514" max-vertical-offset="2052">
               <folding />
             </state>
           </provider>
@@ -969,23 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="11" selection-start="4100" selection-end="4100" vertical-scroll-proportion="-1.4074074" vertical-offset="1186" max-vertical-offset="4536">
-          <folding>
-            <element signature="e#59#131#0" expanded="false" />
-            <element signature="n#index#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#sendPackage#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#receive#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="e#424#561#0" expanded="false" />
-            <element signature="n#checkqr#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#listconfirmed#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#cancelreceive#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="e#1898#2217#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="159" column="0" selection-start="6815" selection-end="7122" vertical-scroll-proportion="-12.851851" vertical-offset="2515" max-vertical-offset="3060">
@@ -1002,8 +982,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="4334" selection-end="4334" vertical-scroll-proportion="0.849162" vertical-offset="1568" max-vertical-offset="2052">
+        <state line="104" column="0" selection-start="4334" selection-end="4334" vertical-scroll-proportion="-13.259259" vertical-offset="1514" max-vertical-offset="2052">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="11" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.40782124" vertical-offset="1078" max-vertical-offset="4536">
+          <folding>
+            <element signature="e#59#131#0" expanded="false" />
+            <element signature="n#index#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#sendPackage#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#receive#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="e#424#561#0" expanded="false" />
+            <element signature="n#checkqr#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#listconfirmed#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#cancelreceive#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="e#1898#2217#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
