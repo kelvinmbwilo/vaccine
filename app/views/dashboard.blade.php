@@ -162,11 +162,11 @@ foreach(Vaccine::all() as $vaccine){
     $i++;
     $cats .=($i == Vaccine::all()->count())?"'".$vaccine->name ."'":"'".$vaccine->name ."',";
     if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
-        $min = round((1344000 *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
+        $min = round((1344000 *$vaccine->wastage *$vaccine->schedule*0.5 ) );
         $stock = NationalStock::where('GTIN',$vaccine->GTIN)->sum('number_of_doses');
         $pack = ManufacturePackage::where('status','')->where('vaccine_id',$vaccine->id)->sum('number_of_doses');
     }elseif(Auth::user()->role_id == 'Region'){
-        $min = round((Auth::user()->region->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
+        $min = round((Auth::user()->region->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/4 );
         $stock = RegionStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
         $pack = (NationalPackageContent::where('status','')->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
     }elseif(Auth::user()->role_id == 'District'){
