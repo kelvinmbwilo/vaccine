@@ -109,7 +109,7 @@ class PackageController extends \BaseController {
 //        }else{
 //            echo "not";
 //        }
-        echo "Recieved Successful";
+        echo "<h3 class='text-success'>Recieved Successful {{ $arr }} {{ $arr1 }}</h3>";
 
     }
 
