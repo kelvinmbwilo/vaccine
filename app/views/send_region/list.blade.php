@@ -42,7 +42,7 @@
     ?>
     @if($max < $newlevel )
     <tr class="danger" title="amaount exceed maximum amount needed">
-        @elseif($max > $newlevel )
+        @elseif( $newlevel < $min   )
     <tr class="danger" title="amount is less than amount needed">
         @else
     <tr>

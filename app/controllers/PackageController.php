@@ -142,7 +142,7 @@ class PackageController extends \BaseController {
                 $other_vaccine = NationalStock::where('GTIN',$package->GTIN)->where('number_of_doses','!=','0')->get();
                 foreach($other_vaccine as $vaccine){
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
-                        $other_available = "available";
+                        $other_available = $vaccine->lot_number;
                 }
                 $region = Region::find($id);
                 return View::make("send_national.package",compact('package','idd','expiry_status','other_available','region'));

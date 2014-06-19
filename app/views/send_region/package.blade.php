@@ -89,11 +89,11 @@
         }
 
         //showing expired and near expired warings
-        if('<?php echo $other_available  ?>' == "available"){
+        if('<?php echo $other_available  ?>' != ""){
             $("#itemarea").hide();
             $("#warn").remove();
             var warning = "<h4 id='warn'><i class='fa fa-warning fa-2x text-warning'></i> ";
-            warning    +="There is other similar item in stock which will expiry sooner. Do you wish to proceed ";
+            warning    +="Item with Lot number <?php echo $other_available  ?> in stock expiry sooner. Do you wish to proceed ";
             warning    +="<a href='#s' id='no' class='btn btn-danger btn-xs'> <i class='fa fa-times'></i> No</a>";
             warning    +="<a href='#s' id='yes' class='btn btn-success btn-xs'><i class='fa fa-check'></i> Yes</a></h4>";
             $("#itemarea").after(warning)

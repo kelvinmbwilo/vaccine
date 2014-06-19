@@ -132,7 +132,7 @@ class DistrictPackageController extends \BaseController {
                 $other_vaccine = DistrictStock::where('vaccine_id',$package->vaccine->GTIN)->where('number_of_doses','!=','0')->get();
                 foreach($other_vaccine as $vaccine){
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
-                        $other_available = "available";
+                        $other_available = $vaccine->lot_number;
                 }
                 $facility = Facility::find($id);
                 return View::make("send_district.package",compact('package','idd','expiry_status','other_available','facility'));

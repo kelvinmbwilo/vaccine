@@ -51,7 +51,8 @@
         $("input[name=sscc]").focus();
     $('#qrform').on('submit', function(e) {
         e.preventDefault();
-        $("#itemarea").html("<h3><i class='fa fa-spin fa-spinner '></i><span>Getting Item please wait...</span><h3>");
+        $("#warn").remove();
+        $("#itemarea").show().html("<h3><i class='fa fa-spin fa-spinner '></i><span>Getting Item please wait...</span><h3>");
         $(this).ajaxSubmit({
             target: '#itemarea',
             success:  afterSuccess2
