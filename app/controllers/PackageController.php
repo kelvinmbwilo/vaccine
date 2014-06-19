@@ -177,7 +177,9 @@ class PackageController extends \BaseController {
 
     public function sendPackageList($id){
         $natpack = NationalPackage::find($id);
-        return View::make('send_national.list',compact('natpack'));
+        include "vaccine-barcode.php";
+        $barcode = new Barcode39("'{$natpack->package_number}'");
+        return View::make('send_national.list',compact('natpack','barcode'));
     }
 
     public function deleteinlist($id){
