@@ -32,7 +32,7 @@ class PackageController extends \BaseController {
     public function checksscc($id){
         $package = ManufacturePackage::where('sscc',$id)->where('status',"")->get();
         if($package->count() != 0){
-        if(ArrivalNational::where('ssc',$id)->count() == ManufacturePackage::where('sscc',$id)->where('status',"")->count() ){
+        if(ArrivalNational::where('ssc',$id)->count() == ManufacturePackage::where('sscc',$id)->count() ){
             echo "<h3 class='text-danger'>All packages from this shipping information have been received</h3>";
         }else{
                 return View::make("recieve_national.package",compact('package'));
@@ -70,8 +70,6 @@ class PackageController extends \BaseController {
 
     public function additemtostock($id){
         $package = ManufacturePackage::find($id);
-        $arr = ArrivalNational::where('ssc',$package->ssc)->count();
-        $arr1 = ManufacturePackage::where('sscc',$package->sscc)->where('status','received')->count();
         $arrival = ArrivalNational::create(array(
             'ssc'                   =>$package->sscc,
             'GTIN'                  =>$package->vaccine->GTIN,
@@ -85,6 +83,8 @@ class PackageController extends \BaseController {
             'receiver'              =>Auth::user()->id,
             'problem'               =>Input::get('comments'),
         ));
+        $arr = ArrivalNational::where('ssc',$package->ssc)->count();
+        $arr1 = ManufacturePackage::where('sscc',$package->sscc)->where('status','received')->count();
 
         $stock = NationalStock::where('lot_number',$package->lot_number)->first();
         if($stock){
@@ -104,7 +104,13 @@ class PackageController extends \BaseController {
             "user_id"=>  Auth::user()->id,
             "action"  =>"Receive ".$package->vaccine->name." From Shipment number ". $package->sscc
         ));
-        echo "<h3 class='text-success'>Received Successful.</h3>";
+//        if($arr == $arr1){
+//            echo "last";
+//        }else{
+//            echo "not";
+//        }
+        echo "Recieved Successful";
+
     }
 
     public function listrecieved(){

@@ -145,9 +145,14 @@
             })
 
             function afterSuccess1(){
+                if($("#output1").html() == "last"){
+                    $("#infoarea").html("").fadeOut("500")
+                    $("#output").fadeOut("500").html("").fadeIn()
+                    $("#ssccarea").fadeIn("slow");
+                    $("input[name=sscc]").focus();
+                }
                 setTimeout(function() {
-
-                    $("#submitqr").parent().parent().parent().parent().parent().fadeOut( "slow", function() {
+                $("#submitqr").parent().parent().parent().parent().parent().fadeOut( "slow", function() {
                         $("#submitqr").parent().parent().parent().parent().parent().html("").fadeIn();
                     });
                     $("input[name=lot]").focus();
