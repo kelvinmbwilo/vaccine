@@ -154,6 +154,13 @@
                     $("#submitqr").parent().parent().parent().parent().parent().html("").fadeIn();
                 });
                 $("input[name=lot]").focus();
+                if($('#alllist tr:visible').length == 0){
+                    $("#infoarea").html("").fadeOut("500")
+                    $("#output").fadeOut("500").html("").fadeIn()
+                    $("#ssccarea").fadeIn("slow");
+                    $("input[name=sscc]").focus();
+                }
+
             }, 2000);
         }
     });

@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/controllers/PackageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" afterPath="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +31,7 @@
       <file leaf-file-name="PackageController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="38" selection-start="4250" selection-end="4250" vertical-scroll-proportion="-1.4074074" vertical-offset="1294" max-vertical-offset="4626">
+            <state line="105" column="11" selection-start="4100" selection-end="4100" vertical-scroll-proportion="-1.4074074" vertical-offset="1186" max-vertical-offset="4536">
               <folding>
                 <element signature="e#59#131#0" expanded="false" />
                 <element signature="n#index#0;n#PackageController#0;n#!!top" expanded="false" />
@@ -63,10 +65,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirm.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="confirm.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="54" selection-start="7099" selection-end="7099" vertical-scroll-proportion="0.81201047" vertical-offset="2515" max-vertical-offset="3060">
+            <state line="159" column="0" selection-start="6815" selection-end="7122" vertical-scroll-proportion="-12.851851" vertical-offset="2515" max-vertical-offset="3060">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirm.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="162" column="0" selection-start="6863" selection-end="6863" vertical-scroll-proportion="-9.925926" vertical-offset="2648" max-vertical-offset="3096">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirm.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="104" column="0" selection-start="4334" selection-end="4334" vertical-scroll-proportion="0.849162" vertical-offset="1568" max-vertical-offset="2052">
               <folding />
             </state>
           </provider>
@@ -114,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/NationalInventory.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/countstock.blade.php" />
         <option value="$PROJECT_DIR$/public/css/AdminLTE.css" />
         <option value="$PROJECT_DIR$/app/views/demographics/add.blade.php" />
@@ -144,7 +163,6 @@
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/info.blade.php" />
@@ -163,8 +181,10 @@
         <option value="$PROJECT_DIR$/app/views/send_national/listcount.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
         <option value="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
       </list>
     </option>
   </component>
@@ -335,7 +355,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="recieve_region" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="recieve_national" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recieve_district" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -540,10 +604,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="80" width="1301" height="716" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21772939" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21772939" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16910069" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -601,13 +665,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/user/profileEdit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="86" selection-start="1004" selection-end="1004" vertical-scroll-proportion="-4.0" vertical-offset="216" max-vertical-offset="1386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/demographics/add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="20" selection-start="440" selection-end="662" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="846">
@@ -716,11 +773,6 @@
         <state line="70" column="46" selection-start="2509" selection-end="2509" vertical-scroll-proportion="-22.666666" vertical-offset="648" max-vertical-offset="1458">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="58" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.10817308" vertical-offset="531" max-vertical-offset="2970" />
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/9e54f60/85db52de-39ee-4537-b718-874a383257e4/vaccine..region_stock">
@@ -880,34 +932,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/RegionPackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="135" selection-start="798" selection-end="798" vertical-scroll-proportion="-7.0" vertical-offset="333" max-vertical-offset="5058">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DistrictPackageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="137" selection-start="806" selection-end="806" vertical-scroll-proportion="24.88889" vertical-offset="1194" max-vertical-offset="4284">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="38" selection-start="4250" selection-end="4250" vertical-scroll-proportion="-1.4074074" vertical-offset="1294" max-vertical-offset="4626">
-          <folding>
-            <element signature="e#59#131#0" expanded="false" />
-            <element signature="n#index#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#sendPackage#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#receive#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="e#424#561#0" expanded="false" />
-            <element signature="n#checkqr#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#listconfirmed#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="n#cancelreceive#0;n#PackageController#0;n#!!top" expanded="false" />
-            <element signature="e#1898#2217#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,9 +962,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/RegionPackageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="135" selection-start="798" selection-end="798" vertical-scroll-proportion="-7.0" vertical-offset="333" max-vertical-offset="5058">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="11" selection-start="4100" selection-end="4100" vertical-scroll-proportion="-1.4074074" vertical-offset="1186" max-vertical-offset="4536">
+          <folding>
+            <element signature="e#59#131#0" expanded="false" />
+            <element signature="n#index#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#sendPackage#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#receive#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="e#424#561#0" expanded="false" />
+            <element signature="n#checkqr#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#listconfirmed#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="n#cancelreceive#0;n#PackageController#0;n#!!top" expanded="false" />
+            <element signature="e#1898#2217#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="54" selection-start="7099" selection-end="7099" vertical-scroll-proportion="0.81201047" vertical-offset="2515" max-vertical-offset="3060">
+        <state line="159" column="0" selection-start="6815" selection-end="7122" vertical-scroll-proportion="-12.851851" vertical-offset="2515" max-vertical-offset="3060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="0" selection-start="6863" selection-end="6863" vertical-scroll-proportion="-9.925926" vertical-offset="2648" max-vertical-offset="3096">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="0" selection-start="4334" selection-end="4334" vertical-scroll-proportion="0.849162" vertical-offset="1568" max-vertical-offset="2052">
           <folding />
         </state>
       </provider>

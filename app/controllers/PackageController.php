@@ -104,12 +104,7 @@ class PackageController extends \BaseController {
             "user_id"=>  Auth::user()->id,
             "action"  =>"Receive ".$package->vaccine->name." From Shipment number ". $package->sscc
         ));
-//        if($arr == $arr1){
-//            echo "last";
-//        }else{
-//            echo "not";
-//        }
-        echo "<h3 class='text-success'>Recieved Successful {{ $arr }} {{ $arr1 }}</h3>";
+        echo "<h3 class='text-success'>Received Successful</h3>";
 
     }
 
