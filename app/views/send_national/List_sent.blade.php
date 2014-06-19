@@ -2,12 +2,12 @@
 
 @section('title')
 <h1>
-    Dispatch
+    Dispatched Items
     <small>National Dispatch Information </small>
 </h1>
 @stop
 @section('contents')
-@if(NationalPackage::where('sender','!=','0')->count() == 0)
+@if(NationalPackage::where('sender','!=','0')->where('date_sent','!=','')->count() == 0)
 <h3>There are no packages sent</h3>
 @else
 <table class="table table-striped table-bordered example3" id="example2">
@@ -30,7 +30,7 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(NationalPackage::orderBy('created_at','DESC')->get() as $us)
+    @foreach(NationalPackage::where('date_sent','!=','')->orderBy('created_at','DESC')->get() as $us)
     @if($us)
     <tr>
         <td>{{ $us->package_number }}</td>
