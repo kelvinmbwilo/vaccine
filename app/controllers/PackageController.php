@@ -177,9 +177,37 @@ class PackageController extends \BaseController {
 
     public function sendPackageList($id){
         $natpack = NationalPackage::find($id);
-        include "vaccine-barcode.php";
-        $barcode = new Barcode39("'{$natpack->package_number}'");
-        return View::make('send_national.list',compact('natpack','barcode'));
+        require_once('class/BCGFontFile.php');
+        require_once('class/BCGColor.php');
+        require_once('class/BCGDrawing.php');
+
+// Including the barcode technology
+        require_once('class/BCGcode39.barcode.php');
+
+// Loading Font
+        //$font = new BCGFontFile('../font/Arial.ttf', 18);
+
+        $text =  $natpack->package_number;
+
+        $color_black = new BCGColor(0, 0, 0);
+        $color_white = new BCGColor(255, 255, 255);
+
+        $drawException = null;
+        try {
+            $code = new BCGcode39();
+            $code->setScale(2); // Resolution
+            $code->setThickness(30); // Thickness
+            $code->setForegroundColor($color_black); // Color of bars
+            $code->setBackgroundColor($color_white); // Color of spaces
+            $code->setFont(0); // Font (or 0)
+            $code->parse($text); // Text
+        } catch(Exception $exception) {
+            $drawException = $exception;
+        }
+
+        $drawing = new BCGDrawing('', $color_white);
+        $drawing->setBarcode($code);
+        return View::make('send_national.list',compact('natpack','drawing'));
     }
 
     public function deleteinlist($id){

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/send_national/vaccine-barcode.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PackageController.php" afterPath="$PROJECT_DIR$/app/controllers/PackageController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/list.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/package.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/package.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
@@ -31,7 +33,16 @@
       <file leaf-file-name="package.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_district/package.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="0" selection-start="3816" selection-end="3816" vertical-scroll-proportion="-7.0" vertical-offset="1449" max-vertical-offset="2718">
+            <state line="90" column="95" selection-start="3782" selection-end="3782" vertical-scroll-proportion="5.6666665" vertical-offset="1773" max-vertical-offset="2718">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/send_region/package.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="95" selection-start="3937" selection-end="3937" vertical-scroll-proportion="-4.6666665" vertical-offset="1584" max-vertical-offset="2808">
               <folding />
             </state>
           </provider>
@@ -67,7 +78,7 @@
       <file leaf-file-name="list.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/send_national/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="33" selection-start="103" selection-end="103" vertical-scroll-proportion="0.14754099" vertical-offset="0" max-vertical-offset="2916">
+            <state line="9" column="25" selection-start="347" selection-end="347" vertical-scroll-proportion="0.4864865" vertical-offset="0" max-vertical-offset="3060">
               <folding>
                 <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
@@ -97,7 +108,7 @@
       <file leaf-file-name="PackageController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="31" selection-start="7504" selection-end="7504" vertical-scroll-proportion="-6.6666665" vertical-offset="1674" max-vertical-offset="3834">
+            <state line="201" column="28" selection-start="8230" selection-end="8230" vertical-scroll-proportion="-1.6666666" vertical-offset="2187" max-vertical-offset="4338">
               <folding>
                 <element signature="n#additemtostock#0;n#PackageController#0;n#!!top" expanded="false" />
                 <element signature="n#listrecieved#0;n#PackageController#0;n#!!top" expanded="false" />
@@ -108,19 +119,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/send_national/info.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="8" selection-start="1566" selection-end="1721" vertical-scroll-proportion="-3.3333333" vertical-offset="900" max-vertical-offset="1314">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_national/package.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="39" selection-start="3640" selection-end="3644" vertical-scroll-proportion="-4.5925927" vertical-offset="1586" max-vertical-offset="2826">
+            <state line="96" column="94" selection-start="3792" selection-end="3792" vertical-scroll-proportion="-3.2592592" vertical-offset="1640" max-vertical-offset="2826">
               <folding />
             </state>
           </provider>
@@ -179,15 +181,15 @@
         <option value="$PROJECT_DIR$/app/views/recieve_national/confirm.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/package.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_region/package.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
         <option value="$PROJECT_DIR$/app/controllers/DistrictPackageController.php" />
-        <option value="$PROJECT_DIR$/app/views/send_district/package.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/info.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/list.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/send_national/package.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/send_district/package.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/send_region/package.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
       </list>
@@ -582,7 +584,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20528771" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21772939" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16910069" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -635,7 +637,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/views/demographics/edit.blade.php">
@@ -908,27 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/package.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="27" selection-start="3842" selection-end="3971" vertical-scroll-proportion="-6.6666665" vertical-offset="1530" max-vertical-offset="2808">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_district/package.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="3816" selection-end="3816" vertical-scroll-proportion="-7.0" vertical-offset="1449" max-vertical-offset="2718">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_national/package.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="39" selection-start="3640" selection-end="3644" vertical-scroll-proportion="-4.5925927" vertical-offset="1586" max-vertical-offset="2826">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_national/info.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="8" selection-start="1566" selection-end="1721" vertical-scroll-proportion="-3.3333333" vertical-offset="900" max-vertical-offset="1314">
@@ -964,9 +947,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_region/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="13" selection-start="1440" selection-end="1649" vertical-scroll-proportion="-8.666667" vertical-offset="594" max-vertical-offset="2790">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/package.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="94" selection-start="3792" selection-end="3792" vertical-scroll-proportion="-3.2592592" vertical-offset="1640" max-vertical-offset="2826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_district/package.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="95" selection-start="3782" selection-end="3782" vertical-scroll-proportion="5.6666665" vertical-offset="1773" max-vertical-offset="2718">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_region/package.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="95" selection-start="3937" selection-end="3937" vertical-scroll-proportion="-4.6666665" vertical-offset="1584" max-vertical-offset="2808">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PackageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="31" selection-start="7504" selection-end="7504" vertical-scroll-proportion="-6.6666665" vertical-offset="1674" max-vertical-offset="3834">
+        <state line="201" column="28" selection-start="8230" selection-end="8230" vertical-scroll-proportion="-1.6666666" vertical-offset="2187" max-vertical-offset="4338">
           <folding>
             <element signature="n#additemtostock#0;n#PackageController#0;n#!!top" expanded="false" />
             <element signature="n#listrecieved#0;n#PackageController#0;n#!!top" expanded="false" />
@@ -976,16 +987,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="13" selection-start="1440" selection-end="1649" vertical-scroll-proportion="-8.666667" vertical-offset="594" max-vertical-offset="2790">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_national/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="33" selection-start="103" selection-end="103" vertical-scroll-proportion="0.14754099" vertical-offset="0" max-vertical-offset="2916">
+        <state line="9" column="25" selection-start="347" selection-end="347" vertical-scroll-proportion="0.4864865" vertical-offset="0" max-vertical-offset="3060">
           <folding>
             <element signature="n#style#0;n#button#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#p#0;n#!!top" expanded="true" />
