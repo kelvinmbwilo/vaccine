@@ -1,4 +1,5 @@
-<?php $packages = NationalInventory::all() ?>
+<?php $packages = NationalInventory::where('reporting_period',date('M Y'))->get() ?>
+<h3 class="lead">Stock count on {{ date('M Y') }}</h3>
 <table class="table table-responsive table-bordered" id="alllist">
     <tr>
         <th>GTIN</th>
