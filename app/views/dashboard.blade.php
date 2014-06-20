@@ -168,11 +168,11 @@ foreach(Vaccine::all() as $vaccine){
     }elseif(Auth::user()->role_id == 'Region'){
         $min = round((Auth::user()->region->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/4 );
         $stock = RegionStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
-        $pack = (NationalPackageContent::where('status','')->whereIn('package_id',NationalPackage::where('region_id',Auth::user()->region_id)->get()->lists('id'))->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
+        $pack = (NationalPackageContent::where('status','')->whereIn('package_id',NationalPackage::where('region_id',Auth::user()->region_id)->where('date_sent','!=','')->get()->lists('id'))->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
     }elseif(Auth::user()->role_id == 'District'){
         $min = round((Auth::user()->district->surviving_infants *$vaccine->wastage *$vaccine->schedule*0.5 )/12 );
         $stock = DistrictStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
-        $pack = (RegionalPackageContent::where('status','')->whereIn('package_id',RegionalPackage::where('district_id',Auth::user()->district_id)->get()->lists('id'))->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
+        $pack = (RegionalPackageContent::where('status','')->whereIn('package_id',RegionalPackage::where('district_id',Auth::user()->district_id)->where('date_sent','!=','')->get()->lists('id'))->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
      }
 
     $relevel .=($i == Vaccine::all()->count())? $min : $min.",";
