@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/List_sent.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/List_sent.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/List_sent.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/List_sent.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/listreceived.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/listreceived.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/listreceived.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/listreceived.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vaccine.iws" />
@@ -41,6 +35,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="174" column="90" selection-start="6777" selection-end="6777" vertical-scroll-proportion="0.5251572" vertical-offset="2965" max-vertical-offset="4914">
+              <folding>
+                <marker date="1403261701308" expanded="true" signature="7233:7264" placeholder="..." />
+                <marker date="1403261701308" expanded="true" signature="7803:7817" placeholder="..." />
+                <marker date="1403261701308" expanded="true" signature="7899:7929" placeholder="..." />
+                <marker date="1403261701308" expanded="true" signature="7987:7996" placeholder="..." />
+                <marker date="1403261701308" expanded="true" signature="8966:8980" placeholder="..." />
+                <marker date="1403261701308" expanded="true" signature="9056:9086" placeholder="..." />
+                <marker date="1403261701308" expanded="true" signature="9144:9153" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="List_sent.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_region/List_sent.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stocklevel.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="stocklevel.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="9" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.9879154" vertical-offset="105" max-vertical-offset="576">
+            <state line="12" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="-4.111111" vertical-offset="105" max-vertical-offset="576">
               <folding>
                 <element signature="tag#table#0" expanded="false" />
               </folding>
@@ -125,17 +136,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/send_region/stock.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="91" selection-start="463" selection-end="463" vertical-scroll-proportion="26.0" vertical-offset="972" max-vertical-offset="1386">
-              <folding>
-                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -187,7 +187,6 @@
         <option value="$PROJECT_DIR$/app/controllers/PackageController.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_region/confirm.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_district/confirm.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/RegionPackageController.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/countstock.blade.php" />
@@ -200,6 +199,7 @@
         <option value="$PROJECT_DIR$/app/views/send_national/List_sent.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/listreceived.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/listreceived.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -820,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="12" selection-start="5968" selection-end="5968" vertical-scroll-proportion="0.4750733" vertical-offset="2862" max-vertical-offset="4914">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DistrictPackageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="137" selection-start="806" selection-end="806" vertical-scroll-proportion="-1.8461539" vertical-offset="1194" max-vertical-offset="4284">
@@ -1076,9 +1069,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="9" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.9879154" vertical-offset="105" max-vertical-offset="576">
+        <state line="12" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="-4.111111" vertical-offset="105" max-vertical-offset="576">
           <folding>
             <element signature="tag#table#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="90" selection-start="6777" selection-end="6777" vertical-scroll-proportion="0.5251572" vertical-offset="2965" max-vertical-offset="4914">
+          <folding>
+            <marker date="1403261701308" expanded="true" signature="7233:7264" placeholder="..." />
+            <marker date="1403261701308" expanded="true" signature="7803:7817" placeholder="..." />
+            <marker date="1403261701308" expanded="true" signature="7899:7929" placeholder="..." />
+            <marker date="1403261701308" expanded="true" signature="7987:7996" placeholder="..." />
+            <marker date="1403261701308" expanded="true" signature="8966:8980" placeholder="..." />
+            <marker date="1403261701308" expanded="true" signature="9056:9086" placeholder="..." />
+            <marker date="1403261701308" expanded="true" signature="9144:9153" placeholder="..." />
           </folding>
         </state>
       </provider>
