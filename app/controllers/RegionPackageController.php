@@ -273,4 +273,40 @@ class RegionPackageController extends \BaseController {
         }
 
     }
+
+    public function checkstocklot($id){
+        $arr = $this->breakqr($id);
+        $package = NationalStock::where('lot_number',$arr['lot_number'])->first();
+        if($package){
+            $period = Input::get('period');
+            return View::make("send_region.countstock",compact('package','period'));            }
+        else{
+            echo "<h3 class='text-danger'>There are no information about this item from your stock</h3>";
+        }
+    }
+
+    public function performcount(){
+        $count = RegionInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
+        if($count){
+            $count->boxes = $count->boxes + Input::get('box');
+            $count->vials = $count->vials + Input::get('vials');
+            $count->save();
+        }else{
+            RegionInventory::create(array(
+                'reporting_period' => date("M Y"),
+                'user_id'       => Auth::user()->id,
+                'lot_number'    => Input::get('lot'),
+                'region_id'     => Auth::user()->region_id,
+                'GTIN'          => Input::get('GTIN'),
+                'boxes'         => Input::get('box'),
+                'vials'         => Input::get('vials'),
+            ));
+        }
+    }
+
+    public function liststock(){
+//        $packages = RegionInvertory::all();
+        return View::make('send_region.listcount');
+    }
+
 }

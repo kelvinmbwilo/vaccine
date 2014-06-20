@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Stock
-    <small>{{ Auth::user()->region->region }} Region Stock Information </small>
+    My Store
+    <small>{{ Auth::user()->region->region }} Region Store Information </small>
 </h1>
 @stop
 @section('contents')

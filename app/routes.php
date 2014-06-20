@@ -300,6 +300,15 @@ Route::post('region_package/national/confirmsend/{id}',array('uses'=>'RegionPack
 //display a form to edit vaccine information
 Route::post('region_package/national/prepared/delete/{id}',array('uses'=>'RegionPackageController@deletprepared'));
 
+//display a form to edit vaccine information
+Route::post('region_package/stock/checklot/{id}',array('uses'=>'PackageController@checkstocklot'));
+
+//display a form to edit vaccine information
+Route::post('region_package/stock/count',array('uses'=>'PackageController@performcount'));
+
+//display a form to edit vaccine information
+Route::get('region_package/inventory/list',array('uses'=>'PackageController@liststock'));
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 ////// Routes for District package management
