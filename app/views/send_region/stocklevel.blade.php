@@ -43,6 +43,18 @@
 
     </tbody>
 </table>
+<script>
+    /* Table initialisation */
+    $(document).ready(function() {
+        $('#example2').dataTable({
+
+        });
+
+        $('input[type="text"]').addClass("form-control");
+        $('select').addClass("form-control");
+
+    } );
+</script>
 
 @endif
 @stop

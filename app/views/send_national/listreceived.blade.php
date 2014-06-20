@@ -15,7 +15,7 @@
             @if(ManufacturePackage::where('status','received')->count() == 0)
             <h3>There are no Packages</h3>
             @else
-            <table class="table table-striped table-bordered" id="example3">
+            <table class="table table-striped table-bordered" id="example2">
                 <thead>
                 <tr>
                     <th> # </th>
@@ -45,7 +45,18 @@
 
                 </tbody>
             </table>
+            <script>
+                /* Table initialisation */
+                $(document).ready(function() {
+                    $('#example2').dataTable({
 
+                    });
+
+                    $('input[type="text"]').addClass("form-control");
+                    $('select').addClass("form-control");
+
+                } );
+            </script>
             @endif
         </div>
 </div>
