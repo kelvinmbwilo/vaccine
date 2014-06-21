@@ -10,7 +10,7 @@
 @if(NationalStock::all()->count() == 0)
 <h3>There are no vaccines or diluent in the stock</h3>
 @else
-<table class="table table-striped table-bordered example3" id="example2">
+<table class="table table-bordered example3" id="example2">
     <thead>
     <tr>
         <th> # </th>
@@ -27,7 +27,13 @@
     @foreach(NationalStock::all() as $us)
     @if($us)
         @if($us->number_of_doses > 0 )
+    @if(strtotime($us->expiry_date) < strtotime(date('Y-m-d')))
+            <tr class="danger" title="this item has expired">
+       @elseif((strtotime($us->expiry_date) - strtotime(date('Y-m-d')))/2592000 < $us->vaccine->warning_period)
+            <tr class="warning" title="This item is near expiry date">
+         @else
             <tr>
+                @endif
                 <td>{{ $i++ }}</td>
                 <td>{{ $us->vaccine->GTIN }}</td>
                 <td>{{ $us->vaccine->manufacturer }}</td>

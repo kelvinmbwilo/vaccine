@@ -210,6 +210,11 @@ class PackageController extends \BaseController {
 
     }
 
+    public function voucher($id){
+        $natpack = NationalPackage::find($id);
+        return View::make('send_national.voucher',compact('natpack'));
+    }
+
     public function deletprepared($id){
         $package = NationalPackage::find($id);
         foreach($package->packages as $pack){

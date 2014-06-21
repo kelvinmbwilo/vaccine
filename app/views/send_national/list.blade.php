@@ -18,7 +18,7 @@
     <tr>
         <th>GTIN</th>
         <th>Manufacture</th>
-        <th>Description</th>
+        <th>Item</th>
         <th>Lot Number</th>
         <th>Expiry</th>
         <th>Amount Issued (Doses)</th>
@@ -63,7 +63,7 @@
     </tr>
     @endforeach
 </table>
-<p><button type="button" class="btn btn-danger delpack" style="margin-top: 10px" id="{{ $natpack->id }}">Cancel</button>
+<p id="buttons"><button type="button" class="btn btn-danger delpack" style="margin-top: 10px" id="{{ $natpack->id }}">Cancel</button>
 <button type="button" class="btn btn-primary sendpack" style="margin-top: 10px" id="{{ $natpack->id }}">Confirm and Send</button></p>
 <script>
     $(document).ready(function(){
@@ -90,8 +90,12 @@
                         $("#itemarea").fadeOut( "slow", function() {
                             $("#itemarea").html("").fadeIn();
                         });
+                        $("#buttons").fadeOut( "slow");
                         $("#listuser").fadeOut( "slow", function() {
                             $("#listuser").html("").fadeIn();
+                            $("#destination").fadeOut( "slow")
+                            $("#listuser").html("<h3 class='text-success'><i class='fa fa-spinner fa-spin'></i>Loading Voucher Information...</h3>");
+                            $("#listuser").load("<?php echo url("package/displayvoucher/{$natpack->id}") ?>");
                         });
                         $("#output").fadeOut( "slow", function() {
                             $("#output").html("").fadeIn();

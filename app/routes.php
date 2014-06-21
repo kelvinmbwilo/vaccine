@@ -221,6 +221,10 @@ Route::post('package/national/listed/delete/{id}',array('uses'=>'PackageControll
 //display a form to edit vaccine information
 Route::post('package/national/confirmsend/{id}',array('uses'=>'PackageController@confirmsend'));
 
+//display a voucher ready to print
+Route::get('package/displayvoucher/{id}',array('uses'=>'PackageController@voucher'));
+
+
 //display a form to edit vaccine information
 Route::post('package/national/prepared/delete/{id}',array('uses'=>'PackageController@deletprepared'));
 

@@ -16,7 +16,7 @@
 @stop
 
 @section('contents')
-    <div class="form-group col-sm-3">
+    <div class="form-group col-sm-3" id="destination">
         <span class="help-block">Select destination region <!--<a href="{{ url('package/prepare/easysend') }}">easy send</a></span> -->
         {{ Form::select('region',array(""=>"Select Region")+Region::all()->lists('region','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
     </div>
