@@ -15,9 +15,8 @@
     <tr>
         <th> # </th>
         <th>GTIN</th>
-        <!--        <th>Number Of Packages</th>-->
         <th>Manufacturer</th>
-        <th>Name</th>
+        <th>Item</th>
         <th>Lot Number</th>
         <th>Number Of Doses</th>
         <th>Expiry Date</th>

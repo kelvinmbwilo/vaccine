@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" afterPath="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" />
     </list>
@@ -56,16 +57,25 @@
       <file leaf-file-name="stocklevel.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="15" selection-start="1064" selection-end="1064" vertical-scroll-proportion="-23.333334" vertical-offset="54" max-vertical-offset="1206">
+            <state line="33" column="44" selection-start="907" selection-end="907" vertical-scroll-proportion="-8.0" vertical-offset="378" max-vertical-offset="1152">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stocklevel.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="21" selection-start="382" selection-end="382" vertical-scroll-proportion="3.3333333" vertical-offset="378" max-vertical-offset="1134">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="stocklevel.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="722" selection-end="722" vertical-scroll-proportion="0.23809524" vertical-offset="432" max-vertical-offset="1152">
+            <state line="33" column="20" selection-start="892" selection-end="892" vertical-scroll-proportion="1.5714285" vertical-offset="0" max-vertical-offset="1134">
               <folding />
             </state>
           </provider>
@@ -118,7 +128,6 @@
         <option value="$PROJECT_DIR$/app/views/send_region/countstock.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/listcount.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/stock.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_district/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
@@ -135,6 +144,7 @@
         <option value="$PROJECT_DIR$/app/views/send_region/listreceived.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php" />
       </list>
     </option>
   </component>
@@ -532,10 +542,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21346469" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21346469" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.168429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -749,11 +759,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/user/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="34" selection-start="2155" selection-end="2181" vertical-scroll-proportion="0.29395604" vertical-offset="1099" max-vertical-offset="3114" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="9" selection-start="1121" selection-end="1368" vertical-scroll-proportion="-7.7777777" vertical-offset="600" max-vertical-offset="954" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/send_region/list.blade.php">
@@ -1005,16 +1010,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="15" selection-start="1064" selection-end="1064" vertical-scroll-proportion="-23.333334" vertical-offset="54" max-vertical-offset="1206">
+        <state line="16" column="21" selection-start="382" selection-end="382" vertical-scroll-proportion="3.3333333" vertical-offset="378" max-vertical-offset="1134">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/send_region/stocklevel.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="722" selection-end="722" vertical-scroll-proportion="0.23809524" vertical-offset="432" max-vertical-offset="1152">
+        <state line="33" column="44" selection-start="907" selection-end="907" vertical-scroll-proportion="-8.0" vertical-offset="378" max-vertical-offset="1152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/send_district/stocklevel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="20" selection-start="892" selection-end="892" vertical-scroll-proportion="1.5714285" vertical-offset="0" max-vertical-offset="1134">
           <folding />
         </state>
       </provider>

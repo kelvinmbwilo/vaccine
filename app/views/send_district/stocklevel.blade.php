@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Stock
-    <small>{{ Auth::user()->district->district }} District Stock Information </small>
+    Stock Balance
+    <small>{{ Auth::user()->district->district }} District Stock Balance </small>
 </h1>
 @stop
 @section('contents')
@@ -15,9 +15,8 @@
     <tr>
         <th> # </th>
         <th>GTIN</th>
-        <!--        <th>Number Of Packages</th>-->
         <th>Manufacturer</th>
-        <th>Name</th>
+        <th>Item</th>
         <th>Lot Number</th>
         <th>Number Of Doses</th>
         <th>Expiry Date</th>
@@ -27,17 +26,17 @@
     <?php $i=1; ?>
     @foreach(DistrictStock::all() as $us)
     @if($us)
-    <tr>
-        <td>{{ $i++ }}</td>
-        <td>{{ $us->vaccine->GTIN }}</td>
-        <td>{{ $us->vaccine->manufacturer }}</td>
-        <td>
-            {{ $us->vaccine->name }}
-        </td>
-        <td>{{ $us->lot_number }}</td>
-        <td>{{ $us->number_of_doses }}</td>
-        <td>{{ date('j M Y',strtotime($us->expiry_date)) }}</td>
-    </tr>
+        @if($us->number_of_doses > 0)
+            <tr>
+                <td>{{ $i++ }}</td>
+                <td>{{ $us->vaccine->GTIN }}</td>
+                <td>{{ $us->vaccine->manufacturer }}</td>
+                <td>{{ $us->vaccine->name }} </td>
+                <td>{{ $us->lot_number }}</td>
+                <td>{{ $us->number_of_doses }}</td>
+                <td>{{ date('j M Y',strtotime($us->expiry_date)) }}</td>
+            </tr>
+        @endif
     @endif
     @endforeach
 
