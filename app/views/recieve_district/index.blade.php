@@ -16,27 +16,29 @@
 @stop
 
 @section('contents')
+
 <div class="col-sm-12" id="infoarea"></div>
 <div class="col-sm-12" style="margin-bottom: 20px" id="ssccarea">
-<form method="post" action="{{ url('') }}" id="addsscc">
-    <div class="form-group" >
-        <div class="col-sm-6">
-            Scan Shipment Number<br>
-            <input type="text" name="sscc" placeholder="Scan Shipment Number" required class="form-control">
+    <form method="post" action="{{ url('') }}" id="addsscc">
+        <div class="form-group" >
+            <div class="col-sm-6">
+                Scan the SSCC <br>
+                <input type="text" name="sscc" placeholder="Scan Package SSCC Number" required class="form-control">
+            </div>
+            <div class="col-sm-6">
+                <br><button type="submit" class="btn btn-info btn-min">Scan</button>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <br><button type="submit" class="btn btn-info btn-min">Scan</button>
-        </div>
-    </div>
-</form>
+    </form>
 </div>
-    <div id="output" style="margin-top: 20px">
+<div id="output" style="margin-top: 20px">
 
-    </div>
+</div>
 
 <script>
     $(document).ready(function (){
-        ("#infoarea").hide();
+        $("#infoarea").hide();
+
         $(".dat").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -73,3 +75,4 @@
     });
 </script>
 @stop
+
