@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    My Store
-    <small>{{ Auth::user()->region->region }} Region Store Information </small>
+    Stock Balance
+    <small>{{ Auth::user()->region->region }} Region Stock Balance </small>
 </h1>
 @stop
 @section('contents')
@@ -27,17 +27,19 @@
     <?php $i=1; ?>
     @foreach(RegionStock::all() as $us)
     @if($us)
-    <tr>
-        <td>{{ $i++ }}</td>
-        <td>{{ $us->vaccine->GTIN }}</td>
-        <td>{{ $us->vaccine->manufacturer }}</td>
-        <td>
-            {{ $us->vaccine->name }}
-        </td>
-        <td>{{ $us->lot_number }}</td>
-        <td>{{ $us->number_of_doses }}</td>
-        <td>{{ date('j M Y',strtotime($us->expiry_date)) }}</td>
-    </tr>
+        @if($us->number_of_doses > 0 )
+            <tr>
+                <td>{{ $i++ }}</td>
+                <td>{{ $us->vaccine->GTIN }}</td>
+                <td>{{ $us->vaccine->manufacturer }}</td>
+                <td>
+                    {{ $us->vaccine->name }}
+                </td>
+                <td>{{ $us->lot_number }}</td>
+                <td>{{ $us->number_of_doses }}</td>
+                <td>{{ date('j M Y',strtotime($us->expiry_date)) }}</td>
+            </tr>
+        @endif
     @endif
     @endforeach
 
