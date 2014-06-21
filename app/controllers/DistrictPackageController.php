@@ -51,27 +51,30 @@ class DistrictPackageController extends \BaseController {
 
     public function additemtostock($id){
         $package = RegionalPackageContent::find($id);
+        $doses = $package->number_of_boxes * $package->vaccine->vials_per_box *$package->vaccine->doses_per_vial;
         $arrival = ArrivalDistrict::create(array(
             'regional_package'      =>$package->package->id,
+            'GTIN'                  =>$package->vaccine->GTIN,
             'package_number'        =>$package->package->package_number,
             'district_id'           =>$package->package->district_id,
             'lot_number'            =>$package->lot_number,
             'number_as_expected'    =>Input::get('quantity'),
             'physcal_damege'        =>Input::get('damage'),
             'vvm_status'            =>Input::get('vvm'),
+            'number_received'       =>(Input::has('quantity1'))?Input::get('quantity1')*$package->vaccine->doses_per_vial:$doses,
+            'number_expected'       =>$doses,
             'receiver'              =>Auth::user()->id,
             'problem'               =>Input::get('comments'),
         ));
 
-        $stock = DistrictStock::where('lot_number',$package->lot_number)->first();
-        $doses = $package->number_of_boxes * $package->vaccine->vials_per_box *$package->vaccine->doses_per_vial;
+        $stock = DistrictStock::where('lot_number',$package->lot_number)->where('district_id',Auth::user()->district_id)->first();
         if($stock){
-            $stock->number_of_doses = $stock->number_of_doses + $doses;
+            $stock->number_of_doses = $stock->number_of_doses + $arrival->number_received;
             $stock->save();
         }else{
             DistrictStock::create(array(
                 'district_id'       => $package->package->district_id,
-                'number_of_doses'   => $doses,
+                'number_of_doses'   => $arrival->number_received,
                 'lot_number'        => $package->lot_number,
                 'vaccine_id'        => $package->vaccine->GTIN,
                 'expiry_date'       => $package->manufacturer->expiry_date

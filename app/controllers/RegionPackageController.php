@@ -72,7 +72,7 @@ class RegionPackageController extends \BaseController {
             'problem'               =>Input::get('comments'),
         ));
 
-        $stock = RegionStock::where('lot_number',$package->lot_number)->first();
+        $stock = RegionStock::where('lot_number',$package->lot_number)->where('region_id',Auth::user()->region_id)->first();
         if($stock){
             $stock->number_of_doses = $stock->number_of_doses + $arrival->number_received;
             $stock->save();

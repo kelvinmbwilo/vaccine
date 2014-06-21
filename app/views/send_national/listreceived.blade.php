@@ -20,11 +20,12 @@
                 <tr>
                     <th> # </th>
                     <th>SSCC</th>
-                    <th>Item</th>
-                    <th>Manufacture</th>
                     <th>GTIN</th>
+                    <th>Manufacture</th>
+                    <th>Item</th>
                     <th>Lot Number</th>
                     <th>Expiry</th>
+                    <th>Date received</th>
                     <th>Doses</th>
                 </tr>
                 </thead>
@@ -34,11 +35,12 @@
                 <tr>
                     <td>{{ $i++ }}</td>
                     <td>{{ $pack->sscc }}</td>
-                    <td>{{ $pack->vaccine->name }}</td>
-                    <td>{{ $pack->vaccine->manufacturer }}</td>
                     <td>{{ $pack->vaccine->GTIN }}</td>
+                    <td>{{ $pack->vaccine->manufacturer }}</td>
+                    <td>{{ $pack->vaccine->name }}</td>
                     <td>{{ $pack->lot_number }}</td>
                     <td>{{ date('j M Y',strtotime($pack->expiry_date)) }}</td>
+                    <td>{{ date('j M Y',strtotime($pack->updated_at)) }}</td>
                     <td>{{ $pack->number_of_doses }}</td>
                 </tr>
                 @endforeach
