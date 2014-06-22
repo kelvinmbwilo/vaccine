@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/master.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/master.blade.php" />
     </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,30 +34,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="250" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.16788322" vertical-offset="3189" max-vertical-offset="5634">
+            <state line="181" column="250" selection-start="6997" selection-end="6997" vertical-scroll-proportion="-2.5555556" vertical-offset="3189" max-vertical-offset="5634">
               <folding>
+                <marker date="1403430987521" expanded="true" signature="48:101" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="154:264" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1052:1971" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1079:1278" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1121:1267" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1305:1508" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1347:1497" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1535:1734" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1577:1723" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1761:1964" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="1803:1953" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="5092:5199" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="5130:5142" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="5180:5192" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="10381:12718" placeholder="..." />
                 <marker date="1403430987521" expanded="true" signature="10381:10412" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="10401:12707" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="10434:11602" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="10455:10501" placeholder="{&quot;type&quot;: 'column'...}" />
+                <marker date="1403430987521" expanded="true" signature="10522:10570" placeholder="{&quot;text&quot;: 'My Store'...}" />
+                <marker date="1403430987521" expanded="true" signature="10594:10645" placeholder="{&quot;text&quot;: 'Stock Level'...}" />
+                <marker date="1403430987521" expanded="true" signature="10666:10732" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="10753:10882" placeholder="{&quot;min&quot;: 0...}" />
+                <marker date="1403430987521" expanded="true" signature="10802:10868" placeholder="{&quot;text&quot;: 'Stock Level(Doses)'...}" />
+                <marker date="1403430987521" expanded="true" signature="10905:11296" placeholder="{&quot;headerFormat&quot;: '&lt;span style=&quot;font-size:10px&quot;&gt;&lt;b&gt;{point.key}&lt;/b&gt;&lt;/span&gt;&lt;table&gt;'...}" />
                 <marker date="1403430987521" expanded="true" signature="10951:10965" placeholder="..." />
                 <marker date="1403430987521" expanded="true" signature="11047:11077" placeholder="..." />
                 <marker date="1403430987521" expanded="true" signature="11135:11144" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="11323:11456" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="11349:11442" placeholder="{&quot;pointPadding&quot;: 0.2...}" />
+                <marker date="1403430987521" expanded="true" signature="11478:11592" placeholder="[...]" />
+                <marker date="1403430987521" expanded="true" signature="11479:11535" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="11537:11591" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="11637:12699" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="11658:11704" placeholder="{&quot;type&quot;: 'column'...}" />
+                <marker date="1403430987521" expanded="true" signature="11725:11785" placeholder="{&quot;text&quot;: ' Expected Shipments '...}" />
+                <marker date="1403430987521" expanded="true" signature="11806:11908" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="11836:11894" placeholder="[...]" />
+                <marker date="1403430987521" expanded="true" signature="11929:12045" placeholder="{&quot;min&quot;: 0...}" />
+                <marker date="1403430987521" expanded="true" signature="11978:12031" placeholder="{&quot;text&quot;: 'Doses'...}" />
+                <marker date="1403430987521" expanded="true" signature="12068:12453" placeholder="{&quot;headerFormat&quot;: '&lt;span style=&quot;font-size:10px&quot;&gt;{point.key} &lt;/span&gt;&lt;table&gt;'...}" />
                 <marker date="1403430987521" expanded="true" signature="12114:12128" placeholder="..." />
                 <marker date="1403430987521" expanded="true" signature="12204:12234" placeholder="..." />
                 <marker date="1403430987521" expanded="true" signature="12292:12301" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="12480:12613" placeholder="{...}" />
+                <marker date="1403430987521" expanded="true" signature="12506:12599" placeholder="{&quot;pointPadding&quot;: 0.2...}" />
+                <marker date="1403430987521" expanded="true" signature="12635:12689" placeholder="[...]" />
+                <marker date="1403430987521" expanded="true" signature="12636:12688" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="master.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="-8.555555" vertical-offset="1785" max-vertical-offset="4410">
+            <state line="110" column="9" selection-start="4688" selection-end="4688" vertical-scroll-proportion="0.47445256" vertical-offset="1785" max-vertical-offset="4410">
               <folding>
                 <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,8 +165,8 @@
         <option value="$PROJECT_DIR$/app/views/send_national/voucher.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
       </list>
     </option>
   </component>
@@ -436,10 +476,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21346469" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21346469" sideWeight="0.49924242" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.168429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -757,27 +797,67 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="-8.555555" vertical-offset="1785" max-vertical-offset="4410">
+        <state line="181" column="250" selection-start="6997" selection-end="6997" vertical-scroll-proportion="-2.5555556" vertical-offset="3189" max-vertical-offset="5634">
           <folding>
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1403430987521" expanded="true" signature="48:101" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="154:264" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1052:1971" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1079:1278" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1121:1267" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1305:1508" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1347:1497" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1535:1734" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1577:1723" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1761:1964" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="1803:1953" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="5092:5199" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="5130:5142" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="5180:5192" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="10381:12718" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="10381:10412" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="10401:12707" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="10434:11602" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="10455:10501" placeholder="{&quot;type&quot;: 'column'...}" />
+            <marker date="1403430987521" expanded="true" signature="10522:10570" placeholder="{&quot;text&quot;: 'My Store'...}" />
+            <marker date="1403430987521" expanded="true" signature="10594:10645" placeholder="{&quot;text&quot;: 'Stock Level'...}" />
+            <marker date="1403430987521" expanded="true" signature="10666:10732" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="10753:10882" placeholder="{&quot;min&quot;: 0...}" />
+            <marker date="1403430987521" expanded="true" signature="10802:10868" placeholder="{&quot;text&quot;: 'Stock Level(Doses)'...}" />
+            <marker date="1403430987521" expanded="true" signature="10905:11296" placeholder="{&quot;headerFormat&quot;: '&lt;span style=&quot;font-size:10px&quot;&gt;&lt;b&gt;{point.key}&lt;/b&gt;&lt;/span&gt;&lt;table&gt;'...}" />
+            <marker date="1403430987521" expanded="true" signature="10951:10965" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="11047:11077" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="11135:11144" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="11323:11456" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="11349:11442" placeholder="{&quot;pointPadding&quot;: 0.2...}" />
+            <marker date="1403430987521" expanded="true" signature="11478:11592" placeholder="[...]" />
+            <marker date="1403430987521" expanded="true" signature="11479:11535" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="11537:11591" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="11637:12699" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="11658:11704" placeholder="{&quot;type&quot;: 'column'...}" />
+            <marker date="1403430987521" expanded="true" signature="11725:11785" placeholder="{&quot;text&quot;: ' Expected Shipments '...}" />
+            <marker date="1403430987521" expanded="true" signature="11806:11908" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="11836:11894" placeholder="[...]" />
+            <marker date="1403430987521" expanded="true" signature="11929:12045" placeholder="{&quot;min&quot;: 0...}" />
+            <marker date="1403430987521" expanded="true" signature="11978:12031" placeholder="{&quot;text&quot;: 'Doses'...}" />
+            <marker date="1403430987521" expanded="true" signature="12068:12453" placeholder="{&quot;headerFormat&quot;: '&lt;span style=&quot;font-size:10px&quot;&gt;{point.key} &lt;/span&gt;&lt;table&gt;'...}" />
+            <marker date="1403430987521" expanded="true" signature="12114:12128" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="12204:12234" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="12292:12301" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="12480:12613" placeholder="{...}" />
+            <marker date="1403430987521" expanded="true" signature="12506:12599" placeholder="{&quot;pointPadding&quot;: 0.2...}" />
+            <marker date="1403430987521" expanded="true" signature="12635:12689" placeholder="[...]" />
+            <marker date="1403430987521" expanded="true" signature="12636:12688" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="250" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.16788322" vertical-offset="3189" max-vertical-offset="5634">
+        <state line="110" column="9" selection-start="4688" selection-end="4688" vertical-scroll-proportion="0.47445256" vertical-offset="1785" max-vertical-offset="4410">
           <folding>
-            <marker date="1403430987521" expanded="true" signature="10381:10412" placeholder="..." />
-            <marker date="1403430987521" expanded="true" signature="10951:10965" placeholder="..." />
-            <marker date="1403430987521" expanded="true" signature="11047:11077" placeholder="..." />
-            <marker date="1403430987521" expanded="true" signature="11135:11144" placeholder="..." />
-            <marker date="1403430987521" expanded="true" signature="12114:12128" placeholder="..." />
-            <marker date="1403430987521" expanded="true" signature="12204:12234" placeholder="..." />
-            <marker date="1403430987521" expanded="true" signature="12292:12301" placeholder="..." />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

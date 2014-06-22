@@ -109,9 +109,9 @@
     <li style="border-left:solid 2px #8FB0BD">
        <a href="{{ url('logout') }}" ><i class="fa fa-power-off text-maroon"></i> Logout</a>
     </li>
-    <li style="margin-top: 0px;padding-top: 0px">
-        <a href="#" style="margin-top: 0px;padding: 0px"  ><img src="{{ asset('img/GAVILogo.jpg') }}" class="img-responsive" /> </a>
-    </li>
+<!--    <li style="margin-top: 0px;padding-top: 0px">-->
+<!--        <a href="#" style="margin-top: 0px;padding: 0px"  ><img src="{{ asset('img/GAVILogo.jpg') }}" class="img-responsive" /> </a>-->
+<!--    </li>-->
 <!--<li class="user user-menu">-->
 <!--    <a href="{{ url('profile')}}" class="" data-toggle="dropdown">-->
 <!--        <i class="glyphicon glyphicon-user"></i>-->
