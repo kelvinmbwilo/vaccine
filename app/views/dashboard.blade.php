@@ -179,7 +179,7 @@ foreach(Vaccine::all() as $vaccine){
             $s = RegionStock::where('vaccine_id',"1234567889771")->sum('number_of_doses');
             $s1= RegionStock::where('vaccine_id',"1234567890074")->sum('number_of_doses');
             $stock = $s +$s1;
-            $b =(NationalPackageContent::where('status','')->whereIn('package_id',NationalPackage::where('region_id',Auth::user()->region_id)->where('date_sent','!=','')->get()->lists('id')+array(0))->where('vaccine_id','6')->sum('number_of_boxes'))*$$bcg->vials_per_box*$bcg->doses_per_vial;
+            $b =(NationalPackageContent::where('status','')->whereIn('package_id',NationalPackage::where('region_id',Auth::user()->region_id)->where('date_sent','!=','')->get()->lists('id')+array(0))->where('vaccine_id','6')->sum('number_of_boxes'))*$bcg->vials_per_box*$bcg->doses_per_vial;
             $b1= (NationalPackageContent::where('status','')->whereIn('package_id',NationalPackage::where('region_id',Auth::user()->region_id)->where('date_sent','!=','')->get()->lists('id')+array(0))->where('vaccine_id','8')->sum('number_of_boxes'))*$bcg_serum->vials_per_box*$bcg_serum->doses_per_vial;
             $pack = $b + $b1;
         }

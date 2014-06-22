@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/master.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
     </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,27 +34,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="13" selection-start="10371" selection-end="10371" vertical-scroll-proportion="-1.2222222" vertical-offset="3999" max-vertical-offset="5634">
+            <state line="181" column="250" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.16788322" vertical-offset="3189" max-vertical-offset="5634">
               <folding>
-                <marker date="1403428959005" expanded="true" signature="10382:10413" placeholder="..." />
-                <marker date="1403428959005" expanded="true" signature="10952:10966" placeholder="..." />
-                <marker date="1403428959005" expanded="true" signature="11048:11078" placeholder="..." />
-                <marker date="1403428959005" expanded="true" signature="11136:11145" placeholder="..." />
-                <marker date="1403428959005" expanded="true" signature="12115:12129" placeholder="..." />
-                <marker date="1403428959005" expanded="true" signature="12205:12235" placeholder="..." />
-                <marker date="1403428959005" expanded="true" signature="12293:12302" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="10381:10412" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="10951:10965" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="11047:11077" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="11135:11144" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="12114:12128" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="12204:12234" placeholder="..." />
+                <marker date="1403430987521" expanded="true" signature="12292:12301" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="0.43065694" vertical-offset="1839" max-vertical-offset="4410">
+            <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="-8.555555" vertical-offset="1785" max-vertical-offset="4410">
               <folding>
                 <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -125,8 +125,8 @@
         <option value="$PROJECT_DIR$/app/views/send_national/voucher.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -757,27 +757,27 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="13" selection-start="10371" selection-end="10371" vertical-scroll-proportion="-1.2222222" vertical-offset="3999" max-vertical-offset="5634">
+        <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="-8.555555" vertical-offset="1785" max-vertical-offset="4410">
           <folding>
-            <marker date="1403428959005" expanded="true" signature="10382:10413" placeholder="..." />
-            <marker date="1403428959005" expanded="true" signature="10952:10966" placeholder="..." />
-            <marker date="1403428959005" expanded="true" signature="11048:11078" placeholder="..." />
-            <marker date="1403428959005" expanded="true" signature="11136:11145" placeholder="..." />
-            <marker date="1403428959005" expanded="true" signature="12115:12129" placeholder="..." />
-            <marker date="1403428959005" expanded="true" signature="12205:12235" placeholder="..." />
-            <marker date="1403428959005" expanded="true" signature="12293:12302" placeholder="..." />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="0.43065694" vertical-offset="1839" max-vertical-offset="4410">
+        <state line="181" column="250" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.16788322" vertical-offset="3189" max-vertical-offset="5634">
           <folding>
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1403430987521" expanded="true" signature="10381:10412" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="10951:10965" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="11047:11077" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="11135:11144" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="12114:12128" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="12204:12234" placeholder="..." />
+            <marker date="1403430987521" expanded="true" signature="12292:12301" placeholder="..." />
           </folding>
         </state>
       </provider>
