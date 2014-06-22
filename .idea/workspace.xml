@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b662df-6a80-4328-af8c-09804212d2e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layout/master.blade.php" afterPath="$PROJECT_DIR$/app/views/layout/master.blade.php" />
     </list>
     <ignored path="vaccine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="224" column="13" selection-start="10371" selection-end="10371" vertical-scroll-proportion="0.08029197" vertical-offset="3999" max-vertical-offset="5634">
+            <state line="224" column="13" selection-start="10371" selection-end="10371" vertical-scroll-proportion="-1.2222222" vertical-offset="3999" max-vertical-offset="5634">
               <folding>
                 <marker date="1403428959005" expanded="true" signature="10382:10413" placeholder="..." />
                 <marker date="1403428959005" expanded="true" signature="10952:10966" placeholder="..." />
@@ -47,6 +46,18 @@
                 <marker date="1403428959005" expanded="true" signature="12115:12129" placeholder="..." />
                 <marker date="1403428959005" expanded="true" signature="12205:12235" placeholder="..." />
                 <marker date="1403428959005" expanded="true" signature="12293:12302" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="0.43065694" vertical-offset="1839" max-vertical-offset="4410">
+              <folding>
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,7 +87,6 @@
         <option value="$PROJECT_DIR$/app/views/user/add.blade.php" />
         <option value="$PROJECT_DIR$/app/views/user/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/views/user/list.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_region/index.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_05_31_124823_create_arrival_national_table.php" />
         <option value="$PROJECT_DIR$/app/views/recieve_national/listconfirmed.blade.php" />
@@ -116,6 +126,7 @@
         <option value="$PROJECT_DIR$/app/views/send_national/list.blade.php" />
         <option value="$PROJECT_DIR$/app/views/send_national/stocklevel.blade.php" />
         <option value="$PROJECT_DIR$/app/views/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/layout/master.blade.php" />
       </list>
     </option>
   </component>
@@ -199,6 +210,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vaccine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -474,11 +507,6 @@
         <state line="103" column="46" selection-start="2920" selection-end="2928" vertical-scroll-proportion="0.17224881" vertical-offset="1782" max-vertical-offset="4104" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="42" selection-start="9567" selection-end="9567" vertical-scroll-proportion="-28.333334" vertical-offset="3375" max-vertical-offset="4356" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ArrivalNational.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="6.0" vertical-offset="162" max-vertical-offset="846" />
@@ -731,7 +759,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="13" selection-start="10371" selection-end="10371" vertical-scroll-proportion="0.08029197" vertical-offset="3999" max-vertical-offset="5634">
+        <state line="224" column="13" selection-start="10371" selection-end="10371" vertical-scroll-proportion="-1.2222222" vertical-offset="3999" max-vertical-offset="5634">
           <folding>
             <marker date="1403428959005" expanded="true" signature="10382:10413" placeholder="..." />
             <marker date="1403428959005" expanded="true" signature="10952:10966" placeholder="..." />
@@ -740,6 +768,16 @@
             <marker date="1403428959005" expanded="true" signature="12115:12129" placeholder="..." />
             <marker date="1403428959005" expanded="true" signature="12205:12235" placeholder="..." />
             <marker date="1403428959005" expanded="true" signature="12293:12302" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layout/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="50" selection-start="4789" selection-end="4789" vertical-scroll-proportion="0.43065694" vertical-offset="1839" max-vertical-offset="4410">
+          <folding>
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
