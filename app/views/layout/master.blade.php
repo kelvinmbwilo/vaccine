@@ -60,7 +60,7 @@
 <div class="navbar-right" >
 <ul class="nav navbar-nav" style="margin:0px">
     <li style="margin-top: 0px;padding-top: 0px">
-        <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 5px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 50px"/> </a>
+        <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 5px"  ><img src="{{ asset('img/GAVILogo.jpg') }}" class="img-responsive" style="height: 50px"/> </a>
     </li>
 
 <!--<li class="user user-menu">-->
