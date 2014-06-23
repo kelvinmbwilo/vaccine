@@ -45,7 +45,7 @@
 <header class="header">
 <a href="{{ url('/home') }}" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    <img src="{{ asset('img/logo.png') }}" class="img-responsive" style="height: 50px"/>
+    <img src="{{ asset('img/nembo.png') }}" class="img-responsive" style="height: 50px"/>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation" style="background-color: #7BBADE">
@@ -57,8 +57,11 @@
     <span class="icon-bar"></span>
 </a>
 
-<div class="navbar-right" >
+<div class="navbar-right hidden-sm hidden-xs" >
 <ul class="nav navbar-nav" style="margin:0px">
+    <li style="margin-top: 0px;padding-top: 0px">
+        <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 350px"  ><img src="{{ asset('img/logo1.png') }}" class="img-responsive" style="height: 50px; width: 200px"/> </a>
+    </li>
     <li style="margin-top: 0px;padding-top: 0px">
         <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 10px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 50px"/> </a>
     </li>

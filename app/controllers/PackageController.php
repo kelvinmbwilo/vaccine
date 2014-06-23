@@ -271,7 +271,7 @@ class PackageController extends \BaseController {
             $count->vials = $count->vials + Input::get('vials');
             $count->save();
         }else{
-            NationalInventory::create(array(
+            $inv = NationalInventory::create(array(
                 'reporting_period' => date("M Y"),
                 'user_id' => Auth::user()->id,
                 'lot_number' => Input::get('lot'),
@@ -280,6 +280,7 @@ class PackageController extends \BaseController {
                 'vials' => Input::get('vials'),
             ));
         }
+
     }
 
     public function liststock(){
