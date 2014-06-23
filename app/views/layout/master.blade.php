@@ -60,7 +60,7 @@
 <div class="navbar-right hidden-sm hidden-xs" >
 <ul class="nav navbar-nav" style="margin:0px">
     <li style="margin-top: 0px;padding-top: 0px">
-        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 390px"  ><b><span class="lead" style="color: #000000"> Ministry Of Health And Social Welfare </span><br>
+        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 390px"  ><b><span class="lead" style="color: #000000"> Ministry Of Health and Social Welfare </span><br>
                 <span style="padding-left: 20px;color: #000000">Immunization and Vaccine Department(IVD)</span></b> </a>
     </li>
     <li style="margin-top: 0px;padding-top: 0px">
