@@ -41,13 +41,14 @@
 </head>
 <body class="skin-blue" style="background-image: url({{ asset('img/body-bg.png')}})">
 <!-- header logo: style can be found in header.less -->
+
 <header class="header">
 <a href="{{ url('/home') }}" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-
+    <img src="{{ asset('img/logo.png') }}" class="img-responsive" style="height: 50px"/>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
-<nav class="navbar navbar-static-top" role="navigation">
+<nav class="navbar navbar-static-top" role="navigation" style="">
 <!-- Sidebar toggle button-->
 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
     <span class="sr-only">Toggle navigation</span>
@@ -55,63 +56,13 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </a>
-<div class="navbar-right">
-<ul class="nav navbar-nav">
-<!-- Messages: style can be found in dropdown.less-->
-<!--<li class="dropdown messages-menu">-->
-<!--    <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-<!--        <i class="fa fa-envelope"></i>-->
-<!--        <span class="label label-success">4</span>-->
-<!--    </a>-->
-<!--    <ul class="dropdown-menu">-->
-<!--        <li class="header">You have 2 messages</li>-->
-<!--        <li>-->
-<!--            <!-- inner menu: contains the actual data -->
-<!--            <ul class="menu">-->
-<!--                <li><!-- start message -->
-<!--                    <a href="#">-->
-<!--                        <div class="pull-left">-->
-<!--                            <img src="{{ asset('img/avatar3.png') }}" class="img-circle" alt="User Image"/>-->
-<!--                        </div>-->
-<!--                        <h4>-->
-<!--                            Support Team-->
-<!--                            <small><i class="fa fa-clock-o"></i> 5 mins</small>-->
-<!--                        </h4>-->
-<!--                        <p>Challenges using this system?</p>-->
-<!--                    </a>-->
-<!--                </li><!-- end message -->
-<!--                <li>-->
-<!--                    <a href="#">-->
-<!--                        <div class="pull-left">-->
-<!--                            <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="user image"/>-->
-<!--                        </div>-->
-<!--                        <h4>-->
-<!--                            System Notification-->
-<!--                            <small><i class="fa fa-clock-o"></i> 2 hours</small>-->
-<!--                        </h4>-->
-<!--                        <p>3 vaccines are close to expiry</p>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!---->
-<!---->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li class="footer"><a href="#">See All Messages</a></li>-->
-<!--    </ul>-->
-<!--</li>-->
-<!-- Notifications: style can be found in dropdown.less -->
-<!-- User Account: style can be found in dropdown.less -->
-    <li>
-        <a href="{{ url('profile')}}">
-           <b>Logged in as</b> <i>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</i>
-        </a>
+
+<div class="navbar-right" >
+<ul class="nav navbar-nav" style="margin:0px">
+    <li style="margin-top: 0px;padding-top: 0px">
+        <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 5px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 50px"/> </a>
     </li>
-    <li style="border-left:solid 2px #8FB0BD">
-       <a href="{{ url('logout') }}" ><i class="fa fa-power-off text-maroon"></i> Logout</a>
-    </li>
-<!--    <li style="margin-top: 0px;padding-top: 0px">-->
-<!--        <a href="#" style="margin-top: 0px;padding: 0px"  ><img src="{{ asset('img/GAVILogo.jpg') }}" class="img-responsive" /> </a>-->
-<!--    </li>-->
+
 <!--<li class="user user-menu">-->
 <!--    <a href="{{ url('profile')}}" class="" data-toggle="dropdown">-->
 <!--        <i class="glyphicon glyphicon-user"></i>-->
@@ -148,6 +99,32 @@
 </div>
 </nav>
 </header>
+<nav class="navbar navbar-default" role="navigation" style="max-height: 20px;min-height: 20px;margin-bottom: 0px;background-color: #fbfbfb; border: 0px;border-color:#fbfbfb; border-radius: 0px ">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right" style="padding-left: 100px">
+            <li><a href="#" style="padding: 0px;margin: 0px;color: #232f2e"><i>Logged in as {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</i>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('logout') }}" style="padding: 0px;margin: 0px;color: #0f1616;border-left: 0.5px solid #017ebc;padding-left: 5px"><i class="fa fa-power-off text-maroon"></i> Logout</a>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="left-side sidebar-offcanvas">
@@ -174,7 +151,7 @@
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <section class="content-header" style="padding: 5px;">
 <!--            page title-->
             @yield("title")
 
