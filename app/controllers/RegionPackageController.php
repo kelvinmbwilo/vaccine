@@ -175,7 +175,7 @@ class RegionPackageController extends \BaseController {
                 $other_available="";
                 $other_vaccine = RegionStock::where('vaccine_id',$package->vaccine->GTIN)->where('number_of_doses','!=','0')->get();
                 foreach($other_vaccine as $vaccine){
-                    if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date))
+                    if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date ) && strtotime($vaccine->expiry_date) > strtotime(date('Y-m-d')))
                         $other_available = $vaccine->lot_number;
                 }
                 $district = District::find($id);
