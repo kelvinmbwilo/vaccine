@@ -2541,7 +2541,7 @@ Component: timeline
 }
 /* skin-blue logo */
 .skin-blue .logo {
-  background-color: #3c8dbc;
+  background-color: #7BBADE;
   color: #f9f9f9;
   /*background-image: url('../img/nembo.png');*/
 }
@@ -2549,7 +2549,7 @@ Component: timeline
   color: #f9f9f9;
 }
 .skin-blue .logo:hover {
-  background: #3c8dbc;
+  background: #7BBADE;
   /*background-image:url('../img/logo.png');*/
 }
 /* skin-blue content header */
