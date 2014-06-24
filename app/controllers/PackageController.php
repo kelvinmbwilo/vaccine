@@ -295,15 +295,10 @@ class PackageController extends \BaseController {
     }
 
     public function confirmcount($id){
-        $count = NationalInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
-        if($count){
-            $boxx = $count->boxes + Input::get('box');
-            $viall = $count->vials + Input::get('vials');
 
-        }else{
             $boxx =  Input::get('box');
             $viall =  Input::get('vials');
-        }
+
         $stock = NationalStock::where('lot_number',$id)->first();
         $doses = $stock->number_of_doses;
         $fromdoses =  ($boxx*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + ($viall*$stock->vaccine->doses_per_vial);
