@@ -27,6 +27,11 @@
     @foreach(DistrictStock::all() as $us)
     @if($us)
         @if($us->number_of_doses > 0)
+            @if(strtotime($us->expiry_date) < strtotime(date('Y-m-d')))
+            <tr class="danger" title="this item has expired">
+                @elseif((strtotime($us->expiry_date) - strtotime(date('Y-m-d')))/2592000 < $us->vaccine->warning_period)
+            <tr class="warning" title="This item is near expiry date">
+                @else
             <tr>
                 <td>{{ $i++ }}</td>
                 <td>{{ $us->vaccine->GTIN }}</td>

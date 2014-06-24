@@ -272,19 +272,33 @@ class PackageController extends \BaseController {
             $count->save();
         }else{
             $inv = NationalInventory::create(array(
-                'reporting_period' => date("M Y"),
-                'user_id' => Auth::user()->id,
-                'lot_number' => Input::get('lot'),
-                'GTIN' => Input::get('GTIN'),
-                'boxes' => Input::get('box'),
-                'vials' => Input::get('vials'),
+                'reporting_period'  => date("M Y"),
+                'user_id'           => Auth::user()->id,
+                'lot_number'        => Input::get('lot'),
+                'GTIN'              => Input::get('GTIN'),
+                'status'            => (Input::has('positive'))?"positive":"negative",
+                'reason'            => (Input::has('positive'))? Input::get('positive'): Input::get('negative'),
+                'boxes'             => Input::get('box'),
+                'vials'             => Input::get('vials'),
             ));
         }
-
     }
 
     public function liststock(){
 //        $packages = NationalInvertory::all();
         return View::make('send_national.listcount');
+    }
+
+    public function confirmcount($id){
+        $stock = NationalStock::where('lot_number',$id)->first();
+        $doses = $stock->number_of_doses;
+        $fromdoses =  (Input::get('box')*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + (Input::get('vial')*$stock->vaccine->doses_per_vial);
+        if($doses > $fromdoses){
+            echo "negative";
+        }elseif($doses < $fromdoses){
+            echo "positive";
+        }elseif($doses == $fromdoses){
+            echo "equals";
+        }
     }
 }

@@ -235,6 +235,9 @@ Route::post('package/stock/checklot/{id}',array('uses'=>'PackageController@check
 Route::post('package/stock/count',array('uses'=>'PackageController@performcount'));
 
 //display a form to edit vaccine information
+Route::post('package/confirmcount/{id}',array('uses'=>'PackageController@confirmcount'));
+
+//display a form to edit vaccine information
 Route::get('package/inventory/list',array('uses'=>'PackageController@liststock'));
 
 
