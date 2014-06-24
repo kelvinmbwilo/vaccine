@@ -240,6 +240,9 @@ Route::post('package/confirmcount/{id}',array('uses'=>'PackageController@confirm
 //display a form to edit vaccine information
 Route::get('package/inventory/list',array('uses'=>'PackageController@liststock'));
 
+//display a form to edit vaccine information
+Route::get('package/inventory/list1',array('uses'=>'PackageController@liststock1'));
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 ////// Routes for Regional package management

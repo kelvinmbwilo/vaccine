@@ -289,10 +289,24 @@ class PackageController extends \BaseController {
         return View::make('send_national.listcount');
     }
 
+    public function liststock1(){
+//        $packages = NationalInvertory::all();
+        return View::make('send_national.listcount1');
+    }
+
     public function confirmcount($id){
+        $count = NationalInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
+        if($count){
+            $boxx = $count->boxes + Input::get('box');
+            $viall = $count->vials + Input::get('vials');
+
+        }else{
+            $boxx =  Input::get('box');
+            $viall =  Input::get('vials');
+        }
         $stock = NationalStock::where('lot_number',$id)->first();
         $doses = $stock->number_of_doses;
-        $fromdoses =  (Input::get('box')*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + (Input::get('vial')*$stock->vaccine->doses_per_vial);
+        $fromdoses =  ($boxx*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + ($viall*$stock->vaccine->doses_per_vial);
         if($doses > $fromdoses){
             echo "negative";
         }elseif($doses < $fromdoses){
