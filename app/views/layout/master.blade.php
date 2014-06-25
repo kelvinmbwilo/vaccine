@@ -16,6 +16,7 @@
     {{HTML::style("css/jvectormap/jquery-jvectormap-1.2.2.css") }}
     <!-- fullCalendar -->
      {{HTML::style("css/fullcalendar/fullcalendar.css") }}
+     {{HTML::style("css/muonekano.css") }}
     <!-- Daterange picker -->
     {{HTML::style("css/daterangepicker/daterangepicker-bs3.css") }}
     {{HTML::style("css/timepicker/bootstrap-timepicker.css") }}
@@ -38,6 +39,35 @@
     {{HTML::script("js/html5shiv.js")}}
     {{HTML::script("js/respond.min.js")}}
    <![endif]-->
+    <style>
+        @font-face {
+            font-family: header-font;
+            src: url('myriad-pro.eot');
+            src: url('myriad-pro.eot?#iefix') format('embedded-opentype'),
+            url('myriad-pro.woff') format('woff'),
+            url('myriad-pro.ttf') format('truetype'),
+            url('myriad-pro.svg#OpenSansBold') format('svg');
+        }
+
+        .center-title {
+            color: #ffffff;
+            text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+            text-transform: uppercase;
+            text-align: center;
+            font-family: header-font;
+            font-size: 16pt;
+            font-weight: normal;
+        }
+
+        .center-subtitle {
+            color: rgba(238, 238, 238, 8);
+            text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+            text-align: center;
+            font-family: header-font;
+            font-size: 12pt;
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body class="skin-blue" style="background-image: url({{ asset('img/body-bg.png')}})">
 <!-- header logo: style can be found in header.less -->
@@ -60,8 +90,9 @@
 <div class="navbar-right hidden-sm hidden-xs" >
 <ul class="nav navbar-nav" style="margin:0px">
     <li style="margin-top: 0px;padding-top: 0px">
-        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 390px"  ><b><span class="lead" style="color: #000000"> Ministry Of Health and Social Welfare </span><br>
-                <span style="padding-left: 20px;color: #252525">Immunization and Vaccine Department(IVD)</span></b> </a>
+        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 390px"  ><span class="center-title">Ministry of Health and Social Welfare</span>
+            <br />
+            <span class="center-subtitle">Immunization and Vaccine Department(IVD)<span></a>
     </li>
     <li style="margin-top: 0px;padding-top: 0px">
         <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 10px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 50px"/> </a>
