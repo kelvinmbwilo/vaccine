@@ -22,7 +22,7 @@
     <form method="post" action="{{ url('') }}" id="addsscc">
         <div class="form-group" >
             <div class="col-sm-6">
-                Scan the SSCC <br>
+                Scan Shipment/Voucher Number <br>
                 <input type="text" name="sscc" placeholder="Scan Package SSCC Number" required class="form-control">
             </div>
             <div class="col-sm-6">

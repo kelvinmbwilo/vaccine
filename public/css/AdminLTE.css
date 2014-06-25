@@ -68,7 +68,7 @@ body > .header {
 }
 @media screen and (min-width: 992px) {
   .left-side {
-    top: 50px;
+    top: 70px;
   }
   /*Right side strech mode*/
   .right-side.strech {
@@ -437,7 +437,7 @@ body > .header .logo {
   width: 220px;
   font-family: 'Kaushan Script', cursive;
   font-weight: 500;
-  height: 50px;
+  height: 70px;
   display: block;
 }
 body > .header .logo .icon {

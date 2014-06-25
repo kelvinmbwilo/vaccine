@@ -39,35 +39,7 @@
     {{HTML::script("js/html5shiv.js")}}
     {{HTML::script("js/respond.min.js")}}
    <![endif]-->
-    <style>
-        @font-face {
-            font-family: header-font;
-            src: url('myriad-pro.eot');
-            src: url('myriad-pro.eot?#iefix') format('embedded-opentype'),
-            url('myriad-pro.woff') format('woff'),
-            url('myriad-pro.ttf') format('truetype'),
-            url('myriad-pro.svg#OpenSansBold') format('svg');
-        }
 
-        .center-title {
-            color: #ffffff;
-            text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
-            text-transform: uppercase;
-            text-align: center;
-            font-family: header-font;
-            font-size: 16pt;
-            font-weight: normal;
-        }
-
-        .center-subtitle {
-            color: rgba(238, 238, 238, 8);
-            text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
-            text-align: center;
-            font-family: header-font;
-            font-size: 12pt;
-            font-weight: normal;
-        }
-    </style>
 </head>
 <body class="skin-blue" style="background-image: url({{ asset('img/body-bg.png')}})">
 <!-- header logo: style can be found in header.less -->
@@ -75,10 +47,10 @@
 <header class="header">
 <a href="{{ url('/home') }}" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    <img src="{{ asset('img/nembo.png') }}" class="img-responsive" style="height: 50px"/>
+    <img src="{{ asset('img/nembo.png') }}" class="img-responsive" style="height: 70px"/>
 </a>
 <!-- Header Navbar: style can be found in header.less -->
-<nav class="navbar navbar-static-top" role="navigation" style="background-color: #7BBADE">
+<nav class="navbar navbar-static-top" role="navigation" style="max-height: 70px;min-height: 70px;background-color: #7BBADE">
 <!-- Sidebar toggle button-->
 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
     <span class="sr-only">Toggle navigation</span>
@@ -88,14 +60,14 @@
 </a>
 
 <div class="navbar-right hidden-sm hidden-xs" >
-<ul class="nav navbar-nav" style="margin:0px">
-    <li style="margin-top: 0px;padding-top: 0px">
-        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 390px"  ><span class="center-title">Ministry of Health and Social Welfare</span>
+<ul class="nav navbar-nav" style="margin:0px;">
+    <li style="margin-top: 0px;padding-top: 10px">
+        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 350px"  ><span class="center-title">Ministry of Health and Social Welfare</span>
             <br />
             <span class="center-subtitle">Immunization and Vaccine Department(IVD)<span></a>
     </li>
     <li style="margin-top: 0px;padding-top: 0px">
-        <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 10px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 50px"/> </a>
+        <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 10px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 70px"/> </a>
     </li>
 
 <!--<li class="user user-menu">-->
