@@ -1,4 +1,4 @@
-<?php $pack = NationalInventory::where('reporting_period',date('M Y'))->orderBy('created_at',"DESC")->first() ?>
+<?php $pack = NationalInventory::where('reporting_period',date('M Y'))->orderBy('updated_at',"DESC")->first() ?>
 <h3 class="lead">Stock count on {{ date('M Y') }}
 <button class="btn btn-info btn-sm pull-right" id="listall">All count for {{ date('M Y') }}</button></h3>
 <table class="table table-responsive table-bordered" id="alllist">

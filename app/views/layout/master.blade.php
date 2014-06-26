@@ -62,9 +62,10 @@
 <div class="navbar-right hidden-sm hidden-xs" >
 <ul class="nav navbar-nav" style="margin:0px;">
     <li style="margin-top: 0px;padding-top: 10px;text-align: center;">
-        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 350px"  ><span class="center-title">Ministry of Health and Social Welfare</span>
+        <a href="#" style="margin-top: 0px;padding: 0px; margin-right: 350px"  >
+            <span class="center-title">Ministry of Health and Social Welfare</span>
             <br />
-            <span class="center-subtitle">Immunization and Vaccine Department(IVD)<span></a>
+            <span class="center-subtitle">Immunization and Vaccine Department(IVD)</span></a>
     </li>
     <li style="margin-top: 0px;padding-top: 0px">
         <a href="#" style="margin-top: 0px;padding: 0px; padding-right: 10px"  ><img src="{{ asset('img/gavi-logo.png') }}" class="img-responsive" style="height: 70px"/> </a>
