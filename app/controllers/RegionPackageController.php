@@ -276,7 +276,7 @@ class RegionPackageController extends \BaseController {
 
     public function checkstocklot($id){
         $arr = $this->breakqr($id);
-        $package = NationalStock::where('lot_number',$arr['lot_number'])->first();
+        $package = RegionStock::where('lot_number',$arr['lot_number'])->first();
         if($package){
             $period = Input::get('period');
             return View::make("send_region.countstock",compact('package','period'));            }
@@ -288,9 +288,18 @@ class RegionPackageController extends \BaseController {
     public function performcount(){
         $count = RegionInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
         if($count){
-            $count->boxes = $count->boxes + Input::get('box');
-            $count->vials = $count->vials + Input::get('vials');
-            $count->save();
+            $count->delete();
+            RegionInventory::create(array(
+                'reporting_period' => date("M Y"),
+                'user_id'       => Auth::user()->id,
+                'lot_number'    => Input::get('lot'),
+                'region_id'     => Auth::user()->region_id,
+                'GTIN'          => Input::get('GTIN'),
+                'boxes'         => Input::get('box'),
+                'status'            => (Input::has('positive'))?"positive":"negative",
+                'reason'            => (Input::has('positive'))? Input::get('positive'): Input::get('negative'),
+                'vials'         => Input::get('vials'),
+            ));
         }else{
             RegionInventory::create(array(
                 'reporting_period' => date("M Y"),
@@ -299,6 +308,8 @@ class RegionPackageController extends \BaseController {
                 'region_id'     => Auth::user()->region_id,
                 'GTIN'          => Input::get('GTIN'),
                 'boxes'         => Input::get('box'),
+                'status'            => (Input::has('positive'))?"positive":"negative",
+                'reason'            => (Input::has('positive'))? Input::get('positive'): Input::get('negative'),
                 'vials'         => Input::get('vials'),
             ));
         }
@@ -307,6 +318,33 @@ class RegionPackageController extends \BaseController {
     public function liststock(){
 //        $packages = RegionInvertory::all();
         return View::make('send_region.listcount');
+    }
+
+    public function liststock1(){
+//        $packages = NationalInvertory::all();
+        return View::make('send_region.listcount1');
+    }
+
+    public function confirmcount($id){
+
+        $boxx =  Input::get('box');
+        $viall =  Input::get('vials');
+
+        $stock = RegionStock::where('lot_number',$id)->first();
+        $doses = $stock->number_of_doses;
+        $fromdoses =  ($boxx*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + ($viall*$stock->vaccine->doses_per_vial);
+        if($doses > $fromdoses){
+            echo "negative";
+        }elseif($doses < $fromdoses){
+            echo "positive";
+        }elseif($doses == $fromdoses){
+            echo "equals";
+        }
+    }
+
+    public function voucher($id){
+        $natpack = RegionalPackage::find($id);
+        return View::make('send_region.voucher',compact('natpack'));
     }
 
 }

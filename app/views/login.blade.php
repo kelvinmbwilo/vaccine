@@ -70,14 +70,15 @@
 
     </div>
     <div class="col-xs-6">
-    <div class="header-mod"><h4>Sign In</h4></div>
+    <div class="header-mod"><h4>Sign In</h4>
+    </div>
     @if(isset($error))
     <div class="alert alert-danger alert-dismissable" style="padding: 5px">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>{{ $error }}!</strong>
     </div>
     @endif
-    <form method="post" action="{{ url('login') }}" style="">
+    <form method="post" action="{{ url('login') }}" style="" autocomplete="off">
         <div class="body bg-none"> <!-- Kizito's: it was bg-aqua -->
             <div class="form-group">
                 <input type="text" name="email" class="form-control transparent-input" placeholder="User ID" />
@@ -95,7 +96,7 @@
 
             <p><a href="#"></a></p>
 
-            <a href="#" class="text-center">Forget password</a>
+            <a href="{{ url('password/remind/') }}" class="text-center">Forget password</a>
         </div>
     </form>
 

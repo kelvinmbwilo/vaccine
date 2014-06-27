@@ -1201,6 +1201,21 @@
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="district_inventory" schema="" catalog="vaccine" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="reporting_period" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="district_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="lot_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="GTIN" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="boxes" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="vials" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="reason" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="district_package" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="package_number" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
@@ -1384,8 +1399,15 @@
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="password_reminders" schema="" catalog="vaccine" type="TABLE">
+      <column name="email" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <index name="email" unique="false" columns="email,token"/>
+    </table>
     <table name="region_inventory" schema="" catalog="vaccine" type="TABLE">
-      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="reporting_period" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="region_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
@@ -1393,8 +1415,11 @@
       <column name="GTIN" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="boxes" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="vials" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="reason" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="region_stock" schema="" catalog="vaccine" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

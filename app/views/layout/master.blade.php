@@ -123,7 +123,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right" style="padding-left: 100px">
-            <li><a href="#" style="padding: 0px;margin: 0px;color: #232f2e"><i>Logged in as {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</i>
+            <li><a href="{{ url('profile') }}" style="padding: 0px;margin: 0px;color: #232f2e"><i>Logged in as {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</i>
                 </a>
             </li>
             <li>

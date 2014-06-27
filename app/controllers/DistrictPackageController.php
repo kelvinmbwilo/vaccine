@@ -232,4 +232,78 @@ class DistrictPackageController extends \BaseController {
         }
 
     }
+
+    public function voucher($id){
+        $natpack = DistrictPackage::find($id);
+        return View::make('send_district.voucher',compact('natpack'));
+    }
+
+    public function checkstocklot($id){
+        $arr = $this->breakqr($id);
+        $package = DistrictStock::where('lot_number',$arr['lot_number'])->first();
+        if($package){
+            $period = Input::get('period');
+            return View::make("send_district.countstock",compact('package','period'));            }
+        else{
+            echo "<h3 class='text-danger'>There are no information about this item from your stock</h3>";
+        }
+    }
+
+    public function performcount(){
+        $count = DistrictInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
+        if($count){
+            $count->delete();
+            DistrictInventory::create(array(
+                'reporting_period' => date("M Y"),
+                'user_id'       => Auth::user()->id,
+                'lot_number'    => Input::get('lot'),
+                'district_id'   => Auth::user()->district_id,
+                'GTIN'          => Input::get('GTIN'),
+                'boxes'         => Input::get('box'),
+                'status'        => (Input::has('positive'))?"positive":"negative",
+                'reason'        => (Input::has('positive'))? Input::get('positive'): Input::get('negative'),
+                'vials'         => Input::get('vials'),
+            ));
+        }else{
+            DistrictInventory::create(array(
+                'reporting_period' => date("M Y"),
+                'user_id'       => Auth::user()->id,
+                'lot_number'    => Input::get('lot'),
+                'district_id'   => Auth::user()->district_id,
+                'GTIN'          => Input::get('GTIN'),
+                'boxes'         => Input::get('box'),
+                'status'        => (Input::has('positive'))?"positive":"negative",
+                'reason'        => (Input::has('positive'))? Input::get('positive'): Input::get('negative'),
+                'vials'         => Input::get('vials'),
+            ));
+        }
+    }
+
+    public function liststock(){
+//        $packages = RegionInvertory::all();
+        return View::make('send_district.listcount');
+    }
+
+    public function liststock1(){
+//        $packages = NationalInvertory::all();
+        return View::make('send_district.listcount1');
+    }
+
+    public function confirmcount($id){
+
+        $boxx =  Input::get('box');
+        $viall =  Input::get('vials');
+
+        $stock = DistrictStock::where('lot_number',$id)->first();
+        $doses = $stock->number_of_doses;
+        $fromdoses =  ($boxx*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + ($viall*$stock->vaccine->doses_per_vial);
+        if($doses > $fromdoses){
+            echo "negative";
+        }elseif($doses < $fromdoses){
+            echo "positive";
+        }elseif($doses == $fromdoses){
+            echo "equals";
+        }
+    }
+
 }

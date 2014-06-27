@@ -41,9 +41,9 @@
     $min = round(($natpack->district->surviving_infants *$pack->vaccine->wastage *$pack->vaccine->schedule*0.5 )/12 );
     $newlevel = $level+ (($pack->number_of_boxes * $pack->vaccine->vials_per_box) * $pack->vaccine->doses_per_vial);
     ?>
-    @if($max < $newlevel )
+    @if($max < $newlevel)
     <tr class="danger" title="amaount exceed maximum required stock">
-        @elseif( $newlevel < $min   )
+        @elseif( $newlevel < $min )
     <tr class="danger" title="amount is less than required minimum stock">
         @else
     <tr>
@@ -90,8 +90,12 @@
                         $("#itemarea").fadeOut( "slow", function() {
                             $("#itemarea").html("").fadeIn();
                         });
+                        $("#buttons").fadeOut( "slow");
                         $("#listuser").fadeOut( "slow", function() {
                             $("#listuser").html("").fadeIn();
+                            $("#destination").fadeOut( "slow")
+                            $("#listuser").html("<h3 class='text-success'><i class='fa fa-spinner fa-spin'></i>Loading Voucher Information...</h3>");
+                            $("#listuser").load("<?php echo url("region_package/displayvoucher/{$natpack->id}") ?>");
                         });
                         $("#output").fadeOut( "slow", function() {
                             $("#output").html("").fadeIn();
@@ -113,7 +117,12 @@
             $("#yes").click(function(){
                 $(this).parent().html("<br><i class='fa fa-spinner fa-spin'></i>deleting...");
                 $.post("<?php echo url('region_package/national/listed/delete') ?>/"+id1,function(data){
-                    btn.hide("slow").next("hr").hide("slow");
+                    if($("table#alllist tr").filter(':visible').length == 1){
+                        btn.parent().hide("slow");
+                    }else{
+                        btn.hide("slow");
+                    }
+
                 });
             });
         });//endof deleting category
@@ -142,7 +151,8 @@
                         $("#output").fadeOut( "slow", function() {
                             $("#output").html("").fadeIn();
                         });
-                    },500);
+                    }, 1500);
+//                    location.reload();
                 });
             });
         });//endof deleting category

@@ -158,11 +158,11 @@ $cats = "";$i = 0;
 $currlevel = "name: 'Current Level',data: [";
 $relevel =  "name: 'Reorder Level',data: [";
 $distr =  "name: 'Expected Shipment',data: [";
-foreach(Vaccine::all() as $vaccine){
+foreach(Vaccine::where('type','vaccine')->get() as $vaccine){
     $bcg  =  Vaccine:: where("GTIN","1234567889771")->first();
     $bcg_serum = Vaccine:: where("GTIN","1234567890074")->first();
     $i++;
-    $len = Vaccine::all()->count() ;
+    $len = Vaccine::where('type','vaccine')->count() ;
     if($vaccine->GTIN == "1234567889771"){
         $cats .=($i == $len)?"'".$vaccine->name ."'":"'".$vaccine->name ."',";
         if(Auth::user()->role_id == 'admin' || Auth::user()->role_id == 'National IVD' || Auth::user()->role_id == 'National'){
@@ -192,7 +192,10 @@ foreach(Vaccine::all() as $vaccine){
             $b1=  (RegionalPackageContent::where('status','')->whereIn('package_id',RegionalPackage::where('district_id',Auth::user()->district_id)->where('date_sent','!=','')->get()->lists('id')+array(0))->where('vaccine_id','8')->sum('number_of_boxes'))*$bcg_serum->vials_per_box*$bcg_serum->doses_per_vial;
             $pack = $b + $b1;
         }
-    }elseif($vaccine->GTIN == "1234567890074"){
+        $relevel .=($i == $len)? $min : $min.",";
+        $currlevel .=($i == $len)? $stock : $stock.",";
+        $distr .=($i == $len )? $pack : $pack.",";
+    }elseif($vaccine->GTIN == "1234567890074" ){
 
     }else{
         $cats .=($i == $len)?"'".$vaccine->name ."'":"'".$vaccine->name ."',";
@@ -211,18 +214,21 @@ foreach(Vaccine::all() as $vaccine){
             $stock = DistrictStock::where('vaccine_id',$vaccine->GTIN)->sum('number_of_doses');
             $pack = (RegionalPackageContent::where('status','')->whereIn('package_id',RegionalPackage::where('district_id',Auth::user()->district_id)->where('date_sent','!=','')->get()->lists('id')+array(0))->where('vaccine_id',$vaccine->id)->sum('number_of_boxes'))*$vaccine->vials_per_box*$vaccine->doses_per_vial;
         }
+        $relevel .=($i == $len)? $min : $min.",";
+        $currlevel .=($i == $len)? $stock : $stock.",";
+        $distr .=($i == $len )? $pack : $pack.",";
 
     }
 
 
-    $relevel .=($i == $len)? $min : $min.",";
-    $currlevel .=($i == $len)? $stock : $stock.",";
-    $distr .=($i == $len )? $pack : $pack.",";
+
 
 }
 $currlevel .="]";
 $relevel .="]";
 $distr .="]";
+echo $cats.'<br>';
+echo $relevel;
 ?>
 <script>
     $(function () {

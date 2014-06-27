@@ -11,6 +11,8 @@
 |
 */
 
+Route::controller('password', 'RemindersController');
+
 Route::get('/', function()
 {
 	return View::make('login');
@@ -311,13 +313,22 @@ Route::post('region_package/national/confirmsend/{id}',array('uses'=>'RegionPack
 Route::post('region_package/national/prepared/delete/{id}',array('uses'=>'RegionPackageController@deletprepared'));
 
 //display a form to edit vaccine information
-Route::post('region_package/stock/checklot/{id}',array('uses'=>'PackageController@checkstocklot'));
+Route::post('region_package/stock/checklot/{id}',array('uses'=>'RegionPackageController@checkstocklot'));
+
+//display a voucher ready to print
+Route::get('region_package/displayvoucher/{id}',array('uses'=>'RegionPackageController@voucher'));
 
 //display a form to edit vaccine information
-Route::post('region_package/stock/count',array('uses'=>'PackageController@performcount'));
+Route::post('region_package/stock/count',array('uses'=>'RegionPackageController@performcount'));
 
 //display a form to edit vaccine information
-Route::get('region_package/inventory/list',array('uses'=>'PackageController@liststock'));
+Route::post('region_package/confirmcount/{id}',array('uses'=>'RegionPackageController@confirmcount'));
+
+//display a form to edit vaccine information
+Route::get('region_package/inventory/list1',array('uses'=>'RegionPackageController@liststock1'));
+
+//display a form to edit vaccine information
+Route::get('region_package/inventory/list',array('uses'=>'RegionPackageController@liststock'));
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -385,6 +396,24 @@ Route::post('district_package/national/confirmsend/{id}',array('uses'=>'District
 
 //display a form to edit vaccine information
 Route::post('district_package/national/prepared/delete/{id}',array('uses'=>'DistrictPackageController@deletprepared'));
+
+//display a voucher ready to print
+Route::get('district_package/displayvoucher/{id}',array('uses'=>'DistrictPackageController@voucher'));
+
+//display a form to edit vaccine information
+Route::post('district_package/stock/count',array('uses'=>'DistrictPackageController@performcount'));
+
+//display a form to edit vaccine information
+Route::post('district_package/confirmcount/{id}',array('uses'=>'DistrictPackageController@confirmcount'));
+
+//display a form to edit vaccine information
+Route::get('district_package/inventory/list1',array('uses'=>'DistrictPackageController@liststock1'));
+
+//display a form to edit vaccine information
+Route::get('district_package/inventory/list',array('uses'=>'DistrictPackageController@liststock'));
+
+//display a form to edit vaccine information
+Route::post('district_package/stock/checklot/{id}',array('uses'=>'DistrictPackageController@checkstocklot'));
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

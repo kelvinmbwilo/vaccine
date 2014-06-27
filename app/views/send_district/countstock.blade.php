@@ -2,7 +2,7 @@
 
     <div class="col-sm-2">
         <b>GTIN</b><br>
-        {{ $package->GTIN }}
+        {{ $package->vaccine_id }}
     </div>
     <div class="col-sm-1">
         <b>Item</b><br>
@@ -16,10 +16,10 @@
         Expiry <br>
         {{ date('j M Y',strtotime($package->expiry_date)) }}
     </div>
-    {{ Form::open(array("url"=>url("region_package/stock/count"),"class"=>"form-horizontal","id"=>'countform')) }}
+    {{ Form::open(array("url"=>url("district_package/stock/count"),"class"=>"form-horizontal","id"=>'countform')) }}
     <div class="col-sm-1">
         <input type="hidden" name="lot" value="{{ $package->lot_number }}" />
-        <input type="hidden" name="GTIN" value="{{ $package->GTIN }}" />
+        <input type="hidden" name="GTIN" value="{{ $package->vaccine_id }}" />
         <input type="hidden" name="period" value="{{ $period }}" />
         Boxes:
         <input title="" required="" name="box" pattern="\d*" type="text" class="form-control input-sm" placeholder="Number of  boxes">
@@ -57,7 +57,7 @@
             $(this).html("<i class='fa fa-spin fa-spinner '></i> Checking...");
             var boxes = $("input[name=box]").val();
             var vials = $("input[name=vials]").val();
-            $.post("<?php echo url("region_package/confirmcount/{$package->lot_number}") ?>",{box:boxes,vial:vials},function(data){
+            $.post("<?php echo url("district_package/confirmcount/{$package->lot_number}") ?>",{box:boxes,vial:vials},function(data){
                 if(data == "positive"){
                     $(".positive").html(positive).fadeIn();
                 }
@@ -88,7 +88,7 @@
             $("#output").fadeOut( "slow", function() {
                 $("#output").html("").fadeIn();
             });
-            $("#listuser").load("<?php echo url("region_package/inventory/list") ?>")
+            $("#listuser").load("<?php echo url("district_package/inventory/list") ?>")
         }
     });
 </script>

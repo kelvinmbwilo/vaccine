@@ -24,7 +24,7 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(RegionStock::all() as $us)
+    @foreach(RegionStock::where('region_id',Auth::user()->region_id)->get() as $us)
     @if($us)
         @if($us->number_of_doses > 0 )
             <tr>

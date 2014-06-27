@@ -50,7 +50,7 @@ class UserController extends \BaseController {
                     "role_id"=>Input::get("role"),
                     "region_id"=>(Input::has('region'))?Input::get("region"):0,
                     "district_id"=>(Input::has('district'))?Input::get("district"):0,
-                    "password"=>Input::get("password"),
+                    "password"=>Hash::make(Input::get("password")),
                     "status"=>"active"
                 ));
                 $name = $user->firstname." ".$user->lastname;
@@ -116,7 +116,7 @@ class UserController extends \BaseController {
         //udating password
         if(Input::has("password")){
             if(Input::get("password")===Input::get("re_enter_password")){
-                    $user->password = Input::get("password");
+                    $user->password = Hash::make(Input::get("password"));
                     $user->save();
             }else{}
         }
@@ -155,7 +155,7 @@ class UserController extends \BaseController {
     {
 //        $user = User::where("email",Input::get('email'))->first();
         $user = User::where("username",Input::get('email'))->first();
-        if($user && $user->password == Input::get('password')){
+        if($user && Hash::check( Input::get('password'),$user->password)){
             if(Input::get('keep') == "keep"){
                 Auth::login($user,TRUE);
             }else{

@@ -16,7 +16,7 @@
 @stop
 
 @section('contents')
-    <div class="form-group col-sm-3">
+<div class="form-group col-sm-3" id="destination">
         <span class="help-block">Select destination district</span>
         {{ Form::select('region',array(""=>'Select District')+Auth::user()->region->district->lists('district','id'),'',array('class'=>'form-control','required'=>'requiered')) }}
     </div>

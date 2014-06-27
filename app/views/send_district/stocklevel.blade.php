@@ -24,7 +24,7 @@
     </thead>
     <tbody>
     <?php $i=1; ?>
-    @foreach(DistrictStock::all() as $us)
+    @foreach(DistrictStock::where('district_id',Auth::user()->district_id)->get() as $us)
     @if($us)
         @if($us->number_of_doses > 0)
             @if(strtotime($us->expiry_date) < strtotime(date('Y-m-d')))
@@ -33,6 +33,7 @@
             <tr class="warning" title="This item is near expiry date">
                 @else
             <tr>
+                @endif
                 <td>{{ $i++ }}</td>
                 <td>{{ $us->vaccine->GTIN }}</td>
                 <td>{{ $us->vaccine->manufacturer }}</td>
