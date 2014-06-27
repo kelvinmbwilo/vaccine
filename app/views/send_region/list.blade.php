@@ -17,7 +17,7 @@
 <table class="table table-responsive table-bordered" id="alllist">
     <tr>
         <th>GTIN</th>
-        <th>Manufacture</th>
+        <th>Manufacturer</th>
         <th>Description</th>
         <th>Lot Number</th>
         <th>Expiry</th>

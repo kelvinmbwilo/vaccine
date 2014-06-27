@@ -13,7 +13,7 @@
                 <th> # </th>
                 <th>Shipment Number</th>
                 <th>Item</th>
-                <th>Manufacture</th>
+                <th>Manufacturer</th>
                 <th>GTIN</th>
                 <th>Lot Number</th>
                 <th>Expiry</th>

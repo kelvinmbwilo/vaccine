@@ -21,7 +21,7 @@
                     <th> # </th>
                     <th>SSCC</th>
                     <th>GTIN</th>
-                    <th>Manufacture</th>
+                    <th>Manufacturer</th>
                     <th>Item</th>
                     <th>Lot Number</th>
                     <th>Expiry</th>
