@@ -227,8 +227,6 @@ foreach(Vaccine::where('type','vaccine')->get() as $vaccine){
 $currlevel .="]";
 $relevel .="]";
 $distr .="]";
-echo $cats.'<br>';
-echo $relevel;
 ?>
 <script>
     $(function () {
