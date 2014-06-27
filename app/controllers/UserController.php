@@ -40,7 +40,7 @@ class UserController extends \BaseController {
             if($usser != 0){
                 return "<h4 class='text-error'>User with username ".Input::get("username")." already existed Please try another name</h4>";
             }else{
-
+                if(User::where('email',Input::get("email"))->count() == 0){
                 $user = User::create(array(
                     "firstname"=>Input::get("firstname"),
                     "username"=>Input::get("username"),
@@ -60,8 +60,12 @@ class UserController extends \BaseController {
                 ));
                 return "<h4 class='text-success'>User Successful Registered</h4>";
             }
+                else{
+                    return "<h4 class='text-danger'>There is another user using this email, please use other email</h4>";
+                }
+            }
         }else{
-            return "<h4 class='text-error'>two password do not match</h4>";
+            return "<h4 class='text-danger'>two password do not match</h4>";
         }
     }
 
@@ -99,32 +103,37 @@ class UserController extends \BaseController {
     public function update($id)
     {
         $user = User::find($id);
-        $user->firstname = Input::get("firstname");
-        $user->lastname = Input::get("lastname");
-        $user->username = Input::get("username");
-        $user->role_id = Input::get("role");
-        $user->email = Input::get("email");
-        if(Input::has("region")){
-            $user->region_id = Input::get("region");
-        }if(Input::has("district")){
-            $user->district_id = Input::get("district");
-        }
-        $user->phone = Input::get("phone");
-        $user->save();
-        $name = $user->firstname." ".$user->lastname;
+        if(User::where('email',Input::get("email"))->where('id','!=',$id)->count() == 0){
+            $user->firstname = Input::get("firstname");
+            $user->lastname = Input::get("lastname");
+            $user->username = Input::get("username");
+            $user->role_id = Input::get("role");
+            $user->email = Input::get("email");
+            if(Input::has("region")){
+                $user->region_id = Input::get("region");
+            }if(Input::has("district")){
+                $user->district_id = Input::get("district");
+            }
+            $user->phone = Input::get("phone");
+            $user->save();
+            $name = $user->firstname." ".$user->lastname;
 
-        //udating password
-        if(Input::has("password")){
-            if(Input::get("password")===Input::get("re_enter_password")){
+            //udating password
+            if(Input::has("password")){
+                if(Input::get("password")===Input::get("re_enter_password")){
                     $user->password = Hash::make(Input::get("password"));
                     $user->save();
-            }else{}
+                }else{}
+            }
+            Logs::create(array(
+                "user_id"=>  Auth::user()->id,
+                "action"  =>"Update user named ".$name
+            ));
+            return "<h4 class='text-success'>User Updated Successfull</h4>";
+        }else{
+            return "<h4 class='text-danger'>Email already exist please use other email</h4>";
         }
-        Logs::create(array(
-            "user_id"=>  Auth::user()->id,
-            "action"  =>"Update user named ".$name
-        ));
-        return "<h4 class='text-success'>User Updated Successfull</h4>";
+
     }
 
     /**

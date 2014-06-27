@@ -109,7 +109,7 @@ if(Auth::user()->role_id == "National" || Auth::user()->role_id == "National IVD
             function afterSuccess(){
                 setTimeout(function() {
                     $("#myModal").modal("hide");
-                }, 1000);
+                }, 3000);
                 $("#listuser").load("<?php echo url("user/list") ?>")
             }
         });
