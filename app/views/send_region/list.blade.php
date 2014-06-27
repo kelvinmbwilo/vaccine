@@ -22,7 +22,7 @@
         <th>Lot Number</th>
         <th>Expiry</th>
         <th>Amount Issued (Doses)</th>
-        <th>Amount Issued (Doses)</th>
+        <th>Min Stock</th>
         <th>Max Stock</th>
         <th>Current Stock</th>
         <th>New Stock</th>
