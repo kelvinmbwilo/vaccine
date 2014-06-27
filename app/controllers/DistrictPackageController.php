@@ -110,7 +110,7 @@ class DistrictPackageController extends \BaseController {
 
     public function prepareform($id){
             $arr = $this->breakqr(Input::get('sscc'));
-            $package = DistrictStock::where('lot_number',$arr['lot_number'])->where('number_of_doses','!=','0')->first();
+            $package = DistrictStock::where('lot_number',$arr['lot_number'])->where('number_of_doses','!=','0')->where('district_id',Auth::user()->district_id)->first();
             $idd = "";
             if($package){
                 if(Input::get('id') == "first"){
@@ -132,7 +132,7 @@ class DistrictPackageController extends \BaseController {
 
                 //checking the existance of same vaccine with close expiry date
                 $other_available="";
-                $other_vaccine = DistrictStock::where('vaccine_id',$package->vaccine->GTIN)->where('number_of_doses','!=','0')->get();
+                $other_vaccine = DistrictStock::where('vaccine_id',$package->vaccine->GTIN)->where('number_of_doses','!=','0')->where('district_id',Auth::user()->district_id)->get();
                 foreach($other_vaccine as $vaccine){
                     if(strtotime($vaccine->expiry_date)<strtotime($package->expiry_date) && strtotime($vaccine->expiry_date) > strtotime(date('Y-m-d')))
                         $other_available = $vaccine->lot_number;
@@ -145,7 +145,7 @@ class DistrictPackageController extends \BaseController {
     }
 
     public function processaddpackage(){
-        $stock = DistrictStock::where('lot_number',Input::get('lot'))->first();
+        $stock = DistrictStock::where('lot_number',Input::get('lot'))->where('district_id',Auth::user()->district_id)->first();
         $doses = Input::get('box');
         $boxes = (Input::get('box') / $stock->vaccine->doses_per_vial  )/$stock->vaccine->vials_per_box;
          if($stock->number_of_doses >= $doses){
@@ -186,7 +186,7 @@ class DistrictPackageController extends \BaseController {
             foreach($package->packages as $pack){
                 //$doses = ($pack->manufacturer->vaccine->doses_per_vial / $pack->number_of_doses )*$pack->manufacturer->vaccine->vials_per_box;
                 $doses = $pack->number_of_boxes * $pack->vaccine->vials_per_box * $pack->vaccine->doses_per_vial;
-                $stock = DistrictStock::where('lot_number',$pack->lot_number)->first();
+                $stock = DistrictStock::where('lot_number',$pack->lot_number)->where('district_id',Auth::user()->district_id)->first();
                 $stock->number_of_doses = $stock->number_of_doses - $doses;
                 $stock->save();
             }
@@ -240,7 +240,7 @@ class DistrictPackageController extends \BaseController {
 
     public function checkstocklot($id){
         $arr = $this->breakqr($id);
-        $package = DistrictStock::where('lot_number',$arr['lot_number'])->first();
+        $package = DistrictStock::where('lot_number',$arr['lot_number'])->where('district_id',Auth::user()->district_id)->first();
         if($package){
             $period = Input::get('period');
             return View::make("send_district.countstock",compact('package','period'));            }
@@ -250,7 +250,7 @@ class DistrictPackageController extends \BaseController {
     }
 
     public function performcount(){
-        $count = DistrictInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->first();
+        $count = DistrictInventory::where('lot_number',Input::get('lot'))->where('reporting_period',date('M Y'))->where('district_id',Auth::user()->district_id)->first();
         if($count){
             $count->delete();
             DistrictInventory::create(array(
@@ -294,7 +294,7 @@ class DistrictPackageController extends \BaseController {
         $boxx =  Input::get('box');
         $viall =  Input::get('vials');
 
-        $stock = DistrictStock::where('lot_number',$id)->first();
+        $stock = DistrictStock::where('lot_number',$id)->where('district_id',Auth::user()->district_id)->first();
         $doses = $stock->number_of_doses;
         $fromdoses =  ($boxx*$stock->vaccine->doses_per_vial*$stock->vaccine->vials_per_box) + ($viall*$stock->vaccine->doses_per_vial);
         if($doses > $fromdoses){
