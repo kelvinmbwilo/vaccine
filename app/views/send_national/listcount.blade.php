@@ -8,8 +8,8 @@
         <th>Description</th>
         <th>Lot Number</th>
         <th>Expiry</th>
-        <th>Vials</th>
         <th>Boxes</th>
+        <th>Vials</th>
         <th>Reporting Period</th>
     </tr>
 
@@ -19,8 +19,8 @@
         <td>{{ $pack->vaccine->name }}</td>
         <td>{{ $pack->lot_number }}</td>
         <td>{{ $pack->manufacturer->expiry_date }}</td>
-        <td>{{ $pack->vials}}</td>
         <td>{{ $pack->boxes }}</td>
+        <td>{{ $pack->vials}}</td>
         <td>{{ $pack->reporting_period }}</td>
         </tr>
 
